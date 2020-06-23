@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './elements/header/header.component';
 import { MatButtonModule, MatIconModule, MatTooltipModule, MatToolbarModule } from '@angular/material';
+import { HomeCtaComponent } from './elements/home-cta/home-cta.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    HomeCtaComponent
   ],
   imports: [
     BrowserModule,
