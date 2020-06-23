@@ -1,7 +1,25 @@
-h5 {
-    font-family: GellixMeduim; 
+.sub-title {
+    font-family: GellixMeduim, sans-serif;
+    font-weight: 500;
+    color: #00C189;
+    margin-bottom: .7em;
 }
 
-p {
-    font-family: GellixMeduim;
+.h1 {
+    font-family: GellixMeduim, sans-serif;
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: .4em;
+}
+
+.free {
+    color: blue;
+}
+
+.sub-message {
+    font-family: "Tiempos Text", serif;
+    font-size: 18.3328px;
+    font-weight: 400;
+    max-width: 22rem;
+    margin-bottom: 1.7222rem;
 }

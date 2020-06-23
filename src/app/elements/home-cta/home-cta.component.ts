@@ -9,8 +9,6 @@ export class HomeCtaComponent implements OnInit {
 
   title: string = 'Numberplates.io'
   subTitle: string = 'We want all plates online'
-  // mainTitleMessage: string = `The smartest <br> way to sell your plate`
-  mainTitleMessage: string = '<p>The smartest<br>way to sell<br>your plate</p>'
   subMessage: string = 'Our aim is to get all the number plates in the UK online so anyone contact the lister and make a direct offer.'
 
   constructor() { }
