@@ -12,12 +12,18 @@
     margin-bottom: .4em;
 }
 
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 2.1rem;
+    }
+}
+
 .free {
     color: blue;
 }
 
 .sub-message {
-    font-family: "Tiempos Text", serif;
+    font-family: "Ariel", sans-serif;
     font-size: 18.3328px;
     font-weight: 400;
     max-width: 22rem;
