@@ -2,20 +2,24 @@
     <div class="row">
         <div class="col d-flex flex-column">
 
-            <h5 class="sub-title">{{ subTitle }}</h5>
+            <!-- <h5 class="sub-title">{{ subTitle }}</h5> -->
 
             <h1 class="main-message">The smartest way <br>to sell your plate<br>for <span class="free">FREE!</span></h1>
 
             <p class="sub-message">{{ subMessage }}</p>
 
             <div>
-                <button mat-raised-button class="my-1 text-left primary-cta" (click)="$event">LIST your plate for FREE now</button>
+                <div class="d-flex flex-column align-items-start flex-lg-row align-items-lg-center">
+                    <button mat-raised-button class="my-1 text-left primary-cta" (click)="$event">LIST your plate for FREE</button>
+                    <span class="mx-3">or</span>
+                    <button mat-stroked-button class="my-1 text-left" (click)="$event">Get a VALUATION now</button>
+                </div>
 
-                <h6 class="premium-message mt-2">We also have a <a><b class="secondary-cta" (click)="$event">PREMIUM Listing</b></a> option where for a small charge you can sell your plate fast via social media.</h6>
+                <!-- <h6 class="premium-message mt-2">We also have a <a><b class="secondary-cta" (click)="$event">PREMIUM Listing</b></a> option where for a small charge you can sell your plate fast via social media.</h6> -->
                 
-                <button mat-flat-button color="primary" class="my-1 text-left" (click)="$event">SEARCH 1,195 plates now</button>
+                <button mat-flat-button color="primary" class="text-left my-2" (click)="$event">SEARCH 1,195 plates now</button>
                 <br>
-                <button mat-stroked-button class="my-1 text-left" (click)="$event">Get a VALUATION now</button>
+                <!-- <button mat-stroked-button class="my-1 text-left" (click)="$event">Get a VALUATION now</button> -->
             </div>
 
             <div class="my-3">
