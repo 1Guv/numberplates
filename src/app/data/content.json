@@ -1,0 +1,80 @@
+{
+    "header": {
+        "leftLogoUrl": "./assets/numberplates-io-logo.svg",
+        "middleLogoUrl": "./assets/n-logo-svg.png",
+        "headerMenuOptions": [
+            {
+                "name": "Login",
+                "icon": "account_circle",
+                "url": "/login",
+                "toolTip": "Login"
+            },
+            {
+                "name": "List your plate now",
+                "icon": "loupe",
+                "url": "/create-listing",
+                "toolTip": "List your plate now"
+            },
+            {
+                "name": "Search",
+                "icon": "search",
+                "url": "/search",
+                "toolTip": "Search for your personal plate"
+            },
+            {
+                "name": "Valuation",
+                "icon": "text_snippet",
+                "url": "/valuation",
+                "toolTip": "Get a plate valuation"
+            }
+        ]
+    },
+    "home-cta": {
+        "mainMessage": "The smartest way to sell your plate for FREE!",
+        "subMessage": "Our aim is to get all the number plates in the UK online so anyone contact the seller and make a direct offer.",
+        "createListingButton": {
+            "name": "List your plate for FREE",
+            "url": "/create-listing"
+        },
+        "valuationButton": {
+            "name": "Get a VALUATION now",
+            "url": "/valuation"
+        },
+        "searchButton": {
+            "name": "Search plates now",
+            "url": "/search"
+        },
+        "howItWorks": [
+            {
+                "subTitle": "How it works",
+                "title": "Any number plate, listed at any time.",
+                "paragraph": "It's very simple, you list your Private Number Plate for <b>FREE</b> until someone contacts you direct and provides you with an offer that you can't refuse. The best bit is that we will:",
+                "list": [
+                    {
+                        "listTitle": "List your private registration for free.",
+                        "listIcon": "done_outline"
+                    },
+                    {
+                        "listTitle": "Display your plate online forever or until its sold.",
+                        "listIcon": "done_outline"
+                    },
+                    {
+                        "listTitle": "We won't even take any commission.",
+                        "listIcon": "done_outline"
+                    },
+                    {
+                        "listTitle": "So you keep all the profits.",
+                        "listIcon": "done_outline"
+                    },
+                    {
+                        "listTitle": "Also, for a fee we can help you sell your plate fast via social media.",
+                        "listIcon": "done_outline"
+                    }
+                ],
+                "imageUrl": "./assets/one.svg" 
+            }
+        ]
+
+    }
+
+}
