@@ -10,6 +10,12 @@
                 "toolTip": "Login"
             },
             {
+                "name": "Logout",
+                "icon": "face",
+                "url": "/logout",
+                "toolTip": "Logout"
+            },
+            {
                 "name": "List your plate now",
                 "icon": "loupe",
                 "url": "/create-listing",

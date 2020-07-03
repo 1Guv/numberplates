@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ContentService } from 'src/app/services/content.service';
-import { Content } from 'src/app/models/header';
+import { Header } from 'src/app/models/content';
 
 @Component({
   selector: 'app-header',
@@ -9,15 +9,15 @@ import { Content } from 'src/app/models/header';
 })
 export class HeaderComponent implements OnInit {
 
-  content: Content;
+  header: Header;
 
   constructor(private contentService: ContentService) { }
 
   ngOnInit() {
     this.contentService.getContent()
       .subscribe(data => {
-        this.content = data;
-        console.log("HeaderComponent -> ngOnInit -> this.content", this.content);
+        this.header = data.header;
+        console.log("HeaderComponent -> ngOnInit -> this.content", this.header);
       })
   }
 

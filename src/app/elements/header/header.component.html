@@ -3,38 +3,23 @@
         <mat-toolbar class="col d-flex flex-row">
 
             <a [routerLink]="'/'">
-                <img src="./assets/numberplates-io-logo.svg" class="d-none d-sm-block">
+                <img src="{{ header?.leftLogoUrl }}" class="d-none d-sm-block">
             </a>
 
             <a [routerLink]="'/'" class="ml-sm-auto">
-                <img src="./assets/n-logo-svg.png" id="n-logo-size">
+                <img src="{{ header?.middleLogoUrl }}" id="n-logo-size">
                 <div class="d-inline-block d-sm-none">.io</div>
             </a>
 
-            <button mat-icon-button
-                    matTooltip="Login" 
-                    aria-label="Login" 
-                    class="ml-auto">
-                <mat-icon>account_circle</mat-icon>
-            </button>
+            <ng-container *ngFor="let option of header?.headerMenuOptions; index as i; first as isFirst">
+                <button mat-icon-button
+                        attr.aria-label="{{ option.name }}"
+                        matTooltip="{{ option.toolTip }}"
+                        [ngClass]="{'ml-auto': isFirst}">
+                    <mat-icon>{{ option.icon }}</mat-icon>
+                </button>
+            </ng-container>
 
-            <button mat-icon-button
-                    matTooltip="List your plate now" 
-                    aria-label="List your plate now">
-                <mat-icon>loupe</mat-icon>
-            </button>
-
-            <button mat-icon-button
-                    matTooltip="Search for your personal plate" 
-                    aria-label="Search for your personal plate">
-                <mat-icon>search</mat-icon>
-            </button>
-
-            <button mat-icon-button
-                    matTooltip="Get a plate valuation" 
-                    aria-label="Get a plate valuation">
-                <mat-icon>text_snippet</mat-icon>
-            </button>
         </mat-toolbar>
     </div>
 </div>
