@@ -6,19 +6,20 @@
 
             <!-- <h1 class="main-message">The smartest way <br>to sell your plate<br>for <span class="free">FREE!</span></h1> -->
             <h1 class="main-message">The smartest way to sell your plate for <span class="free">FREE!</span></h1>
+            <!-- <h1 class="main-message">{{ homeCTA.mainMessage }} <span class="free">FREE!</span></h1> -->
 
-            <p class="sub-message">{{ subMessage }}</p>
+            <p class="sub-message">{{ homeCTA?.subMessage }}</p>
 
             <div>
                 <div class="d-flex flex-column align-items-start flex-lg-row align-items-lg-center">
-                    <button mat-raised-button class="my-1 text-left primary-cta" (click)="$event" [routerLink]="'/create-listing'">LIST your plate for FREE</button>
+                    <button mat-raised-button class="my-1 text-left primary-cta" (click)="$event" [routerLink]="listingButton?.url">{{ listingButton?.name }}</button>
                     <span class="mx-3">or</span>
-                    <button mat-stroked-button class="my-1 text-left" (click)="$event">Get a VALUATION now</button>
+                    <button mat-stroked-button class="my-1 text-left" (click)="$event" [routerLink]="valuationButton?.url">Get a VALUATION now</button>
                 </div>
 
                 <!-- <h6 class="premium-message mt-2">We also have a <a><b class="secondary-cta" (click)="$event">PREMIUM Listing</b></a> option where for a small charge you can sell your plate fast via social media.</h6> -->
                 
-                <button mat-flat-button color="primary" class="text-left my-2" (click)="$event">SEARCH 1,195 plates now</button>
+                <button mat-flat-button color="primary" class="text-left my-2" (click)="$event" [routerLink]="searchButton?.url">SEARCH 1,195 plates now</button>
                 <br>
                 <!-- <button mat-stroked-button class="my-1 text-left" (click)="$event">Get a VALUATION now</button> -->
             </div>

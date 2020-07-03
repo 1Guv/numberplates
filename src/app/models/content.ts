@@ -7,6 +7,8 @@ export interface HomeCTA {
     mainMessage: string;
     subMessage: string;
     createListingButton: CTAButtons;
+    valuationButton: CTAButtons;
+    searchButton: CTAButtons;
     howItWorks: Array<Section>;
 }
 
