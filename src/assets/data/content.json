@@ -77,6 +77,8 @@
                         "listIcon": "done_outline"
                     }
                 ],
+                "imageLeft": true,
+                "imageRight": false,
                 "imageUrl": "./assets/one.svg" 
             },
             {
@@ -105,7 +107,9 @@
                         "listIcon": "done_outline"
                     }
                 ],
-                "imageUrl": "./assets/one.svg" 
+                "imageLeft": false,
+                "imageRight": true,
+                "imageUrl": "./assets/two.svg" 
             }
         ]
 

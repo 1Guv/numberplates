@@ -35,6 +35,8 @@ export interface Section {
     title: string;
     paragraph: string;
     list: Array<List>;
+    imageLeft: boolean;
+    imageRight: boolean;
     imageUrl: string;
 }
 

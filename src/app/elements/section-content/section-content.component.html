@@ -3,7 +3,7 @@
     <div class="col d-flex flex-column flex-lg-row">
         <div class="col-lg-1"></div>
 
-        <div class="col col-lg-5 d-flex justify-content-center">
+        <div *ngIf="section.imageLeft" class="col col-lg-5 d-flex justify-content-center">
             <img src="{{ section?.imageUrl }}" class="img-fluid">
         </div>
 
@@ -20,6 +20,10 @@
                 <li class=""><span class="material-icons list-style">done_outline</span>So you keep all the <b>profits.</b></li>
                 <li class=""><span class="material-icons list-style">done_outline</span>Also, for a fee we can help you sell your plate <b>fast</b> via social media.</li> -->
             </ul>
+        </div>
+
+        <div *ngIf="section.imageRight" class="col col-lg-5 d-flex justify-content-center">
+            <img src="{{ section?.imageUrl }}" class="img-fluid">
         </div>
         
         <div class="col-lg-1"></div>
