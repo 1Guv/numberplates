@@ -14,12 +14,6 @@ export class HomeCtaComponent implements OnInit {
   valuationButton: CTAButtons;
   searchButton: CTAButtons;
 
-  // title: string = 'Numberplates.io'
-  // subTitle: string = 'We want all plates online by 2050.'
-  // subMessage: string = 'Our aim is to get all the number plates in the UK online so anyone contact the seller and make a direct offer.'
-  // premiumMessage: string = 'We also have a PREMIUM Listing option where you can sell your plate fast.';
-  // howItWorks: string = 'To see how everything works please click here for more information.';
-
   constructor(private contentService: ContentService) { }
 
   ngOnInit() {

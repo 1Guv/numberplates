@@ -9,13 +9,15 @@ import { MatButtonModule, MatIconModule, MatTooltipModule, MatToolbarModule } fr
 import { HomeCtaComponent } from './elements/home-cta/home-cta.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SectionContentComponent } from './elements/section-content/section-content.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeCtaComponent,
-    HomeComponent
+    HomeComponent,
+    SectionContentComponent
   ],
   imports: [
     BrowserModule,

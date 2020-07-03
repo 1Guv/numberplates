@@ -78,6 +78,34 @@
                     }
                 ],
                 "imageUrl": "./assets/one.svg" 
+            },
+            {
+                "subTitle": "How it works",
+                "title": "Why use Numberplates.io.",
+                "paragraph": "Over the years ever since number plates were first introduced in 1903, our customers have always been searching for plates that have been sold already with no way of finding the owner. We want to make it easy to sell and search your private number plate online.",
+                "list": [
+                    {
+                        "listTitle": "List your private registration for free.",
+                        "listIcon": "done_outline"
+                    },
+                    {
+                        "listTitle": "Display your plate online forever or until its sold.",
+                        "listIcon": "done_outline"
+                    },
+                    {
+                        "listTitle": "We won't even take any commission.",
+                        "listIcon": "done_outline"
+                    },
+                    {
+                        "listTitle": "So you keep all the profits.",
+                        "listIcon": "done_outline"
+                    },
+                    {
+                        "listTitle": "Also, for a fee we can help you sell your plate fast via social media.",
+                        "listIcon": "done_outline"
+                    }
+                ],
+                "imageUrl": "./assets/one.svg" 
             }
         ]
 

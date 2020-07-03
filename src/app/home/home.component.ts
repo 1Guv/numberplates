@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ContentService } from '../services/content.service';
+import { Section } from '../models/content';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  howItWorks: Array<Section>;
+
+  constructor(private contentService: ContentService) { }
 
   ngOnInit() {
+    this.contentService.getContent()
+      .subscribe(data => {
+        this.howItWorks = data.homeCTA.howItWorks;
+      })
   }
 
 }
