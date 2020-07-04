@@ -8,18 +8,17 @@
         </div>
 
         <div class="col d-flex flex-column justify-content-center">
+            
             <h5 class="sub-title">{{ section?.subTitle }}</h5>
-            <!-- <h1 class="main-message">Any number plate, <br>listed at any time.</h1> -->
-            <h1 class="main-message">{{ section?.title }}</h1>
-            <!-- <p>It's very simple, you list your Private Number Plate for <b>FREE</b> until someone contacts you direct and provides you with an offer that you can't refuse. The best bit is that we will:</p> -->
-            <p>{{ section?.paragraph }}</p>
+           
+            <h1 class="main-message" [innerHTML]="section?.title"></h1>
+            
+            <p [innerHTML]="section?.paragraph"></p>
+
             <ul class="list-unstyled" *ngFor="let option of section?.list">
-                <li class=""><span class="material-icons list-style">{{ option?.listIcon }}</span>{{ option?.listTitle }}</li>
-                <!-- <li class=""><span class="material-icons list-style">done_outline</span>Display your plate online <b>forever</b> or until its <b>sold.</b></li>
-                <li class=""><span class="material-icons list-style">done_outline</span>We won't even take any <b>commission.</b></li>
-                <li class=""><span class="material-icons list-style">done_outline</span>So you keep all the <b>profits.</b></li>
-                <li class=""><span class="material-icons list-style">done_outline</span>Also, for a fee we can help you sell your plate <b>fast</b> via social media.</li> -->
+                <li class=""><span class="material-icons list-style">{{ option?.listIcon }}</span><span [innerHTML]="option?.listTitle"></span></li>
             </ul>
+
         </div>
 
         <div *ngIf="section.imageRight" class="col col-lg-5 d-flex justify-content-center">

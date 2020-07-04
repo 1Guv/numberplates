@@ -17,7 +17,7 @@ import { SectionContentComponent } from './elements/section-content/section-cont
     HeaderComponent,
     HomeCtaComponent,
     HomeComponent,
-    SectionContentComponent
+    SectionContentComponent,
   ],
   imports: [
     BrowserModule,
