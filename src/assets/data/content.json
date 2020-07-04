@@ -118,6 +118,44 @@
                 "imageLeft": false,
                 "imageRight": true,
                 "imageUrl": "./assets/fb-icons.svg" 
+            },
+            {
+                "subTitle": "How it works",
+                "title": "We can also sell really good plates really fast.",
+                "paragraph": "So if you have a sought after number plate and would like to sell it at a premuim, then for a <b>fee</b> we can advertise it on our <b>social media network</b> providing lots of targeted querys.",
+                "list": [
+                    {
+                        "listTitle": "We create highly targeted <b>Facebook</b> adverts for each plate.",
+                        "listIcon": "done_outline"
+                    },
+                    {
+                        "listTitle": "Do not confuse a <b>free FB post</b> with an <b>expensive FB advert!</b>.",
+                        "listIcon": "done_outline"
+                    },
+                    {
+                        "listTitle": "For example a <b>KHAN</b> plate would be shown to lots of <b>Khan's</b> on Facebook providing lots of quality enquiries with minimum effort.",
+                        "listIcon": "done_outline"
+                    },
+                    {
+                        "listTitle": "On average your plate would have over <b>30,000</b> views.",
+                        "listIcon": "done_outline"
+                    },
+                    {
+                        "listTitle": "Currently you cant do the above on <b>Instagram</b> or <b>Twitter</b>.",
+                        "listIcon": "done_outline"
+                    },
+                    {
+                        "listTitle": "This can be activated at any time and costs <b>£150</b>.",
+                        "listIcon": "done_outline"
+                    },
+                    {
+                        "listTitle": "<small>Please note we can <b>guarantee enquires</b> depending on the combination and the price but cant guarantee a <b>sale!</b></small>.",
+                        "listIcon": "done_outline"
+                    }
+                ],
+                "imageLeft": true,
+                "imageRight": false,
+                "imageUrl": "./assets/fb-icons.svg" 
             }
         ]
 

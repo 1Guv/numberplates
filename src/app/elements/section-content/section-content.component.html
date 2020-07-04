@@ -3,7 +3,7 @@
     <div class="col d-flex flex-column flex-lg-row">
         <div class="col-lg-1"></div>
 
-        <div *ngIf="section.imageLeft" class="col col-lg-5 d-flex justify-content-center">
+        <div *ngIf="section.imageLeft" class="col order-first col-lg-5 d-flex justify-content-center">
             <img src="{{ section?.imageUrl }}" class="img-fluid">
         </div>
 
@@ -26,7 +26,7 @@
 
         </div>
 
-        <div *ngIf="section.imageRight" class="col col-lg-5 d-flex justify-content-center">
+        <div *ngIf="section.imageRight" class="col order-first order-lg-last col-lg-5 d-flex justify-content-center">
             <img src="{{ section?.imageUrl }}" class="img-fluid">
         </div>
         
