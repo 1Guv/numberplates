@@ -65,11 +65,11 @@
                         "listIcon": "done_outline"
                     },
                     {
-                        "listTitle": "We won't even take any <b>commission</b>.",
+                        "listTitle": "We won't even take any <b>commission</b> so you keep all the <b>profits.</b>",
                         "listIcon": "done_outline"
                     },
                     {
-                        "listTitle": "So you keep all the <b>profits</b>.",
+                        "listTitle": "Any buyers will contact you <b>direct</b>.",
                         "listIcon": "done_outline"
                     },
                     {
@@ -83,33 +83,41 @@
             },
             {
                 "subTitle": "How it works",
-                "title": "Why use Numberplates.io.",
-                "paragraph": "Over the years ever since number plates were first introduced in 1903, our customers have always been searching for plates that have been sold already with no way of finding the owner. We want to make it easy to sell and search your private number plate online.",
+                "title": "We can also sell really good plates really fast.",
+                "paragraph": "So if you have a sought after number plate and would like to sell it at a premuim, then for a <b>fee</b> we can advertise it on our <b>social media network</b> providing lots of targeted querys.",
                 "list": [
                     {
-                        "listTitle": "List your private registration for <b>free</b>.",
+                        "listTitle": "We create highly targeted <b>Facebook</b> adverts for each plate.",
                         "listIcon": "done_outline"
                     },
                     {
-                        "listTitle": "Display your plate online <b>forever</b> or until its <b>sold</b>.",
+                        "listTitle": "Do not confuse a <b>free FB post</b> with an <b>expensive FB advert!</b>.",
                         "listIcon": "done_outline"
                     },
                     {
-                        "listTitle": "We won't even take any <b>commission</b>.",
+                        "listTitle": "For example a <b>KHAN</b> plate would be shown to lots of <b>Khan's</b> on Facebook providing lots of quality enquiries with minimum effort.",
                         "listIcon": "done_outline"
                     },
                     {
-                        "listTitle": "So you keep all the <b>profits</b>.",
+                        "listTitle": "On average your plate would have over <b>30,000</b> views.",
                         "listIcon": "done_outline"
                     },
                     {
-                        "listTitle": "Also, for a fee we can help you sell your plate <b>fast</b> via <b>social media</b>.",
+                        "listTitle": "Currently you cant do the above on <b>Instagram</b> or <b>Twitter</b>.",
+                        "listIcon": "done_outline"
+                    },
+                    {
+                        "listTitle": "This can be activated at any time and costs <b>£150</b>.",
+                        "listIcon": "done_outline"
+                    },
+                    {
+                        "listTitle": "<small>Please note we can <b>guarantee enquires</b> depending on the combination and the price but cant guarantee a <b>sale!</b></small>.",
                         "listIcon": "done_outline"
                     }
                 ],
                 "imageLeft": false,
                 "imageRight": true,
-                "imageUrl": "./assets/two.svg" 
+                "imageUrl": "./assets/fb-icons.svg" 
             }
         ]
 

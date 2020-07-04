@@ -15,8 +15,13 @@
             
             <p [innerHTML]="section?.paragraph"></p>
 
-            <ul class="list-unstyled" *ngFor="let option of section?.list">
-                <li class=""><span class="material-icons list-style">{{ option?.listIcon }}</span><span [innerHTML]="option?.listTitle"></span></li>
+            <ul class="list-unstyled">
+                <span *ngFor="let option of section?.list">
+                    <li class="list-indent">
+                        <span class="material-icons list-style">{{ option?.listIcon }}</span>
+                        <span [innerHTML]="option?.listTitle"></span>
+                    </li>
+                </span>
             </ul>
 
         </div>
