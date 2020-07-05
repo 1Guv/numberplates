@@ -121,41 +121,51 @@
             },
             {
                 "subTitle": "How it works",
-                "title": "We can also sell really good plates really fast.",
-                "paragraph": "So if you have a sought after number plate and would like to sell it at a premuim, then for a <b>fee</b> we can advertise it on our <b>social media network</b> providing lots of targeted querys.",
+                "title": "Get a FREE automated online valuation today.",
+                "paragraph": "We have built a sophisticated automated online valuation system that is free to use and provide you with a approximate value of your private number plate.",
                 "list": [
                     {
-                        "listTitle": "We create highly targeted <b>Facebook</b> adverts for each plate.",
+                        "listTitle": "Fill in the form, it only takes <b>5mins</b>.",
                         "listIcon": "done_outline"
                     },
                     {
-                        "listTitle": "Do not confuse a <b>free FB post</b> with an <b>expensive FB advert!</b>.",
+                        "listTitle": "Its <b>FREE</b>, so you can do it for every plate you have.",
                         "listIcon": "done_outline"
                     },
                     {
-                        "listTitle": "For example a <b>KHAN</b> plate would be shown to lots of <b>Khan's</b> on Facebook providing lots of quality enquiries with minimum effort.",
-                        "listIcon": "done_outline"
-                    },
-                    {
-                        "listTitle": "On average your plate would have over <b>30,000</b> views.",
-                        "listIcon": "done_outline"
-                    },
-                    {
-                        "listTitle": "Currently you cant do the above on <b>Instagram</b> or <b>Twitter</b>.",
-                        "listIcon": "done_outline"
-                    },
-                    {
-                        "listTitle": "This can be activated at any time and costs <b>£150</b>.",
-                        "listIcon": "done_outline"
-                    },
-                    {
-                        "listTitle": "<small>Please note we can <b>guarantee enquires</b> depending on the combination and the price but cant guarantee a <b>sale!</b></small>.",
+                        "listTitle": "We have used all our <b>knowledge</b> & <b>experienece</b> to create a sophisticated algorithm to provide the most <b>accurate</b> valuation for your plate.",
                         "listIcon": "done_outline"
                     }
                 ],
                 "imageLeft": true,
                 "imageRight": false,
-                "imageUrl": "./assets/fb-icons.svg" 
+                "imageUrl": "./assets/cogs.svg" 
+            },
+            {
+                "subTitle": "How it works",
+                "title": "Search for your perfect number plate.",
+                "paragraph": "We have thousands of plates to search from with sophisticated filters so you can quickly find your perfect plate.",
+                "list": [
+                    {
+                        "listTitle": "We have the <b>fatstest</b> number plate search you have every seen.",
+                        "listIcon": "done_outline"
+                    },
+                    {
+                        "listTitle": "<b>Sophisticated filters</b> to narrow down your search.",
+                        "listIcon": "done_outline"
+                    },
+                    {
+                        "listTitle": "No <b>middleman</b> and no <b>commission</b> to pay.",
+                        "listIcon": "done_outline"
+                    },
+                    {
+                        "listTitle": "Contact the seller and negotiate <b>directly</b>.",
+                        "listIcon": "done_outline"
+                    }
+                ],
+                "imageLeft": false,
+                "imageRight": true,
+                "imageUrl": "./assets/valuation.svg" 
             }
         ]
 

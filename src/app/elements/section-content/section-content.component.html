@@ -1,7 +1,7 @@
-<section *ngFor="let section of howItWorks" class="my-2">
+<div class="my-3 mx-4">
 
-    <div class="col d-flex flex-column flex-lg-row">
-        <div class="col-lg-1"></div>
+    <section class="col d-flex flex-column flex-lg-row my-5 py-3 mat-elevation-z8" *ngFor="let section of howItWorks">
+        <!-- <div class="col-lg-1 border"></div> -->
 
         <div *ngIf="section.imageLeft" class="col order-first col-lg-5 d-flex justify-content-center">
             <img src="{{ section?.imageUrl }}" class="img-fluid">
@@ -9,7 +9,7 @@
 
         <div class="col d-flex flex-column justify-content-center">
             
-            <h5 class="sub-title">{{ section?.subTitle }}</h5>
+            <h5 class="sub-title mt-4">{{ section?.subTitle }}</h5>
            
             <h1 class="main-message" [innerHTML]="section?.title"></h1>
             
@@ -30,7 +30,7 @@
             <img src="{{ section?.imageUrl }}" class="img-fluid">
         </div>
         
-        <div class="col-lg-1"></div>
-    </div>
+        <!-- <div class="col-lg-1 border"></div> -->
+    </section>
 
-</section>
+</div>
