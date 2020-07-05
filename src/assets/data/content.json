@@ -79,7 +79,10 @@
                 ],
                 "imageLeft": true,
                 "imageRight": false,
-                "imageUrl": "./assets/one.svg" 
+                "imageUrl": "./assets/one.svg",
+                "ctaButtonText": "Create a FREE listing now",
+                "ctaButtonUrl": "/create-listing",
+                "ctaButtonSubText": "on average only takes 8 minutes"
             },
             {
                 "subTitle": "How it works",
@@ -117,7 +120,10 @@
                 ],
                 "imageLeft": false,
                 "imageRight": true,
-                "imageUrl": "./assets/fb-icons.svg" 
+                "imageUrl": "./assets/fb-icons.svg",
+                "ctaButtonText": "Create a FREE listing now",
+                "ctaButtonUrl": "/create-listing",
+                "ctaButtonSubText": "on average only takes 8 minutes"
             },
             {
                 "subTitle": "How it works",
@@ -139,7 +145,10 @@
                 ],
                 "imageLeft": true,
                 "imageRight": false,
-                "imageUrl": "./assets/cogs.svg" 
+                "imageUrl": "./assets/cogs.svg",
+                "ctaButtonText": "Get a FREE valuation now",
+                "ctaButtonUrl": "/valuation",
+                "ctaButtonSubText": "on average only takes 4 minutes"
             },
             {
                 "subTitle": "How it works",
@@ -165,7 +174,10 @@
                 ],
                 "imageLeft": false,
                 "imageRight": true,
-                "imageUrl": "./assets/valuation.svg" 
+                "imageUrl": "./assets/valuation.svg",
+                "ctaButtonText": "Search now",
+                "ctaButtonUrl": "/search",
+                "ctaButtonSubText": "on average only takes 1 minute"
             }
         ]
 

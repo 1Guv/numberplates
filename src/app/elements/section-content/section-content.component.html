@@ -1,7 +1,6 @@
-<div class="my-3 mx-4">
+<div class="my-3 mx-3 mx-lg-4">
 
     <section class="col d-flex flex-column flex-lg-row my-5 py-3 mat-elevation-z8" *ngFor="let section of howItWorks">
-        <!-- <div class="col-lg-1 border"></div> -->
 
         <div *ngIf="section.imageLeft" class="col order-first col-lg-5 d-flex justify-content-center">
             <img src="{{ section?.imageUrl }}" class="img-fluid">
@@ -24,13 +23,22 @@
                 </span>
             </ul>
 
+            <div class="d-flex flex-column">
+                <button mat-raised-button 
+                    class="my-3 text-left bg-success text-white text-center col-12 col-lg-6"
+                    (click)="$event"
+                    [routerLink]="section?.ctaButtonUrl">
+                    {{ section?.ctaButtonText }}
+                </button>
+
+                <h6 class="text-center font-weight-lighter col-12 col-lg-6">{{ section?.ctaButtonSubText }}</h6>
+            </div>
         </div>
 
         <div *ngIf="section.imageRight" class="col order-first order-lg-last col-lg-5 d-flex justify-content-center">
             <img src="{{ section?.imageUrl }}" class="img-fluid">
         </div>
-        
-        <!-- <div class="col-lg-1 border"></div> -->
+
     </section>
 
 </div>

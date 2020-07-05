@@ -38,6 +38,9 @@ export interface Section {
     imageLeft: boolean;
     imageRight: boolean;
     imageUrl: string;
+    ctaButtonText: string;
+    ctaButtonUrl: string;
+    ctaButtonSubText: string;
 }
 
 export interface List {
