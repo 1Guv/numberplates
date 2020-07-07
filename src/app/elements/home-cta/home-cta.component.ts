@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ContentService } from 'src/app/services/content.service';
 import { HomeCTA, CTAButtons } from 'src/app/models/content';
 
 @Component({
   selector: 'app-home-cta',
   templateUrl: './home-cta.component.html',
-  styleUrls: ['./home-cta.component.scss']
+  styleUrls: ['./home-cta.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class HomeCtaComponent implements OnInit {
 

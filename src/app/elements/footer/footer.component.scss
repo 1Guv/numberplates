@@ -1,0 +1,20 @@
+#footer {
+    background-color: #D4DCE4;
+
+    h2 {
+        font-family: GellixMeduim, sans-serif;
+        font-size: 2.2em;
+        line-height: 1.1;
+        margin-bottom: 0.4em;
+    }
+
+    button {
+        // for some reason the height of the button changes to 74px then back to 36px when reducing screen size
+        // so using below fix for now
+        height: 36px !important;
+    }
+
+    .green {
+        color: #40b32e
+    }
+}

@@ -2,11 +2,7 @@
     <div class="row">
         <div class="col d-flex flex-column">
 
-            <!-- <h5 class="sub-title">{{ subTitle }}</h5> -->
-
-            <!-- <h1 class="main-message">The smartest way <br>to sell your plate<br>for <span class="free">FREE!</span></h1> -->
-            <h1 class="main-message">The smartest way to sell your plate for <span class="free">FREE!</span></h1>
-            <!-- <h1 class="main-message">{{ homeCTA.mainMessage }} <span class="free">FREE!</span></h1> -->
+            <h1 class="main-message" [innerHTML]="homeCTA?.mainMessage"></h1>
 
             <p class="sub-message">{{ homeCTA?.subMessage }}</p>
 

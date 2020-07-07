@@ -36,7 +36,7 @@
         ]
     },
     "homeCTA": {
-        "mainMessage": "The smartest way to sell your plate for",
+        "mainMessage": "The smartest way to sell your plate for <span class=\"free\">FREE<\/span>",
         "subMessage": "Our aim is to get all the number plates in the UK online so anyone contact the seller and make a direct offer.",
         "createListingButton": {
             "name": "List your plate for FREE",
@@ -181,6 +181,74 @@
             }
         ]
 
+    },
+    "footer": {
+        "heading": "Advertise your plate for <span class=\"green\">FREE<\/span> today",
+        "ctaButtons": [
+            {
+                "name": "Advertse now",
+                "url": "/create-listing"
+            },
+            {
+                "name": "Valuation",
+                "url": "/valuation"
+            },
+            {
+                "name": "Search",
+                "url": "/search"
+            }
+        ],
+        "logo": "./assets/numberplates-io-logo.svg",
+        "address": "Wootton,<br>Bedfordshire,<br>UK.<br>",
+        "email": "hello@numberplates.io",
+        "socialMedia": [
+            {
+                "name": "Facebook",
+                "icon": "",
+                "url": ""
+            },
+            {
+                "name": "Twitter",
+                "icon": "",
+                "url": ""
+            },
+            {
+                "name": "LinkedIn",
+                "icon": "",
+                "url": ""
+            },
+            {
+                "name": "Instagram",
+                "icon": "",
+                "url": ""
+            }
+        ],
+        "Company": [
+            {
+                "link": "About",
+                "url": "/about"
+            },
+            {
+                "link": "Blog",
+                "url": "/blog"
+            },
+            {
+                "link": "How it works",
+                "url": "/"
+            },
+            {
+                "link": "Careers",
+                "url": "/careers"
+            },
+             {
+                "link": "Terms & Conditions",
+                "url": "/tandc"
+            },
+            {
+                "link": "Privacy Policy",
+                "url": "/privacy-policy"
+            }
+        ]
     }
 
 }

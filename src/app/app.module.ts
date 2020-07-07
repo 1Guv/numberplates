@@ -10,6 +10,7 @@ import { HomeCtaComponent } from './elements/home-cta/home-cta.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SectionContentComponent } from './elements/section-content/section-content.component';
+import { FooterComponent } from './elements/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { SectionContentComponent } from './elements/section-content/section-cont
     HomeCtaComponent,
     HomeComponent,
     SectionContentComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

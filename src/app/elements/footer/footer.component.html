@@ -1,0 +1,23 @@
+<div id="footer" class="mt-5">
+    <div class="d-flex py-5 border px-3 px-lg-4">
+        <h2 [innerHTML]="footer?.heading"></h2>
+
+        <div class="d-flex flex-column flex-lg-row ml-auto">
+            <ng-container *ngFor="let button of footer?.ctaButtons">
+            
+                <button mat-raised-button 
+                        [routerLink]="button.url" 
+                        class="m-2 bg-success text-white">
+                        {{ button.name }}
+                </button>
+                
+            </ng-container>
+        </div>
+        
+    </div>
+</div>
+
+
+<!-- <button mat-raised-button class="m-2 bg-success text-white">Advertise Now</button>
+            <button mat-raised-button class="m-2" color="primary">Valuation</button>
+            <button mat-raised-button class="m-2">Search</button> -->

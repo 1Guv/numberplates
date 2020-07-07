@@ -16,3 +16,5 @@ export class ContentService {
     return this.http.get<Content>('./assets/data/content.json');
   }
 }
+
+// Need to use RxJs shareReplay so the content is not accessed multiple times
