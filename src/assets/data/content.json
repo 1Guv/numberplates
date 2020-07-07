@@ -199,27 +199,27 @@
             }
         ],
         "logo": "./assets/numberplates-io-logo.svg",
-        "address": "Wootton,<br>Bedfordshire,<br>UK.<br>",
+        "address": "Our offices:<br>Wootton,<br>Bedfordshire,<br>UK.<br>",
         "email": "hello@numberplates.io",
         "socialMedia": [
             {
                 "name": "Facebook",
-                "icon": "",
+                "icon": "<i class=\"fa fa-facebook\"><\/i>",
                 "url": ""
             },
             {
                 "name": "Twitter",
-                "icon": "",
+                "icon": "<i class=\"fa fa-twitter\"><\/i>",
                 "url": ""
             },
             {
                 "name": "LinkedIn",
-                "icon": "",
+                "icon": "<i class=\"fa fa-linkedin\"><\/i>",
                 "url": ""
             },
             {
                 "name": "Instagram",
-                "icon": "",
+                "icon": "<i class=\"fa fa-instagram\"><\/i>",
                 "url": ""
             }
         ],

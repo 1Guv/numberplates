@@ -1,13 +1,14 @@
-<div id="footer" class="mt-5">
+<section id="footer-top" class="mt-5">
     <div class="d-flex py-5 border px-3 px-lg-4">
         <h2 [innerHTML]="footer?.heading"></h2>
 
         <div class="d-flex flex-column flex-lg-row ml-auto">
-            <ng-container *ngFor="let button of footer?.ctaButtons">
+            <ng-container *ngFor="let button of footer?.ctaButtons; index as i; first as isFirst">
             
                 <button mat-raised-button 
-                        [routerLink]="button.url" 
-                        class="m-2 bg-success text-white">
+                        [routerLink]="button.url"
+                        [ngClass]="{'first-button': isFirst}"
+                        class="m-2">
                         {{ button.name }}
                 </button>
                 
@@ -15,9 +16,22 @@
         </div>
         
     </div>
-</div>
+</section>
 
+<section id="footer" class="d-flex flex-column flex-lg-row">
 
-<!-- <button mat-raised-button class="m-2 bg-success text-white">Advertise Now</button>
-            <button mat-raised-button class="m-2" color="primary">Valuation</button>
-            <button mat-raised-button class="m-2">Search</button> -->
+    <div class="m-4">
+        <img src="{{ footer?.logo }}">
+        <br><br>
+        <p class="text-white" [innerHTML]="footer?.address"></p>
+        <br>
+        <a class="text-white" href="mailto:{{ footer?.email }}">{{ footer?.email }}</a>
+        <br>
+        <div class="d-flex flex-row">
+            <ng-container *ngFor="let sm of footer?.socialMedia">
+                <a href="{{ sm.url }}" [innerHTML]="sm.icon" class="mx-2"></a>
+            </ng-container>
+        </div>
+    </div>
+    
+</section>

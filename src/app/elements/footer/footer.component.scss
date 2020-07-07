@@ -1,4 +1,4 @@
-#footer {
+#footer-top {
     background-color: #D4DCE4;
 
     h2 {
@@ -17,4 +17,14 @@
     .green {
         color: #40b32e
     }
+
+    .first-button {
+        background-color: #40b32e;
+        color: white;
+    }
+}
+
+#footer {
+    height: 400px;
+    background-color: #1A2535;
 }
