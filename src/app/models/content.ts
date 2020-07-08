@@ -11,11 +11,12 @@ export interface Footer {
     address: string;
     email: string;
     socialMedia: SocialMedia;
-    company: CompanyLinks;
+    company: Array<CompanyLinks>;
+    help: Array<CompanyLinks>;
 }
 
 export interface CompanyLinks {
-    link: string;
+    name: string;
     url: string;
 }
 

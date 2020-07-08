@@ -223,30 +223,40 @@
                 "url": ""
             }
         ],
-        "Company": [
+        "company": [
             {
-                "link": "About",
+                "name": "About",
                 "url": "/about"
             },
             {
-                "link": "Blog",
+                "name": "Blog",
                 "url": "/blog"
             },
             {
-                "link": "How it works",
+                "name": "How it works",
                 "url": "/"
             },
             {
-                "link": "Careers",
+                "name": "Careers",
                 "url": "/careers"
             },
              {
-                "link": "Terms & Conditions",
+                "name": "Terms & Conditions",
                 "url": "/tandc"
             },
             {
-                "link": "Privacy Policy",
+                "name": "Privacy Policy",
                 "url": "/privacy-policy"
+            }
+        ],
+        "help": [
+            {
+                "name": "Contact",
+                "url": ""
+            },
+            {
+                "name": "Support",
+                "url": ""
             }
         ]
     }

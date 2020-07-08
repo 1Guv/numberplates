@@ -18,20 +18,54 @@
     </div>
 </section>
 
-<section id="footer" class="d-flex flex-column flex-lg-row">
+<section id="footer" class="p-4">
 
-    <div class="m-4">
-        <img src="{{ footer?.logo }}">
-        <br><br>
-        <p class="text-white" [innerHTML]="footer?.address"></p>
-        <br>
-        <a class="text-white" href="mailto:{{ footer?.email }}">{{ footer?.email }}</a>
-        <br>
-        <div class="d-flex flex-row">
-            <ng-container *ngFor="let sm of footer?.socialMedia">
-                <a href="{{ sm.url }}" [innerHTML]="sm.icon" class="mx-2"></a>
-            </ng-container>
+    <div class="row">
+
+        <div class="col-12 col-sm-6 col-md-8">
+            <img src="{{ footer?.logo }}">
+            <br><br>
+            <p class="links" [innerHTML]="footer?.address"></p>
+            <br>
+            <a class="links" href="mailto:{{ footer?.email }}">{{ footer?.email }}</a>
+            <br>
+            <br>
+            <div class="d-flex flex-row">
+                <ng-container *ngFor="let sm of footer?.socialMedia">
+                    <a href="{{ sm.url }}" [innerHTML]="sm.icon" class="mr-3"></a>
+                </ng-container>
+            </div>
         </div>
+
+        <div class="col-12 col-sm-6 col-md-4">
+
+            <div class="row mt-5 mt-sm-0">
+
+                <div class="mx-3 mx-sm-auto">
+                    <h2 class="link-heading">Company</h2>
+                    <div class="d-flex flex-column">
+                        <ng-container *ngFor="let link of footer?.company">
+                            <a class="my-2 links" href="{{ link.url }}">{{ link.name }}</a>
+                        </ng-container>
+                    </div>
+                </div>
+            
+                <div class="mx-auto">
+                    <h2 class="link-heading">Help</h2>
+                    <div class="d-flex flex-column">
+                        <ng-container *ngFor="let link of footer?.help">
+                            <a class="my-2 links" href="{{ link.url }}">{{ link.name }}</a>
+                        </ng-container>
+                    </div>
+                </div>
+
+            </div>
+            
+        </div>
+    
+
     </div>
+
+    
     
 </section>
