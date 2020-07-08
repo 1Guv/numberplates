@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ContentService } from '../services/content.service';
-import { Section } from '../models/content';
+import { ContentService } from '../_services/content.service';
+import { Section } from '../_models/content';
 
 @Component({
   selector: 'app-home',

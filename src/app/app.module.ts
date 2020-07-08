@@ -4,13 +4,14 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HeaderComponent } from './elements/header/header.component';
+import { HeaderComponent } from './_elements/header/header.component';
 import { MatButtonModule, MatIconModule, MatTooltipModule, MatToolbarModule, MatCardModule } from '@angular/material';
-import { HomeCtaComponent } from './elements/home-cta/home-cta.component';
+import { HomeCtaComponent } from './_elements/home-cta/home-cta.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
-import { SectionContentComponent } from './elements/section-content/section-content.component';
-import { FooterComponent } from './elements/footer/footer.component';
+import { SectionContentComponent } from './_elements/section-content/section-content.component';
+import { FooterComponent } from './_elements/footer/footer.component';
+import { LargePlateDisplayInputComponent } from './_elements/large-plate-display-input/large-plate-display-input.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { FooterComponent } from './elements/footer/footer.component';
     HomeComponent,
     SectionContentComponent,
     FooterComponent,
+    LargePlateDisplayInputComponent,
   ],
   imports: [
     BrowserModule,

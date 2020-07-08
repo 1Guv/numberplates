@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Section } from 'src/app/models/content';
+import { Section } from 'src/app/_models/content';
 
 @Component({
   selector: 'app-section-content',
