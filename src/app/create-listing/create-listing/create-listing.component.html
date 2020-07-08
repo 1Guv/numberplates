@@ -1,1 +1,31 @@
-<p>create-listing works!</p>
+<section id="create-listing" class="">
+    <div class="col d-flex flex-column flex-lg-row py-5">
+
+        <div class="col-lg-1"></div>
+
+        <div class="col col-lg-5 d-flex flex-column justify-content-center align-items-center">
+            <app-large-plate-display-input [plate]="value"></app-large-plate-display-input>
+
+            <br>
+            
+            <mat-form-field appearance="fill" class="mr-auto" style="width: 250px;">
+                <mat-label>Please enter your plate</mat-label>
+                <input matInput type="text" [(ngModel)]="value" placeholder="{{ placeholderPlate }}">
+                <button *ngIf="value" 
+                        matSuffix 
+                        mat-icon-button 
+                        aria-label="Clear"
+                        (click)="value=''">
+                  <mat-icon>close</mat-icon>
+                </button>
+            </mat-form-field>
+
+        </div>
+        
+        <div class="col col-lg-5 d-flex justify-content-center align-items-center">
+            <h1>Fill in the form below and get your plate online in a few minutes.</h1>
+        </div>
+
+        <div class="col-lg-1"></div>
+    </div>
+</section>

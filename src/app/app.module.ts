@@ -11,7 +11,6 @@ import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SectionContentComponent } from './_elements/section-content/section-content.component';
 import { FooterComponent } from './_elements/footer/footer.component';
-import { LargePlateDisplayInputComponent } from './_elements/large-plate-display-input/large-plate-display-input.component';
 
 @NgModule({
   declarations: [
@@ -20,8 +19,7 @@ import { LargePlateDisplayInputComponent } from './_elements/large-plate-display
     HomeCtaComponent,
     HomeComponent,
     SectionContentComponent,
-    FooterComponent,
-    LargePlateDisplayInputComponent,
+    FooterComponent,  
   ],
   imports: [
     BrowserModule,

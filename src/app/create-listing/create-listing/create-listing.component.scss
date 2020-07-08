@@ -1,0 +1,13 @@
+#create-listing {
+    height: 400px;
+    clip-path: polygon(0 0, 100% 0, 100% 53%, 0% 100%);
+    background-color: #F8F8F8;
+
+    h1 {
+        // margin-top: 40px;
+        font-family: GellixMedium, sans-serif;
+        font-size: 3.3rem;
+        line-height: 1.1;
+        margin-bottom: .4em;
+    }
+}

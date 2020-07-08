@@ -1,0 +1,21 @@
+#large-plate-display-input {
+
+    // margin-top: 100px;
+
+    .plate-display {
+        height: 140px;
+        width: 500px;
+        // border: 2px solid black;
+        border-radius: 1em;
+        background-color: yellow;
+        color: black;
+    }
+
+    .characters {
+        font-family: GellixMedium, sans-serif;
+        font-size: 6rem;
+        line-height: 1.1;
+        text-transform: uppercase;
+        font-weight: bolder;;
+    }
+}

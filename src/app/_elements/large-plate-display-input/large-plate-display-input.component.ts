@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-large-plate-display-input',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./large-plate-display-input.component.scss']
 })
 export class LargePlateDisplayInputComponent implements OnInit {
+
+  @Input()
+  plate: string;
 
   constructor() { }
 

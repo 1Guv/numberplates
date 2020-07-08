@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateListingComponent implements OnInit {
 
+  numberPlate: string;
+  placeholderPlate: string = 'SE11 NOW'
+  value: string;
+
   constructor() { }
 
   ngOnInit() {
