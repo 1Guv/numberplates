@@ -1,0 +1,264 @@
+{
+    "header": {
+        "leftLogoUrl": "./assets/numberplates-io-logo.svg",
+        "middleLogoUrl": "./assets/n-logo-svg.png",
+        "headerMenuOptions": [
+            {
+                "name": "Login",
+                "icon": "account_circle",
+                "url": "/login",
+                "toolTip": "Login"
+            },
+            {
+                "name": "Logout",
+                "icon": "face",
+                "url": "/logout",
+                "toolTip": "Logout"
+            },
+            {
+                "name": "List your plate now",
+                "icon": "loupe",
+                "url": "/create-listing",
+                "toolTip": "List your plate now"
+            },
+            {
+                "name": "Search",
+                "icon": "search",
+                "url": "/search",
+                "toolTip": "Search for your personal plate"
+            },
+            {
+                "name": "Valuation",
+                "icon": "text_snippet",
+                "url": "/valuation",
+                "toolTip": "Get a plate valuation"
+            }
+        ]
+    },
+    "homeCTA": {
+        "mainMessage": "The smartest way to sell your plate for <span class=\"free\">FREE<\/span>",
+        "subMessage": "Our aim is to get all the number plates in the UK online so anyone contact the seller and make a direct offer.",
+        "createListingButton": {
+            "name": "List your plate for FREE",
+            "url": "/create-listing"
+        },
+        "valuationButton": {
+            "name": "Get a VALUATION now",
+            "url": "/valuation"
+        },
+        "searchButton": {
+            "name": "Search plates now",
+            "url": "/search"
+        },
+        "howItWorks": [
+            {
+                "subTitle": "How it works",
+                "title": "Any number plate, listed at any time.",
+                "paragraph": "It's very simple, you list your Private Number Plate for <b>FREE</b> until someone contacts you direct and provides you with an offer that you can't refuse. The best bit is that we will:",
+                "list": [
+                    {
+                        "listTitle": "List your private registration for <b>free</b>.",
+                        "listIcon": "done_outline"
+                    },
+                    {
+                        "listTitle": "Display your plate online <b>forever</b> or until its <b>sold</b>.",
+                        "listIcon": "done_outline"
+                    },
+                    {
+                        "listTitle": "We won't even take any <b>commission</b> so you keep all the <b>profits.</b>",
+                        "listIcon": "done_outline"
+                    },
+                    {
+                        "listTitle": "Any buyers will contact you <b>direct</b>.",
+                        "listIcon": "done_outline"
+                    },
+                    {
+                        "listTitle": "Also, for a fee we can help you sell your plate <b>fast</b> via <b>social media</b>.",
+                        "listIcon": "done_outline"
+                    }
+                ],
+                "imageLeft": true,
+                "imageRight": false,
+                "imageUrl": "./assets/one.svg",
+                "ctaButtonText": "Create a FREE listing now",
+                "ctaButtonUrl": "/create-listing",
+                "ctaButtonSubText": "on average only takes 8 minutes"
+            },
+            {
+                "subTitle": "How it works",
+                "title": "We can also sell really good plates really fast.",
+                "paragraph": "So if you have a sought after number plate and would like to sell it at a premuim, then for a <b>fee</b> we can advertise it on our <b>social media network</b> providing lots of targeted querys.",
+                "list": [
+                    {
+                        "listTitle": "We create highly targeted <b>Facebook</b> adverts for each plate.",
+                        "listIcon": "done_outline"
+                    },
+                    {
+                        "listTitle": "Do not confuse a <b>free FB post</b> with an <b>expensive FB advert!</b>.",
+                        "listIcon": "done_outline"
+                    },
+                    {
+                        "listTitle": "For example a <b>KHAN</b> plate would be shown to lots of <b>Khan's</b> on Facebook providing lots of quality enquiries with minimum effort.",
+                        "listIcon": "done_outline"
+                    },
+                    {
+                        "listTitle": "On average your plate would have over <b>30,000</b> views.",
+                        "listIcon": "done_outline"
+                    },
+                    {
+                        "listTitle": "Currently you cant do the above on <b>Instagram</b> or <b>Twitter</b>.",
+                        "listIcon": "done_outline"
+                    },
+                    {
+                        "listTitle": "This can be activated at any time and costs <b>£150</b>.",
+                        "listIcon": "done_outline"
+                    },
+                    {
+                        "listTitle": "<small>Please note we can <b>guarantee enquires</b> depending on the combination and the price but cant guarantee a <b>sale!</b></small>.",
+                        "listIcon": "done_outline"
+                    }
+                ],
+                "imageLeft": false,
+                "imageRight": true,
+                "imageUrl": "./assets/fb-icons.svg",
+                "ctaButtonText": "Create a FREE listing now",
+                "ctaButtonUrl": "/create-listing",
+                "ctaButtonSubText": "on average only takes 8 minutes"
+            },
+            {
+                "subTitle": "How it works",
+                "title": "Get a FREE automated online valuation today.",
+                "paragraph": "We have built a sophisticated automated online valuation system that is free to use and provide you with a approximate value of your private number plate.",
+                "list": [
+                    {
+                        "listTitle": "Fill in the form, it only takes <b>5mins</b>.",
+                        "listIcon": "done_outline"
+                    },
+                    {
+                        "listTitle": "Its <b>FREE</b>, so you can do it for every plate you have.",
+                        "listIcon": "done_outline"
+                    },
+                    {
+                        "listTitle": "We have used all our <b>knowledge</b> & <b>experienece</b> to create a sophisticated algorithm to provide the most <b>accurate</b> valuation for your plate.",
+                        "listIcon": "done_outline"
+                    }
+                ],
+                "imageLeft": true,
+                "imageRight": false,
+                "imageUrl": "./assets/cogs.svg",
+                "ctaButtonText": "Get a FREE valuation now",
+                "ctaButtonUrl": "/valuation",
+                "ctaButtonSubText": "on average only takes 4 minutes"
+            },
+            {
+                "subTitle": "How it works",
+                "title": "Search for your perfect number plate.",
+                "paragraph": "We have thousands of plates to search from with sophisticated filters so you can quickly find your perfect plate.",
+                "list": [
+                    {
+                        "listTitle": "We have the <b>fatstest</b> number plate search you have every seen.",
+                        "listIcon": "done_outline"
+                    },
+                    {
+                        "listTitle": "<b>Sophisticated filters</b> to narrow down your search.",
+                        "listIcon": "done_outline"
+                    },
+                    {
+                        "listTitle": "No <b>middleman</b> and no <b>commission</b> to pay.",
+                        "listIcon": "done_outline"
+                    },
+                    {
+                        "listTitle": "Contact the seller and negotiate <b>directly</b>.",
+                        "listIcon": "done_outline"
+                    }
+                ],
+                "imageLeft": false,
+                "imageRight": true,
+                "imageUrl": "./assets/valuation.svg",
+                "ctaButtonText": "Search now",
+                "ctaButtonUrl": "/search",
+                "ctaButtonSubText": "on average only takes 1 minute"
+            }
+        ]
+
+    },
+    "footer": {
+        "heading": "Advertise your plate for <span class=\"green\">FREE<\/span> today",
+        "ctaButtons": [
+            {
+                "name": "Advertse now",
+                "url": "/create-listing"
+            },
+            {
+                "name": "Valuation",
+                "url": "/valuation"
+            },
+            {
+                "name": "Search",
+                "url": "/search"
+            }
+        ],
+        "logo": "./assets/n-logo-svg.png",
+        "address": "Our offices:<br>Wootton,<br>Bedfordshire,<br>UK.<br>",
+        "email": "hello@numberplates.io",
+        "socialMedia": [
+            {
+                "name": "Facebook",
+                "icon": "<i class=\"fa fa-facebook\"><\/i>",
+                "url": ""
+            },
+            {
+                "name": "Twitter",
+                "icon": "<i class=\"fa fa-twitter\"><\/i>",
+                "url": ""
+            },
+            {
+                "name": "LinkedIn",
+                "icon": "<i class=\"fa fa-linkedin\"><\/i>",
+                "url": ""
+            },
+            {
+                "name": "Instagram",
+                "icon": "<i class=\"fa fa-instagram\"><\/i>",
+                "url": ""
+            }
+        ],
+        "company": [
+            {
+                "name": "About",
+                "url": "/about"
+            },
+            {
+                "name": "Blog",
+                "url": "/blog"
+            },
+            {
+                "name": "How it works",
+                "url": "/"
+            },
+            {
+                "name": "Careers",
+                "url": "/careers"
+            },
+             {
+                "name": "Terms & Conditions",
+                "url": "/tandc"
+            },
+            {
+                "name": "Privacy Policy",
+                "url": "/privacy-policy"
+            }
+        ],
+        "help": [
+            {
+                "name": "Contact",
+                "url": ""
+            },
+            {
+                "name": "Support",
+                "url": ""
+            }
+        ]
+    }
+
+}
