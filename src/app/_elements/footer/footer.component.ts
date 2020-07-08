@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { Footer } from 'src/app/models/content';
-import { ContentService } from 'src/app/services/content.service';
+import { Footer } from 'src/app/_models/content';
+import { ContentService } from 'src/app/_services/content.service';
 
 @Component({
   selector: 'app-footer',
