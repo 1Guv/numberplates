@@ -23,8 +23,18 @@
     <div class="row">
 
         <div class="col-12 col-sm-6 col-md-8">
-            <img src="{{ footer?.logo }}">
+
+            <a [routerLink]="'/'">
+                <img class="logo" src="{{ footer?.logo }}">
+            </a>
+
             <br><br>
+
+            <a [routerLink]="'/'">
+                <h1>Numberplates.io</h1>
+            </a>
+
+            <br>
             <p class="links" [innerHTML]="footer?.address"></p>
             <br>
             <a class="links" href="mailto:{{ footer?.email }}">{{ footer?.email }}</a>
