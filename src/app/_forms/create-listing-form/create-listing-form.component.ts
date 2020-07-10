@@ -16,9 +16,8 @@ export class CreateListingFormComponent implements OnInit {
 
   ngOnInit() {
     this.createListingOneForm = this.parentForm.plateForm;
-    
+
     this.createListingOneForm.addControl('one', new FormGroup({
-      numberplate: new FormControl('', [Validators.required]),
       meaningOne: new FormControl('', [Validators.required]),
       meaningTwo: new FormControl('', [Validators.required]),
       meaningThree: new FormControl('', [Validators.required]),

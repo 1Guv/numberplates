@@ -2,29 +2,20 @@
 <form [formGroup]="createListingOneForm" (ngSubmit)="onSubmit()">
 
     <div formGroupName="one" class="d-flex flex-column align-items-center justify-content-center">
-
-        <mat-form-field appearance="fill">
-            <mat-label>Plate</mat-label>
-            <input matInput
-                   type="text"
-                   maxlength="8"
-                   placeholder="1 GUV"
-                   formControlName="numberplate">
-        </mat-form-field>
         
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="fill" class="field-width">
             <mat-label>Meaning One</mat-label>
             <input matInput formControlName="meaningOne">
         </mat-form-field>
     
     
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="fill" class="field-width">
             <mat-label>Meaning Two</mat-label>
             <input matInput formControlName="meaningTwo">
         </mat-form-field>
     
     
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="fill" class="field-width">
             <mat-label>Meaning Three</mat-label>
             <input matInput formControlName="meaningThree">
         </mat-form-field>
