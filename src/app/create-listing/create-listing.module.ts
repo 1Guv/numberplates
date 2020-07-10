@@ -6,7 +6,7 @@ import { LargePlateDisplayInputComponent } from '../_elements/large-plate-displa
 import { MatFormFieldModule, MatIconModule, MatInputModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreateListingFormComponent } from '../_forms/create-listing-form/create-listing-form.component';
-
+import { MatTabsModule } from '@angular/material/tabs';
 
 
 @NgModule({
@@ -22,7 +22,8 @@ import { CreateListingFormComponent } from '../_forms/create-listing-form/create
     MatInputModule,
     MatIconModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatTabsModule
   ],
   exports: [CreateListingComponent]
 })
