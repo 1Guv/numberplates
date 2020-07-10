@@ -3,22 +3,40 @@
 
         <h1>Fill in the form below and get your plate online in a few minutes.</h1>
 
-        <app-large-plate-display-input [plate]="value"></app-large-plate-display-input>
+        <app-large-plate-display-input [plate]="numberPlate"></app-large-plate-display-input>
 
         <br>
         
-        <mat-form-field appearance="fill" class="" style="width: 250px;">
-            <mat-label>Please enter your plate</mat-label>
-            <input matInput type="text" [(ngModel)]="value" placeholder="{{ placeholderPlate }}">
-            <button *ngIf="value"
-                    mat-button
-                    mat-icon-button 
-                    aria-label="Clear"
-                    matSuffix
-                    (click)="value=''">
-                <mat-icon>close</mat-icon>
-            </button>
-        </mat-form-field>
+        <form [formGroup]="plateForm">
+
+            <div formGroupName="plateGroupName">
+
+                <mat-form-field appearance="fill" class="" style="width: 250px;">
+                    <mat-label>Please enter your plate</mat-label>
+        
+                    <input matInput 
+                            type="text" 
+                            formControlName="plate"
+                            maxlength="8"
+                            placeholder="{{ placeholderPlate }}">
+        
+                    <button *ngIf="plateForm.get('plateGroupName').get('plate').value"
+                            mat-button
+                            mat-icon-button 
+                            aria-label="Clear"
+                            matSuffix
+                            (click)="plateForm.get('plateGroupName').get('plate').setValue('')">
+                        <mat-icon>close</mat-icon>
+                    </button>
+        
+                </mat-form-field>
+                
+            </div>
+
+        </form>
+
+        <!-- <pre>{{ plateForm.value | json }}</pre> -->
+        
 
         <app-create-listing-form></app-create-listing-form>
 

@@ -4,7 +4,7 @@ import { CreateListingComponent } from './create-listing/create-listing.componen
 import { CreateListingRoutingModule } from './create-listing-routing';
 import { LargePlateDisplayInputComponent } from '../_elements/large-plate-display-input/large-plate-display-input.component';
 import { MatFormFieldModule, MatIconModule, MatInputModule } from '@angular/material';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreateListingFormComponent } from '../_forms/create-listing-form/create-listing-form.component';
 
 
@@ -21,7 +21,8 @@ import { CreateListingFormComponent } from '../_forms/create-listing-form/create
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [CreateListingComponent]
 })
