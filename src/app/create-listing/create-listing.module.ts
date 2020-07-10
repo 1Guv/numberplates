@@ -7,6 +7,8 @@ import { MatFormFieldModule, MatIconModule, MatInputModule } from '@angular/mate
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreateListingFormComponent } from '../_forms/create-listing-form/create-listing-form.component';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+
 
 
 @NgModule({
@@ -23,7 +25,8 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatIconModule,
     FormsModule,
     ReactiveFormsModule,
-    MatTabsModule
+    MatTabsModule,
+    MatSlideToggleModule
   ],
   exports: [CreateListingComponent]
 })

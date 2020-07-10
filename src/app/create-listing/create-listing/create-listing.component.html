@@ -13,7 +13,6 @@
 
                 <mat-form-field appearance="fill" class="field-width">
                     <mat-label>Please enter your plate</mat-label>
-        
                     <input matInput 
                             type="text" 
                             formControlName="plate"
@@ -28,9 +27,23 @@
                             (click)="plateForm.get('plateGroupName').get('plate').setValue('')">
                         <mat-icon>close</mat-icon>
                     </button>
-        
                 </mat-form-field>
-                
+
+                <br>
+                <div class="d-flex flex-column ml-0">
+                    <mat-slide-toggle formControlName="free"
+                                      (change)="onChangeFree($event)"
+                                      [checked]="!plateForm.get('plateGroupName').get('premium').value">
+                                      FREE!
+                    </mat-slide-toggle>
+                    <br>
+                    <mat-slide-toggle formControlName="premium"
+                                      (change)="onChangePremium($event)"
+                                      [checked]="!plateForm.get('plateGroupName').get('free').value">
+                                      PREMIUM!
+                    </mat-slide-toggle>
+                </div>
+        
             </div>
 
         </form>
@@ -41,11 +54,14 @@
                 <app-create-listing-form></app-create-listing-form>
             </mat-tab>
 
-            <mat-tab label="Second">Content 2</mat-tab>
+            <mat-tab label="Second" class="my-5">Content 2</mat-tab>
 
-            <mat-tab label="Third">Content 3</mat-tab>
+            <mat-tab label="Third" class="my-5">Content 3</mat-tab>
 
         </mat-tab-group>
+
+        <pre>{{ plateForm.valid | json }}</pre>
+        <pre>{{ plateForm.value | json }}</pre>
           
     </div>
 </section>

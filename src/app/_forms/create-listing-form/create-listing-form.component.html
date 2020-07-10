@@ -1,5 +1,5 @@
 
-<form [formGroup]="createListingOneForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="createListingOneForm" (ngSubmit)="onSubmit()" class="my-5">
 
     <div formGroupName="one" class="d-flex flex-column align-items-center justify-content-center">
         
@@ -24,7 +24,5 @@
     
 </form>
 
-<pre>{{ createListingOneForm.valid | json }}</pre>
-<pre>{{ createListingOneForm.value | json }}</pre>
 
 

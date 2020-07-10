@@ -19,8 +19,8 @@ export class CreateListingFormComponent implements OnInit {
 
     this.createListingOneForm.addControl('one', new FormGroup({
       meaningOne: new FormControl('', [Validators.required]),
-      meaningTwo: new FormControl('', [Validators.required]),
-      meaningThree: new FormControl('', [Validators.required]),
+      meaningTwo: new FormControl(''),
+      meaningThree: new FormControl(''),
     }));
   }
 
