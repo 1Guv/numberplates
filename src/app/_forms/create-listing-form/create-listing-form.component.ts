@@ -21,6 +21,14 @@ export class CreateListingFormComponent implements OnInit {
       meaningOne: new FormControl('', [Validators.required]),
       meaningTwo: new FormControl(''),
       meaningThree: new FormControl(''),
+      displayedAs: new FormControl('', [Validators.required]),
+      category: new FormControl('', [Validators.required]),
+      ethnicity: new FormControl('', [Validators.required]),
+      askingPrice: new FormControl('', [Validators.required]),
+      negotiable: new FormControl('', [Validators.required]),
+      retention: new FormControl('', [Validators.required]),
+      gender: new FormControl('', [Validators.required]),
+      plateYear: new FormControl('', [Validators.required]),
     }));
   }
 
