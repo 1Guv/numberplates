@@ -1,27 +1,35 @@
 
-<mat-card class="my-3 mx-3">
+<mat-card class="my-3 mx-auto">
 
     <mat-card-title class="text-left">Plate</mat-card-title>
+    <mat-card-title class="text-left test">
+        <h1>Plate</h1>
+    </mat-card-title>
+
+    <mat-card-title class="text-left">
+        <h5>Plate</h5>
+    </mat-card-title>
+
     <mat-card-subtitle></mat-card-subtitle>
 
     <mat-card-content>
-        <form [formGroup]="createListingOneForm" (ngSubmit)="onSubmit()" class="my-5">
+        <form [formGroup]="createListingOneForm" (ngSubmit)="onSubmit()" class="">
 
             <div formGroupName="one" class="d-flex flex-column align-items-center justify-content-center">
                 
-                <mat-form-field appearance="fill" class="field-width">
+                <mat-form-field appearance="fill" class="w-100">
                     <mat-label>Meaning One</mat-label>
                     <input matInput formControlName="meaningOne">
                 </mat-form-field>
             
             
-                <mat-form-field appearance="fill" class="field-width">
+                <mat-form-field appearance="fill" class="w-100">
                     <mat-label>Meaning Two</mat-label>
                     <input matInput formControlName="meaningTwo">
                 </mat-form-field>
             
             
-                <mat-form-field appearance="fill" class="field-width">
+                <mat-form-field appearance="fill" class="w-100">
                     <mat-label>Meaning Three</mat-label>
                     <input matInput formControlName="meaningThree">
                 </mat-form-field>

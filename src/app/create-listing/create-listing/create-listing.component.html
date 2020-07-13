@@ -48,7 +48,7 @@
 
         </form>
 
-        <mat-tab-group mat-align-tabs="center">
+        <!-- <mat-tab-group mat-align-tabs="center" class="mx-3">
 
             <mat-tab label="Plate">
                 <app-create-listing-form></app-create-listing-form>
@@ -60,7 +60,28 @@
 
             <mat-tab label="Vehicle" class="my-5">Content 4</mat-tab>
 
-        </mat-tab-group>
+        </mat-tab-group> -->
+
+        <mat-horizontal-stepper #stepper class="mx-auto">
+            
+            <mat-step>
+                <ng-template matStepLabel>Plate</ng-template>
+                <app-create-listing-form></app-create-listing-form>
+            </mat-step>
+
+            <mat-step>
+                <ng-template matStepLabel>Personal Details</ng-template>
+            </mat-step>
+
+            <mat-step>
+                <ng-template matStepLabel>Keep it FREE</ng-template>
+            </mat-step>
+
+            <mat-step>
+                <ng-template matStepLabel>Premuim</ng-template>
+            </mat-step>
+
+        </mat-horizontal-stepper>
 
         <pre>{{ plateForm.valid | json }}</pre>
         <pre>{{ plateForm.value | json }}</pre>
