@@ -9,6 +9,7 @@ import { CreateListingFormComponent } from '../_forms/create-listing-form/create
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatCardModule } from '@angular/material/card';
+import { FormCardComponent } from '../_elements/form-card/form-card.component';
 
 
 
@@ -16,7 +17,8 @@ import { MatCardModule } from '@angular/material/card';
   declarations: [
     CreateListingComponent, 
     LargePlateDisplayInputComponent,
-    CreateListingFormComponent
+    CreateListingFormComponent,
+    FormCardComponent
   ],
   imports: [ 
     CommonModule, 

@@ -48,25 +48,37 @@
 
         </form>
 
-        <!-- <mat-tab-group mat-align-tabs="center" class="mx-3">
-
-            <mat-tab label="Plate">
-                <app-create-listing-form></app-create-listing-form>
-            </mat-tab>
-
-            <mat-tab label="Personal" class="my-5">Content 2</mat-tab>
-
-            <mat-tab label="Keep it FREE" class="my-5">Content 3</mat-tab>
-
-            <mat-tab label="Vehicle" class="my-5">Content 4</mat-tab>
-
-        </mat-tab-group> -->
-
         <mat-horizontal-stepper #stepper class="mx-auto">
             
             <mat-step>
                 <ng-template matStepLabel>Plate</ng-template>
-                <app-create-listing-form></app-create-listing-form>
+                <app-form-card [title]="'Tell me what it cost?'" [subTitle]="'Numberplate'">
+
+                    <app-create-listing-form 
+                        fG="one" 
+                        fGN="meanings" 
+                        [fields]="[{name: 'meaningOne'}, {name: 'meaningTwo'}, {name: 'meaningThree'}]">
+                    </app-create-listing-form>
+
+                </app-form-card>
+
+                <app-form-card [title]="'Ethnicity?'" [subTitle]="'Numberplate'">
+
+                    <app-create-listing-form 
+                        fG="one" 
+                        fGN="ethnicity" 
+                        [fields]="[{name: 'Sikh'}, {name: 'Mulsim'}, {name: 'Hindu'}, {name: 'English'}]">
+                    </app-create-listing-form>
+
+                </app-form-card>
+
+                <app-form-card [title]="'Asking price?'" [subTitle]="'Numberplate'">
+
+                </app-form-card>
+
+                <app-form-card [title]="'Plate year?'" [subTitle]="'Numberplate'">
+
+                </app-form-card>
             </mat-step>
 
             <mat-step>

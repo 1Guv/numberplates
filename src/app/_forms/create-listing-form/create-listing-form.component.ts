@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Validators, FormGroup, FormGroupDirective, FormControl, ControlContainer } from '@angular/forms';
+import { Component, OnInit, Input } from '@angular/core';
+import { Validators, FormGroup, FormControl, ControlContainer, FormBuilder } from '@angular/forms';
 import { CreateListingComponent } from 'src/app/create-listing/create-listing/create-listing.component';
 
 @Component({
@@ -10,30 +10,28 @@ import { CreateListingComponent } from 'src/app/create-listing/create-listing/cr
 })
 export class CreateListingFormComponent implements OnInit {
 
-  createListingOneForm;
+  @Input() fG: FormGroup;
+  @Input() fGN: string;
+  @Input() fields: any;
 
-  constructor(private parentForm: CreateListingComponent) { }
+  constructor(
+    private parentForm: CreateListingComponent,
+    private fb: FormBuilder) { }
 
   ngOnInit() {
-    this.createListingOneForm = this.parentForm.plateForm;
+    this.fG = this.parentForm.plateForm;
+    let groupToAdd = {};
 
-    this.createListingOneForm.addControl('one', new FormGroup({
-      meaningOne: new FormControl('', [Validators.required]),
-      meaningTwo: new FormControl(''),
-      meaningThree: new FormControl(''),
-      displayedAs: new FormControl('', [Validators.required]),
-      category: new FormControl('', [Validators.required]),
-      ethnicity: new FormControl('', [Validators.required]),
-      askingPrice: new FormControl('', [Validators.required]),
-      negotiable: new FormControl('', [Validators.required]),
-      retention: new FormControl('', [Validators.required]),
-      gender: new FormControl('', [Validators.required]),
-      plateYear: new FormControl('', [Validators.required]),
-    }));
+    this.fields.forEach(element => {
+      groupToAdd[element.name] = new FormControl('', [Validators.required]);
+    });
+
+    this.fG.addControl(this.fGN, new FormGroup(groupToAdd));
+
   }
 
   onSubmit() {
-    console.log("CreateListingFormComponent -> createListingOneForm", this.createListingOneForm.value);
+    console.log("CreateListingFormComponent -> createListingOneForm", this.fG.value);
   }
 
 }
