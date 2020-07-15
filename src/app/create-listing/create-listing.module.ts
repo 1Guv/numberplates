@@ -10,6 +10,9 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatCardModule } from '@angular/material/card';
 import { FormCardComponent } from '../_elements/form-card/form-card.component';
+import { FormDynamicInputsComponent } from '../_forms/form-dynamic-inputs/form-dynamic-inputs.component';
+import { FormDynamicSelectsComponent } from '../_forms/form-dynamic-selects/form-dynamic-selects.component';
+import { FormDynamicCheckboxesComponent } from '../_forms/form-dynamic-checkboxes/form-dynamic-checkboxes.component';
 
 
 
@@ -18,7 +21,10 @@ import { FormCardComponent } from '../_elements/form-card/form-card.component';
     CreateListingComponent, 
     LargePlateDisplayInputComponent,
     CreateListingFormComponent,
-    FormCardComponent
+    FormCardComponent,
+    FormDynamicInputsComponent,
+    FormDynamicSelectsComponent,
+    FormDynamicCheckboxesComponent
   ],
   imports: [ 
     CommonModule, 

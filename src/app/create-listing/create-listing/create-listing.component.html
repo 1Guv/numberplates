@@ -54,35 +54,43 @@
                 <ng-template matStepLabel>Plate</ng-template>
                 <app-form-card [title]="'Tell me what it cost?'" [subTitle]="'Numberplate'">
 
-                    <app-create-listing-form 
+                    <app-form-dynamic-inputs 
                         fG="one" 
                         fGN="meanings" 
                         [fields]="[{name: 'meaningOne'}, {name: 'meaningTwo'}, {name: 'meaningThree'}]">
-                    </app-create-listing-form>
+                    </app-form-dynamic-inputs>
 
                 </app-form-card>
 
                 <app-form-card [title]="'Ethnicity?'" [subTitle]="'Numberplate'">
 
-                    <app-create-listing-form 
+                    <app-form-dynamic-selects
                         fG="one" 
-                        fGN="ethnicity"
+                        fGN="ethnicities"
+                        fCN="ethnicity"
                         selectTitle="Ethnicity"
                         [select]="[{name: 'Sikh'}, {name: 'Mulsim'}, {name: 'Hindu'}, {name: 'English'}]">
-                    </app-create-listing-form>
+                    </app-form-dynamic-selects>
 
                 </app-form-card>
 
                 <app-form-card [title]="'Price?'" [subTitle]="'Numberplate'">
-                    <app-create-listing-form 
+                    <app-form-dynamic-inputs 
                         fG="one" 
                         fGN="price" 
                         [fields]="[{name: 'Display price'}, {name: 'Ideal selling Price'}, {name: 'Max selling price'}, {name: 'Min selling price'}]">
-                    </app-create-listing-form>
+                    </app-form-dynamic-inputs>
 
                 </app-form-card>
 
-                <app-form-card [title]="'Plate year?'" [subTitle]="'Numberplate'">
+                <app-form-card [title]="'Choose your plate year?'" [subTitle]="'Numberplate'">
+                    <app-form-dynamic-selects
+                        fG="one" 
+                        fGN="registration years"
+                        fCN="year"
+                        selectTitle="Registration Years"
+                        [select]="[{name: '2020'}, {name: '2019'}, {name: '2018'}, {name: '2017'}]">
+                    </app-form-dynamic-selects>
 
                 </app-form-card>
             </mat-step>
