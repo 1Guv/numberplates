@@ -13,6 +13,8 @@ export class CreateListingFormComponent implements OnInit {
   @Input() fG: FormGroup;
   @Input() fGN: string;
   @Input() fields: any;
+  @Input() select: any;
+  @Input() selectTitle: string;
 
   constructor(
     private parentForm: CreateListingComponent,

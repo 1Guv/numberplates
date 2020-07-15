@@ -7,8 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class LargePlateDisplayInputComponent implements OnInit {
 
-  @Input()
-  plate: string;
+  @Input() plate: string;
 
   constructor() { }
 

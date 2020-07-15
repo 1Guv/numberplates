@@ -3,7 +3,7 @@
 
         <h1>Fill in the form below and get your plate online in a few minutes.</h1>
 
-        <app-large-plate-display-input plate="numberPlate"></app-large-plate-display-input>
+        <app-large-plate-display-input [plate]="numberPlate"></app-large-plate-display-input>
 
         <br>
         
@@ -66,13 +66,19 @@
 
                     <app-create-listing-form 
                         fG="one" 
-                        fGN="ethnicity" 
-                        [fields]="[{name: 'Sikh'}, {name: 'Mulsim'}, {name: 'Hindu'}, {name: 'English'}]">
+                        fGN="ethnicity"
+                        selectTitle="Ethnicity"
+                        [select]="[{name: 'Sikh'}, {name: 'Mulsim'}, {name: 'Hindu'}, {name: 'English'}]">
                     </app-create-listing-form>
 
                 </app-form-card>
 
-                <app-form-card [title]="'Asking price?'" [subTitle]="'Numberplate'">
+                <app-form-card [title]="'Price?'" [subTitle]="'Numberplate'">
+                    <app-create-listing-form 
+                        fG="one" 
+                        fGN="price" 
+                        [fields]="[{name: 'Display price'}, {name: 'Ideal selling Price'}, {name: 'Max selling price'}, {name: 'Min selling price'}]">
+                    </app-create-listing-form>
 
                 </app-form-card>
 

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CreateListingComponent } from './create-listing/create-listing.component';
 import { CreateListingRoutingModule } from './create-listing-routing';
 import { LargePlateDisplayInputComponent } from '../_elements/large-plate-display-input/large-plate-display-input.component';
-import { MatFormFieldModule, MatIconModule, MatInputModule, MatStepperModule } from '@angular/material';
+import { MatFormFieldModule, MatIconModule, MatInputModule, MatStepperModule, MatSelectModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreateListingFormComponent } from '../_forms/create-listing-form/create-listing-form.component';
 import { MatTabsModule } from '@angular/material/tabs';
@@ -31,7 +31,8 @@ import { FormCardComponent } from '../_elements/form-card/form-card.component';
     MatTabsModule,
     MatSlideToggleModule,
     MatCardModule,
-    MatStepperModule
+    MatStepperModule,
+    MatSelectModule
   ],
   exports: [CreateListingComponent]
 })
