@@ -2,6 +2,17 @@ export interface Content {
     header: Header;
     homeCTA: HomeCTA;
     footer: Footer;
+    createListing: CreateListing;
+}
+
+export interface CreateListing {
+    heading: string;
+    placeholderPlate: string;
+    plateFree: boolean;
+    platePremuim: boolean;
+    stepperLabels: Array<StepperLabels>
+    formCards: Array<FormCards>
+    meanings: FormSetup
 }
 
 export interface Footer {
@@ -13,6 +24,27 @@ export interface Footer {
     socialMedia: SocialMedia;
     company: Array<CompanyLinks>;
     help: Array<CompanyLinks>;
+}
+
+export interface FormSetup {
+    formGroup: string;
+    formGroupName: string;
+    selectTitle: string;
+    inputFields: Array<InputFields>
+}
+
+export interface InputFields {
+    name: string;
+    required: boolean
+}
+
+export interface FormCards {
+    title: string;
+    subTitle: string;
+}
+
+export interface StepperLabels {
+    label: string;
 }
 
 export interface CompanyLinks {

@@ -17,7 +17,7 @@ export class HeaderComponent implements OnInit {
     this.contentService.getContent()
       .subscribe(data => {
         this.header = data.header;
-        console.log("HeaderComponent -> ngOnInit -> this.content", this.header);
+        // console.log("HeaderComponent -> ngOnInit -> this.content", this.header);
       })
   }
 

@@ -18,7 +18,7 @@ export class FooterComponent implements OnInit {
     this.contentService.getContent()
     .subscribe(data => {
       this.footer = data.footer;
-      console.log("FooterComponent -> ngOnInit -> this.footer", this.footer)
+      // console.log("FooterComponent -> ngOnInit -> this.footer", this.footer)
     })
   }
 

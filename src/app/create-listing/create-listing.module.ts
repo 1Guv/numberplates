@@ -5,7 +5,6 @@ import { CreateListingRoutingModule } from './create-listing-routing';
 import { LargePlateDisplayInputComponent } from '../_elements/large-plate-display-input/large-plate-display-input.component';
 import { MatFormFieldModule, MatIconModule, MatInputModule, MatStepperModule, MatSelectModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CreateListingFormComponent } from '../_forms/create-listing-form/create-listing-form.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatCardModule } from '@angular/material/card';
@@ -14,13 +13,10 @@ import { FormDynamicInputsComponent } from '../_forms/form-dynamic-inputs/form-d
 import { FormDynamicSelectsComponent } from '../_forms/form-dynamic-selects/form-dynamic-selects.component';
 import { FormDynamicCheckboxesComponent } from '../_forms/form-dynamic-checkboxes/form-dynamic-checkboxes.component';
 
-
-
 @NgModule({
   declarations: [
     CreateListingComponent, 
     LargePlateDisplayInputComponent,
-    CreateListingFormComponent,
     FormCardComponent,
     FormDynamicInputsComponent,
     FormDynamicSelectsComponent,

@@ -259,6 +259,101 @@
                 "url": ""
             }
         ]
+    },
+    "createListing": {
+        "heading": "Fill in the form below and get your plate online in a few minutes.",
+        "placeholderPlate": "SE11 NOW",
+        "plateFree": false,
+        "platePremuim": true,
+        "stepperLabels": [
+            {
+                "label": "Plate"
+            },
+            {
+                "label": "Personal Details"
+            },
+            {
+                "label": "Keep it FREE!"
+            },
+            {
+                "label": "Premuim"
+            },
+            {
+                "label": "Test"
+            }
+        ],
+        "formCards": [
+            {
+                "title": "Tell me what it means?",
+                "subTitle": "Numberplate"
+            },
+            {
+                "title": "What is the ethnicity of the plate if any?",
+                "subTitle": "Numberplate"
+            },
+            {
+                "title": "Tell me how much it cost and your chosen selling price?",
+                "subTitle": "Numberplate"
+            },
+            {
+                "title": "Choose your plate year?",
+                "subTitle": "Numberplate"
+            }
+        ],
+        "meanings": {
+            "formGroup": "one",
+            "formGroupName": "meanings",
+            "inputFields": [
+                {
+                    "name": "Meaning 1",
+                    "required": true
+                },
+                {
+                    "name": "Meaning 2",
+                    "required": false
+                },
+                {
+                    "name": "Meaning 3",
+                    "required": false
+                },
+                {
+                    "name": "Meaning 4",
+                    "required": false
+                }
+            ]
+        },
+        "ethnicities": {
+            "formGroup": "one",
+            "formGroupName": "ethnicities",
+            "selectTitle": "Please choose an Ethnicity",
+            "inputFields": [
+                {
+                    "name": "Sikh",
+                    "required": true
+                },
+                {
+                    "name": "Muslim",
+                    "required": false
+                },
+                {
+                    "name": "Hindu",
+                    "required": false
+                },
+                {
+                    "name": "English",
+                    "required": false
+                },
+                {
+                    "name": "Bangladeshi",
+                    "required": false
+                },
+                {
+                    "name": "789",
+                    "required": false
+                }
+            ]
+        }
+
     }
 
 }

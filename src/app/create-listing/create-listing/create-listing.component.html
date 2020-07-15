@@ -1,7 +1,8 @@
 <section id="create-listing" class="container-fluid">
     <div class="d-flex flex-column justify-content-center align-items-center py-5 text-center">
 
-        <h1>Fill in the form below and get your plate online in a few minutes.</h1>
+
+        <h1>{{ heading }}</h1>
 
         <app-large-plate-display-input [plate]="numberPlate"></app-large-plate-display-input>
 
@@ -48,37 +49,77 @@
 
         </form>
 
+        <!-- <mat-horizontal-stepper #stepper class="mx-auto">
+            <mat-step *ngFor="let stepper of stepperLabels; index as i">
+                <ng-template matStepLabel>{{ stepper.label }}
+
+                    <span *ngIf="i===0">
+                        <ng-container *ngFor="let fc of formCards">
+                            <app-form-card [title]="fc.title" [subTitle]="fc.subTitle">
+
+                            </app-form-card>
+                        </ng-container>
+                    </span>
+
+                </ng-template>
+            </mat-step>            
+        </mat-horizontal-stepper> -->
+
         <mat-horizontal-stepper #stepper class="mx-auto">
             
             <mat-step>
                 <ng-template matStepLabel>Plate</ng-template>
-                <app-form-card [title]="'Tell me what it cost?'" [subTitle]="'Numberplate'">
+
+                <app-form-card *ngFor="let fc of formCards; index as i" [title]="fc.title" [subTitle]="fc.subTitle">
+                    <div *ngIf="i===0">
+                        <app-form-dynamic-inputs 
+                            fG="{{meanings.formGroup}}"
+                            fGN="{{meanings.formGroupName}}"
+                            [fields]="meanings.inputFields"
+                            >
+                        </app-form-dynamic-inputs>
+                    </div>
+
+                    <div *ngIf="i===1">
+                        <app-form-dynamic-selects 
+                            fG="{{ethnicities.formGroup}}"
+                            fGN="{{ethnicities.formGroupName}}"
+                            fCN="{{ethnicities.formGroupName}}"
+                            selectTitle="{{ethnicities.selectTitle}}"
+                            [select]="ethnicities.inputFields"
+                            >
+                        </app-form-dynamic-selects>
+                    </div>
+                    
+                </app-form-card>
+
+                <!-- <app-form-card [title]="'Tell me what it means?'" [subTitle]="'Numberplate'">
 
                     <app-form-dynamic-inputs 
                         fG="one" 
                         fGN="meanings" 
-                        [fields]="[{name: 'meaningOne'}, {name: 'meaningTwo'}, {name: 'meaningThree'}]">
+                        [fields]="[{name: 'meaning one'}, {name: 'meaning two'}, {name: 'meaning three'}]">
                     </app-form-dynamic-inputs>
 
                 </app-form-card>
 
-                <app-form-card [title]="'Ethnicity?'" [subTitle]="'Numberplate'">
+                <app-form-card [title]="'What is the ethnicity of the plate if any?'" [subTitle]="'Numberplate'">
 
                     <app-form-dynamic-selects
                         fG="one" 
                         fGN="ethnicities"
                         fCN="ethnicity"
                         selectTitle="Ethnicity"
-                        [select]="[{name: 'Sikh'}, {name: 'Mulsim'}, {name: 'Hindu'}, {name: 'English'}]">
+                        [select]="[{name: 'Sikh'}, {name: 'Mulsim'}, {name: 'Hindu'}, {name: 'English'}, {name: 'None'}]">
                     </app-form-dynamic-selects>
 
                 </app-form-card>
 
-                <app-form-card [title]="'Price?'" [subTitle]="'Numberplate'">
+                <app-form-card [title]="'Tell me how much it cost and your chosen selling price?'" [subTitle]="'Numberplate'">
                     <app-form-dynamic-inputs 
                         fG="one" 
                         fGN="price" 
-                        [fields]="[{name: 'Display price'}, {name: 'Ideal selling Price'}, {name: 'Max selling price'}, {name: 'Min selling price'}]">
+                        [fields]="[{name: 'Display price'}, {name: 'Ideal selling Price'}, {name: 'Max selling price'}, {name: 'Min selling price'}, {name: 'Cost or Auction price'}, {name: 'Auction fees if applicable'}]">
                     </app-form-dynamic-inputs>
 
                 </app-form-card>
@@ -92,7 +133,7 @@
                         [select]="[{name: '2020'}, {name: '2019'}, {name: '2018'}, {name: '2017'}]">
                     </app-form-dynamic-selects>
 
-                </app-form-card>
+                </app-form-card> -->
             </mat-step>
 
             <mat-step>
