@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Footer } from 'src/app/_models/content';
 import { ContentService } from 'src/app/_services/content.service';
+import { map, tap, shareReplay } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-footer',
@@ -10,16 +12,13 @@ import { ContentService } from 'src/app/_services/content.service';
 })
 export class FooterComponent implements OnInit {
 
-  footer: Footer
+  // footer: Footer
+  footer$: Observable<Footer>
 
   constructor(private contentService: ContentService) { }
 
   ngOnInit() {
-    this.contentService.getContent()
-    .subscribe(data => {
-      this.footer = data.footer;
-      // console.log("FooterComponent -> ngOnInit -> this.footer", this.footer)
-    })
+    this.footer$ = this.contentService.content$.pipe(map(content => content.footer));
   }
 
 }

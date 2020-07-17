@@ -9,6 +9,8 @@ import { CreateListingComponent } from 'src/app/create-listing/create-listing/cr
 })
 export class FormDynamicInputsComponent implements OnInit {
 
+  // TODO: need to handle required and non required fields via the content api
+
   @Input() fG: FormGroup;
   @Input() fGN: string;
   @Input() fields: any;

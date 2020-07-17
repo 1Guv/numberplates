@@ -3,15 +3,15 @@
         <mat-toolbar class="col d-flex flex-row">
 
             <a [routerLink]="'/'">
-                <img src="{{ header?.leftLogoUrl }}" class="d-none d-sm-block">
+                <img src="{{ (header$ | async)?.leftLogoUrl }}" class="d-none d-sm-block">
             </a>
 
             <a [routerLink]="'/'" class="ml-sm-auto">
-                <img src="{{ header?.middleLogoUrl }}" id="n-logo-size">
+                <img src="{{ (header$ | async)?.middleLogoUrl }}" id="n-logo-size">
                 <div class="d-inline-block d-sm-none">.io</div>
             </a>
 
-            <ng-container *ngFor="let option of header?.headerMenuOptions; index as i; first as isFirst">
+            <ng-container *ngFor="let option of (header$ | async )?.headerMenuOptions; index as i; first as isFirst">
                 <button mat-icon-button
                         attr.aria-label="{{ option.name }}"
                         matTooltip="{{ option.toolTip }}"
@@ -23,3 +23,5 @@
         </mat-toolbar>
     </div>
 </div>
+
+<!-- <pre>{{ header$ | json }}</pre> -->
