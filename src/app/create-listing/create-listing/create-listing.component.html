@@ -2,9 +2,9 @@
     <div class="d-flex flex-column justify-content-center align-items-center py-5 text-center">
 
 
-        <h1>{{ heading }}</h1>
+        <h1>{{ heading$ | async }}</h1>
 
-        <app-large-plate-display-input [plate]="numberPlate"></app-large-plate-display-input>
+        <app-large-plate-display-input [plate]="numberPlate$ | async"></app-large-plate-display-input>
 
         <br>
         
@@ -18,7 +18,7 @@
                             type="text" 
                             formControlName="plate"
                             maxlength="8"
-                            placeholder="{{ placeholderPlate }}">
+                            placeholder="{{ placeholderPlate$ | async }}">
         
                     <button *ngIf="plateForm.get('plateGroupName').get('plate').value"
                             mat-button

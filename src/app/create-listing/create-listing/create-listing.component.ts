@@ -3,6 +3,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MatSlideToggleChange } from '@angular/material';
 import { ContentService } from 'src/app/_services/content.service';
 import { CreateListing, StepperLabels, FormCards, FormSetup } from 'src/app/_models/content';
+import { map } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-create-listing',
@@ -11,13 +13,13 @@ import { CreateListing, StepperLabels, FormCards, FormSetup } from 'src/app/_mod
 })
 export class CreateListingComponent implements OnInit {
 
-  createListing: CreateListing;
-  heading: string;
+  createListing$: Observable<CreateListing>;
+  heading$: Observable<string>;
   plateForm = new FormGroup({});
 
-  placeholderPlate: string;
-  numberPlate: string;
-  plateFree: boolean;
+  placeholderPlate$: Observable<string>;
+  numberPlate$: Observable<string>;
+  plateFree$: Observable<boolean>;
   platePremuim: boolean = false;
   stepperLabels: Array<StepperLabels>;
   formCards: Array<FormCards>;
@@ -27,12 +29,16 @@ export class CreateListingComponent implements OnInit {
   constructor(private contentService: ContentService ) { }
 
   ngOnInit() {
-    this.contentService.getContent()
-      .subscribe(data => {
-        this.createListing = data.createListing;
-        console.log("CreateListingComponent -> ngOnInit -> this.createListing", this.createListing);
-        this.initContent(this.createListing);
-      })
+
+    this.createListing$ = this.contentService.content$.pipe(map(content => content.createListing));
+    this.initContent();
+
+    // this.contentService.getContent()
+    //   .subscribe(data => {
+    //     this.createListing = data.createListing;
+    //     console.log("CreateListingComponent -> ngOnInit -> this.createListing", this.createListing);
+    //     this.initContent(this.createListing);
+    //   })
       
     this.plateForm.addControl('plateGroupName', new FormGroup({
       plate: new FormControl('', [Validators.required]),
@@ -42,7 +48,7 @@ export class CreateListingComponent implements OnInit {
 
     this.plateForm.get('plateGroupName').get('plate').valueChanges.subscribe(  
       value => {
-         this.numberPlate = value; 
+        this.numberPlate$ = of(value);
       }  
     );
   }
@@ -67,16 +73,16 @@ export class CreateListingComponent implements OnInit {
     }
   }
 
-  initContent(createListing: any) {
-    this.heading = createListing.heading;
-    this.placeholderPlate = createListing.placeholderPlate;
-    this.numberPlate = this.placeholderPlate;
-    this.plateFree = createListing.plateFree;
-    this.platePremuim = createListing.platePremuim;
-    this.stepperLabels = createListing.stepperLabels;
-    this.formCards = createListing.formCards;
-    this.meanings = createListing.meanings;
-    this.ethnicities = createListing.ethnicities;
+  initContent() {
+    this.heading$ = this.contentService.content$.pipe(map(content => content.createListing.heading));
+    this.placeholderPlate$ = this.contentService.content$.pipe(map(content => content.createListing.placeholderPlate));
+    this.numberPlate$ = this.placeholderPlate$;
+    this.plateFree$ = this.contentService.content$.pipe(map(content => content.createListing.plateFree));
+    // this.platePremuim = createListing.platePremuim;
+    // this.stepperLabels = createListing.stepperLabels;
+    // this.formCards = createListing.formCards;
+    // this.meanings = createListing.meanings;
+    // this.ethnicities = createListing.ethnicities;
   }
   
 
