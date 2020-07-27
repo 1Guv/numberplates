@@ -26,7 +26,12 @@ export class FormDynamicInputsComponent implements OnInit {
     let groupToAdd = {};
 
     this.fields.forEach(element => {
-      groupToAdd[element.name] = new FormControl('', [Validators.required]);
+      if (element.required) {
+        groupToAdd[element.name] = new FormControl('', [Validators.required]);
+      } else {
+        groupToAdd[element.name] = new FormControl('');
+      }
+      
     });
 
     this.fG.addControl(this.fGN, new FormGroup(groupToAdd));
