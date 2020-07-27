@@ -70,23 +70,23 @@
             <mat-step>
                 <ng-template matStepLabel>Plate</ng-template>
 
-                <app-form-card *ngFor="let fc of formCards; index as i" [title]="fc.title" [subTitle]="fc.subTitle">
+                <app-form-card *ngFor="let fc of (formCards$ | async); index as i" [title]="fc.title" [subTitle]="fc.subTitle">
                     <div *ngIf="i===0">
                         <app-form-dynamic-inputs 
-                            fG="{{meanings.formGroup}}"
-                            fGN="{{meanings.formGroupName}}"
-                            [fields]="meanings.inputFields"
+                            fG="{{ (meanings$ | async).formGroup }}"
+                            fGN="{{ (meanings$ | async).formGroupName }}"
+                            [fields]=" (meanings$ | async).inputFields "
                             >
                         </app-form-dynamic-inputs>
                     </div>
 
                     <div *ngIf="i===1">
                         <app-form-dynamic-selects 
-                            fG="{{ethnicities.formGroup}}"
-                            fGN="{{ethnicities.formGroupName}}"
-                            fCN="{{ethnicities.formGroupName}}"
-                            selectTitle="{{ethnicities.selectTitle}}"
-                            [select]="ethnicities.inputFields"
+                            fG="{{ ( ethnicities$ | async ).formGroup}}"
+                            fGN="{{ ( ethnicities$ | async ).formGroupName}}"
+                            fCN="{{ ( ethnicities$ | async ).formGroupName}}"
+                            selectTitle="{{ ( ethnicities$ | async ).selectTitle}}"
+                            [select]=" ( ethnicities$ | async ).inputFields"
                             >
                         </app-form-dynamic-selects>
                     </div>

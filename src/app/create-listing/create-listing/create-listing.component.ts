@@ -20,11 +20,11 @@ export class CreateListingComponent implements OnInit {
   placeholderPlate$: Observable<string>;
   numberPlate$: Observable<string>;
   plateFree$: Observable<boolean>;
-  platePremuim: boolean = false;
+  platePremuim$: Observable<boolean> = of(false);
   stepperLabels: Array<StepperLabels>;
-  formCards: Array<FormCards>;
-  meanings: FormSetup;
-  ethnicities: FormSetup;
+  formCards$: Observable<FormCards[]>;
+  meanings$: Observable<FormSetup>;
+  ethnicities$: Observable<FormSetup>;
 
   constructor(private contentService: ContentService ) { }
 
@@ -78,11 +78,11 @@ export class CreateListingComponent implements OnInit {
     this.placeholderPlate$ = this.contentService.content$.pipe(map(content => content.createListing.placeholderPlate));
     this.numberPlate$ = this.placeholderPlate$;
     this.plateFree$ = this.contentService.content$.pipe(map(content => content.createListing.plateFree));
-    // this.platePremuim = createListing.platePremuim;
+    this.platePremuim$ = this.contentService.content$.pipe(map(content => content.createListing.platePremuim));
     // this.stepperLabels = createListing.stepperLabels;
-    // this.formCards = createListing.formCards;
-    // this.meanings = createListing.meanings;
-    // this.ethnicities = createListing.ethnicities;
+    this.formCards$ = this.contentService.content$.pipe(map(content => content.createListing.formCards));
+    this.meanings$ = this.contentService.content$.pipe(map(content => content.createListing.meanings));
+    this.ethnicities$ = this.contentService.content$.pipe(map(content => content.createListing.ethnicities));
   }
   
 

@@ -10,9 +10,10 @@ export interface CreateListing {
     placeholderPlate: string;
     plateFree: boolean;
     platePremuim: boolean;
-    stepperLabels: Array<StepperLabels>
-    formCards: Array<FormCards>
-    meanings: FormSetup
+    stepperLabels: Array<StepperLabels>;
+    formCards: Array<FormCards>;
+    meanings: FormSetup;
+    ethnicities: FormSetup;
 }
 
 export interface Footer {
