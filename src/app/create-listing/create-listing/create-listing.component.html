@@ -71,6 +71,8 @@
                 <ng-template matStepLabel>Plate</ng-template>
 
                 <app-form-card *ngFor="let fc of (formCards$ | async); index as i" [title]="fc.title" [subTitle]="fc.subTitle">
+                    
+                    <!-- // Meanings is 0 in the array -->
                     <div *ngIf="i===0">
                         <app-form-dynamic-inputs 
                             fG="{{ (meanings$ | async).formGroup }}"
@@ -80,6 +82,7 @@
                         </app-form-dynamic-inputs>
                     </div>
 
+                    <!-- // Ethnicities is 1 in the array -->
                     <div *ngIf="i===1">
                         <app-form-dynamic-selects 
                             fG="{{ ( ethnicities$ | async ).formGroup}}"
@@ -89,6 +92,37 @@
                             [select]=" ( ethnicities$ | async ).inputFields"
                             >
                         </app-form-dynamic-selects>
+                    </div>
+
+                    <div *ngIf="i===2">
+                        <app-form-dynamic-inputs 
+                            fG="{{ (costs$ | async).formGroup }}"
+                            fGN="{{ (costs$ | async).formGroupName }}"
+                            [fields]=" (costs$ | async).inputFields "
+                            >
+                        </app-form-dynamic-inputs>
+                    </div>
+
+                    <div *ngIf="i===3">
+                        <app-form-dynamic-selects 
+                        fG="{{ ( boughtFrom$ | async ).formGroup}}"
+                        fGN="{{ ( boughtFrom$ | async ).formGroupName}}"
+                        fCN="{{ ( boughtFrom$ | async ).formGroupName}}"
+                        selectTitle="{{ ( boughtFrom$ | async ).selectTitle}}"
+                        [select]=" ( boughtFrom$ | async ).inputFields"
+                        >
+                    </app-form-dynamic-selects>
+                    </div>
+
+                    <div *ngIf="i===4">
+                        <app-form-dynamic-selects 
+                        fG="{{ ( plateType$ | async ).formGroup}}"
+                        fGN="{{ ( plateType$ | async ).formGroupName}}"
+                        fCN="{{ ( plateType$ | async ).formGroupName}}"
+                        selectTitle="{{ ( plateType$ | async ).selectTitle}}"
+                        [select]=" ( plateType$ | async ).inputFields"
+                        >
+                    </app-form-dynamic-selects>
                     </div>
                     
                 </app-form-card>

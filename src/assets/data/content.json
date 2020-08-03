@@ -296,7 +296,11 @@
                 "subTitle": "Numberplate"
             },
             {
-                "title": "Choose your plate year?",
+                "title": "Who did you buy the plate from?",
+                "subTitle": "Numberplate"
+            },
+            {
+                "title": "Choose your plate type?",
                 "subTitle": "Numberplate"
             }
         ],
@@ -328,28 +332,87 @@
             "selectTitle": "Please choose an Ethnicity",
             "inputFields": [
                 {
-                    "name": "Sikh",
+                    "name": "None"
+                },
+                {
+                    "name": "Sikh"
+                },
+                {
+                    "name": "Muslim"
+                },
+                {
+                    "name": "Hindu"
+                },
+                {
+                    "name": "English"
+                },
+                {
+                    "name": "Bangladeshi"
+                },
+                {
+                    "name": "789"
+                }
+            ]
+        },
+        "costs": {
+            "formGroup": "one",
+            "formGroupName": "costs",
+            "inputFields": [
+                {
+                    "name": "What did the plate cost?",
                     "required": true
                 },
                 {
-                    "name": "Muslim",
-                    "required": false
+                    "name": "Ideal selling price",
+                    "required": true
                 },
                 {
-                    "name": "Hindu",
-                    "required": false
+                    "name": "Selling price to display",
+                    "required": true
+                }
+            ]
+        },
+        "boughtFrom": {
+            "formGroup": "one",
+            "formGroupName": "boughtFrom",
+            "selectTitle": "Who did you buy the plate from?",
+            "inputFields": [
+                {
+                    "name": "Auction"
                 },
                 {
-                    "name": "English",
-                    "required": false
+                    "name": "DVLA direct"
                 },
                 {
-                    "name": "Bangladeshi",
-                    "required": false
+                    "name": "Private Seller"
                 },
                 {
-                    "name": "789",
-                    "required": false
+                    "name": "RegTransfers"
+                },
+                {
+                    "name": "National Numbers"
+                },
+                {
+                    "name": "Other"
+                }
+            ]
+        },
+        "plateType": {
+            "formGroup": "one",
+            "formGroupName": "plateType",
+            "selectTitle": "Choose the plate type?",
+            "inputFields": [
+                {
+                    "name": "Current eg: AB20 ABC"
+                },
+                {
+                    "name": "Prefix eg: A1 BCD"
+                },
+                {
+                    "name": "Suffix eg: ABC D1"
+                },
+                {
+                    "name": "Dateless eg ABC 1"
                 }
             ]
         }

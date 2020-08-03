@@ -25,6 +25,10 @@ export class CreateListingComponent implements OnInit {
   formCards$: Observable<FormCards[]>;
   meanings$: Observable<FormSetup>;
   ethnicities$: Observable<FormSetup>;
+  costs$: Observable<FormSetup>;
+  boughtFrom$: Observable<FormSetup>;
+  plateType$: Observable<FormSetup>;
+
 
   constructor(private contentService: ContentService ) { }
 
@@ -32,13 +36,6 @@ export class CreateListingComponent implements OnInit {
 
     this.createListing$ = this.contentService.content$.pipe(map(content => content.createListing));
     this.initContent();
-
-    // this.contentService.getContent()
-    //   .subscribe(data => {
-    //     this.createListing = data.createListing;
-    //     console.log("CreateListingComponent -> ngOnInit -> this.createListing", this.createListing);
-    //     this.initContent(this.createListing);
-    //   })
       
     this.plateForm.addControl('plateGroupName', new FormGroup({
       plate: new FormControl('', [Validators.required]),
@@ -83,6 +80,9 @@ export class CreateListingComponent implements OnInit {
     this.formCards$ = this.contentService.content$.pipe(map(content => content.createListing.formCards));
     this.meanings$ = this.contentService.content$.pipe(map(content => content.createListing.meanings));
     this.ethnicities$ = this.contentService.content$.pipe(map(content => content.createListing.ethnicities));
+    this.costs$ = this.contentService.content$.pipe(map(content => content.createListing.costs));
+    this.boughtFrom$ = this.contentService.content$.pipe(map(content => content.createListing.boughtFrom));
+    this.plateType$ = this.contentService.content$.pipe(map(content => content.createListing.plateType));
   }
   
 

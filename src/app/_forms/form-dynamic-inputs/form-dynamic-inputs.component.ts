@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl, Validators, MaxLengthValidator } from '@angular/forms';
 import { CreateListingComponent } from 'src/app/create-listing/create-listing/create-listing.component';
 
 @Component({
@@ -44,3 +44,5 @@ export class FormDynamicInputsComponent implements OnInit {
 
 
 }
+
+// TODO: maybe add Validators.maxLength(10), Validators.email, Validators.pattern() 

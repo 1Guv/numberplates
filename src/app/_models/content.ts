@@ -14,6 +14,9 @@ export interface CreateListing {
     formCards: Array<FormCards>;
     meanings: FormSetup;
     ethnicities: FormSetup;
+    costs: FormSetup;
+    boughtFrom: FormSetup;
+    plateType: FormSetup;
 }
 
 export interface Footer {
