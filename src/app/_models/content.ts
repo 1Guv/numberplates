@@ -45,6 +45,7 @@ export interface InputFields {
 export interface FormCards {
     title: string;
     subTitle: string;
+    footer: string;
 }
 
 export interface StepperLabels {

@@ -70,7 +70,7 @@
             <mat-step>
                 <ng-template matStepLabel>Plate</ng-template>
 
-                <app-form-card *ngFor="let fc of (formCards$ | async); index as i" [title]="fc.title" [subTitle]="fc.subTitle">
+                <app-form-card *ngFor="let fc of (formCards$ | async); index as i" [title]="fc.title" [subTitle]="fc.subTitle" [footer]="fc.footer">
                     
                     <!-- // Meanings is 0 in the array -->
                     <div *ngIf="i===0">

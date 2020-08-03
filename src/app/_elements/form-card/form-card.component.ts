@@ -16,6 +16,10 @@ import { Component, OnInit, Input } from '@angular/core';
       <ng-content>  
       </ng-content>
 
+      <mat-card-footer class="text-left">
+        <h6>{{ footer }}</h6>
+      </mat-card-footer>
+
     </mat-card>
   `,
   styleUrls: ['./form-card.component.scss']
@@ -24,6 +28,7 @@ export class FormCardComponent implements OnInit {
 
   @Input() title: string;
   @Input() subTitle: string;
+  @Input() footer: string;
 
   constructor() { }
 

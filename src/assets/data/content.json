@@ -285,7 +285,8 @@
         "formCards": [
             {
                 "title": "Tell me what it means?",
-                "subTitle": "Numberplate"
+                "subTitle": "Numberplate",
+                "footer": "These terms will be used for SEO"
             },
             {
                 "title": "What is the ethnicity of the plate if any?",
