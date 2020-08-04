@@ -11,12 +11,25 @@ export interface CreateListing {
     plateFree: boolean;
     platePremuim: boolean;
     stepperLabels: Array<StepperLabels>;
+
     formCards: Array<FormCards>;
     meanings: FormSetup;
     ethnicities: FormSetup;
     costs: FormSetup;
     boughtFrom: FormSetup;
     plateType: FormSetup;
+
+    formCardsTwo: Array<FormCards>;
+    names: FormSetup;
+    contactDetails: FormSetup;
+    address: FormSetup;
+
+    formCardsThree: Array<FormCards>;
+    car: FormSetup;
+    carInsurance: FormSetup;
+    houseInsurance: FormSetup;
+    mobile: FormSetup;
+    electricCar: FormSetup;
 }
 
 export interface Footer {
@@ -46,6 +59,7 @@ export interface FormCards {
     title: string;
     subTitle: string;
     footer: string;
+    bgColour: string;
 }
 
 export interface StepperLabels {

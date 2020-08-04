@@ -16,12 +16,14 @@ export class CreateListingComponent implements OnInit {
   createListing$: Observable<CreateListing>;
   heading$: Observable<string>;
   plateForm = new FormGroup({});
+  freeOr12Group = new FormGroup({});
 
   placeholderPlate$: Observable<string>;
   numberPlate$: Observable<string>;
   plateFree$: Observable<boolean>;
   platePremuim$: Observable<boolean> = of(false);
   stepperLabels: Array<StepperLabels>;
+
   formCards$: Observable<FormCards[]>;
   meanings$: Observable<FormSetup>;
   ethnicities$: Observable<FormSetup>;
@@ -29,6 +31,19 @@ export class CreateListingComponent implements OnInit {
   boughtFrom$: Observable<FormSetup>;
   plateType$: Observable<FormSetup>;
 
+  formCardsTwo$: Observable<FormCards[]>;
+  names$: Observable<FormSetup>;
+  contactDetails$: Observable<FormSetup>;
+  address$: Observable<FormSetup>;
+
+  formCardsThree$: Observable<FormCards[]>;
+  car$: Observable<FormSetup>;
+  carInsurance$: Observable<FormSetup>;
+  houseInsurance$: Observable<FormSetup>;
+  mobile$: Observable<FormSetup>;
+  electricCar$: Observable<FormSetup>;
+
+  showFormUnlessPay12: boolean = true;
 
   constructor(private contentService: ContentService ) { }
 
@@ -43,6 +58,11 @@ export class CreateListingComponent implements OnInit {
       premium: new FormControl(false, [Validators.required]),
     }));
 
+    this.freeOr12Group.addControl('freeOr12', new FormGroup({
+      free: new FormControl(true, [Validators.required]),
+      12: new FormControl(false, [Validators.required]),
+    }));
+
     this.plateForm.get('plateGroupName').get('plate').valueChanges.subscribe(  
       value => {
         this.numberPlate$ = of(value);
@@ -52,21 +72,48 @@ export class CreateListingComponent implements OnInit {
 
   onChangeFree(event: MatSlideToggleChange) {
     if (event.checked) {
-      this.plateForm.get('plateGroupName').get('premium').setValue(false)
+      this.plateForm.get('plateGroupName').get('premium').setValue(false);
     }
 
     if (!event.checked) {
-      this.plateForm.get('plateGroupName').get('premium').setValue(true)
+      this.plateForm.get('plateGroupName').get('premium').setValue(true);
     }
   }
 
   onChangePremium(event: MatSlideToggleChange) {
     if (event.checked) {
-      this.plateForm.get('plateGroupName').get('free').setValue(false)
+      this.plateForm.get('plateGroupName').get('free').setValue(false);
     }
 
     if (!event.checked) {
-      this.plateForm.get('plateGroupName').get('free').setValue(true)
+      this.plateForm.get('plateGroupName').get('free').setValue(true);
+    }
+  }
+
+  onChangeFreeOr12(event: MatSlideToggleChange) {
+    if (event.checked) {
+      this.freeOr12Group.get('freeOr12').get('free').setValue(false);
+      this.showFormUnlessPay12 = false;
+      // need to remove form as well
+    }
+
+    if (!event.checked) {
+      this.freeOr12Group.get('freeOr12').get('free').setValue(true);
+      this.showFormUnlessPay12 = true;
+    }
+  }
+
+  onChange12(event: MatSlideToggleChange) {
+    if (event.checked) {
+      this.freeOr12Group.get('freeOr12').get('12').setValue(false);
+      this.showFormUnlessPay12 = true;
+    }
+
+    if (!event.checked) {
+      this.freeOr12Group.get('freeOr12').get('12').setValue(true);
+      this.showFormUnlessPay12 = false;
+      // need to remove form as well
+      // TODO: Remove or add form
     }
   }
 
@@ -83,6 +130,18 @@ export class CreateListingComponent implements OnInit {
     this.costs$ = this.contentService.content$.pipe(map(content => content.createListing.costs));
     this.boughtFrom$ = this.contentService.content$.pipe(map(content => content.createListing.boughtFrom));
     this.plateType$ = this.contentService.content$.pipe(map(content => content.createListing.plateType));
+
+    this.formCardsTwo$ = this.contentService.content$.pipe(map(content => content.createListing.formCardsTwo));
+    this.names$ = this.contentService.content$.pipe(map(content => content.createListing.names));
+    this.contactDetails$ = this.contentService.content$.pipe(map(content => content.createListing.contactDetails));
+    this.address$ = this.contentService.content$.pipe(map(content => content.createListing.address));
+
+    this.formCardsThree$ = this.contentService.content$.pipe(map(content => content.createListing.formCardsThree));
+    this.car$ = this.contentService.content$.pipe(map(content => content.createListing.car));
+    this.carInsurance$ = this.contentService.content$.pipe(map(content => content.createListing.carInsurance));
+    this.houseInsurance$ = this.contentService.content$.pipe(map(content => content.createListing.houseInsurance));
+    this.mobile$ = this.contentService.content$.pipe(map(content => content.createListing.mobile));
+    this.electricCar$ = this.contentService.content$.pipe(map(content => content.createListing.electricCar));
   }
   
 

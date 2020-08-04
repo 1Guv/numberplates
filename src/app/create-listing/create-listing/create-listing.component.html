@@ -94,6 +94,7 @@
                         </app-form-dynamic-selects>
                     </div>
 
+                    <!-- Costs -->
                     <div *ngIf="i===2">
                         <app-form-dynamic-inputs 
                             fG="{{ (costs$ | async).formGroup }}"
@@ -103,79 +104,172 @@
                         </app-form-dynamic-inputs>
                     </div>
 
+                    <!-- Bought from -->
                     <div *ngIf="i===3">
                         <app-form-dynamic-selects 
-                        fG="{{ ( boughtFrom$ | async ).formGroup}}"
-                        fGN="{{ ( boughtFrom$ | async ).formGroupName}}"
-                        fCN="{{ ( boughtFrom$ | async ).formGroupName}}"
-                        selectTitle="{{ ( boughtFrom$ | async ).selectTitle}}"
-                        [select]=" ( boughtFrom$ | async ).inputFields"
-                        >
-                    </app-form-dynamic-selects>
+                            fG="{{ ( boughtFrom$ | async ).formGroup}}"
+                            fGN="{{ ( boughtFrom$ | async ).formGroupName}}"
+                            fCN="{{ ( boughtFrom$ | async ).formGroupName}}"
+                            selectTitle="{{ ( boughtFrom$ | async ).selectTitle}}"
+                            [select]=" ( boughtFrom$ | async ).inputFields"
+                            >
+                        </app-form-dynamic-selects>
                     </div>
 
+                    <!-- Plate type -->
                     <div *ngIf="i===4">
                         <app-form-dynamic-selects 
-                        fG="{{ ( plateType$ | async ).formGroup}}"
-                        fGN="{{ ( plateType$ | async ).formGroupName}}"
-                        fCN="{{ ( plateType$ | async ).formGroupName}}"
-                        selectTitle="{{ ( plateType$ | async ).selectTitle}}"
-                        [select]=" ( plateType$ | async ).inputFields"
-                        >
-                    </app-form-dynamic-selects>
+                            fG="{{ ( plateType$ | async ).formGroup}}"
+                            fGN="{{ ( plateType$ | async ).formGroupName}}"
+                            fCN="{{ ( plateType$ | async ).formGroupName}}"
+                            selectTitle="{{ ( plateType$ | async ).selectTitle}}"
+                            [select]=" ( plateType$ | async ).inputFields"
+                            >
+                        </app-form-dynamic-selects>
                     </div>
                     
                 </app-form-card>
-
-                <!-- <app-form-card [title]="'Tell me what it means?'" [subTitle]="'Numberplate'">
-
-                    <app-form-dynamic-inputs 
-                        fG="one" 
-                        fGN="meanings" 
-                        [fields]="[{name: 'meaning one'}, {name: 'meaning two'}, {name: 'meaning three'}]">
-                    </app-form-dynamic-inputs>
-
-                </app-form-card>
-
-                <app-form-card [title]="'What is the ethnicity of the plate if any?'" [subTitle]="'Numberplate'">
-
-                    <app-form-dynamic-selects
-                        fG="one" 
-                        fGN="ethnicities"
-                        fCN="ethnicity"
-                        selectTitle="Ethnicity"
-                        [select]="[{name: 'Sikh'}, {name: 'Mulsim'}, {name: 'Hindu'}, {name: 'English'}, {name: 'None'}]">
-                    </app-form-dynamic-selects>
-
-                </app-form-card>
-
-                <app-form-card [title]="'Tell me how much it cost and your chosen selling price?'" [subTitle]="'Numberplate'">
-                    <app-form-dynamic-inputs 
-                        fG="one" 
-                        fGN="price" 
-                        [fields]="[{name: 'Display price'}, {name: 'Ideal selling Price'}, {name: 'Max selling price'}, {name: 'Min selling price'}, {name: 'Cost or Auction price'}, {name: 'Auction fees if applicable'}]">
-                    </app-form-dynamic-inputs>
-
-                </app-form-card>
-
-                <app-form-card [title]="'Choose your plate year?'" [subTitle]="'Numberplate'">
-                    <app-form-dynamic-selects
-                        fG="one" 
-                        fGN="registration years"
-                        fCN="year"
-                        selectTitle="Registration Years"
-                        [select]="[{name: '2020'}, {name: '2019'}, {name: '2018'}, {name: '2017'}]">
-                    </app-form-dynamic-selects>
-
-                </app-form-card> -->
+                
             </mat-step>
 
             <mat-step>
                 <ng-template matStepLabel>Personal Details</ng-template>
+
+                <app-form-card *ngFor="let fc of (formCardsTwo$ | async); index as i" [title]="fc.title" [subTitle]="fc.subTitle" [footer]="fc.footer">
+                    
+                    <!-- // Names is 0 in the array -->
+                    <div *ngIf="i===0">
+                        <app-form-dynamic-inputs 
+                            fG="{{ (names$ | async).formGroup }}"
+                            fGN="{{ (names$ | async).formGroupName }}"
+                            [fields]=" (names$ | async).inputFields "
+                            >
+                        </app-form-dynamic-inputs>
+                    </div>
+
+                    <!-- // Contact Details is 0 in the array -->
+                    <div *ngIf="i===1">
+                        <app-form-dynamic-inputs 
+                            fG="{{ (contactDetails$ | async).formGroup }}"
+                            fGN="{{ (contactDetails$ | async).formGroupName }}"
+                            [fields]=" (contactDetails$ | async).inputFields "
+                            >
+                        </app-form-dynamic-inputs>
+                    </div>
+
+                     <!-- // Address is 0 in the array -->
+                     <div *ngIf="i===2">
+                        <app-form-dynamic-inputs 
+                            fG="{{ (address$ | async).formGroup }}"
+                            fGN="{{ (address$ | async).formGroupName }}"
+                            [fields]=" (address$ | async).inputFields "
+                            >
+                        </app-form-dynamic-inputs>
+                    </div>
+
+                </app-form-card>
             </mat-step>
 
             <mat-step>
                 <ng-template matStepLabel>Keep it FREE</ng-template>
+
+                <app-form-card 
+                    [title]="'We ask these questions to keep your listing FREE at all times.'"
+                    [subTitle]="'Keep It Free'"
+                    [footer]="'Please note some information below may be passed on to interested third parties and by listing your plate for FREE you agree to these terms and conditions.'"
+                    bgColour="info"
+                    >
+
+                    <form [formGroup]="freeOr12Group" class="my-3">
+                        <div formGroupName="freeOr12">
+                            <div class="d-flex flex-column justify-content-center align-items-left">
+                                <mat-slide-toggle formControlName="free"
+                                                  (change)="onChangeFreeOr12($event)"
+                                                  [checked]="!freeOr12Group.get('freeOr12').get('12').value">
+                                                  keep it FREE!
+                                </mat-slide-toggle>
+                            </div>
+                        </div>
+                    </form>
+                </app-form-card>
+
+                <app-form-card 
+                    [title]="'You also have an option to list your plate for a one off fee of £12.'"
+                    [subTitle]="'Standard Paid Listing'"
+                    [footer]="'If you choose this option we will never share any of your information with anyone.'"
+                    bgColour="green"
+                    >
+
+                    <form [formGroup]="freeOr12Group" class="my-3">
+                        <div formGroupName="freeOr12">
+                            <div class="d-flex flex-column justify-content-center align-items-left">
+                                <mat-slide-toggle formControlName="12"
+                                                  (change)="onChange12($event)"
+                                                  [checked]="!freeOr12Group.get('freeOr12').get('free').value">
+                                                  or list each olate for only £12!
+                                </mat-slide-toggle>
+                            </div>
+                        </div>
+                    </form>
+                </app-form-card>
+
+                <span *ngIf="showFormUnlessPay12">
+                    <app-form-card *ngFor="let fc of (formCardsThree$ | async); index as i" [title]="fc.title" [subTitle]="fc.subTitle" [footer]="fc.footer">
+                    
+                        <!-- // car is 0 in the array -->
+                        <div *ngIf="i===0">
+                            <app-form-dynamic-inputs 
+                                fG="{{ (car$ | async).formGroup }}"
+                                fGN="{{ (car$ | async).formGroupName }}"
+                                [fields]=" (car$ | async).inputFields "
+                                >
+                            </app-form-dynamic-inputs>
+                        </div>
+    
+                        <!-- // carInsurances is 0 in the array -->
+                        <div *ngIf="i===1">
+                            <app-form-dynamic-inputs 
+                                fG="{{ (carInsurance$ | async).formGroup }}"
+                                fGN="{{ (carInsurance$ | async).formGroupName }}"
+                                [fields]=" (carInsurance$ | async).inputFields "
+                                >
+                            </app-form-dynamic-inputs>
+                        </div>
+    
+                         <!-- // houseInsurance is 0 in the array -->
+                         <div *ngIf="i===2">
+                            <app-form-dynamic-inputs 
+                                fG="{{ (houseInsurance$ | async).formGroup }}"
+                                fGN="{{ (houseInsurance$ | async).formGroupName }}"
+                                [fields]=" (houseInsurance$ | async).inputFields "
+                                >
+                            </app-form-dynamic-inputs>
+                        </div>
+    
+                        <!-- // mobile is 0 in the array -->
+                        <div *ngIf="i===3">
+                            <app-form-dynamic-inputs 
+                                fG="{{ (mobile$ | async).formGroup }}"
+                                fGN="{{ (mobile$ | async).formGroupName }}"
+                                [fields]=" (mobile$ | async).inputFields "
+                                >
+                            </app-form-dynamic-inputs>
+                        </div>
+    
+                        <!-- // electricCar is 0 in the array -->
+                        <div *ngIf="i===4">
+                            <app-form-dynamic-inputs 
+                                fG="{{ (electricCar$ | async).formGroup }}"
+                                fGN="{{ (electricCar$ | async).formGroupName }}"
+                                [fields]=" (electricCar$ | async).inputFields "
+                                >
+                            </app-form-dynamic-inputs>
+                        </div>
+    
+                    </app-form-card>
+                </span>
+                
+
             </mat-step>
 
             <mat-step>

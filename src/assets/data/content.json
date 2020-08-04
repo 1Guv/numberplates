@@ -416,6 +416,230 @@
                     "name": "Dateless eg ABC 1"
                 }
             ]
+        },
+        "formCardsTwo": [
+            {
+                "title": "Whats your name?",
+                "subTitle": "Personal Details",
+                "footer": ""
+            },
+            {
+                "title": "Whats your contact details?",
+                "subTitle": "Personal Details",
+                "footer": ""
+            },
+            {
+                "title": "Whats your address?",
+                "subTitle": "Personal Details",
+                "footer": ""
+            }
+        ],
+        "names": {
+            "formGroup": "two",
+            "formGroupName": "names",
+            "inputFields": [
+                {
+                    "name": "First Name",
+                    "required": true
+                },
+                {
+                    "name": "Middle Name",
+                    "required": false
+                },
+                {
+                    "name": "Last Name",
+                    "required": true
+                },
+                {
+                    "name": "Nick Name",
+                    "required": false
+                }
+            ]
+        },
+        "contactDetails": {
+            "formGroup": "two",
+            "formGroupName": "Contact Details",
+            "inputFields": [
+                {
+                    "name": "Email address we will contact you on",
+                    "required": true
+                },
+                {
+                    "name": "Email address that we will display",
+                    "required": true
+                },
+                {
+                    "name": "Number we will contact you on",
+                    "required": true
+                },
+                {
+                    "name": "Number we will display",
+                    "required": true
+                }
+            ]
+        },
+        "address": {
+            "formGroup": "two",
+            "formGroupName": "Address",
+            "inputFields": [
+                {
+                    "name": "House Number",
+                    "required": true
+                },
+                {
+                    "name": "Street / Road / Avenue etc",
+                    "required": true
+                },
+                {
+                    "name": "City / Town",
+                    "required": true
+                },
+                {
+                    "name": "Postcode",
+                    "required": true
+                },
+                {
+                    "name": "Country",
+                    "required": true
+                }
+            ]
+        },
+        "formCardsThree": [
+            {
+                "title": "Car",
+                "subTitle": "Keep It Free",
+                "footer": ""
+            },
+            {
+                "title": "Car Insurance",
+                "subTitle": "Keep It Free",
+                "footer": ""
+            },
+            {
+                "title": "House Insurance",
+                "subTitle": "Keep It Free",
+                "footer": ""
+            },
+            {
+                "title": "Mobile Contract",
+                "subTitle": "Keep It Free",
+                "footer": ""
+            },
+            {
+                "title": "Electric car",
+                "subTitle": "Keep It Free",
+                "footer": ""
+            }
+        ],
+        "car": {
+            "formGroup": "three",
+            "formGroupName": "Car",
+            "inputFields": [
+                {
+                    "name": "What car do you drive?",
+                    "required": true
+                },
+                {
+                    "name": "Is it on lease or do you own your vehicle?",
+                    "required": true
+                },
+                {
+                    "name": "Are you satisfied by your car? Y/N",
+                    "required": true
+                },
+                {
+                    "name": "What car do you want to buy or lease next?",
+                    "required": true
+                },
+                {
+                    "name": "If money was no object what car would you buy?",
+                    "required": true
+                }
+            ]
+        },
+        "carInsurance": {
+            "formGroup": "three",
+            "formGroupName": "Car Insurance",
+            "inputFields": [
+                {
+                    "name": "What is your car insurance renewal date?",
+                    "required": true
+                },
+                {
+                    "name": "Do you pay your car insurance monthly or yearly?",
+                    "required": true
+                },
+                {
+                    "name": "What is your current excess?",
+                    "required": true
+                },
+                {
+                    "name": "Which company do you have insurance with?",
+                    "required": true
+                }
+            ]
+        },
+        "houseInsurance": {
+            "formGroup": "three",
+            "formGroupName": "House Insurance",
+            "inputFields": [
+                {
+                    "name": "What is your house insurance renewal date?",
+                    "required": true
+                },
+                {
+                    "name": "Do you pay your house insurance monthly or yearly?",
+                    "required": true
+                },
+                {
+                    "name": "Which company do you have insurance with?",
+                    "required": true
+                }
+            ]
+        },
+        "mobile": {
+            "formGroup": "three",
+            "formGroupName": "Mobile",
+            "inputFields": [
+                {
+                    "name": "What is your mobile phone contract renewal date?",
+                    "required": true
+                },
+                {
+                    "name": "Do you have mobile phone insurance?",
+                    "required": true
+                },
+                {
+                    "name": "How long have you had your mobile number?",
+                    "required": true
+                },
+                {
+                    "name": "What mobile phone do you own?",
+                    "required": true
+                }
+            ]
+        },
+        "electricCar": {
+            "formGroup": "three",
+            "formGroupName": "Electric Car",
+            "inputFields": [
+                {
+                    "name": "Would you buy an electric car as your next vehicle?",
+                    "required": true
+                },
+                {
+                    "name": "Whats your favourite electric car right now?",
+                    "required": true
+                },
+                {
+                    "name": "Have you ever test driven an electric car?",
+                    "required": true
+                },
+                {
+                    "name": "What is stopping you buying an electric car right now?",
+                    "required": true
+                }
+            ]
         }
 
     }
