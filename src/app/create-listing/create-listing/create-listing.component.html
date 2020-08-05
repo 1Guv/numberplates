@@ -277,7 +277,11 @@
 
                 <app-section-content [howItWorks]="premium$ | async"></app-section-content>
 
-                <mat-card class="mx-4 my-4 mat-elevation-z4">
+                <!-- TODO: Change howItWorks to something generic -->
+                <!-- TODO: Create a Bootstrap reuseable carousel component and put the data in the json -->
+                <!-- TODO: need to use data-touch on the carousel and test on mobile -->
+
+                <mat-card class="mx-4 my-4 mat-elevation-z4" style="background-color: #eef0f3;">
                     <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
                           <div class="carousel-item active" data-interval="5000">
@@ -310,7 +314,7 @@
         </mat-horizontal-stepper>
 
         <pre>{{ plateForm.valid | json }}</pre>
-        <pre>{{ plateForm.value | json }}</pre>
+        <!-- <pre>{{ plateForm.value | json }}</pre> -->
           
     </div>
 </section>
