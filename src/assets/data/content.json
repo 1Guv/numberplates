@@ -640,7 +640,50 @@
                     "required": true
                 }
             ]
-        }
+        },
+        "premium": [
+            {
+                "subTitle": "PREMIUM Listing",
+                "title": "We can also blast your plate on our <b>Facebook Advertising Network</b> to give you mad exposure.",
+                "paragraph": "This is not a FB post, which you can post for FREE, but an expensive fine tuned promotion of your plate to the targeted audience. We have the know how to get fast engagement, clicks and reactions for your plate.:",
+                "list": [
+                    {
+                        "listTitle": "We create highly targeted <b>Facebook</b> adverts for each plate.",
+                        "listIcon": "done_outline"
+                    },
+                    {
+                        "listTitle": "Do not confuse a <b>free FB post</b> with an <b>expensive FB advert!</b>.",
+                        "listIcon": "done_outline"
+                    },
+                    {
+                        "listTitle": "For example a <b>KHAN</b> plate would be shown to lots of <b>Khan's</b> on Facebook providing lots of quality enquiries with minimum effort.",
+                        "listIcon": "done_outline"
+                    },
+                    {
+                        "listTitle": "On average your plate would have over <b>30,000</b> views.",
+                        "listIcon": "done_outline"
+                    },
+                    {
+                        "listTitle": "Currently you cant do the above on <b>Instagram</b> or <b>Twitter</b>.",
+                        "listIcon": "done_outline"
+                    },
+                    {
+                        "listTitle": "This can be activated at any time and costs <b>£150</b>.",
+                        "listIcon": "done_outline"
+                    },
+                    {
+                        "listTitle": "<small>Please note we can <b>guarantee enquires</b> depending on the combination and the price but cant guarantee a <b>sale!</b></small>.",
+                        "listIcon": "done_outline"
+                    }
+                ],
+                "imageLeft": false,
+                "imageRight": false,
+                "imageUrl": "./assets/fb-mobile-4.svg",
+                "ctaButtonText": "",
+                "ctaButtonUrl": "",
+                "ctaButtonSubText": ""
+            }
+        ]
 
     }
 

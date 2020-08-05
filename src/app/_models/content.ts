@@ -30,6 +30,8 @@ export interface CreateListing {
     houseInsurance: FormSetup;
     mobile: FormSetup;
     electricCar: FormSetup;
+
+    premium: Section;
 }
 
 export interface Footer {

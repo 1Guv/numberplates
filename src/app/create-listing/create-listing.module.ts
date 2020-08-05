@@ -12,6 +12,7 @@ import { FormCardComponent } from '../_elements/form-card/form-card.component';
 import { FormDynamicInputsComponent } from '../_forms/form-dynamic-inputs/form-dynamic-inputs.component';
 import { FormDynamicSelectsComponent } from '../_forms/form-dynamic-selects/form-dynamic-selects.component';
 import { FormDynamicCheckboxesComponent } from '../_forms/form-dynamic-checkboxes/form-dynamic-checkboxes.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { FormDynamicCheckboxesComponent } from '../_forms/form-dynamic-checkboxe
     FormCardComponent,
     FormDynamicInputsComponent,
     FormDynamicSelectsComponent,
-    FormDynamicCheckboxesComponent
+    FormDynamicCheckboxesComponent,
   ],
   imports: [ 
     CommonModule, 
@@ -34,7 +35,8 @@ import { FormDynamicCheckboxesComponent } from '../_forms/form-dynamic-checkboxe
     MatSlideToggleModule,
     MatCardModule,
     MatStepperModule,
-    MatSelectModule
+    MatSelectModule,
+    SharedModule
   ],
   exports: [CreateListingComponent]
 })

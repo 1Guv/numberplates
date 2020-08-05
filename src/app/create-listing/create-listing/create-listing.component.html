@@ -274,6 +274,37 @@
 
             <mat-step>
                 <ng-template matStepLabel>Premuim</ng-template>
+
+                <app-section-content [howItWorks]="premium$ | async"></app-section-content>
+
+                <mat-card class="mx-4 my-4 mat-elevation-z4">
+                    <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                          <div class="carousel-item active" data-interval="5000">
+                            <img src="./assets/premium-fb-screen-shots/SS1-JAT1BOY.png" class="d-block w-100" alt="Facebook advert screen shot 1 - JAT 1 BOY plate">
+                          </div>
+                          <div class="carousel-item" data-interval="5000">
+                            <img src="./assets/premium-fb-screen-shots/SS2-USM24N.png" class="d-block w-100" alt="Facebook advert screen shot 2 - USMAN plate">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="./assets/premium-fb-screen-shots/SS3-SA18ABA.png" class="d-block w-100" alt="Facebook advert screen shot 3 - SAI BABA plate">
+                          </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </div>
+                </mat-card>
+
+                <mat-card class="mx-4 my-4 mat-elevation-z4">
+                    <img src="./assets/fb-mobile-4.svg" alt="Premium listings on Facebook">
+                </mat-card>
+
             </mat-step>
 
         </mat-horizontal-stepper>

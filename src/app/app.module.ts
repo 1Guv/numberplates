@@ -9,8 +9,8 @@ import { MatButtonModule, MatIconModule, MatTooltipModule, MatToolbarModule, Mat
 import { HomeCtaComponent } from './_elements/home-cta/home-cta.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
-import { SectionContentComponent } from './_elements/section-content/section-content.component';
 import { FooterComponent } from './_elements/footer/footer.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,6 @@ import { FooterComponent } from './_elements/footer/footer.component';
     HeaderComponent,
     HomeCtaComponent,
     HomeComponent,
-    SectionContentComponent,
     FooterComponent
   ],
   imports: [
@@ -31,6 +30,7 @@ import { FooterComponent } from './_elements/footer/footer.component';
     MatToolbarModule,
     HttpClientModule,
     MatCardModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
