@@ -1,0 +1,31 @@
+<div class="" [ngStyle]="{'background-color': bgColour}">
+    <div id="carousel" 
+        class="carousel slide mx-auto"
+        [ngStyle]="{'max-width': containerMaxWidth}"
+        data-ride="carousel">
+
+        <div class="carousel-inner">
+
+          <div class="carousel-item"
+               *ngFor="let image of images; index as i; first as isFirst"
+               [ngClass]="{'active': isFirst}"
+               data-interval="interval">
+
+            <img src="{{image.src}}" class="d-block w-100" alt="{{image.alt}}">
+
+          </div>
+
+        </div>
+
+        <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+
+        <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+
+    </div>
+</div>

@@ -16,7 +16,7 @@
             
             <p [innerHTML]="section?.paragraph"></p>
 
-            <ul class="list-unstyled">
+            <ul *ngIf="section?.list" class="list-unstyled">
                 <span *ngFor="let option of section?.list">
                     <li class="list-indent">
                         <span class="material-icons list-style">{{ option?.listIcon }}</span>

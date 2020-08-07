@@ -32,6 +32,20 @@ export interface CreateListing {
     electricCar: FormSetup;
 
     premium: Section;
+    premiumCarouselSectionContent: Section;
+    premiumFBScreenShotsCarousel: Carousel;
+}
+
+export interface Carousel {
+    bgColour: string;
+    containerMaxWidth: string;
+    interval: number;
+    images: Array<CarouselImage>;
+}
+
+export interface CarouselImage {
+    src: string;
+    alt: string;
 }
 
 export interface Footer {

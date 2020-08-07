@@ -304,29 +304,43 @@
                 <!-- TODO: need to use data-touch on the carousel and test on mobile -->
                 <!-- TODO: need to put the carousel into app-section-component -->
 
-                <mat-card class="mx-4 my-4 mat-elevation-z4" style="background-color: #eef0f3;">
-                    <div id="carouselExampleInterval" class="carousel slide mx-auto" style="max-width: 522px;" data-ride="carousel">
-                        <div class="carousel-inner">
-                          <div class="carousel-item active" data-interval="5000">
-                            <img src="./assets/premium-fb-screen-shots/SS1-JAT1BOY.png" class="d-block w-100" alt="Facebook advert screen shot 1 - JAT 1 BOY plate">
+                <app-section-content [sectionData]="premiumCarouselSectionContent$ | async">
+
+                    <!-- <div class="" style="background-color: #eef0f3;">
+                        <div id="carouselExampleInterval" class="carousel slide mx-auto" style="max-width: 522px;" data-ride="carousel">
+                            <div class="carousel-inner">
+                              <div class="carousel-item active" data-interval="5000">
+                                <img src="./assets/premium-fb-screen-shots/SS1-JAT1BOY.png" class="d-block w-100" alt="Facebook advert screen shot 1 - JAT 1 BOY plate">
+                              </div>
+                              <div class="carousel-item" data-interval="5000">
+                                <img src="./assets/premium-fb-screen-shots/SS2-USM24N.png" class="d-block w-100" alt="Facebook advert screen shot 2 - USMAN plate">
+                              </div>
+                              <div class="carousel-item" data-interval="5000">
+                                <img src="./assets/premium-fb-screen-shots/SS3-SA18ABA.png" class="d-block w-100" alt="Facebook advert screen shot 3 - SAI BABA plate">
+                              </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="sr-only">Next</span>
+                            </a>
                           </div>
-                          <div class="carousel-item" data-interval="5000">
-                            <img src="./assets/premium-fb-screen-shots/SS2-USM24N.png" class="d-block w-100" alt="Facebook advert screen shot 2 - USMAN plate">
-                          </div>
-                          <div class="carousel-item" data-interval="5000">
-                            <img src="./assets/premium-fb-screen-shots/SS3-SA18ABA.png" class="d-block w-100" alt="Facebook advert screen shot 3 - SAI BABA plate">
-                          </div>
-                        </div>
-                        <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
-                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                          <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
-                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                          <span class="sr-only">Next</span>
-                        </a>
-                      </div>
-                </mat-card>
+                    </div> -->
+
+                    <app-bootstrap-carousel 
+                        [bgColour]="(premiumFBScreenShotsCarousel$ | async).bgColour"
+                        [containerMaxWidth]="(premiumFBScreenShotsCarousel$ | async).containerMaxWidth"
+                        [interval]="(premiumFBScreenShotsCarousel$ | async).interval"
+                        [images]="(premiumFBScreenShotsCarousel$ | async).images"
+                        >
+                    </app-bootstrap-carousel>
+
+                </app-section-content>
+
+                
 
                 <mat-card class="mx-4 my-4 mat-elevation-z4">
                     <img src="./assets/fb-mobile-4.svg" style="max-width: 100%" alt="Premium listings on Facebook">

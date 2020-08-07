@@ -683,8 +683,39 @@
                 "ctaButtonUrl": "",
                 "ctaButtonSubText": ""
             }
-        ]
-
+        ],
+        "premiumCarouselSectionContent": [
+            {
+                "subTitle": "PREMIUM Listing",
+                "title": "Premium listings get super charged on Facebook!.",
+                "paragraph": "Checkout the screen shots and the feedback for each premium listing via people <b>reached</b>, <b>enagagements</b>, <b>comments</b> and <b>shares</b>.",
+                "list": [],
+                "imageLeft": false,
+                "imageRight": false,
+                "imageUrl": "",
+                "ctaButtonText": "",
+                "ctaButtonUrl": "",
+                "ctaButtonSubText": ""
+            }
+        ],
+        "premiumFBScreenShotsCarousel": {
+            "bgColour": "#eef0f3",
+            "containerMaxWidth": "522px",
+            "interval": 5000,
+            "images": [
+                { 
+                    "src": "./assets/premium-fb-screen-shots/SS1-JAT1BOY.png",
+                    "alt": "Facebook screen shot of JAT 1 BOY plate stats"
+                },
+                { 
+                    "src": "./assets/premium-fb-screen-shots/SS2-USM24N.png",
+                    "alt": "Facebook screen shot of USMAN plate stats"
+                },
+                { 
+                    "src": "./assets/premium-fb-screen-shots/SS3-SA18ABA.png",
+                    "alt": "Facebook screen shot of SAI BABA plate stats"
+                }
+            ]
+        }
     }
-
 }
