@@ -8,7 +8,7 @@ import { Section } from 'src/app/_models/content';
 })
 export class SectionContentComponent implements OnInit {
 
-  @Input() howItWorks: Array<Section>;
+  @Input() sectionData: Array<Section>;
 
   constructor() { }
 

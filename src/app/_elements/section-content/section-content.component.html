@@ -2,7 +2,7 @@
 
     <section class="col d-flex flex-column flex-lg-row my-5 py-3 mat-elevation-z8" 
             [ngClass]="('section?.ctaButtonUrl' && 'section?.ctaButtonText')?'text-align-left':'text-align-center'" 
-            *ngFor="let section of howItWorks">
+            *ngFor="let section of sectionData">
 
         <div *ngIf="section.imageLeft" class="col order-first col-lg-5 d-flex justify-content-center">
             <img src="{{ section?.imageUrl }}" class="img-fluid">
@@ -35,6 +35,10 @@
 
                 <h6 class="text-center font-weight-lighter col-12 col-lg-6">{{ section?.ctaButtonSubText }}</h6>
             </div>
+
+            <br>
+            <ng-content class="w-100"></ng-content>
+            
         </div>
 
         <div *ngIf="section.imageRight" class="col order-first order-lg-last col-lg-5 d-flex justify-content-center">

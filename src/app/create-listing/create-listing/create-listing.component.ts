@@ -17,6 +17,7 @@ export class CreateListingComponent implements OnInit {
   heading$: Observable<string>;
   plateForm = new FormGroup({});
   freeOr12Group = new FormGroup({});
+  // premiumGroup = new FormGroup({});
 
   placeholderPlate$: Observable<string>;
   numberPlate$: Observable<string>;
@@ -70,6 +71,10 @@ export class CreateListingComponent implements OnInit {
         this.numberPlate$ = of(value);
       }  
     );
+
+    // this.premiumGroup.addControl('premiumGroupName', new FormGroup({
+    //   premium: new FormControl(false, [Validators.required])
+    // }))
   }
 
   onChangeFree(event: MatSlideToggleChange) {
