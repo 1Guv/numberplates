@@ -17,6 +17,7 @@
                     <input matInput 
                             type="text" 
                             formControlName="plate"
+                            class="action-plate"
                             maxlength="8"
                             placeholder="{{ placeholderPlate$ | async }}">
         
@@ -282,7 +283,7 @@
                 <!-- TODO: need to use data-touch on the carousel and test on mobile -->
 
                 <mat-card class="mx-4 my-4 mat-elevation-z4" style="background-color: #eef0f3;">
-                    <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+                    <div id="carouselExampleInterval" class="carousel slide mx-auto" style="width: 522px;" data-ride="carousel">
                         <div class="carousel-inner">
                           <div class="carousel-item active" data-interval="5000">
                             <img src="./assets/premium-fb-screen-shots/SS1-JAT1BOY.png" class="d-block w-100" alt="Facebook advert screen shot 1 - JAT 1 BOY plate">
@@ -290,7 +291,7 @@
                           <div class="carousel-item" data-interval="5000">
                             <img src="./assets/premium-fb-screen-shots/SS2-USM24N.png" class="d-block w-100" alt="Facebook advert screen shot 2 - USMAN plate">
                           </div>
-                          <div class="carousel-item">
+                          <div class="carousel-item" data-interval="5000">
                             <img src="./assets/premium-fb-screen-shots/SS3-SA18ABA.png" class="d-block w-100" alt="Facebook advert screen shot 3 - SAI BABA plate">
                           </div>
                         </div>
