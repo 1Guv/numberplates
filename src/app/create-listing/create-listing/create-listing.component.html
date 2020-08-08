@@ -51,26 +51,12 @@
 
         </form>
 
-        <!-- <mat-horizontal-stepper #stepper class="mx-auto">
-            <mat-step *ngFor="let stepper of stepperLabels; index as i">
-                <ng-template matStepLabel>{{ stepper.label }}
-
-                    <span *ngIf="i===0">
-                        <ng-container *ngFor="let fc of formCards">
-                            <app-form-card [title]="fc.title" [subTitle]="fc.subTitle">
-
-                            </app-form-card>
-                        </ng-container>
-                    </span>
-
-                </ng-template>
-            </mat-step>            
-        </mat-horizontal-stepper> -->
-
-        <mat-horizontal-stepper #stepper class="mx-auto">
+        <mat-horizontal-stepper #stepper>
             
             <mat-step>
-                <ng-template matStepLabel>Plate</ng-template>
+                <ng-template matStepLabel>
+                    <span class="d-none d-md-block">Plate</span>
+                </ng-template>
 
                 <app-form-card *ngFor="let fc of (formCards$ | async); index as i" [title]="fc.title" [subTitle]="fc.subTitle" [footer]="fc.footer">
                     
@@ -135,7 +121,9 @@
             </mat-step>
 
             <mat-step>
-                <ng-template matStepLabel>Personal Details</ng-template>
+                <ng-template matStepLabel>
+                    <span class="d-none d-md-block">Personal Details</span>
+                </ng-template>
 
                 <app-form-card *ngFor="let fc of (formCardsTwo$ | async); index as i" [title]="fc.title" [subTitle]="fc.subTitle" [footer]="fc.footer">
                     
@@ -173,7 +161,9 @@
             </mat-step>
 
             <mat-step>
-                <ng-template matStepLabel>Keep it FREE</ng-template>
+                <ng-template matStepLabel>
+                    <span class="d-none d-md-block">Keep it FREE</span>
+                </ng-template>
 
                 <app-form-card 
                     [title]="'We ask these questions to keep your listing FREE at all times.'"
@@ -275,7 +265,9 @@
             </mat-step>
 
             <mat-step>
-                <ng-template matStepLabel>Premuim</ng-template>
+                <ng-template matStepLabel>
+                    <span class="d-none d-md-block">Premuim</span>
+                </ng-template>
 
                 <app-section-content [sectionData]="premium$ | async">
 
@@ -306,30 +298,6 @@
 
                 <app-section-content [sectionData]="premiumCarouselSectionContent$ | async">
 
-                    <!-- <div class="" style="background-color: #eef0f3;">
-                        <div id="carouselExampleInterval" class="carousel slide mx-auto" style="max-width: 522px;" data-ride="carousel">
-                            <div class="carousel-inner">
-                              <div class="carousel-item active" data-interval="5000">
-                                <img src="./assets/premium-fb-screen-shots/SS1-JAT1BOY.png" class="d-block w-100" alt="Facebook advert screen shot 1 - JAT 1 BOY plate">
-                              </div>
-                              <div class="carousel-item" data-interval="5000">
-                                <img src="./assets/premium-fb-screen-shots/SS2-USM24N.png" class="d-block w-100" alt="Facebook advert screen shot 2 - USMAN plate">
-                              </div>
-                              <div class="carousel-item" data-interval="5000">
-                                <img src="./assets/premium-fb-screen-shots/SS3-SA18ABA.png" class="d-block w-100" alt="Facebook advert screen shot 3 - SAI BABA plate">
-                              </div>
-                            </div>
-                            <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
-                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                              <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
-                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                              <span class="sr-only">Next</span>
-                            </a>
-                          </div>
-                    </div> -->
-
                     <app-bootstrap-carousel 
                         [bgColour]="(premiumFBScreenShotsCarousel$ | async).bgColour"
                         [containerMaxWidth]="(premiumFBScreenShotsCarousel$ | async).containerMaxWidth"
@@ -339,8 +307,6 @@
                     </app-bootstrap-carousel>
 
                 </app-section-content>
-
-                
 
                 <mat-card class="mx-4 my-4 mat-elevation-z4">
                     <img src="./assets/fb-mobile-4.svg" style="max-width: 100%" alt="Premium listings on Facebook">
