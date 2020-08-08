@@ -119,6 +119,20 @@
                         
                     </app-form-card>
                 </ng-container>
+
+                <div>
+                    <button mat-button 
+                            matStepperNext
+                            [disabled]="!plateForm.get('plateGroupName').valid || 
+                                        !plateForm.get('meanings').valid ||
+                                        !plateForm.get('ethnicities').valid ||
+                                        !plateForm.get('costs').valid ||
+                                        !plateForm.get('boughtFrom').valid ||
+                                        !plateForm.get('plateType').valid"
+                            type="button">
+                            Next
+                    </button>
+                </div>
                 
             </mat-step>
 
@@ -162,6 +176,11 @@
 
                     </app-form-card>
                 </ng-container>
+
+                <div>
+                    <button mat-button matStepperPrevious type="button">Back</button>
+                    <button mat-button matStepperNext type="button">Next</button>
+                </div>
             </mat-step>
 
             <mat-step #third_step>
@@ -267,6 +286,10 @@
                     </app-form-card>
                 </span>
                 
+                <div>
+                    <button mat-button matStepperPrevious type="button">Back</button>
+                    <button mat-button matStepperNext type="button">Next</button>
+                </div>
 
             </mat-step>
 
@@ -320,12 +343,25 @@
                     <img src="./assets/fb-mobile-4.svg" style="max-width: 100%" alt="Premium listings on Facebook">
                 </mat-card>
 
+                <div>
+                    <button mat-button matStepperPrevious type="button">Back</button>
+                </div>
+
             </mat-step>
 
         </mat-horizontal-stepper>
 
-        <pre>{{ plateForm.valid | json }}</pre>
-        <!-- <pre>{{ plateForm.value | json }}</pre> -->
+        <pre class="text-left">{{ plateForm.get('plateGroupName').valid | json }}</pre>
+        <pre class="text-left">{{ plateForm.get('meanings').valid | json }}</pre>
+        <pre class="text-left">{{ plateForm.get('ethnicities').valid | json }}</pre>
+        <pre class="text-left">{{ plateForm.get('costs').valid | json }}</pre>
+        <pre class="text-left">{{ plateForm.get('boughtFrom').valid | json }}</pre>
+        <pre class="text-left">{{ plateForm.get('plateType').valid | json }}</pre>
+
+        <br>
+
+        <pre class="text-left">{{ plateForm.valid | json }}</pre>
+        <pre class="text-left">{{ plateForm.value | json }}</pre>
           
     </div>
 </section>

@@ -16,7 +16,7 @@ export class FormDynamicSelectsComponent implements OnInit {
   @Input() selectTitle: string;
 
   selectedElement: string = '';
-  selectedElementControl = new FormControl(this.selectedElement);
+  selectedElementControl = new FormControl(this.selectedElement, [Validators.required]);
 
   constructor(
     private parentForm: CreateListingComponent,
