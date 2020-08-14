@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CreateListingComponent } from './create-listing/create-listing.component';
 import { CreateListingRoutingModule } from './create-listing-routing';
 import { LargePlateDisplayInputComponent } from '../_elements/large-plate-display-input/large-plate-display-input.component';
-import { MatFormFieldModule, MatIconModule, MatInputModule, MatStepperModule, MatSelectModule } from '@angular/material';
+import { MatFormFieldModule, MatIconModule, MatInputModule, MatStepperModule, MatSelectModule, MatExpansionModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
@@ -13,6 +13,7 @@ import { FormDynamicInputsComponent } from '../_forms/form-dynamic-inputs/form-d
 import { FormDynamicSelectsComponent } from '../_forms/form-dynamic-selects/form-dynamic-selects.component';
 import { FormDynamicCheckboxesComponent } from '../_forms/form-dynamic-checkboxes/form-dynamic-checkboxes.component';
 import { SharedModule } from '../shared/shared.module';
+import { CreateListingTwoComponent } from './create-listing-two/create-listing-two.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { SharedModule } from '../shared/shared.module';
     FormDynamicInputsComponent,
     FormDynamicSelectsComponent,
     FormDynamicCheckboxesComponent,
+    CreateListingTwoComponent,
   ],
   imports: [ 
     CommonModule, 
@@ -36,7 +38,8 @@ import { SharedModule } from '../shared/shared.module';
     MatCardModule,
     MatStepperModule,
     MatSelectModule,
-    SharedModule
+    SharedModule,
+    MatExpansionModule
   ],
   exports: [CreateListingComponent]
 })

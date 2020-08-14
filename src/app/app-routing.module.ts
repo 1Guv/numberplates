@@ -5,7 +5,8 @@ import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'create-listing', loadChildren: './create-listing/create-listing.module#CreateListingModule' }
+  { path: 'create-listing', loadChildren: './create-listing/create-listing.module#CreateListingModule' },
+  { path: 'create-listing-two', loadChildren: './create-listing/create-listing.module#CreateListingModule' },
 ];
 
 @NgModule({

@@ -11,6 +11,8 @@ import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './_elements/footer/footer.component';
 import { SharedModule } from './shared/shared.module';
+import { CreateListingComponent } from './create-listing/create-listing/create-listing.component';
+import { CreateListingTwoComponent } from './create-listing/create-listing-two/create-listing-two.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,7 @@ import { SharedModule } from './shared/shared.module';
     MatCardModule,
     SharedModule
   ],
-  providers: [],
+  providers: [CreateListingComponent, CreateListingTwoComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
