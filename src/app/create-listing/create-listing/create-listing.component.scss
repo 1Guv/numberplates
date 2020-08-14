@@ -1,0 +1,29 @@
+#create-listing {
+    // height: 100%;
+    // clip-path: polygon(0 0, 100% 0, 100% 53%, 0% 100%);
+    background-color: #F8F8F8;
+
+    h1 {
+        font-family: GellixMedium, sans-serif;
+        font-size: 3.3rem;
+        line-height: 1.1;
+        margin-bottom: 1.0em;
+        max-width: 700px;
+        width: 100%;
+    }
+
+    // Removes border around close icon
+    button {
+        border: 0 !important;
+    }
+
+    .field-width {
+        width: 250px;
+    }
+
+    mat-horizontal-stepper {
+        max-width: 800px;
+        width: 100%;
+        background-color: #F8F8F8;
+    }
+}

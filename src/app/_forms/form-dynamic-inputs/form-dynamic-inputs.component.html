@@ -1,0 +1,24 @@
+
+<form [formGroup]="fG">
+
+    <div formGroupName="{{fGN}}"
+         class="d-flex flex-column align-items-center justify-content-center">
+
+
+        <ng-container *ngIf="fields">
+            <div *ngFor="let field of fields" class="w-100">
+                <mat-form-field appearance="fill">
+                    <mat-label>{{field.name}}</mat-label>
+                    <input matInput formControlName="{{field.name}}">
+                </mat-form-field>
+            </div >    
+        </ng-container>
+
+        <!-- // TODO: need to add error messaging to the api and here with ng dirty etc -->
+        <!-- // TODO: move to inline template -->
+
+
+    </div>
+    
+</form>
+

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ContentService } from '../services/content.service';
-import { Section } from '../models/content';
+import { ContentService } from '../_services/content.service';
+import { Section } from '../_models/content';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-home',
@@ -9,15 +11,13 @@ import { Section } from '../models/content';
 })
 export class HomeComponent implements OnInit {
 
-  howItWorks: Array<Section>;
+  // howItWorks: Array<Section>;
+  howItWorks$: Observable<Array<Section>>;
 
   constructor(private contentService: ContentService) { }
 
   ngOnInit() {
-    this.contentService.getContent()
-      .subscribe(data => {
-        this.howItWorks = data.homeCTA.howItWorks;
-      })
+    this.howItWorks$ = this.contentService.content$.pipe(map(content => content.homeCTA.howItWorks));
   }
 
 }

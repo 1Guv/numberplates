@@ -1,1 +1,367 @@
-<p>create-listing works!</p>
+<section id="create-listing" class="container-fluid">
+    <div class="d-flex flex-column justify-content-center align-items-center py-5 text-center">
+
+
+        <h1>{{ heading$ | async }}</h1>
+
+        <app-large-plate-display-input [plate]="numberPlate$ | async"></app-large-plate-display-input>
+
+        <br>
+        
+        <form [formGroup]="plateForm" class="mb-5">
+
+            <div formGroupName="plateGroupName">
+
+                <mat-form-field appearance="fill" class="field-width">
+                    <mat-label>Please enter your plate</mat-label>
+                    <input matInput 
+                            type="text" 
+                            formControlName="plate"
+                            class="action-plate"
+                            maxlength="8"
+                            placeholder="{{ placeholderPlate$ | async }}">
+        
+                    <button *ngIf="plateForm.get('plateGroupName').get('plate').value"
+                            mat-button
+                            mat-icon-button 
+                            aria-label="Clear"
+                            matSuffix
+                            (click)="plateForm.get('plateGroupName').get('plate').setValue('')">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                </mat-form-field>
+
+                <br>
+                
+                
+                    <div class="d-flex flex-column justify-content-center align-items-left">
+                        <mat-slide-toggle formControlName="free"
+                                        (change)="onChangeFree($event)"
+                                        [checked]="!plateForm.get('plateGroupName').get('premium').value">
+                                        FREE!
+                        </mat-slide-toggle>
+                        <br>
+                        <mat-slide-toggle formControlName="premium"
+                                        (change)="onChangePremium($event)"
+                                        [checked]="!plateForm.get('plateGroupName').get('free').value">
+                                        PREMIUM!
+                        </mat-slide-toggle>
+                    </div>
+                </div>
+
+        </form>
+
+        <mat-horizontal-stepper #stepper>
+            
+            <mat-step #first_step>
+                <ng-template matStepLabel>
+                    <span class="d-none d-md-block">Plate</span>
+                </ng-template>
+
+                <ng-container *ngIf="stepper.selected == null || stepper.selected == first_step">
+                    <app-form-card *ngFor="let fc of (formCards$ | async); index as i" [title]="fc.title" [subTitle]="fc.subTitle" [footer]="fc.footer">
+                    
+                        <!-- // Meanings is 0 in the array -->
+                        <div *ngIf="i===0">
+                            <app-form-dynamic-inputs 
+                                fG="{{ (meanings$ | async).formGroup }}"
+                                fGN="{{ (meanings$ | async).formGroupName }}"
+                                [fields]=" (meanings$ | async).inputFields "
+                                >
+                            </app-form-dynamic-inputs>
+                        </div>
+    
+                        <!-- // Ethnicities is 1 in the array -->
+                        <div *ngIf="i===1">
+                            <app-form-dynamic-selects 
+                                fG="{{ ( ethnicities$ | async ).formGroup}}"
+                                fGN="{{ ( ethnicities$ | async ).formGroupName}}"
+                                fCN="{{ ( ethnicities$ | async ).formGroupName}}"
+                                selectTitle="{{ ( ethnicities$ | async ).selectTitle}}"
+                                [select]=" ( ethnicities$ | async ).inputFields"
+                                >
+                            </app-form-dynamic-selects>
+                        </div>
+    
+                        <!-- Costs -->
+                        <div *ngIf="i===2">
+                            <app-form-dynamic-inputs 
+                                fG="{{ (costs$ | async).formGroup }}"
+                                fGN="{{ (costs$ | async).formGroupName }}"
+                                [fields]=" (costs$ | async).inputFields "
+                                >
+                            </app-form-dynamic-inputs>
+                        </div>
+    
+                        <!-- Bought from -->
+                        <div *ngIf="i===3">
+                            <app-form-dynamic-selects 
+                                fG="{{ ( boughtFrom$ | async ).formGroup}}"
+                                fGN="{{ ( boughtFrom$ | async ).formGroupName}}"
+                                fCN="{{ ( boughtFrom$ | async ).formGroupName}}"
+                                selectTitle="{{ ( boughtFrom$ | async ).selectTitle}}"
+                                [select]=" ( boughtFrom$ | async ).inputFields"
+                                >
+                            </app-form-dynamic-selects>
+                        </div>
+    
+                        <!-- Plate type -->
+                        <div *ngIf="i===4">
+                            <app-form-dynamic-selects 
+                                fG="{{ ( plateType$ | async ).formGroup}}"
+                                fGN="{{ ( plateType$ | async ).formGroupName}}"
+                                fCN="{{ ( plateType$ | async ).formGroupName}}"
+                                selectTitle="{{ ( plateType$ | async ).selectTitle}}"
+                                [select]=" ( plateType$ | async ).inputFields"
+                                >
+                            </app-form-dynamic-selects>
+                        </div>
+                        
+                    </app-form-card>
+                </ng-container>
+
+                <div>
+                    <button mat-button 
+                            matStepperNext
+                            [disabled]="!plateForm.get('plateGroupName').valid || 
+                                        !plateForm.get('meanings').valid ||
+                                        !plateForm.get('ethnicities').valid ||
+                                        !plateForm.get('costs').valid ||
+                                        !plateForm.get('boughtFrom').valid ||
+                                        !plateForm.get('plateType').valid"
+                            type="button">
+                            Next
+                    </button>
+                </div>
+                
+            </mat-step>
+
+            <mat-step #second_step>
+                <ng-template matStepLabel>
+                    <span class="d-none d-md-block">Personal Details</span>
+                </ng-template>
+
+                <ng-container *ngIf="stepper.selected == second_step">
+                    <app-form-card *ngFor="let fc of (formCardsTwo$ | async); index as i" [title]="fc.title" [subTitle]="fc.subTitle" [footer]="fc.footer">
+                    
+                    <!-- // Names is 0 in the array -->
+                    <div *ngIf="i===0">
+                        <app-form-dynamic-inputs 
+                            fG="{{ (names$ | async).formGroup }}"
+                            fGN="{{ (names$ | async).formGroupName }}"
+                            [fields]=" (names$ | async).inputFields "
+                            >
+                        </app-form-dynamic-inputs>
+                    </div>
+
+                    <!-- // Contact Details is 0 in the array -->
+                    <div *ngIf="i===1">
+                        <app-form-dynamic-inputs 
+                            fG="{{ (contactDetails$ | async).formGroup }}"
+                            fGN="{{ (contactDetails$ | async).formGroupName }}"
+                            [fields]=" (contactDetails$ | async).inputFields "
+                            >
+                        </app-form-dynamic-inputs>
+                    </div>
+
+                     <!-- // Address is 0 in the array -->
+                     <div *ngIf="i===2">
+                        <app-form-dynamic-inputs 
+                            fG="{{ (address$ | async).formGroup }}"
+                            fGN="{{ (address$ | async).formGroupName }}"
+                            [fields]=" (address$ | async).inputFields "
+                            >
+                        </app-form-dynamic-inputs>
+                    </div>
+
+                    </app-form-card>
+                </ng-container>
+
+                <div>
+                    <button mat-button matStepperPrevious type="button">Back</button>
+                    <button mat-button matStepperNext type="button">Next</button>
+                </div>
+            </mat-step>
+
+            <mat-step #third_step>
+                <ng-template matStepLabel>
+                    <span class="d-none d-md-block">Keep it FREE</span>
+                </ng-template>
+
+                <ng-container *ngIf="stepper.selected == third_step">
+                    <app-form-card 
+                        [title]="'We ask these questions to keep your listing FREE at all times.'"
+                        [subTitle]="'Keep It Free'"
+                        [footer]="'Please note some information below may be passed on to interested third parties and by listing your plate for FREE you agree to these terms and conditions.'"
+                        bgColour="info"
+                        >
+
+                        <form [formGroup]="freeOr12Group" class="my-3">
+                            <div formGroupName="freeOr12">
+                                <div class="d-flex flex-column justify-content-center align-items-left">
+                                    <mat-slide-toggle formControlName="free"
+                                                    (change)="onChangeFreeOr12($event)"
+                                                    [checked]="!freeOr12Group.get('freeOr12').get('12').value">
+                                                    keep it FREE!
+                                    </mat-slide-toggle>
+                                </div>
+                            </div>
+                        </form>
+                    </app-form-card>
+                </ng-container>
+
+                <app-form-card 
+                    [title]="'You also have an option to list your plate for a one off fee of £12.'"
+                    [subTitle]="'Standard Paid Listing'"
+                    [footer]="'If you choose this option we will never share any of your information with anyone.'"
+                    bgColour="green"
+                    >
+
+                    <form [formGroup]="freeOr12Group" class="my-3">
+                        <div formGroupName="freeOr12">
+                            <div class="d-flex flex-column justify-content-center align-items-left">
+                                <mat-slide-toggle formControlName="12"
+                                                  (change)="onChange12($event)"
+                                                  [checked]="!freeOr12Group.get('freeOr12').get('free').value">
+                                                  or list each plate for only £12!
+                                </mat-slide-toggle>
+                            </div>
+                        </div>
+                    </form>
+                </app-form-card>
+
+                <span *ngIf="showFormUnlessPay12">
+                    <app-form-card *ngFor="let fc of (formCardsThree$ | async); index as i" [title]="fc.title" [subTitle]="fc.subTitle" [footer]="fc.footer">
+                    
+                        <!-- // car is 0 in the array -->
+                        <div *ngIf="i===0">
+                            <app-form-dynamic-inputs 
+                                fG="{{ (car$ | async).formGroup }}"
+                                fGN="{{ (car$ | async).formGroupName }}"
+                                [fields]=" (car$ | async).inputFields "
+                                >
+                            </app-form-dynamic-inputs>
+                        </div>
+    
+                        <!-- // carInsurances is 0 in the array -->
+                        <div *ngIf="i===1">
+                            <app-form-dynamic-inputs 
+                                fG="{{ (carInsurance$ | async).formGroup }}"
+                                fGN="{{ (carInsurance$ | async).formGroupName }}"
+                                [fields]=" (carInsurance$ | async).inputFields "
+                                >
+                            </app-form-dynamic-inputs>
+                        </div>
+    
+                         <!-- // houseInsurance is 0 in the array -->
+                         <div *ngIf="i===2">
+                            <app-form-dynamic-inputs 
+                                fG="{{ (houseInsurance$ | async).formGroup }}"
+                                fGN="{{ (houseInsurance$ | async).formGroupName }}"
+                                [fields]=" (houseInsurance$ | async).inputFields "
+                                >
+                            </app-form-dynamic-inputs>
+                        </div>
+    
+                        <!-- // mobile is 0 in the array -->
+                        <div *ngIf="i===3">
+                            <app-form-dynamic-inputs 
+                                fG="{{ (mobile$ | async).formGroup }}"
+                                fGN="{{ (mobile$ | async).formGroupName }}"
+                                [fields]=" (mobile$ | async).inputFields "
+                                >
+                            </app-form-dynamic-inputs>
+                        </div>
+    
+                        <!-- // electricCar is 0 in the array -->
+                        <div *ngIf="i===4">
+                            <app-form-dynamic-inputs 
+                                fG="{{ (electricCar$ | async).formGroup }}"
+                                fGN="{{ (electricCar$ | async).formGroupName }}"
+                                [fields]=" (electricCar$ | async).inputFields "
+                                >
+                            </app-form-dynamic-inputs>
+                        </div>
+    
+                    </app-form-card>
+                </span>
+                
+                <div>
+                    <button mat-button matStepperPrevious type="button">Back</button>
+                    <button mat-button matStepperNext type="button">Next</button>
+                </div>
+
+            </mat-step>
+
+            <mat-step #fourth_step>
+                <ng-template matStepLabel>
+                    <span class="d-none d-md-block">Premuim</span>
+                </ng-template>
+
+                <ng-container *ngIf="stepper.selected == fourth_step">
+                    <app-section-content [sectionData]="premium$ | async">
+
+                        <form [formGroup]="plateForm">
+
+                            <div formGroupName="plateGroupName">
+                                <div class="d-flex flex-column justify-content-center align-items-left">
+                                    <mat-slide-toggle formControlName="free"
+                                                    (change)="onChangeFree($event)"
+                                                    [checked]="!plateForm.get('plateGroupName').get('premium').value">
+                                                    Keep it FREE for now!
+                                    </mat-slide-toggle>
+                                    <br>
+                                    <mat-slide-toggle formControlName="premium"
+                                                    (change)="onChangePremium($event)"
+                                                    [checked]="!plateForm.get('plateGroupName').get('free').value">
+                                                    Lets go PREMIUM for £150 and turbo boost your listing on FB for faster enquiries!
+                                    </mat-slide-toggle>
+                                </div>
+                            </div>
+                        </form>
+
+                    </app-section-content>
+                </ng-container>
+
+                <!-- TODO: Create a Bootstrap reuseable carousel component and put the data in the json -->
+                <!-- TODO: need to use data-touch on the carousel and test on mobile -->
+                <!-- TODO: need to put the carousel into app-section-component -->
+
+                <app-section-content [sectionData]="premiumCarouselSectionContent$ | async">
+
+                    <app-bootstrap-carousel 
+                        [bgColour]="(premiumFBScreenShotsCarousel$ | async).bgColour"
+                        [containerMaxWidth]="(premiumFBScreenShotsCarousel$ | async).containerMaxWidth"
+                        [interval]="(premiumFBScreenShotsCarousel$ | async).interval"
+                        [images]="(premiumFBScreenShotsCarousel$ | async).images"
+                        >
+                    </app-bootstrap-carousel>
+
+                </app-section-content>
+
+                <mat-card class="mx-4 my-4 mat-elevation-z4">
+                    <img src="./assets/fb-mobile-4.svg" style="max-width: 100%" alt="Premium listings on Facebook">
+                </mat-card>
+
+                <div>
+                    <button mat-button matStepperPrevious type="button">Back</button>
+                </div>
+
+            </mat-step>
+
+        </mat-horizontal-stepper>
+
+        <pre class="text-left">{{ plateForm.get('plateGroupName').valid | json }}</pre>
+        <pre class="text-left">{{ plateForm.get('meanings').valid | json }}</pre>
+        <pre class="text-left">{{ plateForm.get('ethnicities').valid | json }}</pre>
+        <pre class="text-left">{{ plateForm.get('costs').valid | json }}</pre>
+        <pre class="text-left">{{ plateForm.get('boughtFrom').valid | json }}</pre>
+        <pre class="text-left">{{ plateForm.get('plateType').valid | json }}</pre>
+
+        <br>
+
+        <pre class="text-left">{{ plateForm.valid | json }}</pre>
+        <pre class="text-left">{{ plateForm.value | json }}</pre>
+          
+    </div>
+</section>

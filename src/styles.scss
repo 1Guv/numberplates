@@ -1,5 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
 
+h1, h2 {
+    font-family: GellixMedium, sans-serif;
+    line-height: 1.1;
+    margin-bottom: 1.0em;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h5 {
+    font-family: GellixMedium, sans-serif;
+    font-size: 20px;
+    line-height: 24px;
+    color: #00C189;
+}
+
+h6 {
+    font-family: GellixMedium, sans-serif;
+    font-size: 13px;
+    line-height: 13px;
+    color: #00C189;
+    margin: 0 16px 16px 16px !important;
+}
+
 html { overflow-y: hidden; }
 
 html, body { 
@@ -11,4 +36,25 @@ html, body {
 
 button {
     outline: none !important;
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        // font-size: 2.1rem;
+        font-size: 3.3rem !important;
+    }
+
+    h2 {
+        font-size: 2.0rem !important;
+    }
+}
+
+@media screen and (min-width: 1450px) {
+    h1 {
+        font-size: 4.5rem !important;
+    }
+}
+
+.title-green {
+    color: #00C189;
 }

@@ -1,0 +1,39 @@
+#large-plate-display-input {
+
+    // margin-top: 100px;
+
+    .plate-display {
+        height: 140px;
+        width: 500px;
+        border-radius: 1em;
+        background-color: yellow;
+        color: black;
+
+        @media screen and (max-width: 480px) {
+            width: 300px;
+            height: 100px;
+            
+            .characters {
+                font-size: 4rem;
+            }
+        }
+        
+        @media screen and (min-width: 1450px) {
+            width: 500px;
+            height: 140px;
+
+            .characters {
+                font-size: 6rem;
+            }
+
+        }
+    }
+
+    .characters {
+        font-family: GellixMedium, sans-serif;
+        font-size: 6rem;
+        line-height: 1.1;
+        text-transform: uppercase;
+        font-weight: bolder;;
+    }
+}

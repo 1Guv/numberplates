@@ -1,0 +1,27 @@
+<div class="container-fluid">
+    <div class="row">
+        <mat-toolbar class="col d-flex flex-row">
+
+            <a [routerLink]="'/'">
+                <img src="{{ (header$ | async)?.leftLogoUrl }}" class="d-none d-sm-block">
+            </a>
+
+            <a [routerLink]="'/'" class="ml-sm-auto">
+                <img src="{{ (header$ | async)?.middleLogoUrl }}" id="n-logo-size">
+                <div class="d-inline-block d-sm-none">.io</div>
+            </a>
+
+            <ng-container *ngFor="let option of (header$ | async )?.headerMenuOptions; index as i; first as isFirst">
+                <button mat-icon-button
+                        attr.aria-label="{{ option.name }}"
+                        matTooltip="{{ option.toolTip }}"
+                        [ngClass]="{'ml-auto': isFirst}">
+                    <mat-icon>{{ option.icon }}</mat-icon>
+                </button>
+            </ng-container>
+
+        </mat-toolbar>
+    </div>
+</div>
+
+<!-- <pre>{{ header$ | json }}</pre> -->

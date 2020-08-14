@@ -18,7 +18,7 @@
             {
                 "name": "List your plate now",
                 "icon": "loupe",
-                "url": "/create-listing",
+                "url": "/create-listing-two",
                 "toolTip": "List your plate now"
             },
             {
@@ -40,7 +40,7 @@
         "subMessage": "Our aim is to get all the number plates in the UK online so anyone contact the seller and make a direct offer.",
         "createListingButton": {
             "name": "List your plate for FREE",
-            "url": "/create-listing"
+            "url": "/create-listing-two"
         },
         "valuationButton": {
             "name": "Get a VALUATION now",
@@ -81,7 +81,7 @@
                 "imageRight": false,
                 "imageUrl": "./assets/one.svg",
                 "ctaButtonText": "Create a FREE listing now",
-                "ctaButtonUrl": "/create-listing",
+                "ctaButtonUrl": "/create-listing-two",
                 "ctaButtonSubText": "on average only takes 8 minutes"
             },
             {
@@ -122,7 +122,7 @@
                 "imageRight": true,
                 "imageUrl": "./assets/fb-icons.svg",
                 "ctaButtonText": "Create a FREE listing now",
-                "ctaButtonUrl": "/create-listing",
+                "ctaButtonUrl": "/create-listing-two",
                 "ctaButtonSubText": "on average only takes 8 minutes"
             },
             {
@@ -187,7 +187,7 @@
         "ctaButtons": [
             {
                 "name": "Advertse now",
-                "url": "/create-listing"
+                "url": "/create-listing-two"
             },
             {
                 "name": "Valuation",
@@ -259,6 +259,463 @@
                 "url": ""
             }
         ]
+    },
+    "createListing": {
+        "heading": "Fill in the form below and get your plate online in a few minutes.",
+        "placeholderPlate": "SE11 NOW",
+        "plateFree": false,
+        "platePremuim": true,
+        "stepperLabels": [
+            {
+                "label": "Plate"
+            },
+            {
+                "label": "Personal Details"
+            },
+            {
+                "label": "Keep it FREE!"
+            },
+            {
+                "label": "Premuim"
+            },
+            {
+                "label": "Test"
+            }
+        ],
+        "formCards": [
+            {
+                "title": "Tell me what it means?",
+                "subTitle": "Numberplate",
+                "footer": "These terms will be used for SEO so the more relevant the better."
+            },
+            {
+                "title": "What is the ethnicity of the plate if any?",
+                "subTitle": "Numberplate"
+            },
+            {
+                "title": "Tell me how much it cost and your chosen selling price?",
+                "subTitle": "Numberplate"
+            },
+            {
+                "title": "Who did you buy the plate from?",
+                "subTitle": "Numberplate"
+            },
+            {
+                "title": "Choose your plate type?",
+                "subTitle": "Numberplate"
+            }
+        ],
+        "meanings": {
+            "formGroup": "one",
+            "formGroupName": "meanings",
+            "inputFields": [
+                {
+                    "name": "Meaning 1",
+                    "required": true
+                },
+                {
+                    "name": "Meaning 2",
+                    "required": false
+                },
+                {
+                    "name": "Meaning 3",
+                    "required": false
+                },
+                {
+                    "name": "Meaning 4",
+                    "required": false
+                }
+            ]
+        },
+        "ethnicities": {
+            "formGroup": "one",
+            "formGroupName": "ethnicities",
+            "selectTitle": "Please choose an Ethnicity",
+            "inputFields": [
+                {
+                    "name": "None"
+                },
+                {
+                    "name": "Sikh"
+                },
+                {
+                    "name": "Muslim"
+                },
+                {
+                    "name": "Hindu"
+                },
+                {
+                    "name": "English"
+                },
+                {
+                    "name": "Bangladeshi"
+                },
+                {
+                    "name": "789"
+                }
+            ]
+        },
+        "costs": {
+            "formGroup": "one",
+            "formGroupName": "costs",
+            "inputFields": [
+                {
+                    "name": "What did the plate cost?",
+                    "required": true
+                },
+                {
+                    "name": "Ideal selling price",
+                    "required": true
+                },
+                {
+                    "name": "Selling price to display",
+                    "required": true
+                }
+            ]
+        },
+        "boughtFrom": {
+            "formGroup": "one",
+            "formGroupName": "boughtFrom",
+            "selectTitle": "Who did you buy the plate from?",
+            "inputFields": [
+                {
+                    "name": "Auction"
+                },
+                {
+                    "name": "DVLA direct"
+                },
+                {
+                    "name": "Private Seller"
+                },
+                {
+                    "name": "RegTransfers"
+                },
+                {
+                    "name": "National Numbers"
+                },
+                {
+                    "name": "Other"
+                }
+            ]
+        },
+        "plateType": {
+            "formGroup": "one",
+            "formGroupName": "plateType",
+            "selectTitle": "Choose the plate type?",
+            "inputFields": [
+                {
+                    "name": "Current eg: AB20 ABC"
+                },
+                {
+                    "name": "Prefix eg: A1 BCD"
+                },
+                {
+                    "name": "Suffix eg: ABC D1"
+                },
+                {
+                    "name": "Dateless eg ABC 1"
+                }
+            ]
+        },
+        "formCardsTwo": [
+            {
+                "title": "Whats your name?",
+                "subTitle": "Personal Details",
+                "footer": ""
+            },
+            {
+                "title": "Whats your contact details?",
+                "subTitle": "Personal Details",
+                "footer": ""
+            },
+            {
+                "title": "Whats your address?",
+                "subTitle": "Personal Details",
+                "footer": ""
+            }
+        ],
+        "names": {
+            "formGroup": "two",
+            "formGroupName": "names",
+            "inputFields": [
+                {
+                    "name": "First Name",
+                    "required": true
+                },
+                {
+                    "name": "Middle Name",
+                    "required": false
+                },
+                {
+                    "name": "Last Name",
+                    "required": true
+                },
+                {
+                    "name": "Nick Name",
+                    "required": false
+                }
+            ]
+        },
+        "contactDetails": {
+            "formGroup": "two",
+            "formGroupName": "Contact Details",
+            "inputFields": [
+                {
+                    "name": "Email address we will contact you on",
+                    "required": true
+                },
+                {
+                    "name": "Email address that we will display",
+                    "required": true
+                },
+                {
+                    "name": "Number we will contact you on",
+                    "required": true
+                },
+                {
+                    "name": "Number we will display",
+                    "required": true
+                }
+            ]
+        },
+        "address": {
+            "formGroup": "two",
+            "formGroupName": "Address",
+            "inputFields": [
+                {
+                    "name": "House Number",
+                    "required": true
+                },
+                {
+                    "name": "Street / Road / Avenue etc",
+                    "required": true
+                },
+                {
+                    "name": "City / Town",
+                    "required": true
+                },
+                {
+                    "name": "Postcode",
+                    "required": true
+                },
+                {
+                    "name": "Country",
+                    "required": true
+                }
+            ]
+        },
+        "formCardsThree": [
+            {
+                "title": "Car",
+                "subTitle": "Keep It Free",
+                "footer": ""
+            },
+            {
+                "title": "Car Insurance",
+                "subTitle": "Keep It Free",
+                "footer": ""
+            },
+            {
+                "title": "House Insurance",
+                "subTitle": "Keep It Free",
+                "footer": ""
+            },
+            {
+                "title": "Mobile Contract",
+                "subTitle": "Keep It Free",
+                "footer": ""
+            },
+            {
+                "title": "Electric car",
+                "subTitle": "Keep It Free",
+                "footer": ""
+            }
+        ],
+        "car": {
+            "formGroup": "three",
+            "formGroupName": "Car",
+            "inputFields": [
+                {
+                    "name": "What car do you drive?",
+                    "required": true
+                },
+                {
+                    "name": "Is it on lease or do you own your vehicle?",
+                    "required": true
+                },
+                {
+                    "name": "Are you satisfied by your car? Y/N",
+                    "required": true
+                },
+                {
+                    "name": "What car do you want to buy or lease next?",
+                    "required": true
+                },
+                {
+                    "name": "If money was no object what car would you buy?",
+                    "required": true
+                }
+            ]
+        },
+        "carInsurance": {
+            "formGroup": "three",
+            "formGroupName": "Car Insurance",
+            "inputFields": [
+                {
+                    "name": "What is your car insurance renewal date?",
+                    "required": true
+                },
+                {
+                    "name": "Do you pay your car insurance monthly or yearly?",
+                    "required": true
+                },
+                {
+                    "name": "What is your current excess?",
+                    "required": true
+                },
+                {
+                    "name": "Which company do you have insurance with?",
+                    "required": true
+                }
+            ]
+        },
+        "houseInsurance": {
+            "formGroup": "three",
+            "formGroupName": "House Insurance",
+            "inputFields": [
+                {
+                    "name": "What is your house insurance renewal date?",
+                    "required": true
+                },
+                {
+                    "name": "Do you pay your house insurance monthly or yearly?",
+                    "required": true
+                },
+                {
+                    "name": "Which company do you have insurance with?",
+                    "required": true
+                }
+            ]
+        },
+        "mobile": {
+            "formGroup": "three",
+            "formGroupName": "Mobile",
+            "inputFields": [
+                {
+                    "name": "What is your mobile phone contract renewal date?",
+                    "required": true
+                },
+                {
+                    "name": "Do you have mobile phone insurance?",
+                    "required": true
+                },
+                {
+                    "name": "How long have you had your mobile number?",
+                    "required": true
+                },
+                {
+                    "name": "What mobile phone do you own?",
+                    "required": true
+                }
+            ]
+        },
+        "electricCar": {
+            "formGroup": "three",
+            "formGroupName": "Electric Car",
+            "inputFields": [
+                {
+                    "name": "Would you buy an electric car as your next vehicle?",
+                    "required": true
+                },
+                {
+                    "name": "Whats your favourite electric car right now?",
+                    "required": true
+                },
+                {
+                    "name": "Have you ever test driven an electric car?",
+                    "required": true
+                },
+                {
+                    "name": "What is stopping you buying an electric car right now?",
+                    "required": true
+                }
+            ]
+        },
+        "premium": [
+            {
+                "subTitle": "PREMIUM Listing",
+                "title": "We can also blast your plate on our <b class=\"title-green\">Facebook Advertising Network</b> to give you mad exposure.",
+                "paragraph": "This is not a FB post, which you can post for FREE, but an expensive fine tuned promotion of your plate to the targeted audience. We have the know how to get fast engagement, clicks and reactions for your plate.:",
+                "list": [
+                    {
+                        "listTitle": "We create highly targeted <b>Facebook</b> adverts for each plate.",
+                        "listIcon": "done_outline"
+                    },
+                    {
+                        "listTitle": "Do not confuse a <b>free FB post</b> with an <b>expensive FB advert!</b>.",
+                        "listIcon": "done_outline"
+                    },
+                    {
+                        "listTitle": "For example a <b>KHAN</b> plate would be shown to lots of <b>Khan's</b> on Facebook providing lots of quality enquiries with minimum effort.",
+                        "listIcon": "done_outline"
+                    },
+                    {
+                        "listTitle": "On average your plate would have over <b>30,000</b> views.",
+                        "listIcon": "done_outline"
+                    },
+                    {
+                        "listTitle": "Currently you cant do the above on <b>Instagram</b> or <b>Twitter</b>.",
+                        "listIcon": "done_outline"
+                    },
+                    {
+                        "listTitle": "This can be activated at any time and costs <b>£150</b>.",
+                        "listIcon": "done_outline"
+                    },
+                    {
+                        "listTitle": "<small>Please note we can <b>guarantee enquires</b> depending on the combination and the price but cant guarantee a <b>sale!</b></small>.",
+                        "listIcon": "done_outline"
+                    }
+                ],
+                "imageLeft": false,
+                "imageRight": false,
+                "imageUrl": "./assets/fb-mobile-4.svg",
+                "ctaButtonText": "",
+                "ctaButtonUrl": "",
+                "ctaButtonSubText": ""
+            }
+        ],
+        "premiumCarouselSectionContent": [
+            {
+                "subTitle": "PREMIUM Listing",
+                "title": "Premium listings get super charged on Facebook!.",
+                "paragraph": "Checkout the screen shots and the feedback for each premium listing via people <b>reached</b>, <b>enagagements</b>, <b>comments</b> and <b>shares</b>.",
+                "list": [],
+                "imageLeft": false,
+                "imageRight": false,
+                "imageUrl": "",
+                "ctaButtonText": "",
+                "ctaButtonUrl": "",
+                "ctaButtonSubText": ""
+            }
+        ],
+        "premiumFBScreenShotsCarousel": {
+            "bgColour": "#eef0f3",
+            "containerMaxWidth": "522px",
+            "interval": 5000,
+            "images": [
+                { 
+                    "src": "./assets/premium-fb-screen-shots/SS1-JAT1BOY.png",
+                    "alt": "Facebook screen shot of JAT 1 BOY plate stats"
+                },
+                { 
+                    "src": "./assets/premium-fb-screen-shots/SS2-USM24N.png",
+                    "alt": "Facebook screen shot of USMAN plate stats"
+                },
+                { 
+                    "src": "./assets/premium-fb-screen-shots/SS3-SA18ABA.png",
+                    "alt": "Facebook screen shot of SAI BABA plate stats"
+                }
+            ]
+        }
     }
-
 }
