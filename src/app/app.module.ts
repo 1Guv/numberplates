@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './_elements/header/header.component';
-import { MatButtonModule, MatIconModule, MatTooltipModule, MatToolbarModule, MatCardModule } from '@angular/material';
 import { HomeCtaComponent } from './_elements/home-cta/home-cta.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -26,12 +25,7 @@ import { CreateListingTwoComponent } from './create-listing/create-listing-two/c
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatButtonModule,
-    MatIconModule,
-    MatTooltipModule,
-    MatToolbarModule,
     HttpClientModule,
-    MatCardModule,
     SharedModule
   ],
   providers: [CreateListingComponent, CreateListingTwoComponent],

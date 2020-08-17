@@ -18,10 +18,15 @@
                             class="my-1 text-left text-center"
                             (click)="$event"
                             [routerLink]="(valuationButton$ | async)?.url">
-                            Get a VALUATION now</button>
+                            Get a VALUATION now
+                    </button>
                 </div>
                 
-                <button mat-flat-button color="primary" class="text-left my-2 text-center" (click)="$event" [routerLink]="(searchButton$ |async)?.url">SEARCH 1,195 plates now</button>
+                <button mat-flat-button color="primary" 
+                        class="text-left my-2 text-center" 
+                        (click)="$event" [routerLink]="(searchButton$ |async)?.url">
+                        SEARCH 1,195 plates now
+                </button>
                 <br>
             </div>
 
