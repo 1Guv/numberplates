@@ -31,6 +31,7 @@ export interface CreateListing {
     mobile: FormSetup;
     electricCar: FormSetup;
 
+    standardListing: Section;
     premium: Section;
     premiumCarouselSectionContent: Section;
     premiumFBScreenShotsCarousel: Carousel;
@@ -91,7 +92,7 @@ export interface SocialMedia {
     name: string;
     icon: string;
     url: string;
-} 
+}
 
 export interface HomeCTA {
     mainMessage: string;
