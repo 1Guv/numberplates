@@ -166,7 +166,7 @@
                             </app-form-dynamic-inputs>
                         </div>
 
-                        <!-- // carInsurances is 0 in the array -->
+                        <!-- // carInsurances is 1 in the array -->
                         <div *ngIf="i===1">
                             <app-form-dynamic-inputs
                                 fG="{{ (carInsurance$ | async).formGroup }}"
@@ -176,7 +176,7 @@
                             </app-form-dynamic-inputs>
                         </div>
 
-                         <!-- // houseInsurance is 0 in the array -->
+                         <!-- // houseInsurance is 2 in the array -->
                          <div *ngIf="i===2">
                             <app-form-dynamic-inputs
                                 fG="{{ (houseInsurance$ | async).formGroup }}"
@@ -186,7 +186,7 @@
                             </app-form-dynamic-inputs>
                         </div>
 
-                        <!-- // mobile is 0 in the array -->
+                        <!-- // mobile is 3 in the array -->
                         <div *ngIf="i===3">
                             <app-form-dynamic-inputs
                                 fG="{{ (mobile$ | async).formGroup }}"
@@ -196,7 +196,7 @@
                             </app-form-dynamic-inputs>
                         </div>
 
-                        <!-- // electricCar is 0 in the array -->
+                        <!-- // electricCar is 4 in the array -->
                         <div *ngIf="i===4">
                             <app-form-dynamic-inputs
                                 fG="{{ (electricCar$ | async).formGroup }}"
