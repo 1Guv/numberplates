@@ -27,7 +27,7 @@ h6 {
 
 html { overflow-y: hidden; }
 
-html, body { 
+html, body {
     margin: 0;
     padding: 0;
     height: 100%;
@@ -35,6 +35,7 @@ html, body {
 }
 
 button {
+    border-width: 0 !important;
     outline: none !important;
 }
 
