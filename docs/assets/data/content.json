@@ -641,11 +641,46 @@
                 }
             ]
         },
+        "standardListing": [
+            {
+                "subTitle": "Standard Listing",
+                "title": "If you can't be arsed to fill in all those <b class=\"title-green\">punk ass questions</b>, then choose this option because we get it, it shouldn't be a long ting!",
+                "paragraph": "This choice allows you to pay us direct for listing your plate on our network, rather than our sponsors paying us for the information.",
+                "list": [
+                    {
+                        "listTitle": "You have no time to answer more <b>useless questions</b> and want to list your plate asap.",
+                        "listIcon": "done_outline"
+                    },
+                    {
+                        "listTitle": "This is a <b>one off fee</b> for each plate.",
+                        "listIcon": "done_outline"
+                    },
+                    {
+                        "listTitle": "Advertised until <b>sold</b>.",
+                        "listIcon": "done_outline"
+                    },
+                    {
+                        "listTitle": "We never take a <b>commission</b>.",
+                        "listIcon": "done_outline"
+                    },
+                    {
+                        "listTitle": "Keep your data <b>private</b>.",
+                        "listIcon": "done_outline"
+                    }
+                ],
+                "imageLeft": false,
+                "imageRight": false,
+                "imageUrl": "./assets/fb-mobile-4.svg",
+                "ctaButtonText": "",
+                "ctaButtonUrl": "",
+                "ctaButtonSubText": ""
+            }
+        ],
         "premium": [
             {
                 "subTitle": "PREMIUM Listing",
                 "title": "We can also blast your plate on our <b class=\"title-green\">Facebook Advertising Network</b> to give you mad exposure.",
-                "paragraph": "This is not a FB post, which you can post for FREE, but an expensive fine tuned promotion of your plate to the targeted audience. We have the know how to get fast engagement, clicks and reactions for your plate.:",
+                "paragraph": "This is not a FB post, which you can post for FREE, but an expensive fine tuned promotion of your plate to the targeted audience. We have the know how to get fast engagement, clicks and reactions for your plate.",
                 "list": [
                     {
                         "listTitle": "We create highly targeted <b>Facebook</b> adverts for each plate.",
@@ -703,15 +738,15 @@
             "containerMaxWidth": "522px",
             "interval": 5000,
             "images": [
-                { 
+                {
                     "src": "./assets/premium-fb-screen-shots/SS1-JAT1BOY.png",
                     "alt": "Facebook screen shot of JAT 1 BOY plate stats"
                 },
-                { 
+                {
                     "src": "./assets/premium-fb-screen-shots/SS2-USM24N.png",
                     "alt": "Facebook screen shot of USMAN plate stats"
                 },
-                { 
+                {
                     "src": "./assets/premium-fb-screen-shots/SS3-SA18ABA.png",
                     "alt": "Facebook screen shot of SAI BABA plate stats"
                 }
