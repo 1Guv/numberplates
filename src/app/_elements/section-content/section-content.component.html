@@ -1,7 +1,7 @@
 <div class="my-3 mx-3 mx-lg-4">
 
-    <section class="col d-flex flex-column flex-lg-row my-5 py-3 mat-elevation-z8" 
-            [ngClass]="('section?.ctaButtonUrl' && 'section?.ctaButtonText')?'text-align-left':'text-align-center'" 
+    <section class="col d-flex flex-column flex-lg-row my-5 py-3 mat-elevation-z8"
+            [ngClass]="('section?.ctaButtonUrl' && 'section?.ctaButtonText')?'text-align-left':'text-align-center'"
             *ngFor="let section of sectionData">
 
         <div *ngIf="section.imageLeft" class="col order-first col-lg-5 d-flex justify-content-center">
@@ -9,11 +9,11 @@
         </div>
 
         <div class="col d-flex flex-column justify-content-center">
-            
+
             <h5 class="sub-title mt-4">{{ section?.subTitle }}</h5>
-           
+
             <h2 class="main-message" [innerHTML]="section?.title"></h2>
-            
+
             <p [innerHTML]="section?.paragraph"></p>
 
             <ul *ngIf="section?.list" class="list-unstyled">
@@ -26,7 +26,7 @@
             </ul>
 
             <div *ngIf="section?.ctaButtonUrl" class="d-flex flex-column">
-                <button mat-raised-button 
+                <button mat-raised-button
                     class="my-3 text-left bg-success text-white text-center col-12 col-lg-6"
                     (click)="$event"
                     [routerLink]="section?.ctaButtonUrl">
@@ -38,7 +38,7 @@
 
             <br>
             <ng-content class="w-100"></ng-content>
-            
+
         </div>
 
         <div *ngIf="section.imageRight" class="col order-first order-lg-last col-lg-5 d-flex justify-content-center">
