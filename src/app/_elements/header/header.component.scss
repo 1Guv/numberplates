@@ -1,9 +1,10 @@
 mat-toolbar {
     background-color: #F8F8F8;
     border-bottom: lightcoral 1px solid;
+
+    .n-logo-size {
+        height: auto;
+        width: 46px;
+    }
 }
 
-#n-logo-size {
-    height: auto;
-    width: 24%;
-}
