@@ -531,6 +531,12 @@
                 "footer": ""
             }
         ],
+        "carManufacturers": {
+            "formGroup": "three",
+            "formGroupName": "Car Manufacturers",
+            "selectTitle": "Please choose a make?",
+            "inputFields": []
+        },
         "car": {
             "formGroup": "three",
             "formGroupName": "Car",
@@ -703,15 +709,15 @@
             "containerMaxWidth": "522px",
             "interval": 5000,
             "images": [
-                { 
+                {
                     "src": "./assets/premium-fb-screen-shots/SS1-JAT1BOY.png",
                     "alt": "Facebook screen shot of JAT 1 BOY plate stats"
                 },
-                { 
+                {
                     "src": "./assets/premium-fb-screen-shots/SS2-USM24N.png",
                     "alt": "Facebook screen shot of USMAN plate stats"
                 },
-                { 
+                {
                     "src": "./assets/premium-fb-screen-shots/SS3-SA18ABA.png",
                     "alt": "Facebook screen shot of SAI BABA plate stats"
                 }

@@ -5,6 +5,7 @@ import { CreateListing, FormSetup, FormCards } from 'src/app/_models/content';
 import { ContentService } from 'src/app/_services/content.service';
 import { MatSlideToggleChange } from '@angular/material';
 import { map } from 'rxjs/operators';
+import carManufacturersData from '../../../assets/data/car_manufacturers.json';
 
 @Component({
   selector: 'app-create-listing-two',
@@ -33,6 +34,9 @@ export class CreateListingTwoComponent implements OnInit {
 
   formCardsThree$: Observable<FormCards[]>;
   car$: Observable<FormSetup>;
+
+  carManufacturers$: Observable<FormSetup>;
+
   carInsurance$: Observable<FormSetup>;
   houseInsurance$: Observable<FormSetup>;
   mobile$: Observable<FormSetup>;
@@ -44,7 +48,7 @@ export class CreateListingTwoComponent implements OnInit {
   ngOnInit() {
     this.createListing$ = this.contentService.content$.pipe(map(content => content.createListing));
     this.initContent();
-    
+
     this.plateForm.addControl('plateGroupName', new FormGroup({
       plate: new FormControl('', [Validators.required]),
       free: new FormControl(true, [Validators.required]),
@@ -56,10 +60,10 @@ export class CreateListingTwoComponent implements OnInit {
     //   12: new FormControl(false, [Validators.required]),
     // }));
 
-    this.plateForm.get('plateGroupName').get('plate').valueChanges.subscribe(  
+    this.plateForm.get('plateGroupName').get('plate').valueChanges.subscribe(
       value => {
         this.numberPlate$ = of(value);
-      }  
+      }
     );
   }
 
@@ -81,6 +85,9 @@ export class CreateListingTwoComponent implements OnInit {
 
     this.formCardsThree$ = this.contentService.content$.pipe(map(content => content.createListing.formCardsThree));
     this.car$ = this.contentService.content$.pipe(map(content => content.createListing.car));
+    this.carManufacturers$ = this.contentService.content$.pipe(map(content => content.createListing.carManufacturers));
+    this.contentService.addManufacturers(carManufacturersData);
+
     this.carInsurance$ = this.contentService.content$.pipe(map(content => content.createListing.carInsurance));
     this.houseInsurance$ = this.contentService.content$.pipe(map(content => content.createListing.houseInsurance));
     this.mobile$ = this.contentService.content$.pipe(map(content => content.createListing.mobile));

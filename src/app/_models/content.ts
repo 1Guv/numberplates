@@ -26,6 +26,7 @@ export interface CreateListing {
 
     formCardsThree: Array<FormCards>;
     car: FormSetup;
+    carManufacturers: FormSetup;
     carInsurance: FormSetup;
     houseInsurance: FormSetup;
     mobile: FormSetup;
@@ -68,7 +69,7 @@ export interface FormSetup {
 
 export interface InputFields {
     name: string;
-    required: boolean
+    required?: boolean
 }
 
 export interface FormCards {
@@ -91,7 +92,7 @@ export interface SocialMedia {
     name: string;
     icon: string;
     url: string;
-} 
+}
 
 export interface HomeCTA {
     mainMessage: string;

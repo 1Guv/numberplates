@@ -7,23 +7,23 @@
         <app-large-plate-display-input [plate]="numberPlate$ | async"></app-large-plate-display-input>
 
         <br>
-        
+
         <form [formGroup]="plateForm" class="mb-5">
 
             <div formGroupName="plateGroupName">
 
                 <mat-form-field appearance="fill" class="field-width">
                     <mat-label>Please enter your plate</mat-label>
-                    <input matInput 
-                            type="text" 
+                    <input matInput
+                            type="text"
                             formControlName="plate"
                             class="action-plate"
                             maxlength="8"
                             placeholder="{{ placeholderPlate$ | async }}">
-        
+
                     <button *ngIf="plateForm.get('plateGroupName').get('plate').value"
                             mat-button
-                            mat-icon-button 
+                            mat-icon-button
                             aria-label="Clear"
                             matSuffix
                             (click)="plateForm.get('plateGroupName').get('plate').setValue('')">
@@ -32,8 +32,8 @@
                 </mat-form-field>
 
                 <br>
-                
-                
+
+
                     <div class="d-flex flex-column justify-content-center align-items-left">
                         <mat-slide-toggle formControlName="free"
                                         (change)="onChangeFree($event)"
@@ -53,10 +53,10 @@
 
         <ng-container>
             <app-form-card style="max-width: 800px; width: 100%" *ngFor="let fc of (formCards$ | async); index as i" [title]="fc.title" [subTitle]="fc.subTitle" [footer]="fc.footer">
-            
+
                 <!-- // Meanings is 0 in the array -->
                 <div *ngIf="i===0">
-                    <app-form-dynamic-inputs 
+                    <app-form-dynamic-inputs
                         fG="{{ (meanings$ | async).formGroup }}"
                         fGN="{{ (meanings$ | async).formGroupName }}"
                         [fields]=" (meanings$ | async).inputFields "
@@ -66,7 +66,7 @@
 
                 <!-- // Ethnicities is 1 in the array -->
                 <div *ngIf="i===1">
-                    <app-form-dynamic-selects 
+                    <app-form-dynamic-selects
                         fG="{{ ( ethnicities$ | async ).formGroup}}"
                         fGN="{{ ( ethnicities$ | async ).formGroupName}}"
                         fCN="{{ ( ethnicities$ | async ).formGroupName}}"
@@ -78,7 +78,7 @@
 
                 <!-- Costs -->
                 <div *ngIf="i===2">
-                    <app-form-dynamic-inputs 
+                    <app-form-dynamic-inputs
                         fG="{{ (costs$ | async).formGroup }}"
                         fGN="{{ (costs$ | async).formGroupName }}"
                         [fields]=" (costs$ | async).inputFields "
@@ -88,7 +88,7 @@
 
                 <!-- Bought from -->
                 <div *ngIf="i===3">
-                    <app-form-dynamic-selects 
+                    <app-form-dynamic-selects
                         fG="{{ ( boughtFrom$ | async ).formGroup}}"
                         fGN="{{ ( boughtFrom$ | async ).formGroupName}}"
                         fCN="{{ ( boughtFrom$ | async ).formGroupName}}"
@@ -100,7 +100,7 @@
 
                 <!-- Plate type -->
                 <div *ngIf="i===4">
-                    <app-form-dynamic-selects 
+                    <app-form-dynamic-selects
                         fG="{{ ( plateType$ | async ).formGroup}}"
                         fGN="{{ ( plateType$ | async ).formGroupName}}"
                         fCN="{{ ( plateType$ | async ).formGroupName}}"
@@ -109,14 +109,14 @@
                         >
                     </app-form-dynamic-selects>
                 </div>
-                
+
             </app-form-card>
 
             <app-form-card  style="max-width: 800px; width: 100%" *ngFor="let fc of (formCardsTwo$ | async); index as i" [title]="fc.title" [subTitle]="fc.subTitle" [footer]="fc.footer">
-                    
+
                 <!-- // Names is 0 in the array -->
                 <div *ngIf="i===0">
-                    <app-form-dynamic-inputs 
+                    <app-form-dynamic-inputs
                         fG="{{ (names$ | async).formGroup }}"
                         fGN="{{ (names$ | async).formGroupName }}"
                         [fields]=" (names$ | async).inputFields "
@@ -126,7 +126,7 @@
 
                 <!-- // Contact Details is 0 in the array -->
                 <div *ngIf="i===1">
-                    <app-form-dynamic-inputs 
+                    <app-form-dynamic-inputs
                         fG="{{ (contactDetails$ | async).formGroup }}"
                         fGN="{{ (contactDetails$ | async).formGroupName }}"
                         [fields]=" (contactDetails$ | async).inputFields "
@@ -136,7 +136,7 @@
 
                  <!-- // Address is 0 in the array -->
                  <div *ngIf="i===2">
-                    <app-form-dynamic-inputs 
+                    <app-form-dynamic-inputs
                         fG="{{ (address$ | async).formGroup }}"
                         fGN="{{ (address$ | async).formGroupName }}"
                         [fields]=" (address$ | async).inputFields "
@@ -156,57 +156,67 @@
 
                 <ng-container *ngIf="stepper.selected == null || stepper.selected == first_step">
                     <app-form-card style="max-width: 800px; width: 100%" *ngFor="let fc of (formCardsThree$ | async); index as i" [title]="fc.title" [subTitle]="fc.subTitle" [footer]="fc.footer">
-                    
-                        <!-- // car is 0 in the array -->
+
                         <div *ngIf="i===0">
-                            <app-form-dynamic-inputs 
+                            <app-form-dynamic-selects
+                                fG="{{ ( carManufacturers$ | async ).formGroup}}"
+                                fGN="{{ ( carManufacturers$ | async ).formGroupName}}"
+                                fCN="{{ ( carManufacturers$ | async ).formGroupName}}"
+                                selectTitle="{{ ( carManufacturers$ | async ).selectTitle}}"
+                                [select]=" ( carManufacturers$ | async ).inputFields"
+                                >
+                            </app-form-dynamic-selects>
+                        </div>
+
+                        <div *ngIf="i===0">
+                            <app-form-dynamic-inputs
                                 fG="{{ (car$ | async).formGroup }}"
                                 fGN="{{ (car$ | async).formGroupName }}"
                                 [fields]=" (car$ | async).inputFields "
                                 >
                             </app-form-dynamic-inputs>
                         </div>
-    
+
                         <!-- // carInsurances is 0 in the array -->
                         <div *ngIf="i===1">
-                            <app-form-dynamic-inputs 
+                            <app-form-dynamic-inputs
                                 fG="{{ (carInsurance$ | async).formGroup }}"
                                 fGN="{{ (carInsurance$ | async).formGroupName }}"
                                 [fields]=" (carInsurance$ | async).inputFields "
                                 >
                             </app-form-dynamic-inputs>
                         </div>
-    
+
                          <!-- // houseInsurance is 0 in the array -->
                          <div *ngIf="i===2">
-                            <app-form-dynamic-inputs 
+                            <app-form-dynamic-inputs
                                 fG="{{ (houseInsurance$ | async).formGroup }}"
                                 fGN="{{ (houseInsurance$ | async).formGroupName }}"
                                 [fields]=" (houseInsurance$ | async).inputFields "
                                 >
                             </app-form-dynamic-inputs>
                         </div>
-    
+
                         <!-- // mobile is 0 in the array -->
                         <div *ngIf="i===3">
-                            <app-form-dynamic-inputs 
+                            <app-form-dynamic-inputs
                                 fG="{{ (mobile$ | async).formGroup }}"
                                 fGN="{{ (mobile$ | async).formGroupName }}"
                                 [fields]=" (mobile$ | async).inputFields "
                                 >
                             </app-form-dynamic-inputs>
                         </div>
-    
+
                         <!-- // electricCar is 0 in the array -->
                         <div *ngIf="i===4">
-                            <app-form-dynamic-inputs 
+                            <app-form-dynamic-inputs
                                 fG="{{ (electricCar$ | async).formGroup }}"
                                 fGN="{{ (electricCar$ | async).formGroupName }}"
                                 [fields]=" (electricCar$ | async).inputFields "
                                 >
                             </app-form-dynamic-inputs>
                         </div>
-    
+
                     </app-form-card>
                 </ng-container>
             </mat-step>
