@@ -62,5 +62,6 @@
     {"name": "Tesla"},
     {"name": "Toyota"},
     {"name": "Volkswagen"},
-    {"name": "Volvo"}
+    {"name": "Volvo"},
+    {"name": "OTHER NOT LISTED"}
   ]

@@ -547,26 +547,70 @@
                 }
             ]
         },
-        "car": {
+        "carFinance": {
+            "formGroup": "three",
+            "formGroupName": "Car Finance",
+            "selectTitle": "How did you finance your vehicle?",
+            "inputFields": [
+                {
+                    "name": "Own my car outright"
+                },
+                {
+                    "name": "Lease"
+                },
+                {
+                    "name": "Loan"
+                },
+                {
+                    "name": "PCP"
+                },
+                {
+                    "name": "HP"
+                }
+            ]
+        },
+        "carSatisfaction": {
+            "formGroup": "three",
+            "formGroupName": "Car Satisfaction",
+            "selectTitle": "Are you satisfied with your car?",
+            "inputFields": [
+                {
+                    "name": "Yes"
+                },
+                {
+                    "name": "No"
+                },
+                {
+                    "name": "Not sure"
+                },
+                {
+                    "name": "Maybe"
+                },
+                {
+                    "name": "Prefer not to say"
+                }
+            ]
+        },
+        "carNext": {
+            "formGroup": "three",
+            "formGroupName": "Next Car",
+            "selectTitle": "What car do you want to get next?",
+            "inputFields": []
+        },
+        "carNextModel": {
+            "formGroup": "three",
+            "formGroupName": "Car Next Model",
+            "inputFields": [
+                {
+                    "name": "What model would it be?",
+                    "required": true
+                }
+            ]
+        },
+        "carMoneyNoObject": {
             "formGroup": "three",
             "formGroupName": "Car",
             "inputFields": [
-                {
-                    "name": "What car do you drive?",
-                    "required": true
-                },
-                {
-                    "name": "Is it on lease or do you own your vehicle?",
-                    "required": true
-                },
-                {
-                    "name": "Are you satisfied by your car? Y/N",
-                    "required": true
-                },
-                {
-                    "name": "What car do you want to buy or lease next?",
-                    "required": true
-                },
                 {
                     "name": "If money was no object what car would you buy?",
                     "required": true

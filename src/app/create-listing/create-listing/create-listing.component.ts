@@ -56,7 +56,7 @@ export class CreateListingComponent implements OnInit {
 
     this.createListing$ = this.contentService.content$.pipe(map(content => content.createListing));
     this.initContent();
-      
+
     this.plateForm.addControl('plateGroupName', new FormGroup({
       plate: new FormControl('', [Validators.required]),
       free: new FormControl(true, [Validators.required]),
@@ -68,10 +68,10 @@ export class CreateListingComponent implements OnInit {
       12: new FormControl(false, [Validators.required]),
     }));
 
-    this.plateForm.get('plateGroupName').get('plate').valueChanges.subscribe(  
+    this.plateForm.get('plateGroupName').get('plate').valueChanges.subscribe(
       value => {
         this.numberPlate$ = of(value);
-      }  
+      }
     );
   }
 
@@ -142,7 +142,7 @@ export class CreateListingComponent implements OnInit {
     this.address$ = this.contentService.content$.pipe(map(content => content.createListing.address));
 
     this.formCardsThree$ = this.contentService.content$.pipe(map(content => content.createListing.formCardsThree));
-    this.car$ = this.contentService.content$.pipe(map(content => content.createListing.car));
+    // this.car$ = this.contentService.content$.pipe(map(content => content.createListing.car));
     this.carInsurance$ = this.contentService.content$.pipe(map(content => content.createListing.carInsurance));
     this.houseInsurance$ = this.contentService.content$.pipe(map(content => content.createListing.houseInsurance));
     this.mobile$ = this.contentService.content$.pipe(map(content => content.createListing.mobile));
@@ -151,8 +151,8 @@ export class CreateListingComponent implements OnInit {
     this.premium$ = this.contentService.content$.pipe(map(content => content.createListing.premium));
     this.premiumCarouselSectionContent$ = this.contentService.content$.pipe(map(content => content.createListing.premiumCarouselSectionContent));
     this.premiumFBScreenShotsCarousel$ = this.contentService.content$.pipe(map(content => content.createListing.premiumFBScreenShotsCarousel));
-    
+
   }
-  
+
 
 }

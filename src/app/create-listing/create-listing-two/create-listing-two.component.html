@@ -174,10 +174,44 @@
                                 >
                             </app-form-dynamic-inputs>
 
+                            <app-form-dynamic-selects
+                                fG="{{ ( carFinance$ | async ).formGroup}}"
+                                fGN="{{ ( carFinance$ | async ).formGroupName}}"
+                                fCN="{{ ( carFinance$ | async ).formGroupName}}"
+                                selectTitle="{{ ( carFinance$ | async ).selectTitle}}"
+                                [select]=" ( carFinance$ | async ).inputFields"
+                                >
+                            </app-form-dynamic-selects>
+
+                            <app-form-dynamic-selects
+                                fG="{{ ( carSatisfaction$ | async ).formGroup}}"
+                                fGN="{{ ( carSatisfaction$ | async ).formGroupName}}"
+                                fCN="{{ ( carSatisfaction$ | async ).formGroupName}}"
+                                selectTitle="{{ ( carSatisfaction$ | async ).selectTitle}}"
+                                [select]=" ( carSatisfaction$ | async ).inputFields"
+                                >
+                            </app-form-dynamic-selects>
+
+                            <app-form-dynamic-selects
+                                fG="{{ ( carNext$ | async ).formGroup}}"
+                                fGN="{{ ( carNext$ | async ).formGroupName}}"
+                                fCN="{{ ( carNext$ | async ).formGroupName}}"
+                                selectTitle="{{ ( carNext$ | async ).selectTitle}}"
+                                [select]=" ( carNext$ | async ).inputFields"
+                                >
+                            </app-form-dynamic-selects>
+
                             <app-form-dynamic-inputs
-                                fG="{{ (car$ | async).formGroup }}"
-                                fGN="{{ (car$ | async).formGroupName }}"
-                                [fields]=" (car$ | async).inputFields "
+                                fG="{{ (carNextModel$ | async).formGroup }}"
+                                fGN="{{ (carNextModel$ | async).formGroupName }}"
+                                [fields]=" (carNextModel$ | async).inputFields "
+                                >
+                            </app-form-dynamic-inputs>
+
+                            <app-form-dynamic-inputs
+                                fG="{{ (carMoneyNoObject$ | async).formGroup }}"
+                                fGN="{{ (carMoneyNoObject$ | async).formGroupName }}"
+                                [fields]=" (carMoneyNoObject$ | async).inputFields "
                                 >
                             </app-form-dynamic-inputs>
                         </div>

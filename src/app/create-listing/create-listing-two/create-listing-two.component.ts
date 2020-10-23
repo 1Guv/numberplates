@@ -33,10 +33,13 @@ export class CreateListingTwoComponent implements OnInit {
   address$: Observable<FormSetup>;
 
   formCardsThree$: Observable<FormCards[]>;
-  car$: Observable<FormSetup>;
-
+  carFinance$: Observable<FormSetup>;
+  carSatisfaction$: Observable<FormSetup>;
   carManufacturers$: Observable<FormSetup>;
   carModels$: Observable<FormSetup>;
+  carNext$: Observable<FormSetup>;
+  carNextModel$: Observable<FormSetup>;
+  carMoneyNoObject$: Observable<FormSetup>;
 
   carInsurance$: Observable<FormSetup>;
   houseInsurance$: Observable<FormSetup>;
@@ -85,11 +88,15 @@ export class CreateListingTwoComponent implements OnInit {
     this.address$ = this.contentService.content$.pipe(map(content => content.createListing.address));
 
     this.formCardsThree$ = this.contentService.content$.pipe(map(content => content.createListing.formCardsThree));
-    this.car$ = this.contentService.content$.pipe(map(content => content.createListing.car));
     this.carManufacturers$ = this.contentService.content$.pipe(map(content => content.createListing.carManufacturers));
-    this.contentService.addManufacturers(carManufacturersData);
-
+    this.contentService.addManufacturers(carManufacturersData, 'carManufacturers');
     this.carModels$ = this.contentService.content$.pipe(map(content => content.createListing.carModels));
+    this.carFinance$ = this.contentService.content$.pipe(map(content => content.createListing.carFinance));
+    this.carSatisfaction$ = this.contentService.content$.pipe(map(content => content.createListing.carSatisfaction));
+    this.carNext$ = this.contentService.content$.pipe(map(content => content.createListing.carNext));
+    this.contentService.addManufacturers(carManufacturersData, 'carNext');
+    this.carNextModel$ = this.contentService.content$.pipe(map(content => content.createListing.carNextModel));
+    this.carMoneyNoObject$ = this.contentService.content$.pipe(map(content => content.createListing.carMoneyNoObject));
 
 
     this.carInsurance$ = this.contentService.content$.pipe(map(content => content.createListing.carInsurance));

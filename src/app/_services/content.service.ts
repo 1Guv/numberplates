@@ -16,9 +16,9 @@ export class ContentService {
     this.content$ = this.http.get<Content>('./assets/data/content.json').pipe(shareReplay(1));
    }
 
-  addManufacturers(manufacturers: Array<InputFields>) {
+  addManufacturers(manufacturers: Array<InputFields>, section: string) {
     this.content$.subscribe(content => {
-      content.createListing.carManufacturers.inputFields = manufacturers;
+      content.createListing[section].inputFields = manufacturers;
     })
     this.$manufacturers.next(this.content$);
   }

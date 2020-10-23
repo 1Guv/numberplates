@@ -25,9 +25,14 @@ export interface CreateListing {
     address: FormSetup;
 
     formCardsThree: Array<FormCards>;
-    car: FormSetup;
     carManufacturers: FormSetup;
     carModels: FormSetup;
+    carFinance: FormSetup;
+    carSatisfaction: FormSetup;
+    carNext: FormSetup;
+    carNextModel: FormSetup;
+    carMoneyNoObject: FormSetup;
+
     carInsurance: FormSetup;
     houseInsurance: FormSetup;
     mobile: FormSetup;
