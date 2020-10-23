@@ -537,6 +537,16 @@
             "selectTitle": "Please choose a make?",
             "inputFields": []
         },
+        "carModels": {
+            "formGroup": "three",
+            "formGroupName": "Car Model",
+            "inputFields": [
+                {
+                    "name": "What model of car do you drive?",
+                    "required": true
+                }
+            ]
+        },
         "car": {
             "formGroup": "three",
             "formGroupName": "Car",

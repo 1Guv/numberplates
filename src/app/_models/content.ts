@@ -27,6 +27,7 @@ export interface CreateListing {
     formCardsThree: Array<FormCards>;
     car: FormSetup;
     carManufacturers: FormSetup;
+    carModels: FormSetup;
     carInsurance: FormSetup;
     houseInsurance: FormSetup;
     mobile: FormSetup;

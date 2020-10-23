@@ -166,9 +166,14 @@
                                 [select]=" ( carManufacturers$ | async ).inputFields"
                                 >
                             </app-form-dynamic-selects>
-                        </div>
 
-                        <div *ngIf="i===0">
+                            <app-form-dynamic-inputs
+                                fG="{{ (carModels$ | async).formGroup }}"
+                                fGN="{{ (carModels$ | async).formGroupName }}"
+                                [fields]=" (carModels$ | async).inputFields "
+                                >
+                            </app-form-dynamic-inputs>
+
                             <app-form-dynamic-inputs
                                 fG="{{ (car$ | async).formGroup }}"
                                 fGN="{{ (car$ | async).formGroupName }}"
