@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { CreateListingTwoComponent } from 'src/app/create-listing/create-listing-two/create-listing-two.component';
 import { CreateListingComponent } from 'src/app/create-listing/create-listing/create-listing.component';
 
 @Component({
@@ -19,7 +20,8 @@ export class FormDynamicSelectsComponent implements OnInit {
   selectedElementControl = new FormControl(this.selectedElement, [Validators.required]);
 
   constructor(
-    private parentForm: CreateListingComponent,
+    // private parentForm: CreateListingComponent,
+    private parentForm: CreateListingTwoComponent,
     private fb: FormBuilder) { }
 
   ngOnInit() {

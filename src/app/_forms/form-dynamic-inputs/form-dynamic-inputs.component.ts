@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators, MaxLengthValidator } from '@angular/forms';
+import { CreateListingTwoComponent } from 'src/app/create-listing/create-listing-two/create-listing-two.component';
 import { CreateListingComponent } from 'src/app/create-listing/create-listing/create-listing.component';
 
 @Component({
@@ -18,7 +19,8 @@ export class FormDynamicInputsComponent implements OnInit {
   @Input() selectTitle: string;
 
   constructor(
-    private parentForm: CreateListingComponent,
+    // private parentForm: CreateListingComponent,
+    private parentForm: CreateListingTwoComponent,
     private fb: FormBuilder) { }
 
   ngOnInit() {
@@ -31,7 +33,7 @@ export class FormDynamicInputsComponent implements OnInit {
       } else {
         groupToAdd[element.name] = new FormControl('');
       }
-      
+
     });
 
     this.fG.addControl(this.fGN, new FormGroup(groupToAdd));
@@ -45,4 +47,4 @@ export class FormDynamicInputsComponent implements OnInit {
 
 }
 
-// TODO: maybe add Validators.maxLength(10), Validators.email, Validators.pattern() 
+// TODO: maybe add Validators.maxLength(10), Validators.email, Validators.pattern()
