@@ -20,7 +20,7 @@ import { CreateListingTwoComponent } from './create-listing/create-listing-two/c
     HeaderComponent,
     HomeCtaComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

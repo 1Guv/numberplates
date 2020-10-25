@@ -617,6 +617,12 @@
                 }
             ]
         },
+        "carInsuranceRenewalDate": {
+            "formGroup": "three",
+            "formGroupName": "Car Insurance Renewal Date",
+            "selectTitle": "What is your car insurance renewal date?",
+            "date": ""
+        },
         "carInsurance": {
             "formGroup": "three",
             "formGroupName": "Car Insurance",

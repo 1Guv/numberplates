@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Observable, of } from 'rxjs';
-import { CreateListing, FormSetup, FormCards } from 'src/app/_models/content';
+import { CreateListing, FormSetup, FormCards, FormSetupDate } from 'src/app/_models/content';
 import { ContentService } from 'src/app/_services/content.service';
 import { MatSlideToggleChange } from '@angular/material';
 import { map } from 'rxjs/operators';
@@ -42,6 +42,7 @@ export class CreateListingTwoComponent implements OnInit {
   carMoneyNoObject$: Observable<FormSetup>;
 
   carInsurance$: Observable<FormSetup>;
+  carInsuranceRenewalDate$: Observable<FormSetupDate>;
   houseInsurance$: Observable<FormSetup>;
   mobile$: Observable<FormSetup>;
   electricCar$: Observable<FormSetup>;
@@ -100,6 +101,7 @@ export class CreateListingTwoComponent implements OnInit {
 
 
     this.carInsurance$ = this.contentService.content$.pipe(map(content => content.createListing.carInsurance));
+    this.carInsuranceRenewalDate$ = this.contentService.content$.pipe(map(content => content.createListing.carInsuranceRenewalDate));
     this.houseInsurance$ = this.contentService.content$.pipe(map(content => content.createListing.houseInsurance));
     this.mobile$ = this.contentService.content$.pipe(map(content => content.createListing.mobile));
     this.electricCar$ = this.contentService.content$.pipe(map(content => content.createListing.electricCar));

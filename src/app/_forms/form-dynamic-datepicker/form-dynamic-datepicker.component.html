@@ -1,0 +1,22 @@
+<form [formGroup]="fG">
+
+    <div formGroupName="{{fGN}}"
+         class="d-flex flex-column align-items-center justify-content-center">
+
+        <ng-container>
+            <mat-form-field appearance="fill" class="w-100">
+                <mat-label>{{selectTitle}}</mat-label>
+                <input matInput
+                       readonly
+                       [matDatepicker]="picker"
+                       [value]="date"
+                       (dateChange)="dateChangeHandler($event.value)"
+                        >
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker touchUi disabled="false" #picker></mat-datepicker>
+            </mat-form-field>
+        </ng-container>
+
+    </div>
+
+</form>

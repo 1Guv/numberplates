@@ -34,6 +34,7 @@ export interface CreateListing {
     carMoneyNoObject: FormSetup;
 
     carInsurance: FormSetup;
+    carInsuranceRenewalDate: FormSetupDate;
     houseInsurance: FormSetup;
     mobile: FormSetup;
     electricCar: FormSetup;
@@ -64,6 +65,13 @@ export interface Footer {
     socialMedia: SocialMedia;
     company: Array<CompanyLinks>;
     help: Array<CompanyLinks>;
+}
+
+export interface FormSetupDate {
+    formGroup: string;
+    formGroupName: string;
+    selectTitle: string;
+    date: string;
 }
 
 export interface FormSetup {

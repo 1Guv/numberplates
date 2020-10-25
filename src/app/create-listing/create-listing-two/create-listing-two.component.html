@@ -218,8 +218,17 @@
 
                         <!-- // carInsurances is 0 in the array -->
                         <div *ngIf="i===1">
+
+                            <app-form-dynamic-datepicker
+                                fG="{{ (carInsuranceRenewalDate$ | async).formGroup }}"
+                                fGN="{{ (carInsuranceRenewalDate$ | async).formGroupName }}"
+                                fCN="{{ ( carInsuranceRenewalDate$ | async ).formGroupName}}"
+                                selectTitle="{{ ( carInsuranceRenewalDate$ | async ).selectTitle}}"
+                                >
+                            </app-form-dynamic-datepicker>
+
                             <app-form-dynamic-inputs
-                                fG="{{ (carInsurance$ | async).formGroup }}"
+                                fG="{{ (carInsuranceRenewalDate$ | async).formGroup }}"
                                 fGN="{{ (carInsurance$ | async).formGroupName }}"
                                 [fields]=" (carInsurance$ | async).inputFields "
                                 >

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CreateListingComponent } from './create-listing/create-listing.component';
 import { CreateListingRoutingModule } from './create-listing-routing';
 import { LargePlateDisplayInputComponent } from '../_elements/large-plate-display-input/large-plate-display-input.component';
-import { MatFormFieldModule, MatIconModule, MatInputModule, MatStepperModule, MatSelectModule, MatExpansionModule } from '@angular/material';
+import { MatFormFieldModule, MatIconModule, MatInputModule, MatStepperModule, MatSelectModule, MatExpansionModule, MatDatepickerModule, MatNativeDateModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
@@ -14,19 +14,21 @@ import { FormDynamicSelectsComponent } from '../_forms/form-dynamic-selects/form
 import { FormDynamicCheckboxesComponent } from '../_forms/form-dynamic-checkboxes/form-dynamic-checkboxes.component';
 import { SharedModule } from '../shared/shared.module';
 import { CreateListingTwoComponent } from './create-listing-two/create-listing-two.component';
+import { FormDynamicDatepickerComponent } from '../_forms/form-dynamic-datepicker/form-dynamic-datepicker.component';
 
 @NgModule({
   declarations: [
-    CreateListingComponent, 
+    CreateListingComponent,
     LargePlateDisplayInputComponent,
     FormCardComponent,
     FormDynamicInputsComponent,
     FormDynamicSelectsComponent,
     FormDynamicCheckboxesComponent,
+    FormDynamicDatepickerComponent,
     CreateListingTwoComponent,
   ],
-  imports: [ 
-    CommonModule, 
+  imports: [
+    CommonModule,
     CreateListingRoutingModule,
     MatFormFieldModule,
     MatInputModule,
@@ -39,7 +41,9 @@ import { CreateListingTwoComponent } from './create-listing-two/create-listing-t
     MatStepperModule,
     MatSelectModule,
     SharedModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   exports: [CreateListingComponent]
 })
