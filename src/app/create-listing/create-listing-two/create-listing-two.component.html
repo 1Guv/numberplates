@@ -228,6 +228,15 @@
                                 >
                             </app-form-dynamic-datepicker>
 
+                            <app-form-dynamic-selects
+                                fG="{{ ( carInsuranceMonthlyOrYearly$ | async ).formGroup}}"
+                                fGN="{{ ( carInsuranceMonthlyOrYearly$ | async ).formGroupName}}"
+                                fCN="{{ ( carInsuranceMonthlyOrYearly$ | async ).formGroupName}}"
+                                selectTitle="{{ ( carInsuranceMonthlyOrYearly$ | async ).selectTitle}}"
+                                [select]=" ( carInsuranceMonthlyOrYearly$ | async ).inputFields"
+                                >
+                            </app-form-dynamic-selects>
+
                             <app-form-dynamic-inputs
                                 fG="{{ (carInsuranceRenewalDate$ | async).formGroup }}"
                                 fGN="{{ (carInsurance$ | async).formGroupName }}"

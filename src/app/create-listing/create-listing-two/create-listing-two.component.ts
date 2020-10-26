@@ -43,6 +43,8 @@ export class CreateListingTwoComponent implements OnInit {
 
   carInsurance$: Observable<FormSetup>;
   carInsuranceRenewalDate$: Observable<FormSetupDate>;
+  carInsuranceMonthlyOrYearly$: Observable<FormSetup>;
+
   houseInsurance$: Observable<FormSetup>;
   mobile$: Observable<FormSetup>;
   electricCar$: Observable<FormSetup>;
@@ -102,6 +104,9 @@ export class CreateListingTwoComponent implements OnInit {
 
     this.carInsurance$ = this.contentService.content$.pipe(map(content => content.createListing.carInsurance));
     this.carInsuranceRenewalDate$ = this.contentService.content$.pipe(map(content => content.createListing.carInsuranceRenewalDate));
+    this.carInsuranceMonthlyOrYearly$ = this.contentService.content$.pipe(map(content => content.createListing.carInsuranceMonthlyOrYearly));
+
+
     this.houseInsurance$ = this.contentService.content$.pipe(map(content => content.createListing.houseInsurance));
     this.mobile$ = this.contentService.content$.pipe(map(content => content.createListing.mobile));
     this.electricCar$ = this.contentService.content$.pipe(map(content => content.createListing.electricCar));

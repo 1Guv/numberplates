@@ -624,18 +624,23 @@
             "date": "",
             "readOnly": true
         },
+        "carInsuranceMonthlyOrYearly": {
+            "formGroup": "three",
+            "formGroupName": "Car Insurance Monthly or Yearly",
+            "selectTitle": "Do you pay your car insurance monthly or yearly?",
+            "inputFields": [
+                {
+                    "name": "Monthly"
+                },
+                {
+                    "name": "Yearly"
+                }
+            ]
+        },
         "carInsurance": {
             "formGroup": "three",
             "formGroupName": "Car Insurance",
             "inputFields": [
-                {
-                    "name": "What is your car insurance renewal date?",
-                    "required": true
-                },
-                {
-                    "name": "Do you pay your car insurance monthly or yearly?",
-                    "required": true
-                },
                 {
                     "name": "What is your current excess?",
                     "required": true
