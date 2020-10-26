@@ -4,16 +4,16 @@
          class="d-flex flex-column align-items-center justify-content-center">
 
         <ng-container>
-            <mat-form-field appearance="fill" class="w-100">
+            <mat-form-field appearance="fill" class="w-100" (click)="picker.open()">
                 <mat-label>{{selectTitle}}</mat-label>
                 <input matInput
-                       readonly
+                       [readonly]="readOnly"
                        [matDatepicker]="picker"
                        [value]="date"
                        (dateChange)="dateChangeHandler($event.value)"
                         >
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker touchUi disabled="false" #picker></mat-datepicker>
+                <mat-datepicker touchUi #picker></mat-datepicker>
             </mat-form-field>
         </ng-container>
 

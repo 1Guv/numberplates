@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { CreateListingTwoComponent } from 'src/app/create-listing/create-listing-two/create-listing-two.component';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-form-dynamic-datepicker',
@@ -13,6 +14,7 @@ export class FormDynamicDatepickerComponent implements OnInit {
   @Input() fGN: string;
   @Input() fCN: any;
   @Input() selectTitle: string;
+  @Input() readOnly: boolean;
   date: any;
 
   selectedElement: string = '';
@@ -30,7 +32,8 @@ export class FormDynamicDatepickerComponent implements OnInit {
   }
 
   dateChangeHandler(date: Date) {
-    this.fG.get(this.fGN).get(this.fCN).setValue(date);
+    const formattedDate = formatDate(date, 'dd/MM/yyyy', 'en-GB');
+    this.fG.get(this.fGN).get(this.fCN).setValue(formattedDate);
   }
 
 }

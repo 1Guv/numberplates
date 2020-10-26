@@ -72,6 +72,7 @@ export interface FormSetupDate {
     formGroupName: string;
     selectTitle: string;
     date: string;
+    readOnly: boolean;
 }
 
 export interface FormSetup {
