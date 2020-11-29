@@ -6,3 +6,10 @@ h1 {
     max-width: 700px;
     width: 100%;
 }
+
+mat-form-field {
+    max-width: 200px;
+    .icon-button {
+        border: none !important;
+    }
+}
