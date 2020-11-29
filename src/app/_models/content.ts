@@ -36,6 +36,8 @@ export interface CreateListing {
     carInsurance: FormSetup;
     carInsuranceRenewalDate: FormSetupDate;
     carInsuranceMonthlyOrYearly: FormSetup;
+    carInsuranceExcess: FormSetup;
+    carInsuranceProviders: FormSetup;
     houseInsurance: FormSetup;
     mobile: FormSetup;
     electricCar: FormSetup;

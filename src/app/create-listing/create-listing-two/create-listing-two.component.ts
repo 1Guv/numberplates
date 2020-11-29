@@ -44,6 +44,9 @@ export class CreateListingTwoComponent implements OnInit {
   carInsurance$: Observable<FormSetup>;
   carInsuranceRenewalDate$: Observable<FormSetupDate>;
   carInsuranceMonthlyOrYearly$: Observable<FormSetup>;
+  carInsuranceExcess$: Observable<FormSetup>;
+  carInsuranceProviders$: Observable<FormSetup>;
+  carInsuranceProvider: string = '';
 
   houseInsurance$: Observable<FormSetup>;
   mobile$: Observable<FormSetup>;
@@ -72,6 +75,11 @@ export class CreateListingTwoComponent implements OnInit {
         this.numberPlate$ = of(value);
       }
     );
+
+    // this.contentService.getPlates()
+    //   .subscribe(plates => {
+    //     console.log('plates', plates);
+    //   });
   }
 
   initContent() {
@@ -105,6 +113,8 @@ export class CreateListingTwoComponent implements OnInit {
     this.carInsurance$ = this.contentService.content$.pipe(map(content => content.createListing.carInsurance));
     this.carInsuranceRenewalDate$ = this.contentService.content$.pipe(map(content => content.createListing.carInsuranceRenewalDate));
     this.carInsuranceMonthlyOrYearly$ = this.contentService.content$.pipe(map(content => content.createListing.carInsuranceMonthlyOrYearly));
+    this.carInsuranceExcess$ = this.contentService.content$.pipe(map(content => content.createListing.carInsuranceExcess));
+    this.carInsuranceProviders$ = this.contentService.content$.pipe(map(content => content.createListing.carInsuranceProviders));
 
 
     this.houseInsurance$ = this.contentService.content$.pipe(map(content => content.createListing.houseInsurance));

@@ -237,6 +237,29 @@
                                 >
                             </app-form-dynamic-selects>
 
+                            <app-form-dynamic-selects
+                                fG="{{ ( carInsuranceExcess$ | async ).formGroup}}"
+                                fGN="{{ ( carInsuranceExcess$ | async ).formGroupName}}"
+                                fCN="{{ ( carInsuranceExcess$ | async ).formGroupName}}"
+                                selectTitle="{{ ( carInsuranceExcess$ | async ).selectTitle}}"
+                                [select]=" ( carInsuranceExcess$ | async ).inputFields"
+                                >
+                            </app-form-dynamic-selects>
+
+                            <app-form-dynamic-selects
+                                fG="{{ ( carInsuranceProviders$ | async ).formGroup}}"
+                                fGN="{{ ( carInsuranceProviders$ | async ).formGroupName}}"
+                                fCN="{{ ( carInsuranceProviders$ | async ).formGroupName}}"
+                                selectTitle="{{ ( carInsuranceProviders$ | async ).selectTitle}}"
+                                [select]=" ( carInsuranceProviders$ | async ).inputFields"
+                                >
+                            </app-form-dynamic-selects>
+
+                            <div *ngIf="plateForm.get('carInsuranceProviders').get('carInsuranceProviders').value === 'Other'">
+                                <h1>Input here</h1>
+                                <!-- <app-form-dynamic-inputs></app-form-dynamic-inputs> -->
+                            </div>
+
                             <app-form-dynamic-inputs
                                 fG="{{ (carInsuranceRenewalDate$ | async).formGroup }}"
                                 fGN="{{ (carInsurance$ | async).formGroupName }}"

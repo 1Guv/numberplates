@@ -637,14 +637,69 @@
                 }
             ]
         },
+        "carInsuranceExcess": {
+            "formGroup": "three",
+            "formGroupName": "Car Insurance Excess",
+            "selectTitle": "What is your current excess?",
+            "inputFields": [
+                {
+                    "name": "£100 - £200"
+                },
+                {
+                    "name": "£200 - £500"
+                },
+                {
+                    "name": "£500 - £1000"
+                },
+                {
+                    "name": "£1000 - £2000"
+                },
+                {
+                    "name": "£2000 - £3000"
+                },
+                {
+                    "name": "£3000+"
+                }
+            ]
+        },
+        "carInsuranceProviders": {
+            "formGroup": "three",
+            "formGroupName": "carInsuranceProviders",
+            "selectTitle": "Who is your car insurance provider?",
+            "inputFields": [
+                {
+                    "name": "Aviva"
+                },
+                {
+                    "name": "Saga"
+                },
+                {
+                    "name": "Direct Line"
+                },
+                {
+                    "name": "Sheila's Wheels"
+                },
+                {
+                    "name": "Churchill"
+                },
+                {
+                    "name": "Hastings Direct"
+                },
+                {
+                    "name": "Admiral"
+                },
+                {
+                    "name": "Age Co"
+                },
+                {
+                    "name": "Other"
+                }
+            ]
+        },
         "carInsurance": {
             "formGroup": "three",
             "formGroupName": "Car Insurance",
             "inputFields": [
-                {
-                    "name": "What is your current excess?",
-                    "required": true
-                },
                 {
                     "name": "Which company do you have insurance with?",
                     "required": true
