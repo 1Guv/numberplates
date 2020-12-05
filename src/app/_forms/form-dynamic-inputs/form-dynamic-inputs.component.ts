@@ -25,7 +25,7 @@ export class FormDynamicInputsComponent implements OnInit {
 
   ngOnInit() {
     this.fG = this.parentForm.plateForm;
-    let groupToAdd = {};
+    const groupToAdd = {};
 
     this.fields.forEach(element => {
       if (element.required) {

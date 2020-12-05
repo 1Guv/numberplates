@@ -351,7 +351,7 @@
                     "name": "Bangladeshi"
                 },
                 {
-                    "name": "789"
+                    "name": "Other"
                 }
             ]
         },
@@ -361,15 +361,18 @@
             "inputFields": [
                 {
                     "name": "What did the plate cost?",
-                    "required": true
+                    "required": true,
+                    "type": "number"
                 },
                 {
                     "name": "Ideal selling price",
-                    "required": true
+                    "required": true,
+                    "type": "number"
                 },
                 {
                     "name": "Selling price to display",
-                    "required": true
+                    "required": true,
+                    "type": "number"
                 }
             ]
         },
@@ -462,19 +465,23 @@
             "inputFields": [
                 {
                     "name": "Email address we will contact you on",
-                    "required": true
+                    "required": true,
+                    "type": "email"
                 },
                 {
                     "name": "Email address that we will display",
-                    "required": true
+                    "required": true,
+                    "type": "email"
                 },
                 {
                     "name": "Number we will contact you on",
-                    "required": true
+                    "required": true,
+                    "type": "number"
                 },
                 {
                     "name": "Number we will display",
-                    "required": true
+                    "required": true,
+                    "type": "number"
                 }
             ]
         },
@@ -566,6 +573,9 @@
                 },
                 {
                     "name": "HP"
+                },
+                {
+                    "name": "Business Lease"
                 }
             ]
         },
@@ -696,31 +706,57 @@
                 }
             ]
         },
-        "carInsurance": {
+        "houseInsuranceRenewalDate": {
             "formGroup": "three",
-            "formGroupName": "Car Insurance",
+            "formGroupName": "House Insurance Renewal Date",
+            "selectTitle": "What is your house insurance renewal date?",
+            "date": "",
+            "readOnly": true
+        },
+        "houseInsuranceMonthlyOrYearly": {
+            "formGroup": "three",
+            "formGroupName": "House Insurance Monthly or Yearly",
+            "selectTitle": "Do you pay your house insurance monthly or yearly?",
             "inputFields": [
                 {
-                    "name": "Which company do you have insurance with?",
-                    "required": true
+                    "name": "Monthly"
+                },
+                {
+                    "name": "Yearly"
                 }
             ]
         },
-        "houseInsurance": {
+        "houseInsuranceProviders": {
             "formGroup": "three",
-            "formGroupName": "House Insurance",
+            "formGroupName": "houseInsuranceProviders",
+            "selectTitle": "Who is your house insurance provider?",
             "inputFields": [
                 {
-                    "name": "What is your house insurance renewal date?",
-                    "required": true
+                    "name": "AA Home Insurance"
                 },
                 {
-                    "name": "Do you pay your house insurance monthly or yearly?",
-                    "required": true
+                    "name": "AXA Home Insurance"
                 },
                 {
-                    "name": "Which company do you have insurance with?",
-                    "required": true
+                    "name": "Admiral Home Insurance"
+                },
+                {
+                    "name": "Aviva Home Insurance"
+                },
+                {
+                    "name": "Bradford & Bingley Home Insurance"
+                },
+                {
+                    "name": "Churchill Home Insurance"
+                },
+                {
+                    "name": "Fresh Home Home Insurance"
+                },
+                {
+                    "name": "HomeInsurer Home Insurance"
+                },
+                {
+                    "name": "HomeProtect Home Insurance"
                 }
             ]
         },

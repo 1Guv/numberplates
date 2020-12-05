@@ -9,9 +9,9 @@
             <div *ngFor="let field of fields" class="w-100">
                 <mat-form-field appearance="fill">
                     <mat-label>{{field.name}}</mat-label>
-                    <input matInput formControlName="{{field.name}}">
+                    <input type="{{field?.type}}" matInput formControlName="{{field.name}}">
                 </mat-form-field>
-            </div >    
+            </div >
         </ng-container>
 
         <!-- // TODO: need to add error messaging to the api and here with ng dirty etc -->
@@ -19,6 +19,6 @@
 
 
     </div>
-    
+
 </form>
 

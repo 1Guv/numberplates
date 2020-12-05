@@ -144,12 +144,14 @@ export class CreateListingComponent implements OnInit {
     this.formCardsThree$ = this.contentService.content$.pipe(map(content => content.createListing.formCardsThree));
     // this.car$ = this.contentService.content$.pipe(map(content => content.createListing.car));
     this.carInsurance$ = this.contentService.content$.pipe(map(content => content.createListing.carInsurance));
-    this.houseInsurance$ = this.contentService.content$.pipe(map(content => content.createListing.houseInsurance));
+    // this.houseInsurance$ = this.contentService.content$.pipe(map(content => content.createListing.houseInsurance));
     this.mobile$ = this.contentService.content$.pipe(map(content => content.createListing.mobile));
     this.electricCar$ = this.contentService.content$.pipe(map(content => content.createListing.electricCar));
 
     this.premium$ = this.contentService.content$.pipe(map(content => content.createListing.premium));
+    // tslint:disable-next-line: max-line-length
     this.premiumCarouselSectionContent$ = this.contentService.content$.pipe(map(content => content.createListing.premiumCarouselSectionContent));
+    // tslint:disable-next-line: max-line-length
     this.premiumFBScreenShotsCarousel$ = this.contentService.content$.pipe(map(content => content.createListing.premiumFBScreenShotsCarousel));
 
   }

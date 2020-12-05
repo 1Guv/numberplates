@@ -38,7 +38,11 @@ export interface CreateListing {
     carInsuranceMonthlyOrYearly: FormSetup;
     carInsuranceExcess: FormSetup;
     carInsuranceProviders: FormSetup;
-    houseInsurance: FormSetup;
+
+    houseInsuranceRenewalDate: FormSetupDate;
+    houseInsuranceMonthlyOrYearly: FormSetup;
+    houseInsuranceProviders: FormSetup;
+
     mobile: FormSetup;
     electricCar: FormSetup;
 
@@ -87,7 +91,8 @@ export interface FormSetup {
 
 export interface InputFields {
     name: string;
-    required?: boolean
+    required?: boolean;
+    type?: string;
 }
 
 export interface FormCards {

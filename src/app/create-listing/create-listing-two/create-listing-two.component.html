@@ -34,7 +34,6 @@
 
                 <br>
 
-
                     <div class="d-flex flex-column justify-content-center align-items-left">
                         <mat-slide-toggle formControlName="free"
                                         (change)="onChangeFree($event)"
@@ -261,22 +260,44 @@
                                 <!-- <app-form-dynamic-inputs></app-form-dynamic-inputs> -->
                             </div>
 
-                            <app-form-dynamic-inputs
+                            <!-- <app-form-dynamic-inputs
                                 fG="{{ (carInsuranceRenewalDate$ | async).formGroup }}"
                                 fGN="{{ (carInsurance$ | async).formGroupName }}"
                                 [fields]=" (carInsurance$ | async).inputFields "
                                 >
-                            </app-form-dynamic-inputs>
+                            </app-form-dynamic-inputs> -->
                         </div>
 
                          <!-- // houseInsurance is 0 in the array -->
                          <div *ngIf="i===2">
-                            <app-form-dynamic-inputs
-                                fG="{{ (houseInsurance$ | async).formGroup }}"
-                                fGN="{{ (houseInsurance$ | async).formGroupName }}"
-                                [fields]=" (houseInsurance$ | async).inputFields "
+                            <app-form-dynamic-datepicker
+                                fG="{{ (houseInsuranceRenewalDate$ | async).formGroup }}"
+                                fGN="{{ (houseInsuranceRenewalDate$ | async).formGroupName }}"
+                                fCN="{{ ( houseInsuranceRenewalDate$ | async ).formGroupName}}"
+                                selectTitle="{{ ( houseInsuranceRenewalDate$ | async ).selectTitle}}"
+                                readOnly="{{ ( houseInsuranceRenewalDate$ | async ).readOnly}}"
                                 >
-                            </app-form-dynamic-inputs>
+                            </app-form-dynamic-datepicker>
+
+                            <app-form-dynamic-selects
+                                fG="{{ ( houseInsuranceMonthlyOrYearly$ | async ).formGroup}}"
+                                fGN="{{ ( houseInsuranceMonthlyOrYearly$ | async ).formGroupName}}"
+                                fCN="{{ ( houseInsuranceMonthlyOrYearly$ | async ).formGroupName}}"
+                                selectTitle="{{ ( houseInsuranceMonthlyOrYearly$ | async ).selectTitle}}"
+                                [select]=" ( houseInsuranceMonthlyOrYearly$ | async ).inputFields"
+                                >
+                            </app-form-dynamic-selects>
+
+                            <app-form-dynamic-selects
+                                fG="{{ ( houseInsuranceProviders$ | async ).formGroup}}"
+                                fGN="{{ ( houseInsuranceProviders$ | async ).formGroupName}}"
+                                fCN="{{ ( houseInsuranceProviders$ | async ).formGroupName}}"
+                                selectTitle="{{ ( houseInsuranceProviders$ | async ).selectTitle}}"
+                                [select]=" ( houseInsuranceProviders$ | async ).inputFields"
+                                >
+                            </app-form-dynamic-selects>
+
+
                         </div>
 
                         <!-- // mobile is 0 in the array -->
