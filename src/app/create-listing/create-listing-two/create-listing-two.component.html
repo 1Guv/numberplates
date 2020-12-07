@@ -259,13 +259,6 @@
                                 <h1>Input here</h1>
                                 <!-- <app-form-dynamic-inputs></app-form-dynamic-inputs> -->
                             </div>
-
-                            <!-- <app-form-dynamic-inputs
-                                fG="{{ (carInsuranceRenewalDate$ | async).formGroup }}"
-                                fGN="{{ (carInsurance$ | async).formGroupName }}"
-                                [fields]=" (carInsurance$ | async).inputFields "
-                                >
-                            </app-form-dynamic-inputs> -->
                         </div>
 
                          <!-- // houseInsurance is 0 in the array -->
@@ -302,20 +295,92 @@
 
                         <!-- // mobile is 0 in the array -->
                         <div *ngIf="i===3">
-                            <app-form-dynamic-inputs
-                                fG="{{ (mobile$ | async).formGroup }}"
-                                fGN="{{ (mobile$ | async).formGroupName }}"
-                                [fields]=" (mobile$ | async).inputFields "
+                            <app-form-dynamic-datepicker
+                                fG="{{ (mobileContractRenewalDate$ | async).formGroup }}"
+                                fGN="{{ (mobileContractRenewalDate$ | async).formGroupName }}"
+                                fCN="{{ ( mobileContractRenewalDate$ | async ).formGroupName}}"
+                                selectTitle="{{ ( mobileContractRenewalDate$ | async ).selectTitle}}"
+                                readOnly="{{ ( mobileContractRenewalDate$ | async ).readOnly}}"
                                 >
-                            </app-form-dynamic-inputs>
+                            </app-form-dynamic-datepicker>
+
+                            <app-form-dynamic-selects
+                                fG="{{ ( mobileInsurance$ | async ).formGroup}}"
+                                fGN="{{ ( mobileInsurance$ | async ).formGroupName}}"
+                                fCN="{{ ( mobileInsurance$ | async ).formGroupName}}"
+                                selectTitle="{{ ( mobileInsurance$ | async ).selectTitle}}"
+                                [select]=" ( mobileInsurance$ | async ).inputFields"
+                                >
+                            </app-form-dynamic-selects>
+
+                            <app-form-dynamic-selects
+                                fG="{{ ( mobileNumberDuration$ | async ).formGroup}}"
+                                fGN="{{ ( mobileNumberDuration$ | async ).formGroupName}}"
+                                fCN="{{ ( mobileNumberDuration$ | async ).formGroupName}}"
+                                selectTitle="{{ ( mobileNumberDuration$ | async ).selectTitle}}"
+                                [select]=" ( mobileNumberDuration$ | async ).inputFields"
+                                >
+                            </app-form-dynamic-selects>
+
+                            <app-form-dynamic-selects
+                                fG="{{ ( mobileInsurance$ | async ).formGroup}}"
+                                fGN="{{ ( mobileInsurance$ | async ).formGroupName}}"
+                                fCN="{{ ( mobileInsurance$ | async ).formGroupName}}"
+                                selectTitle="{{ ( mobileInsurance$ | async ).selectTitle}}"
+                                [select]=" ( mobileInsurance$ | async ).inputFields"
+                                >
+                            </app-form-dynamic-selects>
+
+                            <app-form-dynamic-selects
+                                fG="{{ ( mobileManufacturer$ | async ).formGroup}}"
+                                fGN="{{ ( mobileManufacturer$ | async ).formGroupName}}"
+                                fCN="{{ ( mobileManufacturer$ | async ).formGroupName}}"
+                                selectTitle="{{ ( mobileManufacturer$ | async ).selectTitle}}"
+                                [select]=" ( mobileManufacturer$ | async ).inputFields"
+                                >
+                            </app-form-dynamic-selects>
+
                         </div>
 
                         <!-- // electricCar is 0 in the array -->
                         <div *ngIf="i===4">
-                            <app-form-dynamic-inputs
+                            <!-- <app-form-dynamic-inputs
                                 fG="{{ (electricCar$ | async).formGroup }}"
                                 fGN="{{ (electricCar$ | async).formGroupName }}"
                                 [fields]=" (electricCar$ | async).inputFields "
+                                >
+                            </app-form-dynamic-inputs> -->
+                            <app-form-dynamic-selects
+                                fG="{{ ( electricCarNextVehicle$ | async ).formGroup}}"
+                                fGN="{{ ( electricCarNextVehicle$ | async ).formGroupName}}"
+                                fCN="{{ ( electricCarNextVehicle$ | async ).formGroupName}}"
+                                selectTitle="{{ ( electricCarNextVehicle$ | async ).selectTitle}}"
+                                [select]=" ( electricCarNextVehicle$ | async ).inputFields"
+                                >
+                            </app-form-dynamic-selects>
+
+                            <app-form-dynamic-selects
+                                fG="{{ ( electricCarFavourite$ | async ).formGroup}}"
+                                fGN="{{ ( electricCarFavourite$ | async ).formGroupName}}"
+                                fCN="{{ ( electricCarFavourite$ | async ).formGroupName}}"
+                                selectTitle="{{ ( electricCarFavourite$ | async ).selectTitle}}"
+                                [select]=" ( electricCarFavourite$ | async ).inputFields"
+                                >
+                            </app-form-dynamic-selects>
+
+                            <app-form-dynamic-selects
+                                fG="{{ ( electricCarTestDrive$ | async ).formGroup}}"
+                                fGN="{{ ( electricCarTestDrive$ | async ).formGroupName}}"
+                                fCN="{{ ( electricCarTestDrive$ | async ).formGroupName}}"
+                                selectTitle="{{ ( electricCarTestDrive$ | async ).selectTitle}}"
+                                [select]=" ( electricCarTestDrive$ | async ).inputFields"
+                                >
+                            </app-form-dynamic-selects>
+
+                            <app-form-dynamic-inputs
+                                fG="{{ (electricCarWhyNot$ | async).formGroup }}"
+                                fGN="{{ (electricCarWhyNot$ | async).formGroupName }}"
+                                [fields]=" (electricCarWhyNot$ | async).inputFields "
                                 >
                             </app-form-dynamic-inputs>
                         </div>

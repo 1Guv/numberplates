@@ -43,8 +43,16 @@ export interface CreateListing {
     houseInsuranceMonthlyOrYearly: FormSetup;
     houseInsuranceProviders: FormSetup;
 
-    mobile: FormSetup;
+    mobileContractRenewalDate: FormSetupDate;
+    mobileInsurance: FormSetup;
+    mobileNumberDuration: FormSetup;
+    mobileManufacturer: FormSetup;
+
     electricCar: FormSetup;
+    electricCarNextVehicle: FormSetup;
+    electricCarFavourite: FormSetup;
+    electricCarTestDrive: FormSetup;
+    electricCarWhyNot: FormSetup;
 
     premium: Section;
     premiumCarouselSectionContent: Section;

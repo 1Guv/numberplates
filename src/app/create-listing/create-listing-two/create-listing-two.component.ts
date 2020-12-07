@@ -51,9 +51,19 @@ export class CreateListingTwoComponent implements OnInit {
   houseInsuranceRenewalDate$: Observable<FormSetupDate>;
   houseInsuranceMonthlyOrYearly$: Observable<FormSetup>;
   houseInsuranceProviders$: Observable<FormSetup>;
-  // houseInsurance$: Observable<FormSetup>;
+
   mobile$: Observable<FormSetup>;
+  mobileContractRenewalDate$: Observable<FormSetupDate>;
+  mobileInsurance$: Observable<FormSetup>;
+  mobileNumberDuration$: Observable<FormSetup>;
+  mobileManufacturer$: Observable<FormSetup>;
+
+
   electricCar$: Observable<FormSetup>;
+  electricCarNextVehicle$: Observable<FormSetup>;
+  electricCarFavourite$: Observable<FormSetup>;
+  electricCarTestDrive$: Observable<FormSetup>;
+  electricCarWhyNot$: Observable<FormSetup>;
 
 
   constructor(private contentService: ContentService ) { }
@@ -126,8 +136,18 @@ export class CreateListingTwoComponent implements OnInit {
     this.houseInsuranceMonthlyOrYearly$ = this.contentService.content$.pipe(map(content => content.createListing.houseInsuranceMonthlyOrYearly));
     this.houseInsuranceProviders$ = this.contentService.content$.pipe(map(content => content.createListing.houseInsuranceProviders));
     // this.houseInsurance$ = this.contentService.content$.pipe(map(content => content.createListing.houseInsurance));
+
     this.mobile$ = this.contentService.content$.pipe(map(content => content.createListing.mobile));
+    this.mobileContractRenewalDate$ = this.contentService.content$.pipe(map(content => content.createListing.mobileContractRenewalDate));
+    this.mobileInsurance$ = this.contentService.content$.pipe(map(content => content.createListing.mobileInsurance));
+    this.mobileNumberDuration$ = this.contentService.content$.pipe(map(content => content.createListing.mobileNumberDuration));
+    this.mobileManufacturer$ = this.contentService.content$.pipe(map(content => content.createListing.mobileManufacturer));
+
     this.electricCar$ = this.contentService.content$.pipe(map(content => content.createListing.electricCar));
+    this.electricCarNextVehicle$ = this.contentService.content$.pipe(map(content => content.createListing.electricCarNextVehicle));
+    this.electricCarFavourite$ = this.contentService.content$.pipe(map(content => content.createListing.electricCarFavourite));
+    this.electricCarTestDrive$ = this.contentService.content$.pipe(map(content => content.createListing.electricCarTestDrive));
+    this.electricCarWhyNot$ = this.contentService.content$.pipe(map(content => content.createListing.electricCarWhyNot));
   }
 
   onChangeFree(event: MatSlideToggleChange) {

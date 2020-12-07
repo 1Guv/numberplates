@@ -760,24 +760,151 @@
                 }
             ]
         },
-        "mobile": {
+        "mobileContractRenewalDate": {
             "formGroup": "three",
-            "formGroupName": "Mobile",
+            "formGroupName": "Mobile Contract Renewal Date",
+            "selectTitle": "What is your mobile contract renewal date?",
+            "date": "",
+            "readOnly": true
+        },
+        "mobileInsurance": {
+            "formGroup": "three",
+            "formGroupName": "Mobile Phone Insurance?",
+            "selectTitle": "Do you have mobile phone insurance?",
             "inputFields": [
                 {
-                    "name": "What is your mobile phone contract renewal date?",
-                    "required": true
+                    "name": "Yes"
                 },
                 {
-                    "name": "Do you have mobile phone insurance?",
-                    "required": true
+                    "name": "No"
+                }
+            ]
+        },
+        "mobileNumberDuration": {
+            "formGroup": "three",
+            "formGroupName": "Mobile Phone Number Duration",
+            "selectTitle": "How long have you had your mobile number?",
+            "inputFields": [
+                {
+                    "name": "Nearly 2 Years"
                 },
                 {
-                    "name": "How long have you had your mobile number?",
-                    "required": true
+                    "name": "Nearly 5 Years"
                 },
                 {
-                    "name": "What mobile phone do you own?",
+                    "name": "Nearly 10 Years"
+                },
+                {
+                    "name": "Nearly 15 Years"
+                },
+                {
+                    "name": "Over 20 Years"
+                }
+            ]
+        },
+        "mobileManufacturer": {
+            "formGroup": "three",
+            "formGroupName": "Mobile Manufacturer",
+            "selectTitle": "What mobile phone do you own?",
+            "inputFields": [
+                {
+                    "name": "Samsung"
+                },
+                {
+                    "name": "Apple"
+                },
+                {
+                    "name": "Huawei"
+                },
+                {
+                    "name": "Xiaomi"
+                },
+                {
+                    "name": "Oppo"
+                },
+                {
+                    "name": "LG"
+                },
+                {
+                    "name": "Motorola"
+                },
+                {
+                    "name": "Nokia"
+                }
+            ]
+        },
+        "electricCarNextVehicle": {
+            "formGroup": "three",
+            "formGroupName": "Electric Car Next",
+            "selectTitle": "Would you buy an electric car as your next vehicle?",
+            "inputFields": [
+                {
+                    "name": "Yes"
+                },
+                {
+                    "name": "No"
+                },
+                {
+                    "name": "Maybe"
+                },
+                {
+                    "name": "Not sure"
+                },
+                {
+                    "name": "Never thought about it"
+                }
+            ]
+        },
+        "electricCarFavourite": {
+            "formGroup": "three",
+            "formGroupName": "Electric Car Favourite",
+            "selectTitle": "Whats your favourite electric car right now?",
+            "inputFields": [
+                {
+                    "name": "Tesla"
+                },
+                {
+                    "name": "BMW i3s"
+                },
+                {
+                    "name": "Porsche Taycan"
+                },
+                {
+                    "name": "Mercedes EQC"
+                },
+                {
+                    "name": "Honda E"
+                }
+            ]
+        },
+        "electricCarTestDrive": {
+            "formGroup": "three",
+            "formGroupName": "Electric Car Test Drive",
+            "selectTitle": "Have you ever test driven an electric car?",
+            "inputFields": [
+                {
+                    "name": "Yes"
+                },
+                {
+                    "name": "No"
+                },
+                {
+                    "name": "Not yet"
+                },
+                {
+                    "name": "Soon"
+                },
+                {
+                    "name": "Never thought about it"
+                }
+            ]
+        },
+        "electricCarWhyNot": {
+            "formGroup": "three",
+            "formGroupName": "Electric Car Why Not",
+            "inputFields": [
+                {
+                    "name": "What is stopping you buying an electric car right now?",
                     "required": true
                 }
             ]
