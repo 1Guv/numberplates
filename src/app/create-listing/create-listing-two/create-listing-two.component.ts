@@ -137,7 +137,6 @@ export class CreateListingTwoComponent implements OnInit {
     this.houseInsuranceProviders$ = this.contentService.content$.pipe(map(content => content.createListing.houseInsuranceProviders));
     // this.houseInsurance$ = this.contentService.content$.pipe(map(content => content.createListing.houseInsurance));
 
-    this.mobile$ = this.contentService.content$.pipe(map(content => content.createListing.mobile));
     this.mobileContractRenewalDate$ = this.contentService.content$.pipe(map(content => content.createListing.mobileContractRenewalDate));
     this.mobileInsurance$ = this.contentService.content$.pipe(map(content => content.createListing.mobileInsurance));
     this.mobileNumberDuration$ = this.contentService.content$.pipe(map(content => content.createListing.mobileNumberDuration));

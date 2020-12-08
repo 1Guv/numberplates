@@ -351,7 +351,7 @@
                     "name": "Bangladeshi"
                 },
                 {
-                    "name": "789"
+                    "name": "Other"
                 }
             ]
         },
@@ -361,15 +361,18 @@
             "inputFields": [
                 {
                     "name": "What did the plate cost?",
-                    "required": true
+                    "required": true,
+                    "type": "number"
                 },
                 {
                     "name": "Ideal selling price",
-                    "required": true
+                    "required": true,
+                    "type": "number"
                 },
                 {
                     "name": "Selling price to display",
-                    "required": true
+                    "required": true,
+                    "type": "number"
                 }
             ]
         },
@@ -462,19 +465,23 @@
             "inputFields": [
                 {
                     "name": "Email address we will contact you on",
-                    "required": true
+                    "required": true,
+                    "type": "email"
                 },
                 {
                     "name": "Email address that we will display",
-                    "required": true
+                    "required": true,
+                    "type": "email"
                 },
                 {
                     "name": "Number we will contact you on",
-                    "required": true
+                    "required": true,
+                    "type": "number"
                 },
                 {
                     "name": "Number we will display",
-                    "required": true
+                    "required": true,
+                    "type": "number"
                 }
             ]
         },
@@ -531,90 +538,373 @@
                 "footer": ""
             }
         ],
-        "car": {
+        "carManufacturers": {
             "formGroup": "three",
-            "formGroupName": "Car",
+            "formGroupName": "Car Manufacturers",
+            "selectTitle": "Please choose a make?",
+            "inputFields": []
+        },
+        "carModels": {
+            "formGroup": "three",
+            "formGroupName": "Car Model",
             "inputFields": [
                 {
-                    "name": "What car do you drive?",
+                    "name": "What model of car do you drive?",
                     "required": true
+                }
+            ]
+        },
+        "carFinance": {
+            "formGroup": "three",
+            "formGroupName": "Car Finance",
+            "selectTitle": "How did you finance your vehicle?",
+            "inputFields": [
+                {
+                    "name": "Own my car outright"
                 },
                 {
-                    "name": "Is it on lease or do you own your vehicle?",
-                    "required": true
+                    "name": "Lease"
                 },
                 {
-                    "name": "Are you satisfied by your car? Y/N",
-                    "required": true
+                    "name": "Loan"
                 },
                 {
-                    "name": "What car do you want to buy or lease next?",
-                    "required": true
+                    "name": "PCP"
                 },
+                {
+                    "name": "HP"
+                },
+                {
+                    "name": "Business Lease"
+                }
+            ]
+        },
+        "carSatisfaction": {
+            "formGroup": "three",
+            "formGroupName": "Car Satisfaction",
+            "selectTitle": "Are you satisfied with your car?",
+            "inputFields": [
+                {
+                    "name": "Yes"
+                },
+                {
+                    "name": "No"
+                },
+                {
+                    "name": "Not sure"
+                },
+                {
+                    "name": "Maybe"
+                },
+                {
+                    "name": "Prefer not to say"
+                }
+            ]
+        },
+        "carNext": {
+            "formGroup": "three",
+            "formGroupName": "Next Car",
+            "selectTitle": "What car do you want to get next?",
+            "inputFields": []
+        },
+        "carNextModel": {
+            "formGroup": "three",
+            "formGroupName": "Car Next Model",
+            "inputFields": [
+                {
+                    "name": "What model would it be?",
+                    "required": true
+                }
+            ]
+        },
+        "carMoneyNoObject": {
+            "formGroup": "three",
+            "formGroupName": "Car Money No Object",
+            "inputFields": [
                 {
                     "name": "If money was no object what car would you buy?",
                     "required": true
                 }
             ]
         },
-        "carInsurance": {
+        "carInsuranceRenewalDate": {
             "formGroup": "three",
-            "formGroupName": "Car Insurance",
+            "formGroupName": "Car Insurance Renewal Date",
+            "selectTitle": "What is your car insurance renewal date?",
+            "date": "",
+            "readOnly": true
+        },
+        "carInsuranceMonthlyOrYearly": {
+            "formGroup": "three",
+            "formGroupName": "Car Insurance Monthly or Yearly",
+            "selectTitle": "Do you pay your car insurance monthly or yearly?",
             "inputFields": [
                 {
-                    "name": "What is your car insurance renewal date?",
-                    "required": true
+                    "name": "Monthly"
                 },
                 {
-                    "name": "Do you pay your car insurance monthly or yearly?",
-                    "required": true
-                },
-                {
-                    "name": "What is your current excess?",
-                    "required": true
-                },
-                {
-                    "name": "Which company do you have insurance with?",
-                    "required": true
+                    "name": "Yearly"
                 }
             ]
         },
-        "houseInsurance": {
+        "carInsuranceExcess": {
             "formGroup": "three",
-            "formGroupName": "House Insurance",
+            "formGroupName": "Car Insurance Excess",
+            "selectTitle": "What is your current excess?",
             "inputFields": [
                 {
-                    "name": "What is your house insurance renewal date?",
-                    "required": true
+                    "name": "£100 - £200"
                 },
                 {
-                    "name": "Do you pay your house insurance monthly or yearly?",
-                    "required": true
+                    "name": "£200 - £500"
                 },
                 {
-                    "name": "Which company do you have insurance with?",
-                    "required": true
+                    "name": "£500 - £1000"
+                },
+                {
+                    "name": "£1000 - £2000"
+                },
+                {
+                    "name": "£2000 - £3000"
+                },
+                {
+                    "name": "£3000+"
                 }
             ]
         },
-        "mobile": {
+        "carInsuranceProviders": {
             "formGroup": "three",
-            "formGroupName": "Mobile",
+            "formGroupName": "carInsuranceProviders",
+            "selectTitle": "Who is your car insurance provider?",
             "inputFields": [
                 {
-                    "name": "What is your mobile phone contract renewal date?",
-                    "required": true
+                    "name": "Aviva"
                 },
                 {
-                    "name": "Do you have mobile phone insurance?",
-                    "required": true
+                    "name": "Saga"
                 },
                 {
-                    "name": "How long have you had your mobile number?",
-                    "required": true
+                    "name": "Direct Line"
                 },
                 {
-                    "name": "What mobile phone do you own?",
+                    "name": "Sheila's Wheels"
+                },
+                {
+                    "name": "Churchill"
+                },
+                {
+                    "name": "Hastings Direct"
+                },
+                {
+                    "name": "Admiral"
+                },
+                {
+                    "name": "Age Co"
+                },
+                {
+                    "name": "Other"
+                }
+            ]
+        },
+        "houseInsuranceRenewalDate": {
+            "formGroup": "three",
+            "formGroupName": "House Insurance Renewal Date",
+            "selectTitle": "What is your house insurance renewal date?",
+            "date": "",
+            "readOnly": true
+        },
+        "houseInsuranceMonthlyOrYearly": {
+            "formGroup": "three",
+            "formGroupName": "House Insurance Monthly or Yearly",
+            "selectTitle": "Do you pay your house insurance monthly or yearly?",
+            "inputFields": [
+                {
+                    "name": "Monthly"
+                },
+                {
+                    "name": "Yearly"
+                }
+            ]
+        },
+        "houseInsuranceProviders": {
+            "formGroup": "three",
+            "formGroupName": "houseInsuranceProviders",
+            "selectTitle": "Who is your house insurance provider?",
+            "inputFields": [
+                {
+                    "name": "AA Home Insurance"
+                },
+                {
+                    "name": "AXA Home Insurance"
+                },
+                {
+                    "name": "Admiral Home Insurance"
+                },
+                {
+                    "name": "Aviva Home Insurance"
+                },
+                {
+                    "name": "Bradford & Bingley Home Insurance"
+                },
+                {
+                    "name": "Churchill Home Insurance"
+                },
+                {
+                    "name": "Fresh Home Home Insurance"
+                },
+                {
+                    "name": "HomeInsurer Home Insurance"
+                },
+                {
+                    "name": "HomeProtect Home Insurance"
+                }
+            ]
+        },
+        "mobileContractRenewalDate": {
+            "formGroup": "three",
+            "formGroupName": "Mobile Contract Renewal Date",
+            "selectTitle": "What is your mobile contract renewal date?",
+            "date": "",
+            "readOnly": true
+        },
+        "mobileInsurance": {
+            "formGroup": "three",
+            "formGroupName": "Mobile Phone Insurance?",
+            "selectTitle": "Do you have mobile phone insurance?",
+            "inputFields": [
+                {
+                    "name": "Yes"
+                },
+                {
+                    "name": "No"
+                }
+            ]
+        },
+        "mobileNumberDuration": {
+            "formGroup": "three",
+            "formGroupName": "Mobile Phone Number Duration",
+            "selectTitle": "How long have you had your mobile number?",
+            "inputFields": [
+                {
+                    "name": "Nearly 2 Years"
+                },
+                {
+                    "name": "Nearly 5 Years"
+                },
+                {
+                    "name": "Nearly 10 Years"
+                },
+                {
+                    "name": "Nearly 15 Years"
+                },
+                {
+                    "name": "Over 20 Years"
+                }
+            ]
+        },
+        "mobileManufacturer": {
+            "formGroup": "three",
+            "formGroupName": "Mobile Manufacturer",
+            "selectTitle": "What mobile phone do you own?",
+            "inputFields": [
+                {
+                    "name": "Samsung"
+                },
+                {
+                    "name": "Apple"
+                },
+                {
+                    "name": "Huawei"
+                },
+                {
+                    "name": "Xiaomi"
+                },
+                {
+                    "name": "Oppo"
+                },
+                {
+                    "name": "LG"
+                },
+                {
+                    "name": "Motorola"
+                },
+                {
+                    "name": "Nokia"
+                }
+            ]
+        },
+        "electricCarNextVehicle": {
+            "formGroup": "three",
+            "formGroupName": "Electric Car Next",
+            "selectTitle": "Would you buy an electric car as your next vehicle?",
+            "inputFields": [
+                {
+                    "name": "Yes"
+                },
+                {
+                    "name": "No"
+                },
+                {
+                    "name": "Maybe"
+                },
+                {
+                    "name": "Not sure"
+                },
+                {
+                    "name": "Never thought about it"
+                }
+            ]
+        },
+        "electricCarFavourite": {
+            "formGroup": "three",
+            "formGroupName": "Electric Car Favourite",
+            "selectTitle": "Whats your favourite electric car right now?",
+            "inputFields": [
+                {
+                    "name": "Tesla"
+                },
+                {
+                    "name": "BMW i3s"
+                },
+                {
+                    "name": "Porsche Taycan"
+                },
+                {
+                    "name": "Mercedes EQC"
+                },
+                {
+                    "name": "Honda E"
+                }
+            ]
+        },
+        "electricCarTestDrive": {
+            "formGroup": "three",
+            "formGroupName": "Electric Car Test Drive",
+            "selectTitle": "Have you ever test driven an electric car?",
+            "inputFields": [
+                {
+                    "name": "Yes"
+                },
+                {
+                    "name": "No"
+                },
+                {
+                    "name": "Not yet"
+                },
+                {
+                    "name": "Soon"
+                },
+                {
+                    "name": "Never thought about it"
+                }
+            ]
+        },
+        "electricCarWhyNot": {
+            "formGroup": "three",
+            "formGroupName": "Electric Car Why Not",
+            "inputFields": [
+                {
+                    "name": "What is stopping you buying an electric car right now?",
                     "required": true
                 }
             ]
@@ -703,15 +993,15 @@
             "containerMaxWidth": "522px",
             "interval": 5000,
             "images": [
-                { 
+                {
                     "src": "./assets/premium-fb-screen-shots/SS1-JAT1BOY.png",
                     "alt": "Facebook screen shot of JAT 1 BOY plate stats"
                 },
-                { 
+                {
                     "src": "./assets/premium-fb-screen-shots/SS2-USM24N.png",
                     "alt": "Facebook screen shot of USMAN plate stats"
                 },
-                { 
+                {
                     "src": "./assets/premium-fb-screen-shots/SS3-SA18ABA.png",
                     "alt": "Facebook screen shot of SAI BABA plate stats"
                 }

@@ -145,7 +145,7 @@ export class CreateListingComponent implements OnInit {
     // this.car$ = this.contentService.content$.pipe(map(content => content.createListing.car));
     this.carInsurance$ = this.contentService.content$.pipe(map(content => content.createListing.carInsurance));
     // this.houseInsurance$ = this.contentService.content$.pipe(map(content => content.createListing.houseInsurance));
-    this.mobile$ = this.contentService.content$.pipe(map(content => content.createListing.mobile));
+    // this.mobile$ = this.contentService.content$.pipe(map(content => content.createListing.mobile));
     this.electricCar$ = this.contentService.content$.pipe(map(content => content.createListing.electricCar));
 
     this.premium$ = this.contentService.content$.pipe(map(content => content.createListing.premium));
