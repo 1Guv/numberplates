@@ -1,0 +1,58 @@
+.list-group-item {
+    padding: 0!important;
+}
+
+.plate-css {
+    height: 140px;
+    width: 100%;
+    border-radius: 5px;
+    background-color: yellow;
+    color: black;
+    font-size: 1.5rem;
+    padding: 10px;
+}
+
+.account-circle {
+    left: 10px;
+    top: -25px;
+    position: absolute;
+
+    span {
+        font-size: 3.2rem;
+    }
+}
+
+.views {
+    position: absolute;
+    top: 135px;
+    // left: 65px;
+    padding: 0px 10px 0px 3px;
+    background-color: orange;
+    clip-path: polygon(0 0, 100% 0, 75% 100%, 0% 100%);
+}
+
+.listed-on {
+    position: absolute;
+    top: -10px;
+    left: 110px;
+
+    #rectangle {
+        padding: 2px 5px;
+        border: 1px solid lightgreen;
+        border-radius: 10px;
+        // background-color: lightgreen;
+        // color: white;
+    }
+}
+
+.flag {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 10;
+
+    img {
+        width: 25px;
+        height: 20px;
+    }
+}

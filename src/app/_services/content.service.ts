@@ -13,7 +13,8 @@ export class ContentService {
   content$: Observable<Content>;
 
   constructor(private http: HttpClient) {
-    this.content$ = this.http.get<Content>('./assets/data/content.json').pipe(shareReplay(1));
+    // this.content$ = this.http.get<Content>('./assets/data/content.json').pipe(shareReplay(1));
+    this.content$ = this.http.get<Content>('./assets/data/content-new.json').pipe(shareReplay(1));
    }
 
   addManufacturers(manufacturers: Array<InputFields>, section: string) {

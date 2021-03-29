@@ -14,6 +14,7 @@ export interface CreateListing {
 
     formCards: Array<FormCards>;
     meanings: FormSetup;
+    plate: FormSetup;
     ethnicities: FormSetup;
     costs: FormSetup;
     boughtFrom: FormSetup;

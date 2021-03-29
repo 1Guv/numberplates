@@ -1,0 +1,95 @@
+<section id="create-listing" class="">
+    <div class="d-flex flex-column justify-content-center align-items-center py-3 text-center">
+        <h1>{{ heading$ | async }}</h1>
+    </div>
+
+    <form [formGroup]="newPlateForm">
+        <div class="my-3" formArrayName="arr" *ngFor="let plate of newPlateForm.get('arr').controls; let i = index">
+            <div [formGroupName]="i">
+                <div class="bg-light border">
+                    <div class="d-flex flex-row-reverse card-action-container">
+                        <button mat-raised-button class="col mt-2 col-lg-1">
+                            <span class="material-icons delete">delete</span>
+                        </button>
+                    </div>
+                    <div class="col d-flex flex-column flex-lg-row">
+
+                        <div class="col-lg-6">
+                            <!-- <h1 class="text-center">Form</h1> -->
+                            <ng-container>
+                                <app-form-card
+                                    [title]="'Plate Details'"
+                                    [subTitle]="'Numberplate'"
+                                    [footer]="'Please make sure everything is accurate!'"
+                                    >
+
+                                        <ng-container>
+                                            <mat-form-field appearance="fill" class="w-100">
+                                                <mat-label>Account Picture</mat-label>
+                                                <input type="text" matInput formControlName="plateAccountPicUrl">
+                                            </mat-form-field>
+
+                                            <mat-form-field appearance="fill" class="w-100">
+                                                <mat-label>Plate</mat-label>
+                                                <input type="text" matInput placeholder="SE11 NOW" formControlName="plateCharacters">
+                                            </mat-form-field>
+
+                                            <mat-form-field appearance="fill" class="w-100">
+                                                <mat-label>Asking Price</mat-label>
+                                                <input type="text" matInput placeholder="1000" formControlName="askingPrice">
+                                            </mat-form-field>
+
+                                            <mat-form-field appearance="fill" class="w-100">
+                                                <mat-label>Meanings</mat-label>
+                                                <input type="text" matInput placeholder="What does it mean" formControlName="meanings">
+                                            </mat-form-field>
+                                        </ng-container>
+
+                                </app-form-card>
+                            </ng-container>
+                        </div>
+
+                        <div class="d-flex flex-column col-lg-6 align-items-center">
+                            <!-- <h1 class="text-center">Listing Preview</h1> -->
+                            <ng-container>
+                                <app-form-card
+                                    class="col px-0 align-items-center"
+                                    [title]="'Listing Preview'"
+                                    [subTitle]="'Numberplate'"
+                                    [footer]="'This is how your listing will look once live'"
+                                    >
+                                        <app-plate-card
+                                            [profilePic]="'https://100k-faces.glitch.me/random-image'"
+                                            [plateCreated]="plate.get('currentDate').value"
+                                            [plateCategory]="'SIKH'"
+                                            [plateId]="plate.get('plateCharacters').value"
+                                            [askingPrice]="plate.get('askingPrice').value"
+                                            [meaning]="plate.get('meanings').value"
+                                            [pageViews]="1234"
+                                            [sellerContacted]="80"
+                                            [emailToFriend]="36"
+                                            [sold]="'No'"
+                                            >
+                                        </app-plate-card>
+                                </app-form-card>
+                            </ng-container>
+                        </div>
+
+                    </div>
+                    <div class="d-flex flex-row-reverse card-action-container">
+                        <button mat-raised-button class="col mb-2 col-lg-1">
+                            <span class="material-icons save">save</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex card-footer-container">
+            <button mat-raised-button class="my-4 col col-lg-1">
+                <span class="material-icons" (click)="addNewPlateListing()">add</span>
+            </button>
+        </div>
+
+    </form>
+</section>

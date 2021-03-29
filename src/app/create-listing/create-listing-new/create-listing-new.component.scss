@@ -1,0 +1,14 @@
+.card-footer-container, .card-action-container {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.card-action-container {
+    .delete {
+            color: red;
+    }
+
+    .save {
+        color: green;
+    }
+}

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CreateListingComponent } from './create-listing/create-listing.component';
 import { CreateListingRoutingModule } from './create-listing-routing';
 import { LargePlateDisplayInputComponent } from '../_elements/large-plate-display-input/large-plate-display-input.component';
-import { MatFormFieldModule, MatIconModule, MatInputModule, MatStepperModule, MatSelectModule, MatExpansionModule, MatDatepickerModule, MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material';
+import { MatFormFieldModule, MatIconModule, MatInputModule, MatStepperModule, MatSelectModule, MatExpansionModule, MatDatepickerModule, MatNativeDateModule, MAT_DATE_LOCALE, MatBadgeModule, MatButtonModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
@@ -15,6 +15,9 @@ import { FormDynamicCheckboxesComponent } from '../_forms/form-dynamic-checkboxe
 import { SharedModule } from '../shared/shared.module';
 import { CreateListingTwoComponent } from './create-listing-two/create-listing-two.component';
 import { FormDynamicDatepickerComponent } from '../_forms/form-dynamic-datepicker/form-dynamic-datepicker.component';
+import { CreateListingNewComponent } from './create-listing-new/create-listing-new.component';
+import { ListingPreviewComponent } from './create-listing-new/listing-preview/listing-preview.component';
+import { PlateCardComponent } from '../_elements/plate-card/plate-card.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,9 @@ import { FormDynamicDatepickerComponent } from '../_forms/form-dynamic-datepicke
     FormDynamicCheckboxesComponent,
     FormDynamicDatepickerComponent,
     CreateListingTwoComponent,
+    CreateListingNewComponent,
+    ListingPreviewComponent,
+    PlateCardComponent
   ],
   imports: [
     CommonModule,
@@ -43,7 +49,9 @@ import { FormDynamicDatepickerComponent } from '../_forms/form-dynamic-datepicke
     SharedModule,
     MatExpansionModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatBadgeModule,
+    MatButtonModule
   ],
   providers: [
     {provide: MAT_DATE_LOCALE, useValue: 'en-GB'}
