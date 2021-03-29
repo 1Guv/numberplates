@@ -89,8 +89,6 @@ THE SOFTWARE.
 
 @angular/material/card
 
-@angular/material/core
-
 @angular/material/datepicker
 
 @angular/material/dialog
@@ -98,12 +96,6 @@ THE SOFTWARE.
 @angular/material/form-field
 
 @angular/material/icon
-
-@angular/material/select
-
-@angular/material/slide-toggle
-
-@angular/material/stepper
 
 @angular/material/toolbar
 

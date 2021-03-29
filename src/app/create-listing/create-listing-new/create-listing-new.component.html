@@ -4,7 +4,7 @@
     </div>
 
     <form [formGroup]="newPlateForm">
-        <div class="my-3" formArrayName="arr" *ngFor="let plate of newPlateForm.get('arr').controls; let i = index">
+        <div class="my-3" formArrayName="arr" *ngFor="let plate of newPlateForm.get('arr')['controls']; let i = index">
             <div [formGroupName]="i">
                 <div class="bg-light border">
                     <div class="d-flex flex-row-reverse card-action-container">
