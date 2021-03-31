@@ -5,15 +5,19 @@ import { Component, OnInit, Input } from '@angular/core';
   template: `
     <mat-card [ngClass]="bgColour" class="my-3 mx-auto">
 
-      <mat-card-subtitle class="text-left">
-          <h5>{{ subTitle }}</h5>
+      <mat-card-subtitle class="d-flex">
+          <h5 class="text-left">{{ subTitle }}</h5>
+          <!-- <h5 class="ml-auto">{{ index }}</h5> -->
+          <mat-chip-list class="ml-auto">
+            <mat-chip color="primary" selected>{{ index }}</mat-chip>
+          </mat-chip-list>
       </mat-card-subtitle>
 
       <mat-card-title class="text-left">
           <h3>{{ title }}</h3>
-      </mat-card-title>  
+      </mat-card-title>
 
-      <ng-content>  
+      <ng-content>
       </ng-content>
 
       <mat-card-footer class="text-left">
@@ -26,6 +30,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class FormCardComponent implements OnInit {
 
+  @Input() index: number;
   @Input() title: string;
   @Input() subTitle: string;
   @Input() footer: string;

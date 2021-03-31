@@ -1,5 +1,5 @@
 <section id="create-listing" class="">
-    <div class="d-flex flex-column justify-content-center align-items-center py-3 text-center">
+    <div class="d-flex flex-column justify-content-center align-items-center p-3 text-center">
         <h1>{{ heading$ | async }}</h1>
     </div>
 
@@ -18,12 +18,28 @@
                             <!-- <h1 class="text-center">Form</h1> -->
                             <ng-container>
                                 <app-form-card
+                                    [index]="i+1"
                                     [title]="'Plate Details'"
                                     [subTitle]="'Numberplate'"
                                     [footer]="'Please make sure everything is accurate!'"
                                     >
 
                                         <ng-container>
+                                            <mat-form-field appearance="fill" class="w-100 mr-1">
+                                                <mat-label>Listing contact name</mat-label>
+                                                <input type="text" matInput formControlName="lCName">
+                                            </mat-form-field>
+
+                                            <mat-form-field appearance="fill" class="w-100 mr-1">
+                                                <mat-label>Listing contact number</mat-label>
+                                                <input type="text" matInput formControlName="lCNumber">
+                                            </mat-form-field>
+
+                                            <mat-form-field appearance="fill" class="w-100">
+                                                <mat-label>Initials</mat-label>
+                                                <input type="text" matInput formControlName="initials">
+                                            </mat-form-field>
+
                                             <mat-form-field appearance="fill" class="w-100">
                                                 <mat-label>Account Picture</mat-label>
                                                 <input type="text" matInput formControlName="plateAccountPicUrl">
@@ -53,6 +69,7 @@
                             <!-- <h1 class="text-center">Listing Preview</h1> -->
                             <ng-container>
                                 <app-form-card
+                                    [index]="i+1"
                                     class="col px-0 align-items-center"
                                     [title]="'Listing Preview'"
                                     [subTitle]="'Numberplate'"
