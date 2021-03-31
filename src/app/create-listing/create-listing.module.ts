@@ -18,6 +18,7 @@ import { FormDynamicDatepickerComponent } from '../_forms/form-dynamic-datepicke
 import { CreateListingNewComponent } from './create-listing-new/create-listing-new.component';
 import { ListingPreviewComponent } from './create-listing-new/listing-preview/listing-preview.component';
 import { PlateCardComponent } from '../_elements/plate-card/plate-card.component';
+import { MessagePreviewComponent } from './create-listing-new/message-preview/message-preview.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { PlateCardComponent } from '../_elements/plate-card/plate-card.component
     CreateListingTwoComponent,
     CreateListingNewComponent,
     ListingPreviewComponent,
-    PlateCardComponent
+    PlateCardComponent,
+    MessagePreviewComponent
   ],
   imports: [
     CommonModule,

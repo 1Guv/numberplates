@@ -49,9 +49,10 @@ export class CreateListingNewComponent implements OnInit {
 
   createNewPlateListing() {
     return this.fb.group({
-      lCName: [''],
-      lCNumber: [''],
-      initials: [''],
+      lCName: ['Joe Blogs'],
+      lCNumber: ['07540 100200'],
+      lCEmail: ['joe.blogs@gmail.com'],
+      initials: ['JB'],
       plateAccountPicUrl: [''],
       currentDate: [this.todaysDate],
       plateCharacters: ['SE11 NOW'],

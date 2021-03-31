@@ -35,15 +35,24 @@
                                                 <input type="text" matInput formControlName="lCNumber">
                                             </mat-form-field>
 
+                                            <mat-form-field appearance="fill" class="w-100 mr-1">
+                                                <mat-label>Listing contact email</mat-label>
+                                                <input type="text" matInput formControlName="lCEmail">
+                                            </mat-form-field>
+
                                             <mat-form-field appearance="fill" class="w-100">
                                                 <mat-label>Initials</mat-label>
                                                 <input type="text" matInput formControlName="initials">
                                             </mat-form-field>
 
-                                            <mat-form-field appearance="fill" class="w-100">
+                                            <button class="mb-3 col col-lg-3" mat-raised-button>Upload Profile Pic</button>
+
+                                            <mat-slide-toggle class="mb-2 ml-lg-5 ">Use Initials instead of profile pic</mat-slide-toggle>
+
+                                            <!-- <mat-form-field appearance="fill" class="w-100">
                                                 <mat-label>Account Picture</mat-label>
                                                 <input type="text" matInput formControlName="plateAccountPicUrl">
-                                            </mat-form-field>
+                                            </mat-form-field> -->
 
                                             <mat-form-field appearance="fill" class="w-100">
                                                 <mat-label>Plate</mat-label>
@@ -88,6 +97,24 @@
                                             [sold]="'No'"
                                             >
                                         </app-plate-card>
+                                </app-form-card>
+                            </ng-container>
+
+                            <ng-container>
+                                <app-form-card
+                                    [index]="i+1"
+                                    class="col px-0 align-items-center"
+                                    [subTitle]="'Message Preview'"
+                                    [footer]="'This is how the message form look likes used to contact you about your plate.'"
+                                    >
+                                    <app-message-preview
+                                        [plate]="plate.get('plateCharacters').value"
+                                        [askingPrice]="plate.get('askingPrice').value"
+                                        [lCName]="plate.get('lCName').value"
+                                        [lCNumber]="plate.get('lCNumber').value"
+                                        [lCEmail]="plate.get('lCEmail').value"
+                                        >
+                                    </app-message-preview>
                                 </app-form-card>
                             </ng-container>
                         </div>
