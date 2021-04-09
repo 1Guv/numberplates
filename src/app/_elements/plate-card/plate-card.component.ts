@@ -12,10 +12,16 @@ export class PlateCardComponent implements OnInit {
   @Input() title: string;
 
   @Input() profilePic: string;
+  @Input() initials: string;
+  @Input() profilePicInitials: boolean;
   @Input() plateCreated: string;
   @Input() plateCategory: string;
   @Input() plateId: string;
   @Input() askingPrice: string;
+  @Input() plateNegotiable: boolean;
+  @Input() plateBestOffer: boolean;
+  @Input() offersOver: boolean;
+  @Input() orNearestOffer: boolean;
   @Input() meaning: string;
   @Input() pageViews: string;
   @Input() sellerContacted: string;

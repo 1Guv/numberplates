@@ -4,8 +4,12 @@
     <mat-card-content class="list-group text-center">
         <div class="account-circle">
           <ng-container>
-            <span class="material-icons">
+            <span *ngIf="!profilePicInitials" class="material-icons">
               account_circle
+            </span>
+            <span *ngIf="profilePicInitials && initials.length > 1"
+              class="rounded-circle profile-initials">
+              {{initials}}
             </span>
             <!-- <img src="{{profilePic}}"
                   style="border-radius: 50px; height: 50px; width: 50px; border: 1px solid grey"/> -->
@@ -29,9 +33,20 @@
           </span>
         </li>
         <br>
+        <li class="list-group-item border-0 py-0">
+          <!-- <b>Asking Price: </b> -->
+          <mat-chip color="accent" selected>
+            <span *ngIf="offersOver">Offers over&nbsp;</span>
+            <span *ngIf="plateBestOffer">Make me an offer</span>
+            <span *ngIf="!plateBestOffer"> £{{askingPrice}} </span>
+            <span *ngIf="orNearestOffer">&nbsp;ONO</span>
+            <span *ngIf="plateNegotiable">&nbsp;Negotiable</span>
+          </mat-chip>
+        </li>
         <li class="list-group-item border-0 py-0 my-1">
-          <b>Asking Price: </b>
-          £{{askingPrice}}
+          <!-- <mat-chip color="accent" selected *ngIf="plateNegotiable">Negotiable</mat-chip>
+          <mat-chip *ngIf="!plateNegotiable">Asking Price</mat-chip> -->
+          <!-- <mat-chip>Asking Price</mat-chip> -->
         </li>
         <li class="list-group-item border-0 py-0 text-truncate "
             style="font-size: 9px;">

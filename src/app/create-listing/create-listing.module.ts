@@ -19,6 +19,9 @@ import { CreateListingNewComponent } from './create-listing-new/create-listing-n
 import { ListingPreviewComponent } from './create-listing-new/listing-preview/listing-preview.component';
 import { PlateCardComponent } from '../_elements/plate-card/plate-card.component';
 import { MessagePreviewComponent } from './create-listing-new/message-preview/message-preview.component';
+import { LettersOnlyDirective } from '../_directives/letters-only.directive';
+import { NumbersOnlyDirective } from '../_directives/numbers-only.directive';
+import { EmailValidationDirective } from '../_directives/email-validation.directive';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,10 @@ import { MessagePreviewComponent } from './create-listing-new/message-preview/me
     CreateListingNewComponent,
     ListingPreviewComponent,
     PlateCardComponent,
-    MessagePreviewComponent
+    MessagePreviewComponent,
+    LettersOnlyDirective,
+    NumbersOnlyDirective,
+    EmailValidationDirective
   ],
   imports: [
     CommonModule,

@@ -24,7 +24,7 @@
 
 .views {
     position: absolute;
-    top: 135px;
+    top: 142px;
     // left: 65px;
     padding: 0px 10px 0px 3px;
     background-color: orange;
@@ -55,4 +55,15 @@
         width: 25px;
         height: 20px;
     }
+}
+
+.profile-initials {
+    font-size: 1.2rem !important;
+    text-transform: uppercase;
+    color: white;
+    background-color: rgba(0,0,0,.87);
+    padding: 8px 11px;
+    position: absolute;
+    top: 3px;
+    left: 2px;
 }

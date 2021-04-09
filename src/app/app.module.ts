@@ -13,7 +13,7 @@ import { FooterComponent } from './_elements/footer/footer.component';
 import { SharedModule } from './shared/shared.module';
 import { CreateListingComponent } from './create-listing/create-listing/create-listing.component';
 import { CreateListingTwoComponent } from './create-listing/create-listing-two/create-listing-two.component';
-import { PlateCardComponent } from './_elements/plate-card/plate-card.component';
+import { CreateListingNewComponent } from './create-listing/create-listing-new/create-listing-new.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,7 @@ import { PlateCardComponent } from './_elements/plate-card/plate-card.component'
     HeaderComponent,
     HomeCtaComponent,
     HomeComponent,
-    FooterComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +35,7 @@ import { PlateCardComponent } from './_elements/plate-card/plate-card.component'
     MatCardModule,
     SharedModule
   ],
-  providers: [CreateListingComponent, CreateListingTwoComponent],
+  providers: [CreateListingComponent, CreateListingTwoComponent, CreateListingNewComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
