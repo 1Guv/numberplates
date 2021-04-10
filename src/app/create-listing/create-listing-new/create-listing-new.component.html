@@ -138,28 +138,28 @@
 
                                             <div class="col d-flex flex-column flex-lg-row flex-wrap ml-0 slide-toggle-container">
                                                 <mat-slide-toggle
-                                                    (click)="togglePriceWording(i, 'negotiable')"
+                                                    (toggleChange)="togglePriceWording(i, 'negotiable')"
                                                     formControlName="plateNegotiable"
                                                     class="mb-2 ml-lg-5 col-lg-5">
                                                     Is the Price Negotiable?
                                                 </mat-slide-toggle>
 
                                                 <mat-slide-toggle
-                                                    (click)="togglePriceWording(i, 'bestOffer')"
+                                                    (toggleChange)="togglePriceWording(i, 'bestOffer')"
                                                     formControlName="plateBestOffer"
                                                     class="mb-2 ml-lg-5 col-lg-5">
                                                     Make me an offer?
                                                 </mat-slide-toggle>
 
                                                 <mat-slide-toggle
-                                                    (click)="togglePriceWording(i, 'offersOver')"
+                                                    (toggleChange)="togglePriceWording(i, 'offersOver')"
                                                     formControlName="offersOver"
                                                     class="mb-2 ml-lg-5 col-lg-5">
                                                     Offers over £{{ plate.controls.askingPrice.value}}
                                                 </mat-slide-toggle>
 
                                                 <mat-slide-toggle
-                                                    (click)="togglePriceWording(i, 'ono')"
+                                                    (toggleChange)="togglePriceWording(i, 'ono')"
                                                     formControlName="orNearestOffer"
                                                     class="mb-2 ml-lg-5 col-lg-5">
                                                     £{{ plate.controls.askingPrice.value}} or nearest offer
