@@ -14,6 +14,7 @@ import { SharedModule } from './shared/shared.module';
 import { CreateListingComponent } from './create-listing/create-listing/create-listing.component';
 import { CreateListingTwoComponent } from './create-listing/create-listing-two/create-listing-two.component';
 import { CreateListingNewComponent } from './create-listing/create-listing-new/create-listing-new.component';
+import { NumberPlateSearchComponent } from './search/number-plate-search/number-plate-search.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { CreateListingNewComponent } from './create-listing/create-listing-new/c
     MatCardModule,
     SharedModule
   ],
-  providers: [CreateListingComponent, CreateListingTwoComponent, CreateListingNewComponent],
+  providers: [CreateListingComponent, CreateListingTwoComponent, CreateListingNewComponent, NumberPlateSearchComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -48,7 +48,7 @@
         },
         "searchButton": {
             "name": "Search plates now",
-            "url": "/search"
+            "url": "/number-plate-search"
         },
         "howItWorks": [
             {

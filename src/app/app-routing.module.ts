@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: 'create-listing', loadChildren: './create-listing/create-listing.module#CreateListingModule' },
   { path: 'create-listing-two', loadChildren: './create-listing/create-listing.module#CreateListingModule' },
   { path: 'create-listing-new', loadChildren: './create-listing/create-listing.module#CreateListingModule' },
+  { path: 'number-plate-search', loadChildren: './search/search.module#SearchModule' },
 ];
 
 @NgModule({
