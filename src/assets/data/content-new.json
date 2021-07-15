@@ -264,5 +264,9 @@
         "heading": "Fill in the form below and get your plate online in a few minutes.",
         "placeholderPlate": "SE11 NOW",
         "plateFree": false
+    },
+    "search": {
+        "heading": "Search for your PERFECT plate.",
+        "subHeading": "The FASTEST number plate search in the world!"
     }
 }

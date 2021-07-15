@@ -1,1 +1,32 @@
-<p>number-plate-search works!</p>
+<mat-sidenav-container autosize id="search" class="sidenav-container">
+    <mat-sidenav #sidenav [ngStyle]='{ width : currentWidthPx}' position="end" mode="over" [(opened)]="opened">
+        <button mat-button (click)="sidenav.toggle()">Open/Close</button>
+        <br>
+        <p>Advanced Search Options</p>
+        <!-- Advanced search component should go here -->
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <section>
+            <div class="d-flex flex-column justify-content-center align-items-center p-3 text-center">
+                <h1 class="mb-0">{{ (searchContent$ | async).heading }}</h1>
+                <br>
+                <h5 class="mb-0">{{ (searchContent$ | async).subHeading }}</h5>
+            </div>
+
+            <div class="col d-flex flex-row justify-content-center align-items-center p-3 text-center">
+                <mat-form-field appearance="fill" class="col-12 col-sm-8 mr-1">
+                    <mat-label>Number Plate Search</mat-label>
+                    <mat-icon matSuffix>search</mat-icon>
+                    <div class="d-flex flex-row">
+                        <input
+                            type="text"
+                            matInput
+                            placeholder="{{searchPlaceholder}}">
+                    </div>
+                </mat-form-field>
+                <mat-icon class="settings-icon" (click)="sidenav.toggle()" matSuffix>settings</mat-icon>
+            </div>
+        </section>
+    </mat-sidenav-content>
+</mat-sidenav-container>

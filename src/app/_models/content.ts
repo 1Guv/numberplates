@@ -1,8 +1,14 @@
 export interface Content {
-    header: Header;
-    homeCTA: HomeCTA;
-    footer: Footer;
-    createListing: CreateListing;
+    header?: Header;
+    homeCTA?: HomeCTA;
+    footer?: Footer;
+    createListing?: CreateListing;
+    search?: Search;
+}
+
+export interface Search {
+    heading: string;
+    subHeading:string;
 }
 
 export interface CreateListing {
@@ -170,4 +176,3 @@ export interface List {
     listTitle: string;
     listIcon: string;
 }
-

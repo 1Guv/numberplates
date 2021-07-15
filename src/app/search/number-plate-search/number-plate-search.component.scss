@@ -1,0 +1,27 @@
+#search {
+
+    .sidenav-container {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        mat-drawer-backdrop {
+            position: fixed !important;
+        }
+    }
+
+    mat-sidenav {
+        position: fixed;
+        // width: 500px;
+    }
+
+    .settings-icon {
+        position: relative;
+        font-size: 24px;
+        top: -10px;
+        left: -15px;
+        cursor: pointer;
+    }
+}
