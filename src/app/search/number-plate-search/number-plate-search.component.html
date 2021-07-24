@@ -28,5 +28,33 @@
                 <mat-icon class="settings-icon" (click)="sidenav.toggle()" matSuffix>settings</mat-icon>
             </div>
         </section>
+
+        <section #searchResults>
+            <div class="d-flex flex-row justify-content-center align-items-center flex-wrap p-3">
+                <div *ngFor="let plate of numberPlates$ | async">
+                    <app-plate-card
+                        [forSearch]="true"
+                        [profilePic]="plate.profiletPicUrl"
+                        [initials]="plate.initials"
+                        [profilePicInitials]="true"
+                        [plateCreated]="plate.createdDate"
+                        [plateCategory]="plate.plateCategory"
+                        [plateId]="plate.plateCharacters"
+                        [askingPrice]="plate.askingPrice"
+                        [plateNegotiable]="plate.plateNegotiable"
+                        [plateBestOffer]="plate.plateBestOffer"
+                        [offersOver]="plate.offersOver"
+                        [orNearestOffer]="plate.orNearestOffer"
+                        [meaning]="plate.meanings"
+                        [pageViews]="plate.viewsPlaceholder"
+                        [sellerContacted]="plate.sellerContacted"
+                        [emailToFriend]="plate.emailToFriend"
+                        [sold]="plate.sold"
+                        >
+                    </app-plate-card>
+                </div>
+            </div>
+        </section>
+
     </mat-sidenav-content>
 </mat-sidenav-container>

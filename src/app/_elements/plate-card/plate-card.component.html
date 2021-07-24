@@ -1,8 +1,8 @@
 <div class="d-flex flex-column align-items-center py-3">
-  <mat-card class="m-3 mat-elevation-z8" style="width: 208px;">
+  <mat-card class="m-3 mat-elevation-z8 position-sticky" style="width: 208px;">
 
     <mat-card-content class="list-group text-center">
-        <div class="account-circle">
+        <div class="account-circle" ngClass="forSearch ? 'fs-account-cirlce' : 'account-circle'">
           <ng-container>
             <span *ngIf="!profilePicInitials" class="material-icons">
               account_circle
@@ -35,13 +35,15 @@
         <br>
         <li class="list-group-item border-0 py-0">
           <!-- <b>Asking Price: </b> -->
-          <mat-chip color="accent" selected>
-            <span *ngIf="offersOver">Offers over&nbsp;</span>
-            <span *ngIf="plateBestOffer">Make me an offer</span>
-            <span *ngIf="!plateBestOffer"> £{{askingPrice}} </span>
-            <span *ngIf="orNearestOffer">&nbsp;ONO</span>
-            <span *ngIf="plateNegotiable">&nbsp;Negotiable</span>
-          </mat-chip>
+          <mat-chip-list class="d-flex flex-column align-items-center">
+            <mat-chip color="accent" selected>
+              <span *ngIf="offersOver">Offers over&nbsp;</span>
+              <span *ngIf="plateBestOffer">Make me an offer</span>
+              <span *ngIf="!plateBestOffer"> £{{askingPrice}} </span>
+              <span *ngIf="orNearestOffer">&nbsp;ONO</span>
+              <span *ngIf="plateNegotiable">&nbsp;Negotiable</span>
+            </mat-chip>
+          </mat-chip-list>
         </li>
         <li class="list-group-item border-0 py-0 my-1">
           <!-- <mat-chip color="accent" selected *ngIf="plateNegotiable">Negotiable</mat-chip>
