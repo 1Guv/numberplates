@@ -48,7 +48,7 @@
         },
         "searchButton": {
             "name": "Search plates now",
-            "url": "/search"
+            "url": "/number-plate-search"
         },
         "howItWorks": [
             {
@@ -266,7 +266,7 @@
         "plateFree": false
     },
     "search": {
-        "heading": "Search for your perfect plate",
-        "subHeading": "The FASTEST plate search in the world!.",
+        "heading": "Search for your PERFECT plate.",
+        "subHeading": "The FASTEST number plate search in the world!"
     }
 }
