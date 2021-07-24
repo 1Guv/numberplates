@@ -4,11 +4,12 @@ import { NumberPlateSearchComponent } from './number-plate-search/number-plate-s
 import { SearchRoutingModule } from './search-routing';
 import { MatBadgeModule, MatButtonModule, MatCardModule, MatChipsModule, MatFormFieldModule, MatIconModule, MatInputModule, MatSidenavModule } from '@angular/material';
 import { PlateCardComponent } from '../_elements/plate-card/plate-card.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
     NumberPlateSearchComponent,
-    PlateCardComponent
+    // PlateCardComponent
   ],
   imports: [
     CommonModule,
@@ -19,8 +20,7 @@ import { PlateCardComponent } from '../_elements/plate-card/plate-card.component
     MatSidenavModule,
     MatBadgeModule,
     MatButtonModule,
-    MatChipsModule,
-    MatCardModule
+    SharedModule
   ],
   schemas:  [CUSTOM_ELEMENTS_SCHEMA]
 })

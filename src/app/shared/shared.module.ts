@@ -3,10 +3,15 @@ import { CommonModule } from '@angular/common';
 import { SectionContentComponent } from '../_elements/section-content/section-content.component';
 import { RouterModule } from '@angular/router';
 import { BootstrapCarouselComponent } from '../_elements/bootstrap-carousel/bootstrap-carousel.component';
-import { MatButtonModule, MatIconModule, MatTooltipModule, MatToolbarModule, MatCardModule, MatBadgeModule } from '@angular/material';
+import { MatButtonModule, MatIconModule, MatTooltipModule, MatToolbarModule, MatCardModule, MatBadgeModule, MatChipsModule } from '@angular/material';
+import { PlateCardComponent } from '../_elements/plate-card/plate-card.component';
 
 @NgModule({
-  declarations: [SectionContentComponent, BootstrapCarouselComponent],
+  declarations: [
+    SectionContentComponent,
+    BootstrapCarouselComponent,
+    PlateCardComponent
+  ],
   imports: [
     CommonModule,
     RouterModule,
@@ -16,7 +21,14 @@ import { MatButtonModule, MatIconModule, MatTooltipModule, MatToolbarModule, Mat
     MatToolbarModule,
     MatCardModule,
     MatBadgeModule,
+    MatChipsModule,
+    MatBadgeModule
+
   ],
-  exports: [SectionContentComponent, BootstrapCarouselComponent]
+  exports: [
+    SectionContentComponent,
+    BootstrapCarouselComponent,
+    PlateCardComponent
+  ]
 })
 export class SharedModule { }

@@ -35,7 +35,7 @@ import { EmailValidationDirective } from '../_directives/email-validation.direct
     CreateListingTwoComponent,
     CreateListingNewComponent,
     ListingPreviewComponent,
-    PlateCardComponent,
+    // PlateCardComponent,
     MessagePreviewComponent,
     LettersOnlyDirective,
     NumbersOnlyDirective,
