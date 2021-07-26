@@ -21,6 +21,7 @@
                     <div class="d-flex flex-row">
                         <input
                             type="text"
+                            [formControl]="filter"
                             matInput
                             placeholder="{{searchPlaceholder}}">
                     </div>
@@ -29,9 +30,13 @@
             </div>
         </section>
 
+        <section class="d-flex flex-row justify-content-center align-items-center">
+            <p>Total Plates: {{( filteredNumberPlates$ | async)?.length }}</p>
+        </section>
+
         <section #searchResults>
             <div class="d-flex flex-row justify-content-center align-items-center flex-wrap p-3">
-                <div *ngFor="let plate of numberPlates$ | async">
+                <div *ngFor="let plate of filteredNumberPlates$ | async">
                     <app-plate-card
                         [forSearch]="true"
                         [profilePic]="plate.profiletPicUrl"

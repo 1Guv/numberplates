@@ -2,14 +2,13 @@ import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NumberPlateSearchComponent } from './number-plate-search/number-plate-search.component';
 import { SearchRoutingModule } from './search-routing';
-import { MatBadgeModule, MatButtonModule, MatCardModule, MatChipsModule, MatFormFieldModule, MatIconModule, MatInputModule, MatSidenavModule } from '@angular/material';
-import { PlateCardComponent } from '../_elements/plate-card/plate-card.component';
+import { MatBadgeModule, MatButtonModule, MatFormFieldModule, MatIconModule, MatInputModule, MatSidenavModule } from '@angular/material';
 import { SharedModule } from '../shared/shared.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    NumberPlateSearchComponent,
-    // PlateCardComponent
+    NumberPlateSearchComponent
   ],
   imports: [
     CommonModule,
@@ -20,7 +19,9 @@ import { SharedModule } from '../shared/shared.module';
     MatSidenavModule,
     MatBadgeModule,
     MatButtonModule,
-    SharedModule
+    SharedModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   schemas:  [CUSTOM_ELEMENTS_SCHEMA]
 })

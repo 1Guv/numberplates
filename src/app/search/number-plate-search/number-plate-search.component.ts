@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { FormControl } from '@angular/forms';
+import { combineLatest, Observable, Subscription } from 'rxjs';
+import { map, startWith } from 'rxjs/operators';
 import { ContentService } from 'src/app/_services/content.service';
 import { NumberPlatesService } from 'src/app/_services/number-plates.service';
 import { WindowsResizeService } from 'src/app/_services/windows-resize.service';
@@ -50,6 +51,9 @@ export class NumberPlateSearchComponent implements OnInit, OnDestroy {
   resizeSubscription: Subscription;
   subscriptions: Subscription[] = [];
   samplePlatesForSearchJson = '';
+  filter = new FormControl('');
+  filter$: Observable<string>;
+  filteredNumberPlates$: Observable<any>;
 
   constructor(
     private contentService: ContentService,
@@ -71,6 +75,20 @@ export class NumberPlateSearchComponent implements OnInit, OnDestroy {
         this.currentWidthPx = `${size.innerWidth - (size.innerWidth * 0.25)}px`;
       })
     );
+
+    this.filter$ = this.filter.valueChanges.pipe(startWith(''));
+
+    this.filteredNumberPlates$ =
+      combineLatest(this.numberPlates$, this.filter$)
+      .pipe(
+        map(
+          ([numberplates, filterString]) =>
+            numberplates.filter((plate: CustomerPlate) => {
+              return plate.meanings.toLowerCase().indexOf(filterString.toLowerCase()) !== -1 ||
+              plate.plateCharacters.replace(/\s/g, '').toLowerCase().indexOf(filterString.replace(/\s/g, '').toLowerCase()) !== -1;
+            })
+          )
+      )
   }
 
   getHeaderInfo() {
