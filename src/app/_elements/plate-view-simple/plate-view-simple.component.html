@@ -1,0 +1,30 @@
+<div class="row">
+
+    <div class="col">
+        <span class="plate-css text-uppercase mat-elevation-z4">
+            {{plateId}}
+        </span>
+    </div>
+
+    <div class="col">
+        <mat-chip-list class="">
+            <mat-chip color="accent" selected>
+            <span *ngIf="offersOver">Offers over&nbsp;</span>
+            <span *ngIf="plateBestOffer">Make me an offer</span>
+            <span *ngIf="!plateBestOffer"> £{{askingPrice}} </span>
+            <span *ngIf="orNearestOffer">&nbsp;ONO</span>
+            <span *ngIf="plateNegotiable">&nbsp;Negotiable</span>
+            </mat-chip>
+        </mat-chip-list>
+    </div>
+
+    <div class="col-12 col-md-4 text-right">
+        <button
+            id="messageSellerBtn"
+            mat-raised-button
+            color="primary">
+            Message Seller
+        </button>
+    </div>
+
+</div>

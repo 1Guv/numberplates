@@ -34,9 +34,35 @@
             <p>Total Plates: {{( filteredNumberPlates$ | async)?.length }}</p>
         </section>
 
+        <form [formGroup]="toggleCardOrListView">
+            <section class="d-flex flex-row justify-content-center align-items-center">
+                <span style="width: 100px;" class="">
+                    <mat-slide-toggle
+                        (toggleChange)="toggleView('Cards')"
+                        name="Cards"
+                        formControlName="cardView"
+                        class="py-2">
+                        Cards
+                    </mat-slide-toggle>
+                </span>
+            </section>
+
+            <section class="d-flex flex-row justify-content-center align-items-center">
+                <span style="width: 100px;" class="">
+                    <mat-slide-toggle
+                        (toggleChange)="toggleView('List')"
+                        name="List"
+                        formControlName="listView"
+                        class="py-2">
+                        List
+                    </mat-slide-toggle>
+                </span>
+            </section>
+        </form>
+
         <section #searchResults>
-            <div class="d-flex flex-row justify-content-center align-items-center flex-wrap p-3">
-                <div *ngFor="let plate of filteredNumberPlates$ | async">
+            <div *ngIf="toggleCardOrListView.get('cardView').value" class="d-flex flex-row justify-content-center align-items-center flex-wrap p-3">
+                <ng-container *ngFor="let plate of filteredNumberPlates$ | async">
                     <app-plate-card
                         [forSearch]="true"
                         [profilePic]="plate.profiletPicUrl"
@@ -57,7 +83,21 @@
                         [sold]="plate.sold"
                         >
                     </app-plate-card>
-                </div>
+                </ng-container>
+            </div>
+
+            <div *ngIf="toggleCardOrListView.get('listView').value" class="container justify-content-center">
+                <ng-container *ngFor="let plate of filteredNumberPlates$ | async">
+                    <app-plate-view-simple
+                        [plateId]="plate.plateCharacters"
+                        [askingPrice]="plate.askingPrice"
+                        [plateNegotiable]="plate.plateNegotiable"
+                        [plateBestOffer]="plate.plateBestOffer"
+                        [offersOver]="plate.offersOver"
+                        >
+                    </app-plate-view-simple>
+                    <hr>
+                </ng-container>
             </div>
         </section>
 

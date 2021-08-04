@@ -5,12 +5,14 @@ import { RouterModule } from '@angular/router';
 import { BootstrapCarouselComponent } from '../_elements/bootstrap-carousel/bootstrap-carousel.component';
 import { MatButtonModule, MatIconModule, MatTooltipModule, MatToolbarModule, MatCardModule, MatBadgeModule, MatChipsModule } from '@angular/material';
 import { PlateCardComponent } from '../_elements/plate-card/plate-card.component';
+import { PlateViewSimpleComponent } from '../_elements/plate-view-simple/plate-view-simple.component';
 
 @NgModule({
   declarations: [
     SectionContentComponent,
     BootstrapCarouselComponent,
-    PlateCardComponent
+    PlateCardComponent,
+    PlateViewSimpleComponent
   ],
   imports: [
     CommonModule,
@@ -28,7 +30,8 @@ import { PlateCardComponent } from '../_elements/plate-card/plate-card.component
   exports: [
     SectionContentComponent,
     BootstrapCarouselComponent,
-    PlateCardComponent
+    PlateCardComponent,
+    PlateViewSimpleComponent
   ]
 })
 export class SharedModule { }

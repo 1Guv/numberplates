@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { combineLatest, Observable, Subscription } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 import { ContentService } from 'src/app/_services/content.service';
@@ -54,11 +54,13 @@ export class NumberPlateSearchComponent implements OnInit, OnDestroy {
   filter = new FormControl('');
   filter$: Observable<string>;
   filteredNumberPlates$: Observable<any>;
+  toggleCardOrListView: FormGroup;
 
   constructor(
     private contentService: ContentService,
     private windowsResizeService: WindowsResizeService,
-    private numberPlateService: NumberPlatesService
+    private numberPlateService: NumberPlatesService,
+    private fb: FormBuilder
   ) { }
 
   ngOnInit() {
@@ -89,6 +91,29 @@ export class NumberPlateSearchComponent implements OnInit, OnDestroy {
             })
           )
       )
+
+    this.createPlateViewForm();
+  }
+
+  createPlateViewForm() {
+    this.toggleCardOrListView = this.fb.group({
+      cardView: [false],
+      listView: [true]
+    })
+  }
+
+  toggleView(viewType: any) {
+    if (viewType === 'List') {
+      this.toggleCardOrListView.get('listView').value ?
+      this.toggleCardOrListView.patchValue({cardView:  true}) :
+      this.toggleCardOrListView.patchValue({cardView:  false});
+    }
+
+    if (viewType === 'Cards') {
+      this.toggleCardOrListView.get('cardView').value ?
+      this.toggleCardOrListView.patchValue({listView:  true}) :
+      this.toggleCardOrListView.patchValue({listView:  false});
+    }
   }
 
   getHeaderInfo() {
