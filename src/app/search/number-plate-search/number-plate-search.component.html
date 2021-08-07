@@ -30,8 +30,9 @@
             </div>
         </section>
 
-        <section class="d-flex flex-row justify-content-center align-items-center">
-            <p>Total Plates: {{( filteredNumberPlates$ | async)?.length }}</p>
+        <section class="d-flex flex-column justify-content-center align-items-center">
+            <p>Total Plates: {{( numberPlates$ | async)?.length }}</p>
+            <p>Filtered Plates: {{( filteredNumberPlates$ | async)?.length }}</p>
         </section>
 
         <form [formGroup]="toggleCardOrListView">
@@ -58,6 +59,8 @@
                     </mat-slide-toggle>
                 </span>
             </section>
+            <br>
+            <br>
         </form>
 
         <section #searchResults>
