@@ -7,7 +7,8 @@ import { NumberPlatesService } from 'src/app/_services/number-plates.service';
 import { WindowsResizeService } from 'src/app/_services/windows-resize.service';
 
 export interface SampleNumberPlateSet {
-  sampleSet: Array<CustomerPlate>
+  sampleSet?: Array<CustomerPlate>;
+  currentAPPlateSet?: Array<CustomerPlate>;
 }
 
 export interface CustomerPlate {
@@ -121,7 +122,8 @@ export class NumberPlateSearchComponent implements OnInit, OnDestroy {
   }
 
   getNumberPlates() {
-    this.numberPlates$ = this.numberPlateService.samplePlates$.pipe(map(numberplate => numberplate.sampleSet));
+    // this.numberPlates$ = this.numberPlateService.samplePlates$.pipe(map(numberplate => numberplate.sampleSet));
+    this.numberPlates$ = this.numberPlateService.actualAPPlates$.pipe(map(numberplate => numberplate.currentAPPlateSet));
   }
 
   ngOnDestroy() {

@@ -5,6 +5,7 @@ import { SearchRoutingModule } from './search-routing';
 import { MatBadgeModule, MatButtonModule, MatFormFieldModule, MatIconModule, MatInputModule, MatSidenavModule, MatSlideToggleModule } from '@angular/material';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    ScrollingModule
   ],
   schemas:  [CUSTOM_ELEMENTS_SCHEMA]
 })

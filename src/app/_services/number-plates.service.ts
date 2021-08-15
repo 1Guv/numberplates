@@ -10,9 +10,13 @@ import { CustomerPlate, SampleNumberPlateSet } from '../search/number-plate-sear
 export class NumberPlatesService {
 
   samplePlates$: Observable<SampleNumberPlateSet>;
+  actualAPPlates$: Observable<SampleNumberPlateSet>;
 
   constructor(private http: HttpClient) {
     this.samplePlates$ = this.http.get<SampleNumberPlateSet>('./assets/data/plates_for_search.json')
+      .pipe(shareReplay(1));
+
+    this.actualAPPlates$ = this.http.get<SampleNumberPlateSet>('./assets/data/actual_plates_from_ap.json')
       .pipe(shareReplay(1));
   }
 

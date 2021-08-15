@@ -63,45 +63,57 @@
             <br>
         </form>
 
-        <section #searchResults>
-            <div *ngIf="toggleCardOrListView.get('cardView').value" class="d-flex flex-row justify-content-center align-items-center flex-wrap p-3">
-                <ng-container *ngFor="let plate of filteredNumberPlates$ | async">
-                    <app-plate-card
-                        [forSearch]="true"
-                        [profilePic]="plate.profiletPicUrl"
-                        [initials]="plate.initials"
-                        [profilePicInitials]="true"
-                        [plateCreated]="plate.createdDate"
-                        [plateCategory]="plate.plateCategory"
-                        [plateId]="plate.plateCharacters"
-                        [askingPrice]="plate.askingPrice"
-                        [plateNegotiable]="plate.plateNegotiable"
-                        [plateBestOffer]="plate.plateBestOffer"
-                        [offersOver]="plate.offersOver"
-                        [orNearestOffer]="plate.orNearestOffer"
-                        [meaning]="plate.meanings"
-                        [pageViews]="plate.viewsPlaceholder"
-                        [sellerContacted]="plate.sellerContacted"
-                        [emailToFriend]="plate.emailToFriend"
-                        [sold]="plate.sold"
-                        >
-                    </app-plate-card>
-                </ng-container>
-            </div>
+        <section #searchResults class="d-flex flex-row justify-content-center align-items-center flex-wrap p-3">
+            <!-- <ng-container *ngFor="let plate of filteredNumberPlates$ | async"> -->
 
-            <div *ngIf="toggleCardOrListView.get('listView').value" class="container justify-content-center">
-                <ng-container *ngFor="let plate of filteredNumberPlates$ | async">
-                    <app-plate-view-simple
-                        [plateId]="plate.plateCharacters"
-                        [askingPrice]="plate.askingPrice"
-                        [plateNegotiable]="plate.plateNegotiable"
-                        [plateBestOffer]="plate.plateBestOffer"
-                        [offersOver]="plate.offersOver"
-                        >
-                    </app-plate-view-simple>
-                    <hr>
-                </ng-container>
-            </div>
+                <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
+                    <div *cdkVirtualFor="let plate of filteredNumberPlates$ | async">
+
+                        <div *ngIf="toggleCardOrListView.get('cardView').value">
+                            <ng-container>
+                                <app-plate-card
+                                    [forSearch]="true"
+                                    [profilePic]="plate.profiletPicUrl"
+                                    [initials]="plate.initials"
+                                    [profilePicInitials]="true"
+                                    [plateCreated]="plate.createdDate"
+                                    [plateCategory]="plate.plateCategory"
+                                    [plateId]="plate.plateCharacters"
+                                    [askingPrice]="plate.askingPrice"
+                                    [plateNegotiable]="plate.plateNegotiable"
+                                    [plateBestOffer]="plate.plateBestOffer"
+                                    [offersOver]="plate.offersOver"
+                                    [orNearestOffer]="plate.orNearestOffer"
+                                    [meaning]="plate.meanings"
+                                    [pageViews]="plate.viewsPlaceholder"
+                                    [sellerContacted]="plate.sellerContacted"
+                                    [emailToFriend]="plate.emailToFriend"
+                                    [sold]="plate.sold"
+                                    >
+                                </app-plate-card>
+                            </ng-container>
+                        </div>
+
+                        <div *ngIf="toggleCardOrListView.get('listView').value" class="container justify-content-center">
+                            <ng-container>
+                                <app-plate-view-simple
+                                    [plateId]="plate.plateCharacters"
+                                    [askingPrice]="plate.askingPrice"
+                                    [plateNegotiable]="plate.plateNegotiable"
+                                    [plateBestOffer]="plate.plateBestOffer"
+                                    [offersOver]="plate.offersOver"
+                                    >
+                                </app-plate-view-simple>
+                                <hr>
+                            </ng-container>
+                        </div>
+
+                    </div>
+                </cdk-virtual-scroll-viewport>
+
+
+
+            <!-- </ng-container> -->
         </section>
 
     </mat-sidenav-content>
