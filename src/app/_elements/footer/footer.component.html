@@ -1,20 +1,20 @@
-<section id="footer-top" class="mt-5">
+<section id="footer-top" class="">
     <div class="d-flex py-5 border px-3 px-lg-4">
         <h2 [innerHTML]="(footer$ | async)?.heading"></h2>
 
         <div class="d-flex flex-column flex-lg-row ml-auto">
             <ng-container *ngFor="let button of (footer$ | async)?.ctaButtons; index as i; first as isFirst">
-            
-                <button mat-raised-button 
+
+                <button mat-raised-button
                         [routerLink]="button.url"
                         [ngClass]="{'first-button': isFirst}"
                         class="m-2">
                         {{ button.name }}
                 </button>
-                
+
             </ng-container>
         </div>
-        
+
     </div>
 </section>
 
@@ -59,7 +59,7 @@
                         </ng-container>
                     </div>
                 </div>
-            
+
                 <div class="mx-auto">
                     <h2 class="link-heading">Help</h2>
                     <div class="d-flex flex-column">
@@ -70,12 +70,12 @@
                 </div>
 
             </div>
-            
+
         </div>
-    
+
 
     </div>
 
-    
-    
+
+
 </section>

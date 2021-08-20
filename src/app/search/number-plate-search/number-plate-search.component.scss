@@ -25,16 +25,9 @@
         cursor: pointer;
     }
 
-    .example-viewport {
-        height: 400px;
+    .search-viewport {
+        height: 800px;
         width: 100%;
         // border: 1px solid black;
     }
-
-    // ::ng-deep {
-    //     .cdk-virtual-scroll-content-wrapper {
-    //       display: grid;
-    //       grid-template-columns: 33% 33% 33%;
-    //     }
-    // }
 }
