@@ -33,7 +33,8 @@ import { FormCardComponent } from '../_elements/form-card/form-card.component';
     SectionContentComponent,
     BootstrapCarouselComponent,
     PlateCardComponent,
-    PlateViewSimpleComponent
+    PlateViewSimpleComponent,
+    FormCardComponent
   ]
 })
 export class SharedModule { }

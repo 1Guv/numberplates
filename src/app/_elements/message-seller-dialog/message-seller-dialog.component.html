@@ -1,50 +1,58 @@
-<div class="d-flex flex-row-reverse">
-    <mat-icon mat-dialog-close matSuffix>close</mat-icon>
-</div>
-<app-form-card
-    [title]="subTitle"
-    [subTitle]="currentViews"
-    [footer]="footerMessage"
-    bgColour="info">
-
-    <div class="d-flex flex-column align-items-center justify-content-center">
-
-        <span class="plate-css text-uppercase mat-elevation-z4 my-2">
-            {{ data.plateId }}
-        </span>
-
-        <mat-chip color="accent" class="my-2">£{{ data.askingPrice }}</mat-chip>
-
-        <form [formGroup]="messageSellerForm" class="w-100 d-flex flex-column align-items-center">
-            <mat-form-field class="col-12 col-lg-6 px-0" appearance="fill">
-                <mat-label>Name</mat-label>
-                <input type="text" matInput formControlName="contactName">
-            </mat-form-field>
-
-            <mat-form-field class="col-12 col-lg-6 px-0" appearance="fill">
-                <mat-label>Contact Number</mat-label>
-                <input type="number" matInput formControlName="contactNumber">
-            </mat-form-field>
-
-            <mat-form-field class="col-12 col-lg-6 px-0" appearance="fill">
-                <mat-label>Email</mat-label>
-                <input type="email" matInput formControlName="contactEmail">
-            </mat-form-field>
-
-            <mat-form-field class="col-12 col-lg-6 px-0" appearance="fill">
-                <mat-label>Message</mat-label>
-                <textarea type="text" matInput formControlName="contactMessage"></textarea>
-            </mat-form-field>
-
-            <button
-                mat-raised-button
-                [disabled]="!messageSellerForm.valid"
-                (click)="sendContactEnquiry()"
-                class="my-1 col col-lg-1">
-                Send
-            </button>
-        </form>
-
+<mat-card class="my-3 mx-auto">
+    <div class="d-flex flex-row-reverse">
+        <mat-icon mat-dialog-close matSuffix>close</mat-icon>
     </div>
 
-</app-form-card>
+    <mar-card-subtitle class="d-flex">
+        <h5 class="text-left">{{ currentViews }}</h5>
+    </mar-card-subtitle>
+
+    <mat-card-title class="text-left">
+        <h3>{{ subTitle }}</h3>
+    </mat-card-title>
+
+    <ng-container>
+        <div class="d-flex flex-column align-items-center justify-content-center">
+
+            <span class="plate-css text-uppercase mat-elevation-z4 my-2">
+                {{ data.plateId }}
+            </span>
+
+            <mat-chip color="accent" class="my-2">£{{ data.askingPrice }}</mat-chip>
+
+            <form [formGroup]="messageSellerForm" class="w-100 d-flex flex-column align-items-center">
+                <mat-form-field class="col-12 col-lg-6 px-0" appearance="fill">
+                    <mat-label>Name</mat-label>
+                    <input type="text" matInput formControlName="contactName">
+                </mat-form-field>
+
+                <mat-form-field class="col-12 col-lg-6 px-0" appearance="fill">
+                    <mat-label>Contact Number</mat-label>
+                    <input type="number" matInput formControlName="contactNumber">
+                </mat-form-field>
+
+                <mat-form-field class="col-12 col-lg-6 px-0" appearance="fill">
+                    <mat-label>Email</mat-label>
+                    <input type="email" matInput formControlName="contactEmail">
+                </mat-form-field>
+
+                <mat-form-field class="col-12 col-lg-6 px-0" appearance="fill">
+                    <mat-label>Message</mat-label>
+                    <textarea type="text" matInput formControlName="contactMessage"></textarea>
+                </mat-form-field>
+
+                <button
+                    mat-raised-button
+                    [disabled]="!messageSellerForm.valid"
+                    (click)="sendContactEnquiry()"
+                    class="my-1 col col-lg-1">
+                    Send
+                </button>
+            </form>
+        </div>
+    </ng-container>
+
+    <mat-card-footer class="text-left">
+        <h6>{{ footerMessage }}</h6>
+    </mat-card-footer>
+</mat-card>

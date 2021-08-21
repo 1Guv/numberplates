@@ -8,7 +8,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatCardModule } from '@angular/material/card';
-import { FormCardComponent } from '../_elements/form-card/form-card.component';
 import { FormDynamicInputsComponent } from '../_forms/form-dynamic-inputs/form-dynamic-inputs.component';
 import { FormDynamicSelectsComponent } from '../_forms/form-dynamic-selects/form-dynamic-selects.component';
 import { FormDynamicCheckboxesComponent } from '../_forms/form-dynamic-checkboxes/form-dynamic-checkboxes.component';
@@ -17,7 +16,6 @@ import { CreateListingTwoComponent } from './create-listing-two/create-listing-t
 import { FormDynamicDatepickerComponent } from '../_forms/form-dynamic-datepicker/form-dynamic-datepicker.component';
 import { CreateListingNewComponent } from './create-listing-new/create-listing-new.component';
 import { ListingPreviewComponent } from './create-listing-new/listing-preview/listing-preview.component';
-import { PlateCardComponent } from '../_elements/plate-card/plate-card.component';
 import { MessagePreviewComponent } from './create-listing-new/message-preview/message-preview.component';
 import { LettersOnlyDirective } from '../_directives/letters-only.directive';
 import { NumbersOnlyDirective } from '../_directives/numbers-only.directive';
@@ -27,7 +25,6 @@ import { EmailValidationDirective } from '../_directives/email-validation.direct
   declarations: [
     CreateListingComponent,
     LargePlateDisplayInputComponent,
-    // FormCardComponent,
     FormDynamicInputsComponent,
     FormDynamicSelectsComponent,
     FormDynamicCheckboxesComponent,
@@ -35,7 +32,6 @@ import { EmailValidationDirective } from '../_directives/email-validation.direct
     CreateListingTwoComponent,
     CreateListingNewComponent,
     ListingPreviewComponent,
-    // PlateCardComponent,
     MessagePreviewComponent,
     LettersOnlyDirective,
     NumbersOnlyDirective,

@@ -8,14 +8,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MessageSellerDialogComponent } from '../_elements/message-seller-dialog/message-seller-dialog.component';
-import { FormCardComponent } from '../_elements/form-card/form-card.component';
 
 
 @NgModule({
   declarations: [
     NumberPlateSearchComponent,
-    MessageSellerDialogComponent,
-    // FormCardComponent
+    MessageSellerDialogComponent
   ],
   imports: [
     CommonModule,
