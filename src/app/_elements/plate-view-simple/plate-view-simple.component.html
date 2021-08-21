@@ -24,11 +24,16 @@
                 class="d-none d-sm-block"
                 id="messageSellerBtn"
                 mat-raised-button
+                (click)="messageSeller(plateId, askingPrice)"
                 color="primary">
                 Message Seller
             </button>
 
-            <button mat-mini-fab color="primary" class="d-sm-none d-md-none d-lg-none d-xl-none d-xxl-none">
+            <button
+                mat-mini-fab
+                color="primary"
+                (click)="messageSeller(plateId, askingPrice)"
+                class="d-sm-none d-md-none d-lg-none d-xl-none d-xxl-none">
                 <mat-icon>message</mat-icon>
             </button>
          </div>

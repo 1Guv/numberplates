@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Plate } from '../../_models/plate.model';
+import { MessageSellerDialogComponent } from '../message-seller-dialog/message-seller-dialog.component';
 
 @Component({
   selector: 'app-plate-card',
@@ -35,7 +37,7 @@ export class PlateCardComponent implements OnInit {
   category: string;
   imageUrl: string;
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
   }
@@ -74,6 +76,19 @@ export class PlateCardComponent implements OnInit {
       this.imageUrl = '';
     };
     return this.imageUrl;
+  }
+
+  messageSeller(plateId: string, pageViews: number, meaning: string, askingPrice: string, initials: string): void {
+    const dialogRef = this.dialog.open(MessageSellerDialogComponent, {
+      width: '80%',
+      data: {
+        plateId: plateId,
+        pageViews: pageViews,
+        meaning: meaning,
+        askingPrice: askingPrice,
+        initials: initials
+      }
+    });
   }
 
 }

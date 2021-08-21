@@ -1,0 +1,15 @@
+.plate-css {
+    // height: 140px;
+    // width: 100%;
+    border-radius: 5px;
+    background-color: yellow;
+    color: black;
+    font-size: 1.5rem;
+    padding: 10px;
+}
+
+.views {
+    padding: 0px 10px 0px 3px;
+    background-color: orange;
+    clip-path: polygon(0 0, 100% 0, 75% 100%, 0% 100%);
+}

@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 
       <mat-card-subtitle class="d-flex">
           <h5 class="text-left">{{ subTitle }}</h5>
-          <mat-chip-list class="ml-auto">
+          <mat-chip-list *ngIf="index" class="ml-auto">
             <mat-chip color="primary" selected>{{ index }}</mat-chip>
           </mat-chip-list>
       </mat-card-subtitle>
