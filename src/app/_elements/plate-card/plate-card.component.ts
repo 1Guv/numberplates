@@ -78,7 +78,7 @@ export class PlateCardComponent implements OnInit {
     return this.imageUrl;
   }
 
-  messageSeller(plateId: string, pageViews: number, meaning: string, askingPrice: string, initials: string): void {
+  messageSeller(plateId: string, pageViews: number, meaning: string, askingPrice: number, initials: string): void {
     const dialogRef = this.dialog.open(MessageSellerDialogComponent, {
       width: '80%',
       data: {
