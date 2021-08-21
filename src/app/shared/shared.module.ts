@@ -6,13 +6,15 @@ import { BootstrapCarouselComponent } from '../_elements/bootstrap-carousel/boot
 import { MatButtonModule, MatIconModule, MatTooltipModule, MatToolbarModule, MatCardModule, MatBadgeModule, MatChipsModule } from '@angular/material';
 import { PlateCardComponent } from '../_elements/plate-card/plate-card.component';
 import { PlateViewSimpleComponent } from '../_elements/plate-view-simple/plate-view-simple.component';
+import { FormCardComponent } from '../_elements/form-card/form-card.component';
 
 @NgModule({
   declarations: [
     SectionContentComponent,
     BootstrapCarouselComponent,
     PlateCardComponent,
-    PlateViewSimpleComponent
+    PlateViewSimpleComponent,
+    FormCardComponent
   ],
   imports: [
     CommonModule,

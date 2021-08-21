@@ -15,7 +15,7 @@ import { FormCardComponent } from '../_elements/form-card/form-card.component';
   declarations: [
     NumberPlateSearchComponent,
     MessageSellerDialogComponent,
-    FormCardComponent
+    // FormCardComponent
   ],
   imports: [
     CommonModule,

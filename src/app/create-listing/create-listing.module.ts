@@ -27,7 +27,7 @@ import { EmailValidationDirective } from '../_directives/email-validation.direct
   declarations: [
     CreateListingComponent,
     LargePlateDisplayInputComponent,
-    FormCardComponent,
+    // FormCardComponent,
     FormDynamicInputsComponent,
     FormDynamicSelectsComponent,
     FormDynamicCheckboxesComponent,
