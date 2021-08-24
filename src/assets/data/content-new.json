@@ -24,7 +24,7 @@
             {
                 "name": "Search",
                 "icon": "search",
-                "url": "/search",
+                "url": "/number-plate-search",
                 "toolTip": "Search for your personal plate"
             },
             {
@@ -176,7 +176,7 @@
                 "imageRight": true,
                 "imageUrl": "./assets/valuation.svg",
                 "ctaButtonText": "Search now",
-                "ctaButtonUrl": "/search",
+                "ctaButtonUrl": "/number-plate-search",
                 "ctaButtonSubText": "on average only takes 1 minute"
             }
         ]
@@ -195,7 +195,7 @@
             },
             {
                 "name": "Search",
-                "url": "/search"
+                "url": "/number-plate-search"
             }
         ],
         "logo": "./assets/n-logo-svg.png",

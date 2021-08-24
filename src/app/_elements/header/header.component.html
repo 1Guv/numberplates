@@ -15,6 +15,7 @@
                 <button mat-icon-button
                         attr.aria-label="{{ option.name }}"
                         matTooltip="{{ option.toolTip }}"
+                        [routerLink]="option.url"
                         [ngClass]="{'ml-auto': isFirst}">
                     <mat-icon>{{ option.icon }}</mat-icon>
                 </button>
