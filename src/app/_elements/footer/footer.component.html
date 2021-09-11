@@ -6,8 +6,9 @@
             <ng-container *ngFor="let button of (footer$ | async)?.ctaButtons; index as i; first as isFirst">
 
                 <button mat-raised-button
-                        [routerLink]="button.url"
+                        [routerLink]="button.name !== 'Valuation' ? button.url : null"
                         [ngClass]="{'first-button': isFirst}"
+                        (click)="button.name === 'Valuation' ? onValuation() : null"
                         class="m-2">
                         {{ button.name }}
                 </button>
