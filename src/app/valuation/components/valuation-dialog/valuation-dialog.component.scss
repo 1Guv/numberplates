@@ -5,3 +5,7 @@
     font-size: 1.5rem;
     padding: 10px;
 }
+
+::ng-deep mat-step-header {
+    margin-bottom: 15px !important;
+}

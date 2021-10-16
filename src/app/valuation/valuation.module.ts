@@ -1,13 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ValuationDialogComponent } from './components/valuation-dialog/valuation-dialog.component';
-import { MatButtonModule, MatFormFieldModule, MatInputModule, MatStepperModule } from '@angular/material';
+import { MatButtonModule, MatFormFieldModule, MatIconModule, MatInputModule, MatSelectModule, MatSlideToggleModule, MatStepperModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DecimalPipe } from '../_pipes/decimal.pipe';
 
 
 
 @NgModule({
-  declarations: [ValuationDialogComponent],
+  declarations: [
+    ValuationDialogComponent,
+    DecimalPipe
+  ],
   imports: [
     CommonModule,
     MatStepperModule,
@@ -15,7 +19,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSelectModule,
+    MatIconModule,
+    MatSlideToggleModule
   ]
 })
 export class ValuationModule { }

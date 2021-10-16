@@ -11,10 +11,16 @@ export class ContentService {
 
   $manufacturers = new Subject<any>();
   content$: Observable<Content>;
+  suffixYears$: Observable<any>;
+  prefixYears$: Observable<any>;
+  currentYears$: Observable<any>;
 
   constructor(private http: HttpClient) {
     // this.content$ = this.http.get<Content>('./assets/data/content.json').pipe(shareReplay(1));
     this.content$ = this.http.get<Content>('./assets/data/content-new.json').pipe(shareReplay(1));
+    this.suffixYears$ = this.http.get<any>('./assets/data/suffix_years.json').pipe(shareReplay(1));
+    this.prefixYears$ = this.http.get<any>('./assets/data/prefix_years.json').pipe(shareReplay(1));
+    this.currentYears$ = this.http.get<any>('./assets/data/current_years.json').pipe(shareReplay(1));
    }
 
   addManufacturers(manufacturers: Array<InputFields>, section: string) {
