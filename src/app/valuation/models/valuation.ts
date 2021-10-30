@@ -6,7 +6,7 @@ export class PercentageIncrease {
     irish: number;
 
     constructor() {
-      this.dateless = 0.35;
+      this.dateless = 0.35; // Override in getPercentageIncrease()
       this.suffix = 0.30;
       this.prefix = 0.20;
       this.current = 0.15;

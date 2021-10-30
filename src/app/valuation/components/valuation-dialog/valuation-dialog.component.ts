@@ -270,14 +270,37 @@ export class ValuationDialogComponent implements OnInit, OnDestroy {
   getPercentageIncrease() {
     switch (this.stepZeroForm.get('plateType').value) {
       case 'dateless':
+        // If price greater than 7000 then reduce percentage inc to 12%
+        if (parseInt(this.stepZeroForm.get('platePrice').value) > 7000) {
+          console.log('Percentage Increase:' , (0.12 * 100) + '%')
+          return 0.12;
+        }
+
+        // If age is greater than 15 years old then reduce percentage inc to 12%
+        if (this.plateAge > 15) {
+          console.log('Percentage Increase:' , (0.12 * 100) + '%')
+          return 0.12;
+        }
+
         console.log('Percentage Increase:' , (this.percentageIncrease.dateless * 100) + '%')
         return this.percentageIncrease.dateless;
         break;
       case 'suffix':
+        if (this.plateAge > 30) {
+          console.log('Percentage Increase:' , (0.15 * 100) + '%')
+          return 0.15;
+        }
+
         console.log('Percentage Increase:' , (this.percentageIncrease.suffix * 100) + '%')
         return this.percentageIncrease.suffix;
         break;
       case 'prefix':
+         // If age is greater than 15 years old then reduce percentage inc to 12%
+        if (this.plateAge > 15) {
+          console.log('Percentage Increase:' , (0.10 * 100) + '%')
+          return 0.10;
+        }
+
         console.log('Percentage Increase:' , (this.percentageIncrease.prefix * 100) + '%')
         return this.percentageIncrease.prefix;
         break;
@@ -296,6 +319,7 @@ export class ValuationDialogComponent implements OnInit, OnDestroy {
     this.stepZeroForm.reset();
     this.stepOneForm.reset();
     this.stepTwoForm.reset();
+    this.stepThreeForm.reset();
     this.stepper.selectedIndex = 0;
   }
 

@@ -6,6 +6,14 @@
     padding: 10px;
 }
 
+.questions {
+    display: inline-block;
+}
+
+mat-slide-toggle, .questions {
+    margin: 10px 0;
+}
+
 ::ng-deep mat-step-header {
     margin-bottom: 15px !important;
 }
