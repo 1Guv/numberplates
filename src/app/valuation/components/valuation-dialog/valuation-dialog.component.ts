@@ -41,8 +41,8 @@ export class ValuationDialogComponent implements OnInit, OnDestroy {
   currentYears: CurrentYears[];
   plateAge: number;
   platePriceBeforeQuestions = 0;
-  percentageIncrease = new PercentageIncrease;
-  questionValues = new QuestionValues;
+  percentageIncrease = new PercentageIncrease();
+  questionValues = new QuestionValues();
   priceBeforeQuestions: number;
   q1Value: number;
   q2Value: number;
@@ -83,7 +83,7 @@ export class ValuationDialogComponent implements OnInit, OnDestroy {
             this.plateAge = new Date().getFullYear() - plateYear;
           }
         })
-    )
+    );
 
     this.subscriptions.push(
       this.stepZeroForm.valueChanges
@@ -109,7 +109,7 @@ export class ValuationDialogComponent implements OnInit, OnDestroy {
         .pipe(
           filter(plateValB4Q => !!plateValB4Q && plateValB4Q !== 0))
         .subscribe(plateValB4Q => {
-          const plateValB4QNumber = parseInt(plateValB4Q.replace(this.replaceCommas, ''));
+          const plateValB4QNumber = parseInt(plateValB4Q.replace(this.replaceCommas, ''), 10);
           this.q1Value = plateValB4QNumber * this.questionValues.q1;
           this.q2Value = plateValB4QNumber * this.questionValues.q2;
           this.q3Value = plateValB4QNumber * this.questionValues.q3;
@@ -129,7 +129,8 @@ export class ValuationDialogComponent implements OnInit, OnDestroy {
   setPlateValB4Q() {
     this.stepZeroForm.get('plateValB4Q').setValue(this.calcPriceBeforeQuestions(this.stepZeroForm.get('platePrice').value));
     this.stepZeroForm.get('valuationPrice').setValue(this.calcPriceBeforeQuestions(this.stepZeroForm.get('platePrice').value));
-    this.stepZeroForm.get('valuationPrice').setValue(parseInt(this.stepZeroForm.get('valuationPrice').value.replace(this.replaceCommas, '')));
+    this.stepZeroForm.get('valuationPrice')
+      .setValue(parseInt(this.stepZeroForm.get('valuationPrice').value.replace(this.replaceCommas, ''), 10));
   }
 
   createForms() {
@@ -147,30 +148,30 @@ export class ValuationDialogComponent implements OnInit, OnDestroy {
       ],
       plateValB4Q: [''],
       valuationPrice: ['']
-    })
+    });
 
     this.stepOneForm = this.fb.group({
       meaning: ['', [Validators.required]]
-    })
+    });
 
     this.stepTwoForm = this.fb.group({
       q1: ['', [Validators.required]],
       q2: ['', [Validators.required]],
       q3: ['', [Validators.required]],
       q4: ['', [Validators.required]]
-    })
+    });
 
     this.stepThreeForm = this.fb.group({
       q5: ['', [Validators.required]],
       q6: ['', [Validators.required]]
-    })
+    });
   }
 
   plateYearValidator(control: AbstractControl): { [key: string]: boolean } | null {
     if (!!control.value && control.value.length > 0) {
       const firstTwoCharOfYear = [];
 
-      for (var i=0; i<2; i++) {
+      for (let i = 0; i < 2; i++) {
         firstTwoCharOfYear.push(control.value.split('')[i]);
       }
 
@@ -181,7 +182,7 @@ export class ValuationDialogComponent implements OnInit, OnDestroy {
       ) {
         return null;
       } else {
-        return { 'plateYear': false };
+        return { plateYear: false };
       }
     }
   }
@@ -193,25 +194,25 @@ export class ValuationDialogComponent implements OnInit, OnDestroy {
       { label: 'Prefix', value: 'prefix'},
       { label: 'Current', value: 'current'},
       { label: 'Irish', value: 'irish'},
-    ]
+    ];
   }
 
   getSuffixYears() {
     this.contentService.suffixYears$.subscribe((suffixYears: Array<SuffixPrefixYears>) => {
-      this.suffixYears = suffixYears
-    })
+      this.suffixYears = suffixYears;
+    });
   }
 
   getPrefixYears() {
     this.contentService.prefixYears$.subscribe((prefixYears: Array<SuffixPrefixYears>) => {
       this.prefixYears = prefixYears;
-    })
+    });
   }
 
   getCurrentYears() {
     this.contentService.currentYears$.subscribe((currentYears: Array<CurrentYears>) => {
       this.currentYears = currentYears;
-    })
+    });
   }
 
   onCloseValuationDialog() {
@@ -220,20 +221,20 @@ export class ValuationDialogComponent implements OnInit, OnDestroy {
 
   calcPriceBeforeQuestions(priceBought: number) {
     const percentageIncrease = this.getPercentageIncrease();
-    let price = this.calcPercentageInc(priceBought, percentageIncrease)
+    const price = this.calcPercentageInc(priceBought, percentageIncrease);
     this.priceBeforeQuestions = price;
     return this.numberWithCommas(Math.floor(price));
   }
 
   calcPercentageInc(priceBought, percentageIncrease) {
-    for (let i=0; i<this.plateAge;  i++) {
-      priceBought += (priceBought * percentageIncrease)
+    for (let i = 0; i < this.plateAge;  i++) {
+      priceBought += (priceBought * percentageIncrease);
     }
     return priceBought;
   }
 
   numberWithCommas(price: number) {
-    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   }
 
   get valuationPrice() {
@@ -247,7 +248,7 @@ export class ValuationDialogComponent implements OnInit, OnDestroy {
     }
 
     if (!event.checked) {
-      if (!!plateValB4Q && parseInt(plateValB4Q.replace(this.replaceCommas, '')) !== this.valuationPrice) {
+      if (!!plateValB4Q && parseInt(plateValB4Q.replace(this.replaceCommas, ''), 10) !== this.valuationPrice) {
         this.stepZeroForm.get('valuationPrice').setValue(this.valuationPrice + questionValue);
       }
     }
@@ -262,7 +263,7 @@ export class ValuationDialogComponent implements OnInit, OnDestroy {
     }
 
     if (!event.checked) {
-      this.stepZeroForm.get('valuationPrice').setValue(parseInt(valuationPrice) - questionValue);
+      this.stepZeroForm.get('valuationPrice').setValue(parseInt(valuationPrice, 10) - questionValue);
     }
   }
 
@@ -271,45 +272,45 @@ export class ValuationDialogComponent implements OnInit, OnDestroy {
     switch (this.stepZeroForm.get('plateType').value) {
       case 'dateless':
         // If price greater than 7000 then reduce percentage inc to 12%
-        if (parseInt(this.stepZeroForm.get('platePrice').value) > 7000) {
-          console.log('Percentage Increase:' , (0.12 * 100) + '%')
+        if (parseInt(this.stepZeroForm.get('platePrice').value, 10) > 7000) {
+          console.log('Percentage Increase:' , (0.12 * 100) + '%');
           return 0.12;
         }
 
         // If age is greater than 15 years old then reduce percentage inc to 12%
         if (this.plateAge > 15) {
-          console.log('Percentage Increase:' , (0.12 * 100) + '%')
+          console.log('Percentage Increase:' , (0.12 * 100) + '%');
           return 0.12;
         }
 
-        console.log('Percentage Increase:' , (this.percentageIncrease.dateless * 100) + '%')
+        console.log('Percentage Increase:' , (this.percentageIncrease.dateless * 100) + '%');
         return this.percentageIncrease.dateless;
         break;
       case 'suffix':
         if (this.plateAge > 30) {
-          console.log('Percentage Increase:' , (0.15 * 100) + '%')
+          console.log('Percentage Increase:' , (0.15 * 100) + '%');
           return 0.15;
         }
 
-        console.log('Percentage Increase:' , (this.percentageIncrease.suffix * 100) + '%')
+        console.log('Percentage Increase:' , (this.percentageIncrease.suffix * 100) + '%');
         return this.percentageIncrease.suffix;
         break;
       case 'prefix':
          // If age is greater than 15 years old then reduce percentage inc to 12%
         if (this.plateAge > 15) {
-          console.log('Percentage Increase:' , (0.10 * 100) + '%')
+          console.log('Percentage Increase:' , (0.10 * 100) + '%');
           return 0.10;
         }
 
-        console.log('Percentage Increase:' , (this.percentageIncrease.prefix * 100) + '%')
+        console.log('Percentage Increase:' , (this.percentageIncrease.prefix * 100) + '%');
         return this.percentageIncrease.prefix;
         break;
       case 'current':
-        console.log('Percentage Increase:' , (this.percentageIncrease.current * 100) + '%')
+        console.log('Percentage Increase:' , (this.percentageIncrease.current * 100) + '%');
         return this.percentageIncrease.current;
         break;
       case 'irish':
-        console.log('Percentage Increase:' , (this.percentageIncrease.irish * 100) + '%')
+        console.log('Percentage Increase:' , (this.percentageIncrease.irish * 100) + '%');
         return this.percentageIncrease.irish;
         break;
     }

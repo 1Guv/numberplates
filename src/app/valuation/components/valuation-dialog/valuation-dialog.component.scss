@@ -17,3 +17,7 @@ mat-slide-toggle, .questions {
 ::ng-deep mat-step-header {
     margin-bottom: 15px !important;
 }
+
+:host ::ng-deep .mat-vertical-content-container {
+    margin-left: 0px !important;
+}
