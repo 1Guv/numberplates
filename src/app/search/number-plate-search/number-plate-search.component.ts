@@ -91,7 +91,7 @@ export class NumberPlateSearchComponent implements OnInit, OnDestroy {
               plate.plateCharacters.replace(/\s/g, '').toLowerCase().indexOf(filterString.replace(/\s/g, '').toLowerCase()) !== -1;
             })
           )
-      )
+      );
 
     this.createPlateViewForm();
   }
@@ -100,7 +100,7 @@ export class NumberPlateSearchComponent implements OnInit, OnDestroy {
     this.toggleCardOrListView = this.fb.group({
       cardView: [false],
       listView: [true]
-    })
+    });
   }
 
   toggleView(viewType: any) {
@@ -127,7 +127,7 @@ export class NumberPlateSearchComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.subscriptions.forEach(subscription => subscription.unsubscribe())
+    this.subscriptions.forEach(subscription => subscription.unsubscribe());
   }
 
 }

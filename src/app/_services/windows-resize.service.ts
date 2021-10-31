@@ -19,7 +19,7 @@ export class WindowsResizeService {
   }
 
   private onResize(event: UIEvent) {
-    this.resizeSubject.next(<Window>event.target);
+    this.resizeSubject.next(event.target as Window);
   }
 
 }

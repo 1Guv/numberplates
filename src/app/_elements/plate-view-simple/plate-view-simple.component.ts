@@ -28,10 +28,10 @@ export class PlateViewSimpleComponent implements OnInit {
     const dialogRef = this.dialog.open(MessageSellerDialogComponent, {
       width: '80%',
       data: {
-        plateId: plateId,
+        plateId,
         pageViews: this.pageViews,
         meaning: this.meaning,
-        askingPrice: askingPrice,
+        askingPrice,
         initials: this.initials
       }
     });

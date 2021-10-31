@@ -41,7 +41,7 @@ export class FormDynamicInputsComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log("CreateListingFormComponent -> createListingOneForm", this.fG.value);
+    console.log('CreateListingFormComponent -> createListingOneForm', this.fG.value);
   }
 
 

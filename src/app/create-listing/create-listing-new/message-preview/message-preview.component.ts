@@ -31,7 +31,13 @@ import { Component, Input, OnInit } from '@angular/core';
       <textarea matInput>Is this plate {{plate}} still available?</textarea>
     </mat-form-field>
 
-    <div class="mb-3 message">This message will be sent to <b>{{lCEmail}}</b> <span *ngIf="lCNumber"> and will contain the following number <b>{{lCNumber}}</b></span></div>
+    <div
+      class="mb-3 message">
+      This message will be sent to
+      <b>{{lCEmail}}</b>
+      <span *ngIf="lCNumber"> and will contain the following number <b>{{lCNumber}}</b>
+      </span>
+    </div>
 
     <div class="d-flex flex-row-reverse">
       <button mat-raised-button class="my-1 col col-lg-1">Send</button>

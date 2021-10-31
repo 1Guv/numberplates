@@ -44,9 +44,9 @@ export class PlateCardComponent implements OnInit {
 
   soldOrNot(soldOrNot: string) {
     if (soldOrNot === 'Yes') {
-      return 'Yes'
+      return 'Yes';
     } else {
-      return 'No'
+      return 'No';
     }
   }
 
@@ -54,27 +54,27 @@ export class PlateCardComponent implements OnInit {
     if (plateUrl.match(this.muslimRegex)) {
       this.category = 'MUSLIM';
       this.imageUrl = './assets/flags/flag_of_pakistan.svg';
-    };
+    }
 
     if (plateUrl.match(this.sikhRegex)) {
       this.category = 'SIKH';
       this.imageUrl = './assets/flags/khanda.svg';
-    };
+    }
 
     if (plateUrl.match(this.britishRegex)) {
       this.category = 'BRITISH';
       this.imageUrl = './assets/flags/british.svg';
-    };
+    }
 
     if (plateUrl.match(this.hinduRegex)) {
       this.category = 'HINDU';
       this.imageUrl = './assets/flags/india.svg';
-    };
+    }
 
     if (plateUrl === null || plateUrl === '') {
       this.category = 'OTHER';
       this.imageUrl = '';
-    };
+    }
     return this.imageUrl;
   }
 
@@ -82,11 +82,11 @@ export class PlateCardComponent implements OnInit {
     const dialogRef = this.dialog.open(MessageSellerDialogComponent, {
       width: '80%',
       data: {
-        plateId: plateId,
-        pageViews: pageViews,
-        meaning: meaning,
-        askingPrice: askingPrice,
-        initials: initials
+        plateId,
+        pageViews,
+        meaning,
+        askingPrice,
+        initials
       }
     });
   }

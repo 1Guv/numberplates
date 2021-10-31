@@ -16,7 +16,7 @@ export class FormDynamicSelectsComponent implements OnInit {
   @Input() select: any;
   @Input() selectTitle: string;
 
-  selectedElement: string = '';
+  selectedElement = '';
   selectedElementControl = new FormControl(this.selectedElement, [Validators.required]);
 
   constructor(
@@ -26,7 +26,7 @@ export class FormDynamicSelectsComponent implements OnInit {
 
   ngOnInit() {
     this.fG = this.parentForm.plateForm;
-    let groupToAdd = {};
+    const groupToAdd = {};
     groupToAdd[this.fCN] = this.selectedElementControl;
     this.fG.addControl(this.fGN, new FormGroup(groupToAdd));
   }

@@ -48,7 +48,7 @@ export class CreateListingComponent implements OnInit {
   premiumCarouselSectionContent$: Observable<Section>;
   premiumFBScreenShotsCarousel$: Observable<Carousel>;
 
-  showFormUnlessPay12: boolean = true;
+  showFormUnlessPay12 = true;
 
   constructor(private contentService: ContentService ) { }
 

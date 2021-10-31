@@ -33,7 +33,7 @@ export class MessageSellerDialogComponent implements OnInit {
       contactNumber: ['', [Validators.required]],
       contactEmail: ['', [Validators.compose([Validators.required, Validators.email])]],
       contactMessage: [`I want to buy ${this.data.plateId.toUpperCase()}, is it still available?`, [Validators.required]],
-    })
+    });
   }
 
   sendContactEnquiry() {

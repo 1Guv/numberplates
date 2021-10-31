@@ -15,7 +15,7 @@ import { ValuationDialogComponent } from 'src/app/valuation/components/valuation
 export class FooterComponent implements OnInit {
 
   // footer: Footer
-  footer$: Observable<Footer>
+  footer$: Observable<Footer>;
 
   constructor(
     private contentService: ContentService,

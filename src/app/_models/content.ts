@@ -8,7 +8,7 @@ export interface Content {
 
 export interface Search {
     heading: string;
-    subHeading:string;
+    subHeading: string;
 }
 
 export interface CreateListing {
@@ -101,7 +101,7 @@ export interface FormSetup {
     formGroup: string;
     formGroupName: string;
     selectTitle: string;
-    inputFields: Array<InputFields>
+    inputFields: Array<InputFields>;
 }
 
 export interface InputFields {

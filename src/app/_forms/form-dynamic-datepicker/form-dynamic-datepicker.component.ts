@@ -17,7 +17,7 @@ export class FormDynamicDatepickerComponent implements OnInit {
   @Input() readOnly: boolean;
   date: any;
 
-  selectedElement: string = '';
+  selectedElement = '';
   selectedElementControl = new FormControl(this.selectedElement, [Validators.required]);
 
   constructor(
@@ -26,7 +26,7 @@ export class FormDynamicDatepickerComponent implements OnInit {
 
   ngOnInit() {
     this.fG = this.parentForm.plateForm;
-    let groupToAdd = {};
+    const groupToAdd = {};
     groupToAdd[this.fCN] = this.selectedElementControl;
     this.fG.addControl(this.fGN, new FormGroup(groupToAdd));
   }

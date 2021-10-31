@@ -42,7 +42,7 @@ export class CreateListingNewComponent implements OnInit {
     { name: 'Special' },
     { name: 'Rare' },
     { name: 'Modifications needed' },
-  ]
+  ];
 
   constructor(
     private contentService: ContentService,
@@ -58,7 +58,7 @@ export class CreateListingNewComponent implements OnInit {
   getTodaysDate() {
     const today = new Date();
     const dd = String(today.getDate()).padStart(2, '0');
-    const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    const mm = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
     const yyyy = today.getFullYear();
     const toDay = mm + '/' + dd + '/' + yyyy;
     return toDay;
@@ -71,14 +71,14 @@ export class CreateListingNewComponent implements OnInit {
   createNewPlateListingForm() {
     this.newPlateForm = this.fb.group({
       arr: this.fb.array([this.createNewPlateListing()])
-    })
+    });
   }
 
   createNewPlateListing() {
     return this.fb.group({
       lCName: ['Joe Blogs', [Validators.required]],
       lCNumber: ['07540100200', [Validators.required]],
-      lCEmail: ['joe.blogs@gmail.com',[Validators.required, Validators.email]],
+      lCEmail: ['joe.blogs@gmail.com', [Validators.required, Validators.email]],
       initials: ['JB', [Validators.required, Validators.maxLength(2)]],
       profiletPicUrl: [''],
       profiletPicInitials: [true],
@@ -96,7 +96,7 @@ export class CreateListingNewComponent implements OnInit {
       plateListingAccTelNumber: [''],
       plateType: ['', [Validators.required]],
       plateCategory: ['', [Validators.required, Validators.minLength(1)]],
-    })
+    });
   }
 
   addNewPlateListing() {
@@ -110,7 +110,7 @@ export class CreateListingNewComponent implements OnInit {
   }
 
   togglePriceWording(index: number, wording: string) {
-    let plate = (<FormArray>this.newPlateForm.get('arr')).at(index);
+    const plate = (this.newPlateForm.get('arr') as FormArray).at(index);
 
     switch (wording) {
       case 'negotiable':

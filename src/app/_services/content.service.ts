@@ -26,7 +26,7 @@ export class ContentService {
   addManufacturers(manufacturers: Array<InputFields>, section: string) {
     this.content$.subscribe(content => {
       content.createListing[section].inputFields = manufacturers;
-    })
+    });
     this.$manufacturers.next(this.content$);
   }
 

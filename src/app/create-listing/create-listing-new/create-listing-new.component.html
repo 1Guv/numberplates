@@ -8,10 +8,7 @@
             <div [formGroupName]="i">
                 <div class="bg-light border">
                     <div class="d-flex flex-row-reverse card-action-container">
-                        <button
-                            mat-raised-button
-                            (click)="removelateListing(i)"
-                            class="col mt-2 col-lg-1">
+                        <button mat-raised-button (click)="removelateListing(i)" class="col mt-2 col-lg-1">
                             <span class="material-icons delete">delete</span>
                         </button>
                     </div>
@@ -20,181 +17,119 @@
                         <div class="col-lg-6">
                             <!-- <h1 class="text-center">Form</h1> -->
                             <ng-container>
-                                <app-form-card
-                                    [index]="i+1"
-                                    [title]="'Plate Details'"
-                                    [subTitle]="'Numberplate'"
-                                    [footer]="'Please make sure everything is accurate!'"
-                                    >
+                                <app-form-card [index]="i+1" [title]="'Plate Details'" [subTitle]="'Numberplate'" [footer]="'Please make sure everything is accurate!'">
 
-                                        <ng-container>
+                                    <ng-container>
 
-                                            <div class="d-flex">
-                                                <mat-form-field appearance="fill" class="col-8 mr-1 lCName-input">
-                                                    <mat-label>Listing contact name</mat-label>
-                                                    <input
-                                                        type="text"
-                                                        matInput
-                                                        formControlName="lCName">
-                                                </mat-form-field>
+                                        <div class="d-flex">
+                                            <mat-form-field appearance="fill" class="col-8 mr-1 lCName-input">
+                                                <mat-label>Listing contact name</mat-label>
+                                                <input type="text" matInput formControlName="lCName">
+                                            </mat-form-field>
 
-                                                <mat-form-field appearance="fill" class="col-4 initials-input">
-                                                    <mat-label>Initials</mat-label>
-                                                    <input
-                                                        style="text-transform:uppercase"
-                                                        type="text"
-                                                        maxlength="2"
-                                                        lettersOnly
-                                                        matInput
-                                                        pattern="[a-zA-Z ]*"
-                                                        formControlName="initials">
-                                                    <mat-hint
-                                                        *ngIf="!plate.pristine && plate.controls.initials.value.length < 2">
-                                                        Max of two letters
-                                                    </mat-hint>
-                                                </mat-form-field>
+                                            <mat-form-field appearance="fill" class="col-4 initials-input">
+                                                <mat-label>Initials</mat-label>
+                                                <input style="text-transform:uppercase" type="text" maxlength="2" appLettersOnly matInput pattern="[a-zA-Z ]*" formControlName="initials">
+                                                <mat-hint *ngIf="!plate.pristine && plate.controls.initials.value.length < 2">
+                                                    Max of two letters
+                                                </mat-hint>
+                                            </mat-form-field>
+                                        </div>
+
+                                        <mat-form-field appearance="fill" class="w-100 mr-1">
+                                            <mat-label>Listing contact number</mat-label>
+                                            <input type="text" matInput appNumbersOnly maxlength="11" minlength="11" formControlName="lCNumber">
+                                            <mat-hint *ngIf="!plate.pristine && plate.controls.lCNumber.value.length < 11">
+                                                A max & min of 11 numbers is only accepted please
+                                            </mat-hint>
+                                        </mat-form-field>
+
+                                        <mat-form-field appearance="fill" class="w-100 mr-1">
+                                            <mat-label>Listing contact email</mat-label>
+                                            <input type="email" matInput formControlName="lCEmail">
+                                            <mat-hint *ngIf="!plate.pristine && plate.controls.lCEmail.invalid">
+                                                The email is invalid
+                                            </mat-hint>
+                                        </mat-form-field>
+
+                                        <button class="mb-3 col col-lg-3" mat-raised-button>Upload Profile Pic</button>
+
+                                        <mat-slide-toggle formControlName="profiletPicInitials" class="mb-2 ml-lg-5 ">
+                                            Use Initials instead of profile pic
+                                        </mat-slide-toggle>
+
+                                        <mat-form-field appearance="fill" class="w-100">
+                                            <mat-label>Plate</mat-label>
+                                            <input type="text" matInput style="text-transform:uppercase" placeholder="SE11 NOW" maxlength="8" formControlName="plateCharacters">
+                                            <mat-hint *ngIf="!plate.pristine && plate.controls.plateCharacters.invalid">
+                                                A maximum of only 7 characters is accepted
+                                            </mat-hint>
+                                        </mat-form-field>
+
+                                        <mat-form-field appearance="fill" class="w-100">
+                                            <mat-label>Meanings</mat-label>
+                                            <input type="text" matInput placeholder="What does it mean" formControlName="meanings">
+                                        </mat-form-field>
+
+                                        <div class="d-flex flex-column flex-lg-row">
+                                            <mat-form-field appearance="fill" class="col col-lg-8 px-0">
+                                                <mat-label>Asking Price</mat-label>
+                                                <input type="text" matInput placeholder="1000" numbersOnly maxlength="7" formControlName="askingPrice">
+                                                <mat-hint *ngIf="!plate.pristine && plate.controls.askingPrice.invalid">
+                                                    Please enter an asking price
+                                                </mat-hint>
+                                            </mat-form-field>
+                                            <div style="height: 61px;" class="d-flex flex-column justify-content-center align-items-center col col-lg-4 mt-lg-2 mb-4">
+                                                <button mat-raised-button disabled color="accent" class="mb-1">Quick Valuation</button>
+                                                <h6>Coming Soon!</h6>
                                             </div>
+                                        </div>
 
-                                            <mat-form-field appearance="fill" class="w-100 mr-1">
-                                                <mat-label>Listing contact number</mat-label>
-                                                <input
-                                                    type="text"
-                                                    matInput
-                                                    numbersOnly
-                                                    maxlength="11"
-                                                    minlength="11"
-                                                    formControlName="lCNumber">
-                                                    <mat-hint
-                                                        *ngIf="!plate.pristine && plate.controls.lCNumber.value.length < 11">
-                                                        A max & min of 11 numbers is only accepted please
-                                                    </mat-hint>
-                                            </mat-form-field>
-
-                                            <mat-form-field appearance="fill" class="w-100 mr-1">
-                                                <mat-label>Listing contact email</mat-label>
-                                                <input
-                                                    type="email"
-                                                    matInput
-                                                    formControlName="lCEmail">
-                                                    <mat-hint
-                                                        *ngIf="!plate.pristine && plate.controls.lCEmail.invalid">
-                                                        The email is invalid
-                                                    </mat-hint>
-                                            </mat-form-field>
-
-                                            <button class="mb-3 col col-lg-3" mat-raised-button>Upload Profile Pic</button>
-
-                                            <mat-slide-toggle
-                                                formControlName="profiletPicInitials"
-                                                class="mb-2 ml-lg-5 ">
-                                                Use Initials instead of profile pic
+                                        <div class="col d-flex flex-column flex-lg-row flex-wrap ml-0 slide-toggle-container">
+                                            <mat-slide-toggle (toggleChange)="togglePriceWording(i, 'negotiable')" formControlName="plateNegotiable" class="mb-2 ml-lg-5 col-lg-5">
+                                                Is the Price Negotiable?
                                             </mat-slide-toggle>
 
-                                            <mat-form-field appearance="fill" class="w-100">
-                                                <mat-label>Plate</mat-label>
-                                                <input
-                                                    type="text"
-                                                    matInput
-                                                    style="text-transform:uppercase"
-                                                    placeholder="SE11 NOW"
-                                                    maxlength="8"
-                                                    formControlName="plateCharacters">
-                                                    <mat-hint
-                                                        *ngIf="!plate.pristine && plate.controls.plateCharacters.invalid">
-                                                        A maximum of only 7 characters is accepted
-                                                    </mat-hint>
+                                            <mat-slide-toggle (toggleChange)="togglePriceWording(i, 'bestOffer')" formControlName="plateBestOffer" class="mb-2 ml-lg-5 col-lg-5">
+                                                Make me an offer?
+                                            </mat-slide-toggle>
+
+                                            <mat-slide-toggle (toggleChange)="togglePriceWording(i, 'offersOver')" formControlName="offersOver" class="mb-2 ml-lg-5 col-lg-5">
+                                                Offers over £{{ plate.controls.askingPrice.value}}
+                                            </mat-slide-toggle>
+
+                                            <mat-slide-toggle (toggleChange)="togglePriceWording(i, 'ono')" formControlName="orNearestOffer" class="mb-2 ml-lg-5 col-lg-5">
+                                                £{{ plate.controls.askingPrice.value}} or nearest offer
+                                            </mat-slide-toggle>
+                                        </div>
+
+                                        <div class="d-flex flex-column flex-lg-row mt-1">
+                                            <mat-form-field appearance="fill" class="col px-0 col-lg-6 mr-1">
+                                                <mat-label>Plate Type</mat-label>
+                                                <mat-select formControlName="plateType">
+                                                    <mat-option *ngFor="let type of plateTypes" value="{{type.name}}">
+                                                        {{type.name}}
+                                                    </mat-option>
+                                                </mat-select>
+                                                <mat-hint *ngIf="!plate.pristine && plate.controls.plateType.invalid > 0">
+                                                    Please choose a plate type
+                                                </mat-hint>
                                             </mat-form-field>
 
-                                            <mat-form-field appearance="fill" class="w-100">
-                                                <mat-label>Meanings</mat-label>
-                                                <input
-                                                    type="text"
-                                                    matInput
-                                                    placeholder="What does it mean"
-                                                    formControlName="meanings">
+                                            <mat-form-field appearance="fill" class="col px-0">
+                                                <mat-label>Categories</mat-label>
+                                                <mat-select formControlName="plateCategory" multiple>
+                                                    <mat-option *ngFor="let cat of plateCategories" value="{{cat.name}}">
+                                                        {{cat.name}}
+                                                    </mat-option>
+                                                </mat-select>
+                                                <mat-hint *ngIf="!plate.pristine && plate.controls.plateCategory.value.length < 1">
+                                                    Please choose at least one category
+                                                </mat-hint>
                                             </mat-form-field>
+                                        </div>
 
-                                            <div class="d-flex flex-column flex-lg-row">
-                                                <mat-form-field appearance="fill" class="col col-lg-8 px-0">
-                                                    <mat-label>Asking Price</mat-label>
-                                                    <input
-                                                        type="text"
-                                                        matInput
-                                                        placeholder="1000"
-                                                        numbersOnly
-                                                        maxlength="7"
-                                                        formControlName="askingPrice">
-                                                        <mat-hint
-                                                            *ngIf="!plate.pristine && plate.controls.askingPrice.invalid">
-                                                            Please enter an asking price
-                                                        </mat-hint>
-                                                </mat-form-field>
-                                                <div style="height: 61px;"
-                                                    class="d-flex flex-column justify-content-center align-items-center col col-lg-4 mt-lg-2 mb-4">
-                                                    <button mat-raised-button disabled color="accent" class="mb-1">Quick Valuation</button>
-                                                    <h6>Coming Soon!</h6>
-                                                </div>
-                                            </div>
-
-                                            <div class="col d-flex flex-column flex-lg-row flex-wrap ml-0 slide-toggle-container">
-                                                <mat-slide-toggle
-                                                    (toggleChange)="togglePriceWording(i, 'negotiable')"
-                                                    formControlName="plateNegotiable"
-                                                    class="mb-2 ml-lg-5 col-lg-5">
-                                                    Is the Price Negotiable?
-                                                </mat-slide-toggle>
-
-                                                <mat-slide-toggle
-                                                    (toggleChange)="togglePriceWording(i, 'bestOffer')"
-                                                    formControlName="plateBestOffer"
-                                                    class="mb-2 ml-lg-5 col-lg-5">
-                                                    Make me an offer?
-                                                </mat-slide-toggle>
-
-                                                <mat-slide-toggle
-                                                    (toggleChange)="togglePriceWording(i, 'offersOver')"
-                                                    formControlName="offersOver"
-                                                    class="mb-2 ml-lg-5 col-lg-5">
-                                                    Offers over £{{ plate.controls.askingPrice.value}}
-                                                </mat-slide-toggle>
-
-                                                <mat-slide-toggle
-                                                    (toggleChange)="togglePriceWording(i, 'ono')"
-                                                    formControlName="orNearestOffer"
-                                                    class="mb-2 ml-lg-5 col-lg-5">
-                                                    £{{ plate.controls.askingPrice.value}} or nearest offer
-                                                </mat-slide-toggle>
-                                            </div>
-
-                                            <div class="d-flex flex-column flex-lg-row mt-1">
-                                                <mat-form-field appearance="fill" class="col px-0 col-lg-6 mr-1">
-                                                    <mat-label>Plate Type</mat-label>
-                                                    <mat-select formControlName="plateType">
-                                                      <mat-option *ngFor="let type of plateTypes" value="{{type.name}}">
-                                                          {{type.name}}
-                                                      </mat-option>
-                                                    </mat-select>
-                                                    <mat-hint
-                                                        *ngIf="!plate.pristine && plate.controls.plateType.invalid > 0">
-                                                        Please choose a plate type
-                                                    </mat-hint>
-                                                </mat-form-field>
-
-                                                <mat-form-field appearance="fill" class="col px-0">
-                                                    <mat-label>Categories</mat-label>
-                                                    <mat-select formControlName="plateCategory" multiple>
-                                                      <mat-option *ngFor="let cat of plateCategories" value="{{cat.name}}">
-                                                          {{cat.name}}
-                                                      </mat-option>
-                                                    </mat-select>
-                                                    <mat-hint
-                                                        *ngIf="!plate.pristine && plate.controls.plateCategory.value.length < 1">
-                                                        Please choose at least one category
-                                                    </mat-hint>
-                                                </mat-form-field>
-                                            </div>
-
-                                        </ng-container>
+                                    </ng-container>
 
                                 </app-form-card>
                             </ng-container>
@@ -203,49 +138,17 @@
                         <div class="d-flex flex-column col-lg-6 align-items-center">
                             <!-- <h1 class="text-center">Listing Preview</h1> -->
                             <ng-container>
-                                <app-form-card
-                                    [index]="i+1"
-                                    class="col px-0 align-items-center"
-                                    [title]="'Listing Preview'"
-                                    [subTitle]="'Numberplate'"
-                                    [footer]="'This is how your listing will look once live'"
-                                    >
-                                        <app-plate-card
-                                            [profilePic]="'https://100k-faces.glitch.me/random-image'"
-                                            [initials]="plate.get('initials').value"
-                                            [profilePicInitials]="plate.get('profiletPicInitials').value"
-                                            [plateCreated]="plate.get('currentDate').value"
-                                            [plateCategory]="'SIKH'"
-                                            [plateId]="plate.get('plateCharacters').value"
-                                            [askingPrice]="plate.get('askingPrice').value"
-                                            [plateNegotiable]="plate.get('plateNegotiable').value"
-                                            [plateBestOffer]="plate.get('plateBestOffer').value"
-                                            [offersOver]="plate.get('offersOver').value"
-                                            [orNearestOffer]="plate.get('orNearestOffer').value"
-                                            [meaning]="plate.get('meanings').value"
-                                            [pageViews]="1234"
-                                            [sellerContacted]="80"
-                                            [emailToFriend]="36"
-                                            [sold]="'No'"
-                                            >
-                                        </app-plate-card>
+                                <app-form-card [index]="i+1" class="col px-0 align-items-center" [title]="'Listing Preview'" [subTitle]="'Numberplate'" [footer]="'This is how your listing will look once live'">
+                                    <app-plate-card [profilePic]="'https://100k-faces.glitch.me/random-image'" [initials]="plate.get('initials').value" [profilePicInitials]="plate.get('profiletPicInitials').value" [plateCreated]="plate.get('currentDate').value" [plateCategory]="'SIKH'"
+                                        [plateId]="plate.get('plateCharacters').value" [askingPrice]="plate.get('askingPrice').value" [plateNegotiable]="plate.get('plateNegotiable').value" [plateBestOffer]="plate.get('plateBestOffer').value" [offersOver]="plate.get('offersOver').value"
+                                        [orNearestOffer]="plate.get('orNearestOffer').value" [meaning]="plate.get('meanings').value" [pageViews]="1234" [sellerContacted]="80" [emailToFriend]="36" [sold]="'No'">
+                                    </app-plate-card>
                                 </app-form-card>
                             </ng-container>
 
                             <ng-container>
-                                <app-form-card
-                                    [index]="i+1"
-                                    class="col px-0 align-items-center"
-                                    [subTitle]="'Message Preview'"
-                                    [footer]="'This is how the message form look likes used to contact you about your plate.'"
-                                    >
-                                    <app-message-preview
-                                        [plate]="plate.get('plateCharacters').value"
-                                        [askingPrice]="plate.get('askingPrice').value"
-                                        [lCName]="plate.get('lCName').value"
-                                        [lCNumber]="plate.get('lCNumber').value"
-                                        [lCEmail]="plate.get('lCEmail').value"
-                                        >
+                                <app-form-card [index]="i+1" class="col px-0 align-items-center" [subTitle]="'Message Preview'" [footer]="'This is how the message form look likes used to contact you about your plate.'">
+                                    <app-message-preview [plate]="plate.get('plateCharacters').value" [askingPrice]="plate.get('askingPrice').value" [lCName]="plate.get('lCName').value" [lCNumber]="plate.get('lCNumber').value" [lCEmail]="plate.get('lCEmail').value">
                                     </app-message-preview>
                                 </app-form-card>
                             </ng-container>
