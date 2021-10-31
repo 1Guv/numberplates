@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { ValuationDialogComponent } from 'src/app/valuation/components/valuation-dialog/valuation-dialog.component';
 import { FormCards, FormSetup } from 'src/app/_models/content';
 import { ContentService } from 'src/app/_services/content.service';
 
@@ -46,6 +48,7 @@ export class CreateListingNewComponent implements OnInit {
 
   constructor(
     private contentService: ContentService,
+    public dialog: MatDialog,
     private fb: FormBuilder
   ) { }
 
@@ -134,6 +137,14 @@ export class CreateListingNewComponent implements OnInit {
         plate.patchValue({ offersOver: false});
         break;
     }
+  }
+
+  onQuickValuation() {
+    this.dialog.open(ValuationDialogComponent,
+      {
+        width: '95vw',
+        height: '90vh'
+      });
   }
 
 }
