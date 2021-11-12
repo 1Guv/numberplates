@@ -25,6 +25,8 @@ import { CreateListingNewComponent } from './create-listing/create-listing-new/c
 import { NumberPlateSearchComponent } from './search/number-plate-search/number-plate-search.component';
 import { ValuationDialogComponent } from './valuation/components/valuation-dialog/valuation-dialog.component';
 import { ValuationModule } from './valuation/valuation.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,9 @@ import { ValuationModule } from './valuation/valuation.module';
     MatCardModule,
     SharedModule,
     MatDialogModule,
-    ValuationModule
+    ValuationModule,
+    FontAwesomeModule,
+    AngularFontAwesomeModule
   ],
   providers: [CreateListingComponent, CreateListingTwoComponent, CreateListingNewComponent, NumberPlateSearchComponent],
   entryComponents: [ValuationDialogComponent],

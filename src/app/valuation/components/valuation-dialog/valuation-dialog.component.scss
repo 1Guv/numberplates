@@ -1,3 +1,7 @@
+#valuation-dialog {
+    height: 90vh;
+}
+
 .plate-css {
     border-radius: 5px;
     background-color: yellow;
@@ -10,7 +14,12 @@
     display: inline-block;
 }
 
-mat-slide-toggle, .questions {
+.social-icons {
+    font-size: xx-large;
+}
+
+mat-slide-toggle,
+.questions {
     margin: 10px 0;
 }
 

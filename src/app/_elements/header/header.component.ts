@@ -25,11 +25,7 @@ export class HeaderComponent implements OnInit {
   }
 
   onValuation() {
-    this.dialog.open(ValuationDialogComponent,
-      {
-        width: '95vw',
-        height: '90vh'
-      });
+    this.dialog.open(ValuationDialogComponent);
   }
 
 }

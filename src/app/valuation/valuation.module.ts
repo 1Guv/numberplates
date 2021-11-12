@@ -12,6 +12,7 @@ import {
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DecimalPipe } from '../_pipes/decimal.pipe';
 import { UppercaseDirective } from '../_directives/uppercase.directive';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 
 
@@ -31,7 +32,8 @@ import { UppercaseDirective } from '../_directives/uppercase.directive';
     MatButtonModule,
     MatSelectModule,
     MatIconModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    AngularFontAwesomeModule
   ]
 })
 export class ValuationModule { }

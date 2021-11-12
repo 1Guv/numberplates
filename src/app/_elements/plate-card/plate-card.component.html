@@ -1,108 +1,99 @@
 <div class="d-flex flex-column align-items-center py-3">
-  <mat-card class="m-3 mat-elevation-z8 position-sticky" style="width: 208px;">
+    <mat-card class="m-3 mat-elevation-z8 position-sticky" style="width: 208px;">
 
-    <mat-card-content class="list-group text-center">
-        <div class="account-circle" ngClass="forSearch ? 'fs-account-cirlce' : 'account-circle'">
-          <ng-container>
-            <span *ngIf="!profilePicInitials" class="material-icons">
+        <mat-card-content class="list-group text-center">
+            <div class="account-circle" ngClass="forSearch ? 'fs-account-cirlce' : 'account-circle'">
+                <ng-container>
+                    <span *ngIf="!profilePicInitials" class="material-icons">
               account_circle
             </span>
-            <span *ngIf="profilePicInitials && initials.length > 1"
-              class="rounded-circle profile-initials">
+                    <span *ngIf="profilePicInitials && initials.length > 1" class="rounded-circle profile-initials">
               {{initials}}
             </span>
-            <!-- <img src="{{profilePic}}"
+                    <!-- <img src="{{profilePic}}"
                   style="border-radius: 50px; height: 50px; width: 50px; border: 1px solid grey"/> -->
-          </ng-container>
-        </div>
+                </ng-container>
+            </div>
 
-        <div class="listed-on">
-          <span id="rectangle" data-toggle="tooltip" title="Listed on this date">
+            <div class="listed-on">
+                <span id="rectangle" data-toggle="tooltip" title="Listed on this date">
             {{plateCreated | date}}
           </span>
-        </div>
+            </div>
 
-        <div class="flag">
-          <!-- <img src="{{findCategory(plateCategory)}}"> -->
-        </div>
+            <div class="flag">
+                <!-- <img src="{{findCategory(plateCategory)}}"> -->
+            </div>
 
-        <li class="list-group-item border-0 py-0 mt-3" style="background: transparent;">
-          <!-- <b>Plate: </b> -->
-          <span class="plate-css text-uppercase mat-elevation-z4">
+            <li class="list-group-item border-0 py-0 mt-3" style="background: transparent;">
+                <!-- <b>Plate: </b> -->
+                <span class="plate-css text-uppercase mat-elevation-z4">
             {{plateId}}
           </span>
-        </li>
-        <br>
-        <li class="list-group-item border-0 py-0">
-          <!-- <b>Asking Price: </b> -->
-          <mat-chip-list class="d-flex flex-column align-items-center">
-            <mat-chip color="accent" selected>
-              <span *ngIf="offersOver">Offers over&nbsp;</span>
-              <span *ngIf="plateBestOffer">Make me an offer</span>
-              <span *ngIf="!plateBestOffer"> £{{askingPrice}} </span>
-              <span *ngIf="orNearestOffer">&nbsp;ONO</span>
-              <span *ngIf="plateNegotiable">&nbsp;Negotiable</span>
-            </mat-chip>
-          </mat-chip-list>
-        </li>
-        <li class="list-group-item border-0 py-0 my-1">
-          <!-- <mat-chip color="accent" selected *ngIf="plateNegotiable">Negotiable</mat-chip>
+            </li>
+            <br>
+            <li class="list-group-item border-0 py-0">
+                <!-- <b>Asking Price: </b> -->
+                <mat-chip-list class="d-flex flex-column align-items-center">
+                    <mat-chip color="accent" selected>
+                        <span *ngIf="offersOver">Offers over&nbsp;</span>
+                        <span *ngIf="plateBestOffer">Make me an offer</span>
+                        <span *ngIf="!plateBestOffer"> £{{askingPrice}} </span>
+                        <span *ngIf="orNearestOffer">&nbsp;ONO</span>
+                        <span *ngIf="plateNegotiable">&nbsp;Negotiable</span>
+                    </mat-chip>
+                </mat-chip-list>
+            </li>
+            <li class="list-group-item border-0 py-0 my-1">
+                <!-- <mat-chip color="accent" selected *ngIf="plateNegotiable">Negotiable</mat-chip>
           <mat-chip *ngIf="!plateNegotiable">Asking Price</mat-chip> -->
-          <!-- <mat-chip>Asking Price</mat-chip> -->
-        </li>
-        <li class="list-group-item border-0 py-0 text-truncate "
-            style="font-size: 9px;">
-            {{meaning}}
-        </li>
-        <!-- <li class="list-group-item border-0 py-0">
+                <!-- <mat-chip>Asking Price</mat-chip> -->
+            </li>
+            <li class="list-group-item border-0 py-0 text-truncate " style="font-size: 9px;">
+                {{meaning}}
+            </li>
+            <!-- <li class="list-group-item border-0 py-0">
           {{category}}
         </li> -->
-    </mat-card-content>
+        </mat-card-content>
 
-    <mat-card-footer class="pb-2">
-      <hr>
-      <div class="views">
-        <span data-toggle="tooltip" title="Page Views" class="pr-2">
+        <mat-card-footer class="pb-2">
+            <hr>
+            <div class="views">
+                <span data-toggle="tooltip" title="Page Views" class="pr-2">
           {{pageViews}}
           <span style="font-size: 10px;">views</span>
-        </span>
-      </div>
-      <div class="d-flex justify-content-center">
-        <button
-          mat-raised-button
-          [matBadgeHidden]="sellerContacted === '0'"
-          matBadge="{{sellerContacted}}"
-          matBadgePosition="after"
-          matBadgeColor="accent"
-          data-toggle="tooltip"
-          data-placement="top"
-          title="Message the seller"
-          (click)="messageSeller(plateId, pageViews, meaning, askingPrice, initials)"
-          color="primary">
+                </span>
+            </div>
+            <div class="d-flex justify-content-center">
+                <button mat-raised-button [matBadgeHidden]="sellerContacted === '0'" matBadge="{{sellerContacted}}" matBadgePosition="after" matBadgeColor="accent" data-toggle="tooltip" data-placement="top" title="Message the seller" (click)="messageSeller(plateId, pageViews, meaning, askingPrice, initials)"
+                    color="primary">
           Message Seller
         </button>
-      </div>
-      <hr>
-      <div class="d-flex justify-content-around">
-        <mat-icon title="Emails sent to friends" matBadge="{{emailToFriend}}" matBadgeColor="warn" class="">email</mat-icon>
-        <!-- <mat-icon matBadge="{{plate.id}}" matBadgeColor="warn" class="">check_circle</mat-icon> -->
-        <mat-icon title="Available" matBadge="" matBadgeColor="warn" class="">done_outline</mat-icon>
-        <!-- <mat-icon matBadge="" matBadgeColor="warn" class="">paid</mat-icon> -->
-        <mat-icon title="Sold" [matBadge]="soldOrNot(sold)" matBadgeColor="warn" class="">payment</mat-icon>
-        <mat-icon title="Save" matBadge="" matBadgeColor="warn" class="">save</mat-icon>
-        <mat-icon title="Share" matBadge="" matBadgeColor="warn" class="">mobile_screen_share</mat-icon>
-      </div>
-      <!-- <div class="d-flex justify-content-around mt-1">
+            </div>
+            <hr>
+            <div class="d-flex justify-content-around">
+                <mat-icon title="Emails sent to friends" matBadge="{{emailToFriend}}" matBadgeColor="warn" class="">email</mat-icon>
+                <!-- <mat-icon matBadge="{{plate.id}}" matBadgeColor="warn" class="">check_circle</mat-icon> -->
+                <mat-icon title="Available" matBadge="" matBadgeColor="warn" class="">done_outline</mat-icon>
+                <!-- <mat-icon matBadge="" matBadgeColor="warn" class="">paid</mat-icon> -->
+                <mat-icon title="Sold" [matBadge]="soldOrNot(sold)" matBadgeColor="warn" class="">payment</mat-icon>
+                <mat-icon title="Save" matBadge="" matBadgeColor="warn" class="">save</mat-icon>
+                <mat-icon title="Share" matBadge="" matBadgeColor="warn" class="">mobile_screen_share</mat-icon>
+            </div>
+
+            <!-- Whatsapp - use https://stackoverflow.com/questions/30344476/web-link-to-specific-whatsapp-contact -->
+
+            <!-- <div class="d-flex justify-content-around mt-1">
         <button mat-raised-button>Save</button>
         <button mat-raised-button>
           <span class="material-icons">share</span>
           Share
         </button>
       </div> -->
-      <!-- <div class="border-top d-flex justify-content-center">
+            <!-- <div class="border-top d-flex justify-content-center">
         <span class="text-center my-1" style="font-size: 10px;">{{plateCreated | date}}</span>
       </div> -->
-    </mat-card-footer>
-  </mat-card>
+        </mat-card-footer>
+    </mat-card>
 </div>
-
