@@ -219,15 +219,19 @@
                                     <span class="fas fa-camera"></span>
                                 </div> -->
 
+                                <ng-container *ngIf="share">
+                                    <app-share-button [share]="share"></app-share-button>
+                                </ng-container>
+
                                 <div class="d-flex justify-content-around w-100">
                                     <!-- https://www.npmjs.com/package/angular-font-awesome -->
-                                    <fa class="social-icons" name="twitter" size="lg"></fa>
+                                    <!-- <fa class="social-icons" name="twitter" size="lg"></fa>
                                     <fa class="social-icons" name="facebook" size="lg"></fa>
                                     <fa class="social-icons" name="instagram" size="lg"></fa>
 
                                     <a href="whatsapp://send?text=www.google.com" data-text="Take a look at this awesome website:">
                                         <fa class="social-icons" name="whatsapp" size="lg"></fa>
-                                    </a>
+                                    </a> -->
 
                                 </div>
 

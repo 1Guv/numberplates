@@ -1,8 +1,10 @@
+import { isPlatformBrowser } from '@angular/common';
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog, MatStepper } from '@angular/material';
 import { combineLatest, Subscription } from 'rxjs';
 import { filter, map, take, tap } from 'rxjs/operators';
+import { Share } from 'src/app/_models/share-button';
 import { ContentService } from 'src/app/_services/content.service';
 import { PercentageIncrease, QuestionValues } from '../../models/valuation';
 
@@ -51,6 +53,7 @@ export class ValuationDialogComponent implements OnInit, OnDestroy {
   q5Value: number;
   q6Value: number;
   replaceCommas = /,/gi;
+  share: Share;
   subscriptions: Subscription[] = [];
 
   constructor(
@@ -99,7 +102,10 @@ export class ValuationDialogComponent implements OnInit, OnDestroy {
       combineLatest(this.stepZeroForm.get('platePrice').valueChanges, this.stepZeroForm.get('plateYear').valueChanges)
         .pipe(
           filter(platePriceAndPlateYear => !!platePriceAndPlateYear),
-          map(() => this.setPlateValB4Q())
+          map(() => {
+            this.setPlateValB4Q();
+            this.setShareButton();
+          })
         )
         .subscribe()
     );
@@ -124,6 +130,18 @@ export class ValuationDialogComponent implements OnInit, OnDestroy {
         })
     );
 
+  }
+
+  setShareButton() {
+    this.share.url = 'https://1guv.github.io/numberplates';
+    this.share.title = this.stepZeroForm.get('plate').value;
+    this.share.text = `
+      Price: ${this.stepZeroForm.get('platePrice').value},
+      Type: ${this.stepZeroForm.get('plateType').value},
+      Year: ${this.stepZeroForm.get('plateYear').value},
+      Value B4Q: ${this.stepZeroForm.get('plateValB4Q').value},
+      Valuation: ${this.stepZeroForm.get('valuationPrice').value},
+    `;
   }
 
   setPlateValB4Q() {

@@ -52,7 +52,12 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     FontAwesomeModule,
     AngularFontAwesomeModule
   ],
-  providers: [CreateListingComponent, CreateListingTwoComponent, CreateListingNewComponent, NumberPlateSearchComponent],
+  providers: [
+    CreateListingComponent,
+    CreateListingTwoComponent,
+    CreateListingNewComponent,
+    NumberPlateSearchComponent
+  ],
   entryComponents: [ValuationDialogComponent],
   bootstrap: [AppComponent]
 })

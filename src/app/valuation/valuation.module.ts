@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DecimalPipe } from '../_pipes/decimal.pipe';
 import { UppercaseDirective } from '../_directives/uppercase.directive';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { ShareButtonComponent } from '../_elements/share-button/share-button.component';
 
 
 
@@ -20,7 +21,8 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
   declarations: [
     ValuationDialogComponent,
     DecimalPipe,
-    UppercaseDirective
+    UppercaseDirective,
+    ShareButtonComponent
   ],
   imports: [
     CommonModule,

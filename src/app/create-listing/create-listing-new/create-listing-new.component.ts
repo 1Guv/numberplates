@@ -140,12 +140,7 @@ export class CreateListingNewComponent implements OnInit {
   }
 
   onQuickValuation() {
-    this.dialog.open(ValuationDialogComponent,
-      // {
-      //   width: '95vw',
-      //   height: '90vh'
-      // }
-    );
+    this.dialog.open(ValuationDialogComponent);
   }
 
 }
