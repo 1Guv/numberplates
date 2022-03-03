@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ValuationDialogComponent } from './components/valuation-dialog/valuation-dialog.component';
 import {
   MatButtonModule,
+  MatExpansionModule,
   MatFormFieldModule,
   MatIconModule,
   MatInputModule,
@@ -14,7 +15,7 @@ import { DecimalPipe } from '../_pipes/decimal.pipe';
 import { UppercaseDirective } from '../_directives/uppercase.directive';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { ShareButtonComponent } from '../_elements/share-button/share-button.component';
-
+import { MatChipsModule } from '@angular/material/chips';
 
 
 @NgModule({
@@ -35,7 +36,9 @@ import { ShareButtonComponent } from '../_elements/share-button/share-button.com
     MatSelectModule,
     MatIconModule,
     MatSlideToggleModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    MatChipsModule,
+    MatExpansionModule
   ]
 })
 export class ValuationModule { }
