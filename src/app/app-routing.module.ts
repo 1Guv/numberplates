@@ -9,6 +9,8 @@ const routes: Routes = [
   { path: 'create-listing-two', loadChildren: './create-listing/create-listing.module#CreateListingModule' },
   { path: 'create-listing-new', loadChildren: './create-listing/create-listing.module#CreateListingModule' },
   { path: 'number-plate-search', loadChildren: './search/search.module#SearchModule' },
+  { path: 'company', loadChildren: () => import('./company/company.module').then(m => m.CompanyModule) },
+  { path: '**', component: HomeComponent },
 ];
 
 @NgModule({
