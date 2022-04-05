@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { Section } from 'src/app/_models/content';
+import { ContentService } from 'src/app/_services/content.service';
 
 @Component({
   selector: 'app-how-it-works',
@@ -7,9 +11,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HowItWorksComponent implements OnInit {
 
-  constructor() { }
+  howItWorks$: Observable<Array<Section>>;
+
+  constructor(private contentService: ContentService) { }
 
   ngOnInit() {
+    this.howItWorks$ = this.contentService.content$.pipe(map(content => content.homeCTA.howItWorks));
   }
 
 }

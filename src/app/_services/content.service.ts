@@ -15,6 +15,7 @@ export class ContentService {
   prefixYears$: Observable<any>;
   currentYears$: Observable<any>;
   about$: Observable<any>;
+  howItWorks$: Observable<any>;
 
   constructor(private http: HttpClient) {
     // this.content$ = this.http.get<Content>('./assets/data/content.json').pipe(shareReplay(1));
