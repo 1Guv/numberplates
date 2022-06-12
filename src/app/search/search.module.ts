@@ -18,28 +18,27 @@ import { MessageSellerDialogComponent } from '../_elements/message-seller-dialog
 
 
 @NgModule({
-  declarations: [
-    NumberPlateSearchComponent,
-    MessageSellerDialogComponent
-  ],
-  imports: [
-    CommonModule,
-    SearchRoutingModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatIconModule,
-    MatSidenavModule,
-    MatBadgeModule,
-    MatButtonModule,
-    SharedModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatSlideToggleModule,
-    ScrollingModule,
-    MatDialogModule,
-    MatChipsModule
-  ],
-  schemas:  [CUSTOM_ELEMENTS_SCHEMA],
-  entryComponents: [MessageSellerDialogComponent]
+    declarations: [
+        NumberPlateSearchComponent,
+        MessageSellerDialogComponent
+    ],
+    imports: [
+        CommonModule,
+        SearchRoutingModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatIconModule,
+        MatSidenavModule,
+        MatBadgeModule,
+        MatButtonModule,
+        SharedModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatSlideToggleModule,
+        ScrollingModule,
+        MatDialogModule,
+        MatChipsModule
+    ],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class SearchModule { }

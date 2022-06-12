@@ -28,36 +28,35 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 // import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    HomeCtaComponent,
-    HomeComponent,
-    FooterComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
-    MatIconModule,
-    MatTooltipModule,
-    MatToolbarModule,
-    HttpClientModule,
-    MatCardModule,
-    SharedModule,
-    MatDialogModule,
-    ValuationModule,
-    FontAwesomeModule,
-    // AngularFontAwesomeModule
-  ],
-  providers: [
-    CreateListingComponent,
-    CreateListingTwoComponent,
-    CreateListingNewComponent,
-    NumberPlateSearchComponent
-  ],
-  entryComponents: [ValuationDialogComponent],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        HeaderComponent,
+        HomeCtaComponent,
+        HomeComponent,
+        FooterComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatButtonModule,
+        MatIconModule,
+        MatTooltipModule,
+        MatToolbarModule,
+        HttpClientModule,
+        MatCardModule,
+        SharedModule,
+        MatDialogModule,
+        ValuationModule,
+        FontAwesomeModule,
+        // AngularFontAwesomeModule
+    ],
+    providers: [
+        CreateListingComponent,
+        CreateListingTwoComponent,
+        CreateListingNewComponent,
+        NumberPlateSearchComponent
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
