@@ -3,7 +3,7 @@ import { ContentService } from 'src/app/_services/content.service';
 import { Header } from 'src/app/_models/content';
 import { Observable } from 'rxjs';
 import { map, tap, shareReplay } from 'rxjs/operators';
-import { MatDialog } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
 import { ValuationDialogComponent } from 'src/app/valuation/components/valuation-dialog/valuation-dialog.component';
 
 @Component({

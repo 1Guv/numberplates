@@ -1,7 +1,8 @@
 import { isPlatformBrowser } from '@angular/common';
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { MatDialog, MatStepper } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
+import { MatStepper } from '@angular/material/stepper';
 import { combineLatest, Subscription } from 'rxjs';
 import { filter, map, take, tap } from 'rxjs/operators';
 import { Share } from 'src/app/_models/share-button';

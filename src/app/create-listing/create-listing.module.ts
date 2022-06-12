@@ -3,19 +3,17 @@ import { CommonModule } from '@angular/common';
 import { CreateListingComponent } from './create-listing/create-listing.component';
 import { CreateListingRoutingModule } from './create-listing-routing';
 import { LargePlateDisplayInputComponent } from '../_elements/large-plate-display-input/large-plate-display-input.component';
-import {
-  MatFormFieldModule,
-  MatIconModule,
-  MatInputModule,
-  MatStepperModule,
-  MatSelectModule,
-  MatExpansionModule,
-  MatDatepickerModule,
-  MatNativeDateModule,
-  MAT_DATE_LOCALE,
-  MatBadgeModule,
-  MatButtonModule,
-  MatChipsModule } from '@angular/material';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatButtonModule } from '@angular/material/button';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatStepperModule } from '@angular/material/stepper';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';

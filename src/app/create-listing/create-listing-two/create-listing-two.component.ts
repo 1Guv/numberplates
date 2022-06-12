@@ -3,7 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Observable, of } from 'rxjs';
 import { CreateListing, FormSetup, FormCards, FormSetupDate } from 'src/app/_models/content';
 import { ContentService } from 'src/app/_services/content.service';
-import { MatSlideToggleChange } from '@angular/material';
+import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 import { map } from 'rxjs/operators';
 import carManufacturersData from '../../../assets/data/car_manufacturers.json';
 
