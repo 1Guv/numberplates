@@ -8,25 +8,17 @@
 
             <div>
                 <div class="d-flex flex-column align-items-start flex-lg-row align-items-lg-center">
-                    <button mat-raised-button
-                            class="my-1 text-left primary-cta text-center col-12 col-md-6"
-                            (click)="$event"
-                            [routerLink]="(listingButton$ | async)?.url">
+                    <button mat-raised-button class="my-1 text-left primary-cta text-center col-12 col-md-6" (click)="$event" [routerLink]="(listingButton$ | async)?.url">
                             {{ (listingButton$ | async)?.name }}
                     </button>
                     <span class="mx-3">or</span>
-                    <button mat-stroked-button
-                            class="my-1 text-left text-center col-12 col-md-6 col-lg-5"
-                            (click)="onValuation()">
+                    <button mat-stroked-button class="my-1 text-left text-center col-12 col-md-6 col-lg-5" (click)="onValuation()">
                             Get a VALUATION now
                     </button>
                 </div>
 
-                <button mat-flat-button
-                        color="primary"
-                        class="text-left my-2 text-center col-12 col-md-6"
-                        (click)="$event"
-                        [routerLink]="(searchButton$ |async)?.url">SEARCH 1,195 plates now
+                <button mat-flat-button color="primary" class="text-left my-2 text-center col-12 col-md-6" (click)="$event" [routerLink]="(searchButton$ |async)?.url">
+                        SEARCH plates now
                 </button>
                 <br>
             </div>

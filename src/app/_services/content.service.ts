@@ -37,6 +37,7 @@ export class ContentService {
     const headerDict = {
       'Content-Type': 'application/json',
       'Access-Control-Allow-Headers': 'Content-Type',
+      'Access-Control-Allow-Origin': '*'
     };
 
     const requestOptions = {

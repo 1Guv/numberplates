@@ -15,6 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MessageSellerDialogComponent } from '../_elements/message-seller-dialog/message-seller-dialog.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { MessageSellerDialogComponent } from '../_elements/message-seller-dialog
         MatSlideToggleModule,
         ScrollingModule,
         MatDialogModule,
-        MatChipsModule
+        MatChipsModule,
+        MatProgressSpinnerModule
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

@@ -14,25 +14,37 @@
                 <h5 class="mb-0">{{ (searchContent$ | async).subHeading }}</h5>
             </div>
 
-            <div class="col d-flex flex-row justify-content-center align-items-center p-3 text-center">
+
+            <div class="d-flex flex-column justify-content-center align-items-center">
+                <div class="col-12 col-sm-8">
+                    <div style="font-size: 0.6em">
+                        <span style="background-color:greenyellow; padding: 1px 5px">
+                            Total Plates: {{( numberPlates$ | async)?.length }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col d-flex flex-row justify-content-center align-items-center text-center">
                 <mat-form-field appearance="fill" class="col-12 col-sm-8 mr-1">
                     <mat-label>Number Plate Search</mat-label>
                     <mat-icon matSuffix>search</mat-icon>
                     <div class="d-flex flex-row">
-                        <input
-                            type="text"
-                            [formControl]="filter"
-                            matInput
-                            placeholder="{{searchPlaceholder}}">
+                        <input type="text" [formControl]="filter" matInput placeholder="{{searchPlaceholder}}">
                     </div>
                 </mat-form-field>
                 <mat-icon class="settings-icon" (click)="sidenav.toggle()" matSuffix>settings</mat-icon>
             </div>
-        </section>
 
-        <section class="d-flex flex-column justify-content-center align-items-center">
-            <p>Total Plates: {{( numberPlates$ | async)?.length }}</p>
-            <p>Filtered Plates: {{( filteredNumberPlates$ | async)?.length }}</p>
+            <div class="d-flex flex-column justify-content-center align-items-center">
+                <div class="col-12 col-sm-8">
+                    <div style="font-size: 0.6em; margin-top: -20px">
+                        <span style="background-color:darkorange; padding: 1px 5px">
+                            Filtered Plates: {{( filteredNumberPlates$ | async)?.length }}
+                        </span>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <form [formGroup]="toggleCardOrListView">
@@ -65,54 +77,31 @@
 
         <section #searchResults class="d-flex flex-row justify-content-center align-items-center flex-wrap p-3">
             <!-- <ng-container *ngFor="let plate of filteredNumberPlates$ | async"> -->
+            <mat-spinner *ngIf="!isDataLoaded"></mat-spinner>
 
-                <cdk-virtual-scroll-viewport itemSize="50" class="search-viewport">
-                    <div *cdkVirtualFor="let plate of filteredNumberPlates$ | async">
+            <cdk-virtual-scroll-viewport itemSize="50" class="search-viewport">
+                <div *cdkVirtualFor="let plate of filteredNumberPlates$ | async">
 
-                        <div *ngIf="toggleCardOrListView.get('cardView').value">
-                            <ng-container>
-                                <app-plate-card
-                                    [forSearch]="true"
-                                    [profilePic]="plate.profiletPicUrl"
-                                    [initials]="plate.initials"
-                                    [profilePicInitials]="true"
-                                    [plateCreated]="plate.createdDate"
-                                    [plateCategory]="plate.plateCategory"
-                                    [plateId]="plate.plateCharacters"
-                                    [askingPrice]="plate.askingPrice"
-                                    [plateNegotiable]="plate.plateNegotiable"
-                                    [plateBestOffer]="plate.plateBestOffer"
-                                    [offersOver]="plate.offersOver"
-                                    [orNearestOffer]="plate.orNearestOffer"
-                                    [meaning]="plate.meanings"
-                                    [pageViews]="plate.viewsPlaceholder"
-                                    [sellerContacted]="plate.sellerContacted"
-                                    [emailToFriend]="plate.emailToFriend"
-                                    [sold]="plate.sold"
-                                    >
-                                </app-plate-card>
-                            </ng-container>
-                        </div>
-
-                        <div *ngIf="toggleCardOrListView.get('listView').value" class="container justify-content-center">
-                            <ng-container>
-                                <app-plate-view-simple
-                                    [plateId]="plate.plateCharacters"
-                                    [askingPrice]="plate.askingPrice"
-                                    [plateNegotiable]="plate.plateNegotiable"
-                                    [plateBestOffer]="plate.plateBestOffer"
-                                    [offersOver]="plate.offersOver"
-                                    [meaning]="plate.meanings"
-                                    [pageViews]="plate.viewsPlaceholder"
-                                    [initials]="plate.initials"
-                                    >
-                                </app-plate-view-simple>
-                                <hr>
-                            </ng-container>
-                        </div>
-
+                    <div *ngIf="toggleCardOrListView.get('cardView').value">
+                        <ng-container>
+                            <app-plate-card [forSearch]="true" [profilePic]="plate.profiletPicUrl" [initials]="plate.initials" [profilePicInitials]="true" [plateCreated]="plate.createdDate" [plateCategory]="plate.plateCategory" [plateId]="plate.plateCharacters" [askingPrice]="plate.askingPrice"
+                                [plateNegotiable]="plate.plateNegotiable" [plateBestOffer]="plate.plateBestOffer" [offersOver]="plate.offersOver" [orNearestOffer]="plate.orNearestOffer" [meaning]="plate.meanings" [pageViews]="plate.viewsPlaceholder" [sellerContacted]="plate.sellerContacted"
+                                [emailToFriend]="plate.emailToFriend" [sold]="plate.sold">
+                            </app-plate-card>
+                        </ng-container>
                     </div>
-                </cdk-virtual-scroll-viewport>
+
+                    <div *ngIf="toggleCardOrListView.get('listView').value" class="container justify-content-center">
+                        <ng-container>
+                            <app-plate-view-simple [plateId]="plate.plateCharacters" [askingPrice]="plate.askingPrice" [plateNegotiable]="plate.plateNegotiable" [plateBestOffer]="plate.plateBestOffer" [offersOver]="plate.offersOver" [meaning]="plate.meanings" [pageViews]="plate.viewsPlaceholder"
+                                [initials]="plate.initials">
+                            </app-plate-view-simple>
+                            <hr>
+                        </ng-container>
+                    </div>
+
+                </div>
+            </cdk-virtual-scroll-viewport>
 
 
 

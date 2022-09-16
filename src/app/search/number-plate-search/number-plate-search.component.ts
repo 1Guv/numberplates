@@ -1,8 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { combineLatest, Observable, Subscription } from 'rxjs';
-import { map, startWith } from 'rxjs/operators';
+import { combineLatest, Observable, Subscription, of } from 'rxjs';
+import { map, startWith, tap } from 'rxjs/operators';
 import { ContentService } from 'src/app/_services/content.service';
+import { FirebaseNumberPlatesService } from 'src/app/_services/firebase-number-plates.service';
 import { NumberPlatesService } from 'src/app/_services/number-plates.service';
 import { WindowsResizeService } from 'src/app/_services/windows-resize.service';
 
@@ -56,17 +57,20 @@ export class NumberPlateSearchComponent implements OnInit, OnDestroy {
   filter$: Observable<string>;
   filteredNumberPlates$: Observable<any>;
   toggleCardOrListView: FormGroup;
+  isDataLoaded = false;
 
   constructor(
     private contentService: ContentService,
     private windowsResizeService: WindowsResizeService,
     private numberPlateService: NumberPlatesService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private firebaseNumberPlatesService: FirebaseNumberPlatesService
   ) { }
 
   ngOnInit() {
     this.getHeaderInfo();
-    this.getNumberPlates();
+    // this.getPlatesFromAPNAPLATES();
+    this.getAllPlates();
 
     // Default width when initialised
     this.currentWidthPx = `${window.innerWidth - (window.innerWidth * 0.25)}px`;
@@ -78,20 +82,6 @@ export class NumberPlateSearchComponent implements OnInit, OnDestroy {
         this.currentWidthPx = `${size.innerWidth - (size.innerWidth * 0.25)}px`;
       })
     );
-
-    this.filter$ = this.filter.valueChanges.pipe(startWith(''));
-
-    this.filteredNumberPlates$ =
-      combineLatest(this.numberPlates$, this.filter$)
-      .pipe(
-        map(
-          ([numberplates, filterString]) =>
-            numberplates.filter((plate: CustomerPlate) => {
-              return plate.meanings.toLowerCase().indexOf(filterString.toLowerCase()) !== -1 ||
-              plate.plateCharacters.replace(/\s/g, '').toLowerCase().indexOf(filterString.replace(/\s/g, '').toLowerCase()) !== -1;
-            })
-          )
-      );
 
     this.createPlateViewForm();
   }
@@ -121,9 +111,62 @@ export class NumberPlateSearchComponent implements OnInit, OnDestroy {
     this.searchContent$ = this.contentService.content$.pipe(map(content => content.search));
   }
 
-  getNumberPlates() {
-    // this.numberPlates$ = this.numberPlateService.samplePlates$.pipe(map(numberplate => numberplate.sampleSet));
-    this.numberPlates$ = this.numberPlateService.actualAPPlates$.pipe(map(numberplate => numberplate.currentAPPlateSet));
+  getPlatesFromAPNAPLATES() {
+    // https://www.apnaplates.com/
+    this.subscriptions.push(
+      this.contentService
+      .getPlates()
+      .pipe(
+        tap((apPlates) => {
+          console.log('apPlates', apPlates);
+        })
+      )
+      .subscribe()
+    );
+  }
+
+  addPlatesToTheDB(plates: Array<CustomerPlate>) {
+    let counter = 0;
+
+    plates.map((plate: CustomerPlate) => {
+      if (counter < 1458) {
+        this.firebaseNumberPlatesService.create(plate);
+      }
+      counter ++;
+    });
+  }
+
+  getAllPlates() {
+    this.subscriptions.push(
+      this.firebaseNumberPlatesService
+      .getAll()
+      .snapshotChanges()
+      .pipe(
+        map(changes =>
+          changes.map(c =>
+            ({ id: c.payload.doc.id, ...c.payload.doc.data() })
+          )
+        ),
+        tap((data: any) => {
+          this.numberPlates$ = of(data);
+          this.isDataLoaded = true;
+          this.filter$ = this.filter.valueChanges.pipe(startWith(''));
+
+          this.filteredNumberPlates$ =
+            combineLatest([this.numberPlates$, this.filter$])
+            .pipe(
+              map(
+                ([numberplates, filterString]) =>
+                  numberplates.filter((plate: CustomerPlate) => {
+                    return plate.meanings.toLowerCase().indexOf(filterString.toLowerCase()) !== -1 ||
+                    plate.plateCharacters.replace(/\s/g, '').toLowerCase().indexOf(filterString.replace(/\s/g, '').toLowerCase()) !== -1;
+                  })
+                )
+            );
+        })
+      )
+      .subscribe()
+    );
   }
 
   ngOnDestroy() {

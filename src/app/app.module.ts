@@ -1,3 +1,4 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -25,6 +26,9 @@ import { NumberPlateSearchComponent } from './search/number-plate-search/number-
 import { ValuationDialogComponent } from './valuation/components/valuation-dialog/valuation-dialog.component';
 import { ValuationModule } from './valuation/valuation.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { environment } from 'src/environments/environment';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore/';
 // import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
@@ -49,6 +53,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
         MatDialogModule,
         ValuationModule,
         FontAwesomeModule,
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+        AngularFirestoreModule,
         // AngularFontAwesomeModule
     ],
     providers: [

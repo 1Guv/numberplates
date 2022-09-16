@@ -188,58 +188,20 @@
                                     <mat-expansion-panel>
                                         <mat-expansion-panel-header>
                                             <mat-panel-title>
-                                                More...
+                                                More info...
                                             </mat-panel-title>
                                         </mat-expansion-panel-header>
 
-                                        <mat-panel-description>
-                                            <div class="d-flex flex-column justify-content-around text-center">
-                                                <div *ngIf="stepZeroForm.get('plateType').value" class="my-3">
+                                        <mat-panel-description class="mx-1">
+                                            <div class="d-flex flex-column">
+                                                <div class="my-3">
                                                     <mat-chip-list>
-                                                        <mat-chip color="primary">Type:</mat-chip>
-                                                        {{ stepZeroForm.get('plateType').value | uppercase }}
-                                                    </mat-chip-list>
-                                                </div>
-
-                                                <div *ngIf="stepZeroForm.get('plateType').value" class="my-3">
-                                                    <mat-chip-list>
-                                                        <mat-chip color="primary">Type:</mat-chip>
-                                                        {{ stepZeroForm.get('plateType').value | uppercase }}
-                                                    </mat-chip-list>
-                                                </div>
-
-                                                <div *ngIf="stepZeroForm.get('platePrice').value" class="my-3">
-                                                    <mat-chip-list>
-                                                        <mat-chip color="primary">Price bought:</mat-chip>
-                                                        £{{ stepZeroForm.get('platePrice').value }}
-                                                    </mat-chip-list>
-                                                </div>
-
-                                                <div *ngIf="stepZeroForm.get('plateYear').value" class="my-3">
-                                                    <mat-chip-list>
-                                                        <mat-chip color="primary">Age:</mat-chip>
-                                                        {{ plateAge }}
-                                                    </mat-chip-list>
-                                                </div>
-
-                                                <div *ngIf="stepOneForm.get('meaning').value" class="my-3 w-100">
-                                                    <mat-chip-list>
-                                                        <mat-chip color="primary">Meaning:</mat-chip>
-                                                        {{ stepOneForm.get('meaning').value | uppercase }}
-                                                    </mat-chip-list>
-                                                </div>
-
-                                                <div *ngIf="stepZeroForm.get('valuationPrice').value" class="my-3 w-100">
-                                                    <mat-chip-list>
-                                                        <mat-chip color="primary">Percentage:</mat-chip>
-                                                        {{ ((stepZeroForm.get('valuationPrice').value / stepZeroForm.get('platePrice').value) * 100) | number }}%
-                                                    </mat-chip-list>
-                                                </div>
-
-                                                <div *ngIf="stepZeroForm.get('valuationPrice').value" class="my-3 w-100">
-                                                    <mat-chip-list>
-                                                        <mat-chip color="primary">Profit:</mat-chip>
-                                                        £{{ (stepZeroForm.get('valuationPrice').value - stepZeroForm.get('platePrice').value | number) }}
+                                                        <mat-chip style="w-100" color="none"><span class="">Type:</span> {{ stepZeroForm.get('plateType')?.value | uppercase }}</mat-chip>
+                                                        <mat-chip style="w-100" color="primary">Price bought: £{{ stepZeroForm.get('platePrice')?.value }}</mat-chip>
+                                                        <mat-chip style="w-100" color="accent">Age: {{ plateAge }}</mat-chip>
+                                                        <mat-chip style="w-100" color="warn">Meaning: {{ stepOneForm.get('meaning').value | uppercase }}</mat-chip>
+                                                        <mat-chip style="w-100" color="primary">Percentage: {{ ((stepZeroForm.get('valuationPrice').value / stepZeroForm.get('platePrice').value) * 100) | number }}%</mat-chip>
+                                                        <mat-chip style="w-100" color="primary">Profit: £{{ (stepZeroForm.get('valuationPrice').value - stepZeroForm.get('platePrice').value | number) }}</mat-chip>
                                                     </mat-chip-list>
                                                 </div>
                                             </div>
@@ -268,13 +230,13 @@
                                     <span class="fas fa-camera"></span>
                                 </div> -->
 
-                                <ng-container *ngIf="isHTTPS">
+                                <!-- <ng-container *ngIf="isHTTPS">
                                     <app-share-button [share]="share"></app-share-button>
-                                </ng-container>
+                                </ng-container> -->
 
-                                <ng-container>
+                                <!-- <ng-container>
                                     <div class="sharethis-inline-share-buttons"></div>
-                                </ng-container>
+                                </ng-container> -->
 
                                 <div class="d-flex justify-content-around w-100">
                                     <!-- https://www.npmjs.com/package/angular-font-awesome -->
