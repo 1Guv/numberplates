@@ -30,3 +30,17 @@ mat-slide-toggle,
 :host ::ng-deep .mat-vertical-content-container {
     margin-left: 0px !important;
 }
+
+.current-val {
+    .sterling {
+        color: black;
+        font-size: 1rem;
+    }
+    font-size:  2.4rem;
+    color:  green;
+}
+
+.mat-chip-list-stacked .mat-chip-list-wrapper {
+    flex-direction: column;
+    align-items: center;
+}

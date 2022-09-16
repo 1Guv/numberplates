@@ -9,6 +9,7 @@ import { CustomerPlate, SampleNumberPlateSet } from '../search/number-plate-sear
 })
 export class NumberPlatesService {
 
+  // Http calls to actual plates which are stored in a JSON file stored locally
   samplePlates$: Observable<SampleNumberPlateSet>;
   actualAPPlates$: Observable<SampleNumberPlateSet>;
 

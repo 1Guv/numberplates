@@ -8,7 +8,7 @@
             </div>
 
             <div class="d-flex flex-column align-items-center justify-content-center">
-                <div>
+                <div *ngIf="this.stepZeroForm.valid && stepOneForm.valid && stepTwoForm.valid && stepThreeForm.valid">
                     <div *ngIf="stepZeroForm.get('plate').value?.length > 0" class="w-100">
                         <span class="plate-css text-uppercase mat-elevation-z4">
                     {{ stepZeroForm.get('plate').value }}
@@ -168,44 +168,55 @@
                     <mat-step>
                         <ng-template matStepLabel>Summary</ng-template>
                         <div>
-                            <div style="margin-left: 0 !important" class="d-flex flex-column align-items-center justify-content-around text-center">
-                                <div *ngIf="stepZeroForm.get('plate').value?.length > 0" class="w-100 mt-3">
+                            <div style="margin-left: 0 !important" class="d-flex flex-column justify-content-around text-center">
+                                <div *ngIf="stepZeroForm.get('plate').value?.length > 0" class="w-100 my-3">
                                     <span class="plate-css text-uppercase mat-elevation-z4">
                                         {{ stepZeroForm.get('plate').value }}
                                     </span>
                                 </div>
 
-                                <div *ngIf="stepZeroForm.get('plateType').value" class="my-3">
-                                    Type: {{ stepZeroForm.get('plateType').value | uppercase }}
-                                </div>
-
-                                <div *ngIf="stepZeroForm.get('platePrice').value" class="my-3">
-                                    Price bought: £{{ stepZeroForm.get('platePrice').value }}
-                                </div>
-
-                                <div *ngIf="stepZeroForm.get('plateYear').value" class="my-3">
-                                    Age: {{ plateAge }}
-                                </div>
-
-                                <div *ngIf="stepOneForm.get('meaning').value" class="my-3 w-100">
-                                    Meaning: {{ stepOneForm.get('meaning').value | uppercase }}
-                                </div>
-
-                                <div *ngIf="stepZeroForm.get('plateValB4Q').value" class="my-3 w-100">
-                                    Plate Value before questions: £{{ stepZeroForm.get('plateValB4Q').value }}
-                                </div>
-
                                 <div *ngIf="stepZeroForm.get('valuationPrice').value" class="my-3 w-100">
-                                    <b>Current Valuation: £{{ stepZeroForm.get('valuationPrice').value | number}}</b>
+                                    <span class="current-val">
+                                        <span class="sterling">£</span> {{ stepZeroForm.get('valuationPrice').value | number}}
+                                    </span>
+                                    <mat-chip-list class="mat-chip-list-stacked">
+                                        <mat-chip>Current Valuation</mat-chip>
+                                    </mat-chip-list>
                                 </div>
 
-                                <div *ngIf="stepZeroForm.get('valuationPrice').value" class="my-3 w-100">
-                                    Percentage Inc/Dec: {{ ((stepZeroForm.get('valuationPrice').value / stepZeroForm.get('platePrice').value) * 100) | number }}%
-                                </div>
+                                <mat-accordion>
+                                    <mat-expansion-panel>
+                                        <mat-expansion-panel-header>
+                                            <mat-panel-title>
+                                                More info...
+                                            </mat-panel-title>
+                                        </mat-expansion-panel-header>
 
-                                <div *ngIf="stepZeroForm.get('valuationPrice').value" class="my-3 w-100">
-                                    Profit: £{{ (stepZeroForm.get('valuationPrice').value - stepZeroForm.get('platePrice').value | number) }}
-                                </div>
+                                        <mat-panel-description class="mx-1">
+                                            <div class="d-flex flex-column">
+                                                <div class="my-3">
+                                                    <mat-chip-list>
+                                                        <mat-chip style="w-100" color="none"><span class="">Type:</span> {{ stepZeroForm.get('plateType')?.value | uppercase }}</mat-chip>
+                                                        <mat-chip style="w-100" color="primary">Price bought: £{{ stepZeroForm.get('platePrice')?.value }}</mat-chip>
+                                                        <mat-chip style="w-100" color="accent">Age: {{ plateAge }}</mat-chip>
+                                                        <mat-chip style="w-100" color="warn">Meaning: {{ stepOneForm.get('meaning').value | uppercase }}</mat-chip>
+                                                        <mat-chip style="w-100" color="primary">Percentage: {{ ((stepZeroForm.get('valuationPrice').value / stepZeroForm.get('platePrice').value) * 100) | number }}%</mat-chip>
+                                                        <mat-chip style="w-100" color="primary">Profit: £{{ (stepZeroForm.get('valuationPrice').value - stepZeroForm.get('platePrice').value | number) }}</mat-chip>
+                                                    </mat-chip-list>
+                                                </div>
+                                            </div>
+                                        </mat-panel-description>
+                                    </mat-expansion-panel>
+                                </mat-accordion>
+
+
+                                <!-- <div *ngIf="stepZeroForm.get('plateValB4Q').value" class="my-3 w-100">
+                                    <mat-chip-list>
+                                        <mat-chip color="primary">Plate Value before questions:</mat-chip>
+                                        £{{ stepZeroForm.get('plateValB4Q').value }}
+                                    </mat-chip-list>
+                                </div> -->
+
 
                                 <!-- <div>
                                     <a href="whatsapp://send?text=www.google.com" data-text="Take a look at this awesome website:" class="wa_btn wa_btn_s">
@@ -219,9 +230,13 @@
                                     <span class="fas fa-camera"></span>
                                 </div> -->
 
-                                <ng-container>
+                                <!-- <ng-container *ngIf="isHTTPS">
                                     <app-share-button [share]="share"></app-share-button>
-                                </ng-container>
+                                </ng-container> -->
+
+                                <!-- <ng-container>
+                                    <div class="sharethis-inline-share-buttons"></div>
+                                </ng-container> -->
 
                                 <div class="d-flex justify-content-around w-100">
                                     <!-- https://www.npmjs.com/package/angular-font-awesome -->

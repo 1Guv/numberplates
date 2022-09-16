@@ -2,8 +2,7 @@
     "header": {
         "leftLogoUrl": "./assets/numberplates-io-logo.svg",
         "middleLogoUrl": "./assets/n-logo-svg.png",
-        "headerMenuOptions": [
-            {
+        "headerMenuOptions": [{
                 "name": "Login",
                 "icon": "account_circle",
                 "url": "/login",
@@ -50,13 +49,11 @@
             "name": "Search plates now",
             "url": "/number-plate-search"
         },
-        "howItWorks": [
-            {
+        "howItWorks": [{
                 "subTitle": "How it works",
                 "title": "Any number plate, listed at any time.",
                 "paragraph": "It's very simple, you list your Private Number Plate for <b>FREE</b> until someone contacts you direct and provides you with an offer that you can't refuse. The best bit is that we will:",
-                "list": [
-                    {
+                "list": [{
                         "listTitle": "List your private registration for <b>free</b>.",
                         "listIcon": "done_outline"
                     },
@@ -88,8 +85,7 @@
                 "subTitle": "How it works",
                 "title": "We can also sell really good plates really fast.",
                 "paragraph": "So if you have a sought after number plate and would like to sell it at a premuim, then for a <b>fee</b> we can advertise it on our <b>social media network</b> providing lots of targeted querys.",
-                "list": [
-                    {
+                "list": [{
                         "listTitle": "We create highly targeted <b>Facebook</b> adverts for each plate.",
                         "listIcon": "done_outline"
                     },
@@ -129,8 +125,7 @@
                 "subTitle": "How it works",
                 "title": "Get a FREE automated online valuation today.",
                 "paragraph": "We have built a sophisticated automated online valuation system that is free to use and provide you with a approximate value of your private number plate.",
-                "list": [
-                    {
+                "list": [{
                         "listTitle": "Fill in the form, it only takes <b>5mins</b>.",
                         "listIcon": "done_outline"
                     },
@@ -154,8 +149,7 @@
                 "subTitle": "How it works",
                 "title": "Search for your perfect number plate.",
                 "paragraph": "We have thousands of plates to search from with sophisticated filters so you can quickly find your perfect plate.",
-                "list": [
-                    {
+                "list": [{
                         "listTitle": "We have the <b>fatstest</b> number plate search you have every seen.",
                         "listIcon": "done_outline"
                     },
@@ -184,8 +178,7 @@
     },
     "footer": {
         "heading": "Advertise your plate for <span class=\"green\">FREE<\/span> today",
-        "ctaButtons": [
-            {
+        "ctaButtons": [{
                 "name": "Advertse now",
                 "url": "/create-listing-two"
             },
@@ -201,8 +194,7 @@
         "logo": "./assets/n-logo-svg.png",
         "address": "Our offices:<br>Wootton,<br>Bedfordshire,<br>UK.<br>",
         "email": "hello@numberplates.io",
-        "socialMedia": [
-            {
+        "socialMedia": [{
                 "name": "Facebook",
                 "icon": "<i class=\"fa fa-facebook\"><\/i>",
                 "url": ""
@@ -223,24 +215,23 @@
                 "url": ""
             }
         ],
-        "company": [
-            {
-                "name": "About",
-                "url": "/about"
+        "company": [{
+                "name": "Our Story",
+                "url": "/company/our-story"
             },
             {
                 "name": "Blog",
-                "url": "/blog"
+                "url": "/company/blog"
             },
             {
                 "name": "How it works",
-                "url": "/"
+                "url": "/company/how-it-works"
             },
             {
                 "name": "Careers",
                 "url": "/careers"
             },
-             {
+            {
                 "name": "Terms & Conditions",
                 "url": "/tandc"
             },
@@ -249,8 +240,7 @@
                 "url": "/privacy-policy"
             }
         ],
-        "help": [
-            {
+        "help": [{
                 "name": "Contact",
                 "url": ""
             },

@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Footer } from 'src/app/_models/content';
 import { ContentService } from 'src/app/_services/content.service';
-import { map, tap, shareReplay } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 import { ValuationDialogComponent } from 'src/app/valuation/components/valuation-dialog/valuation-dialog.component';

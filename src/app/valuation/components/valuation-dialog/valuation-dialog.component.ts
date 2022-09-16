@@ -1,7 +1,8 @@
 import { isPlatformBrowser } from '@angular/common';
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { MatDialog, MatStepper } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
+import { MatStepper } from '@angular/material/stepper';
 import { combineLatest, Subscription } from 'rxjs';
 import { filter, map, take, tap } from 'rxjs/operators';
 import { Share } from 'src/app/_models/share-button';
@@ -53,7 +54,12 @@ export class ValuationDialogComponent implements OnInit, OnDestroy {
   q5Value: number;
   q6Value: number;
   replaceCommas = /,/gi;
-  share: Share;
+  share: Share = {
+    url: '',
+    title: '',
+    text: ''
+  };
+  isHTTPS: boolean;
   subscriptions: Subscription[] = [];
 
   constructor(
@@ -63,6 +69,7 @@ export class ValuationDialogComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit() {
+    location.protocol === 'https::' ? this.isHTTPS = true :this.isHTTPS = false;
     this.createForms();
     this.getPlateTypes();
     this.getSuffixYears();
@@ -134,7 +141,7 @@ export class ValuationDialogComponent implements OnInit, OnDestroy {
 
   setShareButton() {
     this.share.url = 'https://1guv.github.io/numberplates';
-    this.share.title = this.stepZeroForm.get('plate').value;
+    this.share.title = this.stepZeroForm.get('plate').value.toUpperCase();
     this.share.text = `
       Price: ${this.stepZeroForm.get('platePrice').value},
       Type: ${this.stepZeroForm.get('plateType').value},

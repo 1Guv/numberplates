@@ -14,7 +14,16 @@ export class ShareButtonComponent {
   @Input() share: Share;
 
   onClick() {
-    window.navigator.share(this.share);
+
+    const navigator = window.navigator as any;
+    // Share button will only work on https
+    if (navigator.share) {
+      console.log('share', this.share);
+      console.log('window.navigator.share', window.navigator.share(this.share));
+      window.navigator.share(this.share);
+    } else {
+      alert('Share not supported');
+    }
   }
 
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { MatSlideToggleChange } from '@angular/material';
+import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 import { ContentService } from 'src/app/_services/content.service';
 import { CreateListing, StepperLabels, FormCards, FormSetup, Section, Carousel } from 'src/app/_models/content';
 import { map } from 'rxjs/operators';

@@ -14,6 +14,8 @@ export class ContentService {
   suffixYears$: Observable<any>;
   prefixYears$: Observable<any>;
   currentYears$: Observable<any>;
+  about$: Observable<any>;
+  howItWorks$: Observable<any>;
 
   constructor(private http: HttpClient) {
     // this.content$ = this.http.get<Content>('./assets/data/content.json').pipe(shareReplay(1));
@@ -21,6 +23,7 @@ export class ContentService {
     this.suffixYears$ = this.http.get<any>('./assets/data/suffix_years.json').pipe(shareReplay(1));
     this.prefixYears$ = this.http.get<any>('./assets/data/prefix_years.json').pipe(shareReplay(1));
     this.currentYears$ = this.http.get<any>('./assets/data/current_years.json').pipe(shareReplay(1));
+    this.about$ = this.http.get<any>('./assets/data/our-story.json').pipe(shareReplay(1));
    }
 
   addManufacturers(manufacturers: Array<InputFields>, section: string) {
@@ -34,6 +37,7 @@ export class ContentService {
     const headerDict = {
       'Content-Type': 'application/json',
       'Access-Control-Allow-Headers': 'Content-Type',
+      'Access-Control-Allow-Origin': '*'
     };
 
     const requestOptions = {
