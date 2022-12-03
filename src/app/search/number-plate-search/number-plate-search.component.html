@@ -84,7 +84,7 @@
 
                     <div *ngIf="toggleCardOrListView.get('cardView').value">
                         <ng-container>
-                            <app-plate-card [forSearch]="true" [profilePic]="plate.profiletPicUrl" [initials]="plate.initials" [profilePicInitials]="true" [plateCreated]="plate.createdDate" [plateCategory]="plate.plateCategory" [plateId]="plate.plateCharacters" [askingPrice]="plate.askingPrice"
+                            <app-plate-card [forSearch]="true" [profilePic]="plate.profiletPicUrl" [initials]="plate.initials" [profilePicInitials]="true" [plateCreated]="plate.currentDate" [plateCategory]="plate.plateCategory" [plateId]="plate.plateCharacters" [askingPrice]="plate.askingPrice"
                                 [plateNegotiable]="plate.plateNegotiable" [plateBestOffer]="plate.plateBestOffer" [offersOver]="plate.offersOver" [orNearestOffer]="plate.orNearestOffer" [meaning]="plate.meanings" [pageViews]="plate.viewsPlaceholder" [sellerContacted]="plate.sellerContacted"
                                 [emailToFriend]="plate.emailToFriend" [sold]="plate.sold">
                             </app-plate-card>

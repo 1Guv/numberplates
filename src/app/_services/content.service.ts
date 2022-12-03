@@ -1,3 +1,4 @@
+import { environment } from 'src/environments/environment';
 import { Injectable } from '@angular/core';
 import { Content, InputFields } from '../_models/content';
 import { Observable, Subject } from 'rxjs';
@@ -9,6 +10,8 @@ import { shareReplay } from 'rxjs/operators';
 })
 export class ContentService {
 
+
+  awsUrl = 'https://46pkjw13ag.execute-api.eu-west-2.amazonaws.com/prod/';
   $manufacturers = new Subject<any>();
   content$: Observable<Content>;
   suffixYears$: Observable<any>;
@@ -35,9 +38,10 @@ export class ContentService {
 
   getPlates() {
     const headerDict = {
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Headers': 'Content-Type',
-      'Access-Control-Allow-Origin': '*'
+      // 'Content-Type': 'application/json',
+      // 'Access-Control-Allow-Headers': 'Content-Type',
+      // 'Access-Control-Allow-Origin': '*',
+      'x-api-key': environment.awsConfig.xApiKey
     };
 
     const requestOptions = {
@@ -46,6 +50,8 @@ export class ContentService {
       mode: 'no-cors'
     };
 
-    return this.http.get('https://www.apnaplates.com/plates_for_sales/getAutoSuggestionForPlates', requestOptions);
+    // return this.http.get('https://www.apnaplates.com/plates_for_sales/getAutoSuggestionForPlates', requestOptions);
+    return this.http.get(this.awsUrl + 'platelistings', requestOptions);
+
   }
 }

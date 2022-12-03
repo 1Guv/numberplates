@@ -27,7 +27,7 @@ export interface CustomerPlate {
   plateBestOffer: boolean;
   offersOver: boolean;
   orNearestOffer: boolean;
-  meanings: string;
+  meanings: string[];
   viewsPlaceholder: string;
   messageSeller: string;
   plateListingAccName: string;
@@ -70,7 +70,8 @@ export class NumberPlateSearchComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.getHeaderInfo();
     // this.getPlatesFromAPNAPLATES();
-    this.getAllPlates();
+    this.getPlatesFromAWS();
+    // this.getAllPlates();
 
     // Default width when initialised
     this.currentWidthPx = `${window.innerWidth - (window.innerWidth * 0.25)}px`;
@@ -111,14 +112,55 @@ export class NumberPlateSearchComponent implements OnInit, OnDestroy {
     this.searchContent$ = this.contentService.content$.pipe(map(content => content.search));
   }
 
-  getPlatesFromAPNAPLATES() {
-    // https://www.apnaplates.com/
+  // getPlatesFromAPNAPLATES() {
+  //   // www.apnaplates.com
+  //   this.subscriptions.push(
+  //     this.contentService
+  //     .getPlates()
+  //     .pipe(
+  //       tap((apPlates) => {
+  //         console.log('apPlates', apPlates);
+  //       })
+  //     )
+  //     .subscribe()
+  //   );
+  // }
+
+  getPlatesFromAWS() {
+    // AWS
     this.subscriptions.push(
       this.contentService
       .getPlates()
       .pipe(
-        tap((apPlates) => {
-          console.log('apPlates', apPlates);
+        tap((data: any) => {
+          console.log('data', data);
+          this.numberPlates$ = of(data.listings);
+          this.isDataLoaded = true;
+          this.filter$ = this.filter.valueChanges.pipe(startWith(''));
+
+          this.filteredNumberPlates$ =
+            combineLatest([this.numberPlates$, this.filter$])
+            .pipe(
+              map(
+                ([numberplates, filterString]) => {
+                  const filtered = [];
+
+                  numberplates.filter((plate: CustomerPlate) => {
+                    if (plate.plateCharacters.replace(/\s/g, '').toLowerCase().indexOf(filterString.replace(/\s/g, '').toLowerCase()) !== -1) {
+                      filtered.push(plate);
+                    }
+
+                    plate.meanings.forEach(meaning => {
+                      if (meaning.toLowerCase().indexOf(filterString.toLowerCase()) !== -1) {
+                        filtered.push(plate);
+                      }
+                    });
+                  });
+
+                  return [...new Set(filtered)];
+                }
+              )
+            );
         })
       )
       .subscribe()
@@ -136,38 +178,38 @@ export class NumberPlateSearchComponent implements OnInit, OnDestroy {
     });
   }
 
-  getAllPlates() {
-    this.subscriptions.push(
-      this.firebaseNumberPlatesService
-      .getAll()
-      .snapshotChanges()
-      .pipe(
-        map(changes =>
-          changes.map(c =>
-            ({ id: c.payload.doc.id, ...c.payload.doc.data() })
-          )
-        ),
-        tap((data: any) => {
-          this.numberPlates$ = of(data);
-          this.isDataLoaded = true;
-          this.filter$ = this.filter.valueChanges.pipe(startWith(''));
+  // getAllPlates() {
+  //   this.subscriptions.push(
+  //     this.firebaseNumberPlatesService
+  //     .getAll()
+  //     .snapshotChanges()
+  //     .pipe(
+  //       map(changes =>
+  //         changes.map(c =>
+  //           ({ id: c.payload.doc.id, ...c.payload.doc.data() })
+  //         )
+  //       ),
+  //       tap((data: any) => {
+  //         this.numberPlates$ = of(data);
+  //         this.isDataLoaded = true;
+  //         this.filter$ = this.filter.valueChanges.pipe(startWith(''));
 
-          this.filteredNumberPlates$ =
-            combineLatest([this.numberPlates$, this.filter$])
-            .pipe(
-              map(
-                ([numberplates, filterString]) =>
-                  numberplates.filter((plate: CustomerPlate) => {
-                    return plate.meanings.toLowerCase().indexOf(filterString.toLowerCase()) !== -1 ||
-                    plate.plateCharacters.replace(/\s/g, '').toLowerCase().indexOf(filterString.replace(/\s/g, '').toLowerCase()) !== -1;
-                  })
-                )
-            );
-        })
-      )
-      .subscribe()
-    );
-  }
+  //         this.filteredNumberPlates$ =
+  //           combineLatest([this.numberPlates$, this.filter$])
+  //           .pipe(
+  //             map(
+  //               ([numberplates, filterString]) =>
+  //                 numberplates.filter((plate: CustomerPlate) => {
+  //                   return plate.meanings.toLowerCase().indexOf(filterString.toLowerCase()) !== -1 ||
+  //                   plate.plateCharacters.replace(/\s/g, '').toLowerCase().indexOf(filterString.replace(/\s/g, '').toLowerCase()) !== -1;
+  //                 })
+  //               )
+  //           );
+  //       })
+  //     )
+  //     .subscribe()
+  //   );
+  // }
 
   ngOnDestroy() {
     this.subscriptions.forEach(subscription => subscription.unsubscribe());
