@@ -1,6 +1,5 @@
 {
-    "sampleSet": [
-        {
+    "sampleSet": [{
             "id": "1",
             "lCName": "Gurvinder Sandhu",
             "lCNumber": "07540840801",
@@ -234,7 +233,7 @@
             "id": "11",
             "lCName": "Thari",
             "lCNumber": "07540840801",
-            "lCEmail": "thari@apnaplates.com",
+            "lCEmail": "thari@google.com",
             "initials": "TR",
             "profiletPicUrl": "",
             "profiletPicInitials": true,

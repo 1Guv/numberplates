@@ -31,7 +31,7 @@ export class HomeCtaComponent implements OnInit {
     this.listingButton$ = this.contentService.content$.pipe(map(content => content.homeCTA.createListingButton));
     this.valuationButton$ = this.contentService.content$.pipe(map(content => content.homeCTA.valuationButton));
     this.searchButton$ = this.contentService.content$.pipe(map(content => content.homeCTA.searchButton));
-    this.testAWSAPI();
+    // this.testAWSAPI();
   }
 
   testAWSAPI() {
