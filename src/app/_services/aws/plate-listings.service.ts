@@ -31,6 +31,10 @@ export class PlateListingsService {
   }
 
   getPlate(id: number) {
-    return this.http.get(`${this.awsUrl} + plateListing?' + 'id=' ${id}`, this.requestOptions);
+    return this.http.get(`${this.awsUrl} + 'plateListing' + 'id=' ${id}`, this.requestOptions);
+  }
+
+  createPlate(newPlate: any) {
+    return this.http.post(`${this.awsUrl}plateListing`, newPlate, this.requestOptions);
   }
 }

@@ -1,0 +1,17 @@
+<div class="container-fluid">
+    <h3>ADMIN > Plate Upload</h3>
+    <div class="row m-2 p-2">
+        <form [formGroup]="form">
+            <label>Start</label>
+            <input type="number" formControlName="start">
+            <br><br>
+            <label>End</label>
+            <input type="number" formControlName="end">
+        </form>
+    </div>
+    <button mat-raised-button class="m-2" (click)="uploadPlates(form.get('start').value, form.get('end').value)" [disabled]="form.invalid">
+        Upload
+    </button>
+</div>
+
+<pre>{{ form.value | json }}</pre>

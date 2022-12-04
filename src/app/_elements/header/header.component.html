@@ -12,15 +12,14 @@
             </a>
 
             <ng-container *ngFor="let option of (header$ | async )?.headerMenuOptions; index as i; first as isFirst">
-                <button mat-icon-button
-                        attr.aria-label="{{ option.name }}"
-                        matTooltip="{{ option.toolTip }}"
-                        [routerLink]="option.name !== 'Valuation' ? option.url : null"
-                        (click)="option.name === 'Valuation' ? onValuation() : null"
-                        [ngClass]="{'ml-auto': isFirst}">
+                <button mat-icon-button attr.aria-label="{{ option.name }}" matTooltip="{{ option.toolTip }}" [routerLink]="option.name !== 'Valuation' ? option.url : null" (click)="option.name === 'Valuation' ? onValuation() : null" [ngClass]="{'ml-auto': isFirst}">
                     <mat-icon>{{ option.icon }}</mat-icon>
                 </button>
             </ng-container>
+
+            <a [routerLink]="'/admin/upload'" class="">
+                <div class="d-inline-block d-sm-none">GS</div>
+            </a>
 
         </mat-toolbar>
     </div>
