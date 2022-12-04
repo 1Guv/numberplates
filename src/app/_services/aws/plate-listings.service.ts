@@ -10,9 +10,9 @@ export class PlateListingsService {
   awsUrl = 'https://46pkjw13ag.execute-api.eu-west-2.amazonaws.com/prod/';
 
   headerDict = {
-    // 'Content-Type': 'application/json',
-    // 'Access-Control-Allow-Headers': 'Content-Type',
-    // 'Access-Control-Allow-Origin': '*',
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Headers': 'Content-Type',
+    'Access-Control-Allow-Origin': '*',
     'x-api-key': environment.awsConfig.xApiKey
   };
 
