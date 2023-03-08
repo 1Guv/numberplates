@@ -4,7 +4,7 @@ import { PlateUploadComponent } from './components/plate-upload/plate-upload.com
 
 
 const routes: Routes = [
-    { path: 'upload', component: PlateUploadComponent },
+    // { path: 'upload', component: PlateUploadComponent },
 ];
 
 @NgModule({

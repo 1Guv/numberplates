@@ -5,6 +5,7 @@ import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 import { ValuationDialogComponent } from 'src/app/valuation/components/valuation-dialog/valuation-dialog.component';
+import { PlateUploadComponent } from 'src/app/admin/components/plate-upload/plate-upload.component';
 
 @Component({
   selector: 'app-footer',
@@ -28,6 +29,11 @@ export class FooterComponent implements OnInit {
 
   onValuation() {
     this.dialog.open(ValuationDialogComponent);
+  }
+
+  // For testing
+  uploadPlates() {
+    this.dialog.open(PlateUploadComponent);
   }
 
 }
