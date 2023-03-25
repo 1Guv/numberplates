@@ -15,6 +15,7 @@ export class PlateUploadComponent implements OnInit {
   newPlates$: Observable<any>;
   subscriptions: Subscription[] = [];
   form: FormGroup;
+  deleteForm: FormGroup;
 
   constructor(
     private http: HttpClient,
@@ -26,12 +27,19 @@ export class PlateUploadComponent implements OnInit {
 
   ngOnInit(): void {
     this.buildForm();
+    this.buildDeleteForm();
   }
 
   buildForm() {
     this.form = this.formBuilder.group({
       start: [],
       end: []
+    });
+  }
+
+  buildDeleteForm() {
+    this.deleteForm = this.formBuilder.group({
+      id:[]
     });
   }
 
@@ -57,6 +65,20 @@ export class PlateUploadComponent implements OnInit {
               .pipe()
               .subscribe(() => console.log('done'));
 
+          })
+        )
+        .subscribe()
+    );
+  }
+
+  deletePlate() {
+    this.subscriptions.push(
+      this.plateListingsService
+        .deletePlate(this.deleteForm.get('id').value)
+        .pipe(
+          map((res: any) => {
+            console.log('res', res);
+            console.log('plate deleted');
           })
         )
         .subscribe()

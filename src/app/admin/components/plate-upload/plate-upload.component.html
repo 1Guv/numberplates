@@ -12,6 +12,23 @@
     <button mat-raised-button class="m-2" (click)="uploadPlates(form.get('start').value, form.get('end').value)" [disabled]="form.invalid">
         Upload
     </button>
+
+    <br>
+    <br>
+    <h3>Delete Plate</h3>
+    <div class="row m-2 p-2">
+        <form [formGroup]="deleteForm">
+            <label>ID:</label>
+            <input type="text" formControlName="id">
+            <br>
+            <br>
+        </form>
+    </div>
+
+    <button mat-raised-button class="m-2" (click)="deletePlate()">
+        Delete
+    </button>
 </div>
 
 <pre>{{ form.value | json }}</pre>
+<pre>{{ deleteForm.value | json }}</pre>

@@ -51,6 +51,7 @@ export class ContentService {
     };
 
     // return this.http.get('https://www.apnaplates.com/plates_for_sales/getAutoSuggestionForPlates', requestOptions);
+    console.log('getPlates ~ requestOptions:', requestOptions);
     return this.http.get(this.awsUrl + 'platelistings', requestOptions);
 
   }
