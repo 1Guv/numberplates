@@ -145,14 +145,20 @@ export class NumberPlateSearchComponent implements OnInit, OnDestroy {
                 ([numberplates, filterString]) => {
                   const filtered = [];
 
-                  numberplates.filter((plate: CustomerPlate) => {
+                  numberplates?.filter((plate: CustomerPlate) => {
                     if (plate.plateCharacters.replace(/\s/g, '').toLowerCase().indexOf(filterString.replace(/\s/g, '').toLowerCase()) !== -1) {
                       filtered.push(plate);
                     }
 
-                    plate.meanings.forEach(meaning => {
-                      if (meaning.toLowerCase().indexOf(filterString.toLowerCase()) !== -1) {
-                        filtered.push(plate);
+                    plate.meanings?.forEach(meaning => {
+                      // console.log('meaning', meaning);
+                      if (meaning['meaning']) {
+                        return;
+                      }
+                      if ( meaning.length > 0) {
+                        if (meaning?.toLowerCase().indexOf(filterString.toLowerCase()) !== -1) {
+                          filtered.push(plate);
+                        }
                       }
                     });
                   });

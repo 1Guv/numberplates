@@ -33,7 +33,10 @@ export class FooterComponent implements OnInit {
 
   // For testing
   uploadPlates() {
-    this.dialog.open(PlateUploadComponent);
+    this.dialog.open(PlateUploadComponent, {
+      height: '200%',
+      width: '75%'
+    });
   }
 
 }

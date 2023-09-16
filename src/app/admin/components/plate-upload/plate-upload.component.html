@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid h-100">
     <h3>ADMIN > Plate Upload</h3>
     <div class="row m-2 p-2">
         <form [formGroup]="form">
@@ -28,7 +28,94 @@
     <button mat-raised-button class="m-2" (click)="deletePlate()">
         Delete
     </button>
+
+    <br>
+    <br>
+    <h3>Get Plate</h3>
+    <div class="row m-2 p-2">
+        <form [formGroup]="getPlateForm">
+            <label>ID:</label>
+            <input type="text" formControlName="id">
+            <br>
+            <br>
+        </form>
+    </div>
+
+    <button mat-raised-button class="m-2" (click)="getPlate()">
+        Get Plate
+    </button>
+
+    <br>
+    <br>
+    <h3>Update Plate</h3>
+    <div class="row m-2 p-2">
+        <form [formGroup]="updatePlateForm">
+            <label>ID:</label>
+            <input type="text" formControlName="id">
+            <br><br>
+            <label>Field to update:</label>
+            <input type="text" formControlName="fieldToUpdate">
+            <br><br>
+            <label>New field:</label>
+            <input type="text" formControlName="newField">
+            <br><br>
+        </form>
+    </div>
+
+    <button mat-raised-button class="m-2" (click)="updatePlate()">
+        Update Plate
+    </button>
+
+    <hr>
+
+    <button mat-raised-button class="m-2" (click)="getAllUsers()">
+        Get All Users
+    </button>
+
+    <button mat-raised-button class="m-2" (click)="getHealth()">
+        Get Health
+    </button>
+
+    <button mat-raised-button class="m-2" (click)="getUserById()">
+        Get Plate by ID
+    </button>
+
+    <button mat-raised-button class="m-2" (click)="createUser()">
+        Create User
+    </button>
+
+    <button mat-raised-button class="m-2" (click)="updateUser()">
+        Update User
+    </button>
+
+    <hr>
+
+    <!-- Valuations -->
+    <button mat-raised-button class="m-2" (click)="getAllValuations()">
+        Get All Valuations
+    </button>
+
+    <button mat-raised-button class="m-2" (click)="getValuationById()">
+        Get Valuation by ID
+    </button>
+
+    <button mat-raised-button class="m-2" (click)="createValuation()">
+        Create Valuation
+    </button>
+    <hr>
+
+    <!-- Messages -->
+    <button mat-raised-button class="m-2" (click)="getMessages()">
+        Get All Messages
+    </button>
+    <button mat-raised-button class="m-2" (click)="getMessageById()">
+        Get Message by ID = 2
+    </button>
+    <button mat-raised-button class="m-2" (click)="createMessage()">
+        Create Message
+    </button>
+    <hr>
+
 </div>
 
-<pre>{{ form.value | json }}</pre>
-<pre>{{ deleteForm.value | json }}</pre>
+<!-- <pre>{{ form.value | json }}</pre> // <pre>{{ deleteForm.value | json }}</pre> -->
