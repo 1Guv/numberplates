@@ -29,6 +29,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore/';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 // import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
@@ -61,7 +62,11 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore/';
         CreateListingComponent,
         CreateListingTwoComponent,
         CreateListingNewComponent,
-        NumberPlateSearchComponent
+        NumberPlateSearchComponent,
+        {
+            provide: LocationStrategy,
+            useClass: HashLocationStrategy
+        }
     ],
     bootstrap: [AppComponent]
 })
